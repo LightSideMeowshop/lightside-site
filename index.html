@@ -73,6 +73,18 @@
       #langLabel .fi, .lang-option .fi{
         margin-right:8px; border-radius:2px; box-shadow:inset 0 0 0 1px rgba(0,0,0,.25); vertical-align:-0.1em;
       }
+      [class*="ring-"] {
+        --tw-ring-color: var(--brand-accent) !important;
+      }
+      /* Если у элемента не задана своя ring-opacity-*, даём дефолт 0.30 */
+      [class*="ring-"]:not([class*="ring-opacity-"]) {
+        --tw-ring-opacity: .30 !important;
+      }
+
+      /* На всякий: если «синяя обводка» была outline, красим и её */
+      :focus-visible {
+        outline-color: var(--brand-accent);
+      }
     </style>
 
     <!-- React & Babel -->
@@ -82,8 +94,27 @@
 
     <!-- lucide icons UMD -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  </head>
-  <body class="bg-[var(--brand-base)] text-white">
+  <style>
+    /* === Feature toggles: hide, don't remove === */
+    /* Hide sections by id */
+    [data-hide~="careers"] #careers,
+    [data-hide~="news"] #news,
+    [data-hide~="updates"] #news,
+    [data-hide~="press"] #press,
+    [data-hide~="team"] #team,
+    [data-hide~="partners"] #partners { display: none !important; }
+
+    /* Hide any anchors that point to disabled sections (works for nav + buttons) */
+    [data-hide~="careers"] a[href="#careers"],
+    [data-hide~="news"] a[href="#news"],
+    [data-hide~="updates"] a[href="#news"],
+    [data-hide~="press"] a[href="#press"],
+    [data-hide~="team"] a[href="#team"],
+    [data-hide~="partners"] a[href="#partners"] { display: none !important; }
+
+</style>
+</head>
+  <body data-hide="team careers news press partners" class="bg-[var(--brand-base)] text-white">
     <div id="root"></div>
 
     <script type="text/babel">
@@ -161,7 +192,6 @@
         const menuRef = React.useRef(null);
         const btnRef = React.useRef(null);
 
-        // те же языки и флаги, что в privacy.html
         const LANGS = React.useMemo(()=>[
           ["en","English","gb"],
           ["ru","Русский","ru"],
@@ -183,7 +213,6 @@
           return f ? { code:f[0], label:f[1], flag:f[2] } : { code, label:code, flag:"us" };
         }
 
-        // начальное значение — приводим к списку, иначе "en"
         const currentCode = LANGS.some(([c])=>c===locale) ? locale : "en";
         const current = getMeta(currentCode);
 
@@ -191,7 +220,7 @@
         function close(){ setOpen(false); }
 
         function select(code){
-          setLocale(code); // синхронно с вашим useI18n (ключ ls.locale)
+          setLocale(code);
           close();
         }
 
@@ -279,12 +308,6 @@
           try { window.lucide && window.lucide.createIcons(); } catch {}
         });
 
-        const games = [
-          { id:"solar", title:t("games.solar_run.title"), desc:t("games.solar_run.description"), status:t("games.solar_run.status"), tags:[t("games.tags.roguelite"), t("games.tags.singleplayer"), t("games.tags.pc_console")] },
-          { id:"dusk",  title:t("games.dusk_valley.title"), desc:t("games.dusk_valley.description"), status:t("games.dusk_valley.status"), tags:[t("games.tags.adventure"), t("games.tags.choices_matter"), t("games.tags.narrative")] },
-          { id:"neon",  title:t("games.neon_forge.title"), desc:t("games.neon_forge.description"), status:t("games.neon_forge.status"), tags:[t("games.tags.action"), t("games.tags.tactics"), t("games.tags.indie")] },
-        ];
-
         const news = [
           { date:"2025-05-18", title:t("news.items.0.title"), summary:t("news.items.0.summary") },
           { date:"2025-03-02", title:t("news.items.1.title"), summary:t("news.items.1.summary") },
@@ -295,11 +318,15 @@
           <div className="min-h-screen scroll-smooth">
             <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[var(--brand-base)]/60 border-b border-white/10">
               <div className="mx-auto max-w-7xl px-4 py-3 flex items-center gap-3">
-                <div className="h-10 w-10 rounded-lg ring-1 ring-white/20 bg-[var(--brand-accent)]/30 flex items-center justify-center">
-                  <i data-lucide="sun-medium" class="w-5 h-5"></i>
-                </div>
+                <img
+                        src="assets/light-side-logo-clear-512.png"
+                        alt="LIGHT SIDE logo"
+                        className="h-11 w-auto shrink-0"
+                        decoding="async"
+                        loading="eager"
+                />
                 <div className="font-bold tracking-tight text-lg">LIGHT SIDE</div>
-
+                
                 <nav className="ml-auto hidden md:flex items-center gap-2">
                   {["nav.about","nav.games","nav.team","nav.careers","nav.news","nav.press","nav.contact"].map(k => (
                     <a key={k} href={"#"+k.split(".")[1]} className="px-3 py-2 rounded-xl text-sm hover:text-[var(--brand-accent)] hover:bg-white/5 transition">{t(k)}</a>
@@ -327,8 +354,13 @@
                   <p className="mt-5 text-lg md:text-xl text-white/80">{t("hero.subtitle")}</p>
 
                   <div className="mt-8 flex flex-wrap items-center gap-3">
-                    <a href="#games" className="group inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-[var(--brand-accent)] text-slate-900 font-semibold hover:translate-y-[-1px] transition">
-                      <i data-lucide="gamepad-2" class="w-5 h-5"></i> {t("hero.cta.games")}
+                    <a
+                            href="#games"
+                            className="group inline-flex items-center gap-2 px-5 py-3 rounded-2xl
+                            bg-[var(--brand-accent)] text-slate-900 font-semibold
+                            hover:bg-black hover:text-[var(--brand-accent)]
+                            hover:translate-y-[-1px] transition">
+                      <i data-lucide="gamepad-2" className="w-5 h-5"></i> {t("hero.cta.games")}
                     </a>
                     <a href="#careers" className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl border border-white/20 hover:bg-white/10">
                       <i data-lucide="briefcase" class="w-5 h-5"></i> {t("hero.cta.careers")}
@@ -336,7 +368,7 @@
                     <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl border border-white/20 hover:bg-white/10">
                       <i data-lucide="mail" class="w-5 h-5"></i> {t("hero.cta.contact")}
                     </a>
-                  </div>
+                  </div>  
                 </div>
               </div>
             </section>
@@ -373,24 +405,35 @@
               </div>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { id:"solar", title:t("games.solar_run.title"), desc:t("games.solar_run.description"), status:t("games.solar_run.status"), tags:[t("games.tags.roguelite"), t("games.tags.singleplayer"), t("games.tags.pc_console")] },
-                  { id:"dusk",  title:t("games.dusk_valley.title"), desc:t("games.dusk_valley.description"), status:t("games.dusk_valley.status"), tags:[t("games.tags.adventure"), t("games.tags.choices_matter"), t("games.tags.narrative")] },
-                  { id:"neon",  title:t("games.neon_forge.title"), desc:t("games.neon_forge.description"), status:t("games.neon_forge.status"), tags:[t("games.tags.action"), t("games.tags.tactics"), t("games.tags.indie")] },
+                  { id:"solar", title:t("games.solar_run.title"), desc:t("games.solar_run.description"), status:t("games.solar_run.status") },
                 ].map(g=>(
-                  <a key={g.id} href="#" className="group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10">
-                    <div className="relative aspect-[3/4] overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-accent)]/10 to-transparent"></div>
-                      <div className="absolute left-3 top-3"><span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs bg-[var(--brand-accent)]/15 text-[var(--brand-accent)] ring-1 ring-[var(--brand-accent)]/30">{g.status}</span></div>
-                      <div className="absolute inset-0 flex items-center justify-center text-4xl font-extrabold opacity-70">{g.title}</div>
-                      <button className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/60 text-white text-xs backdrop-blur">
-                        <i data-lucide="play-circle" class="w-4 h-4"></i> {t("games.trailer")}
-                      </button>
+                  <a key={g.id} href="https://play.google.com/store/apps/details?id=com.block.juggle&hl=en" target="_blank" rel="noopener noreferrer" className="group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10">
+                    <div className="relative aspect-[1/1] overflow-hidden">
+                      <img
+                              src="assets/tetra-crush-logo.png" // твой путь к картинке
+                              alt={g.title}
+                              className="w-full h-full object-cover"
+                      />
+                      <div className="absolute left-3 top-3">
+                        <span
+                                className="inline-flex items-center px-2.5 py-1 rounded-full text-xs
+                                     bg-[var(--brand-base)]
+                                     text-[var(--brand-accent)]
+                                     ring-1
+                                     shadow-[0_0_0_1px_color-mix(in_oklab,var(--brand-accent)_35%,transparent),_0_0_14px_color-mix(in_oklab,var(--brand-accent)_65%,transparent)]
+                                     hover:shadow-[0_0_0_1px_color-mix(in_oklab,var(--brand-accent)_50%,transparent),_0_0_22px_color-mix(in_oklab,var(--brand-accent)_85%,transparent)]
+                                     transition-shadow">
+                          {g.status}
+                        </span>
+                      </div>
                     </div>
                     <div className="p-4">
+                      <h3 className="text-white font-semibold text-2xl md:text-3xl text-center
+                          leading-tight mb-2
+                          group-hover:text-[var(--brand-accent)] transition-colors">
+                        {g.title}
+                      </h3>
                       <p className="text-white/80 text-sm">{g.desc}</p>
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {g.tags.map(tag => <span key={tag} className="px-2 py-1 rounded-lg bg-white/5 border border-white/10 text-xs">{tag}</span>)}
-                      </div>
                     </div>
                   </a>
                 ))}
@@ -514,7 +557,16 @@
                 <div className="grid gap-3">
                   <textarea placeholder={t("contact.form.message")} rows="6" className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]"></textarea>
                   <div className="flex items-center gap-3">
-                    <button className="px-5 py-3 rounded-xl bg-[var(--brand-accent)] text-slate-900 font-semibold">{t("contact.form.send")}</button>
+                    <button
+                            className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl
+                            bg-[var(--brand-accent)] text-slate-900 font-semibold
+                            transition duration-200 ease-out
+                            hover:translate-y-[-1px] hover:bg-black hover:text-[var(--brand-accent)]
+                            active:translate-y-0
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]/50
+                            disabled:opacity-50 disabled:pointer-events-none">
+                      {t('contact.form.send')}
+                    </button>
                     <span className="text-sm text-white/70">{t("contact.reply_time")}</span>
                   </div>
                 </div>
@@ -524,7 +576,13 @@
             <footer className="border-t border-white/10">
               <div className="mx-auto max-w-7xl px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="h-8 w-8 rounded-lg ring-1 ring-white/10 bg-[var(--brand-accent)]/30"></div>
+                  <img
+                          src="assets/light-side-logo-clear-512.png"
+                          alt="LIGHT SIDE logo"
+                          className="h-11 w-auto shrink-0"
+                          decoding="async"
+                          loading="eager"
+                  />
                   <span className="text-sm text-white/70">© {new Date().getFullYear()} {t("footer.copyright")}</span>
                 </div>
                 <div className="text-sm text-white/70">{t("footer.made_with_love")}</div>

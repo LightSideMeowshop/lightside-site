@@ -25,6 +25,13 @@
     transform: translateY(-100%);
   }
   .header .wrap{display:flex;gap:12px;align-items:center}
+  .header .logo{
+    width: 50px;              /* задайте размер под ваш логотип */
+    height: 50px;
+    background: url("assets/light-side-logo-clear-512.png") no-repeat center / contain;
+    flex: 0 0 auto;           /* чтобы не сжимался во флексе */
+    margin-right: 8px;        /* небольшой отступ от текста бренда */
+  }
   .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:.2px}
   .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg, var(--accent), #cc7f14)}
   .controls{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
@@ -123,7 +130,7 @@
 <header class="header">
   <div class="wrap">
     <div class="logo" aria-hidden="true"></div>
-    <div class="brand">Light Side — <span data-i18n="pp_title">Privacy Policy</span></div>
+    <div class="brand">Light Side</div>
     <div class="controls">
     <div class="lang-dd">
       <input type="hidden" id="lang">
@@ -185,7 +192,17 @@
     </details>
 
     <details>
-      <summary id="sdks" class="section" data-i18n="sdks_t">5) Third-party services (processors)</summary>
+      <summary id="ads" class="section" data-i18n="optout_t">5) Advertising choices (opt-out)</summary>
+      <div data-i18n="optout_b"></div>
+    </details>
+
+    <details>
+      <summary id="att" class="section" data-i18n="att_t">6) Apple App Tracking Transparency (iOS)</summary>
+      <div data-i18n="att_b"></div>
+    </details>
+
+    <details>
+      <summary id="sdks" class="section" data-i18n="sdks_t">7) Third-party services (processors)</summary>
       <div class="grid2">
         <div>
           <h3>Firebase Analytics / Crashlytics</h3>
@@ -208,49 +225,65 @@
     </details>
 
     <details>
-      <summary id="sharing" class="section" data-i18n="share_t">6) Sharing</summary>
+      <summary id="sharing" class="section" data-i18n="share_t">8) Sharing</summary>
       <div data-i18n="share_b"></div>
     </details>
 
     <details>
-      <summary id="retention" class="section" data-i18n="ret_t">7) Retention</summary>
+      <summary id="retention" class="section" data-i18n="ret_t">9) Retention</summary>
       <div data-i18n="ret_b"></div>
     </details>
 
     <details>
-      <summary id="intl" class="section" data-i18n="intl_t">8) International transfers</summary>
+      <summary id="intl" class="section" data-i18n="intl_t">10) International transfers</summary>
       <div data-i18n="intl_b"></div>
     </details>
 
     <details>
-      <summary id="kids" class="section" data-i18n="kids_t">9) Children</summary>
+      <summary id="kids" class="section" data-i18n="kids_t">11) Children</summary>
       <div data-i18n="kids_b"></div>
     </details>
 
     <details>
-      <summary id="rights" class="section" data-i18n="rights_t">10) Your rights</summary>
+      <summary id="rights" class="section" data-i18n="rights_t">12) Your rights</summary>
       <div data-i18n="rights_b"></div>
     </details>
 
     <details>
-      <summary id="cookies" class="section" data-i18n="cookies_t">11) Cookies & consent</summary>
+      <summary id="cookies" class="section" data-i18n="cookies_t">13) Cookies & consent</summary>
       <div data-i18n="cookies_b"></div>
     </details>
 
     <details>
-      <summary id="security" class="section" data-i18n="sec_t">12) Security</summary>
+      <summary id="accounts" class="section" data-i18n="acct_t">14) Accounts and deletion</summary>
+      <div data-i18n="acct_b"></div>
+    </details>
+
+    <details>
+      <summary id="ugc" class="section" data-i18n="ugc_t">15) User‑generated content (UGC) & moderation</summary>
+      <div data-i18n="ugc_b"></div>
+    </details>
+
+    <details>
+      <summary id="security" class="section" data-i18n="sec_t">16) Security</summary>
       <div data-i18n="sec_b"></div>
     </details>
 
     <details>
-      <summary id="changes" class="section" data-i18n="chg_t">13) Changes</summary>
+      <summary id="changes" class="section" data-i18n="chg_t">17) Changes</summary>
       <div data-i18n="chg_b"></div>
     </details>
 
     <details>
-      <summary id="contact" class="section" data-i18n="ct_t">14) Contact</summary>
+      <summary id="contact" class="section" data-i18n="ct_t">18) Contact</summary>
       <div data-i18n="ct_b"></div>
     </details>
+
+    <details>
+      <summary id="definitions" class="section" data-i18n="defs_t">19) Key definitions</summary>
+      <div data-i18n="defs_b"></div>
+    </details>
+
   </section>
 
   <div class="foot card">
@@ -262,17 +295,17 @@
 </main>
 
 <script>
-/* ====== SETTINGS (замени под себя) ====== */
+
 const SETTINGS = {
   companyName: "Light Side",
-  legalEntity: "Light Side",
-  address: "—",                          // укажи адрес регистрации
-  contact: "privacy@lightside.games",    // e-mail для прав субъектов
-  effective: "2025-08-10",               // дата вступления в силу
-  appsList: "our published games and apps", // перечисли проекты при желании
-  hasAccounts: false,                    // есть ли учётные записи в продуктах
+  legalEntity: "Light Side LLC",
+  address: "Georgia, Tbilisi, Saburtalo district, Bakhtrioni street, N22, flat N75",
+  contact: "privacy@lightside.media",
+  effective: "2025-08-10",
+  appsList: "Light Side Gaming Business Unit",
+  hasAccounts: false,
   retention: { crashes: "90 days", analytics: "14 months", finance: "as required by tax law" },
-  hasCookiesBanner: true                 // если используешь баннер согласия на сайте
+  hasCookiesBanner: true
 };
 
 /* ====== I18N ====== */
@@ -293,527 +326,1148 @@ const LANGS = [
 ];
 
 const I18N = {
-  en:{
-    pp_title:"Privacy Policy",
-    updated:"Effective date",
-    btn_expand:"Expand all", btn_collapse:"Collapse all", btn_print:"Print / Save PDF", btn_copy:"Copy link to this section",
-    sum_global:"Applies worldwide to our games, apps and websites.",
-    sum_sdks:"We use widely adopted services: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"We do not sell or share personal data.",
-    sum_kids:"We do not knowingly collect data from children.",
-    who_t:"1) Who we are",
-    who_b: `${SETTINGS.legalEntity} (“we”, “us”) develops and publishes video games and applications. We act as the data controller for processing described in this Policy.`,
-    scope_t:"2) Scope",
-    scope_b:`This Policy covers ${SETTINGS.appsList} and our websites operated under the “${SETTINGS.companyName}” brand, worldwide.`,
-    data_t:"3) Data we process",
-    d_usage:"Usage & diagnostics (events, sessions, coarse location, device/OS) — analytics, crash detection, product improvement.",
-    d_progress:"Game progress & identifiers (player ID, achievements, cloud saves, anti-cheat signals) — core functionality and sync.",
-    d_purchases:"Purchase information (SKU, region, purchase token/receipt) — purchase fulfillment, refunds, fraud prevention.",
-    d_ads:"Ads data (ad impressions, resettable advertising IDs) — showing ads, frequency capping, measurement (ad-supported titles).",
-    d_support:"Support data (email, message content, attachments) — customer support and troubleshooting.",
-    legal_t:"4) Purposes & legal bases",
-    legal_b:"Depending on your location, we rely on consent (where required for ads/analytics), performance of a contract (to deliver the game/app and purchases), and legitimate interests (security, anti-fraud, crash diagnostics). You may withdraw consent at any time via in-app settings or our cookie/consent banner.",
-    sdks_t:"5) Third-party services (processors)",
-    sdk_firebase:"Analytics of usage and stability; Crashlytics to diagnose crashes. Data may include device/OS info, app version, events, and crash logs.",
-    sdk_ads:"Ad networks show ads and measure performance using resettable advertising IDs and context signals. You can reset or limit ad tracking in your OS.",
-    sdk_play:"Cloud saves, achievements, leaderboards, and platform integrations as provided by Google Play Games Services.",
-    sdk_af:"Attribution and campaign performance to understand installs and optimize marketing. Uses identifiers and non-sensitive event data.",
-    processors_note:"We engage these providers under contracts as our processors; they must protect data and use it only on our instructions.",
-    share_t:"6) Sharing",
-    share_b:"We do not sell or share personal data. We disclose data only to service providers (processors) and where required by law or to protect rights, safety and integrity.",
-    ret_t:"7) Retention",
-    ret_b:`We retain data only as needed: crash logs ~ ${SETTINGS.retention.crashes}, analytics ~ ${SETTINGS.retention.analytics}, and financial records ${SETTINGS.retention.finance}. Then we delete or anonymize.`,
-    intl_t:"8) International transfers",
-    intl_b:"Where data is transferred internationally, we apply appropriate safeguards (e.g., Standard Contractual Clauses) as required by law.",
-    kids_t:"9) Children",
-    kids_b:"We do not knowingly collect personal data from children. If you believe a child provided data to us, please contact us and we will take appropriate action.",
-    rights_t:"10) Your rights",
-    rights_b:"Depending on your region, you may have rights to access, correct, delete, object, restrict, withdraw consent, or get a copy of your data. To exercise rights, contact us via the email below. California residents can also opt out of 'sale'/'sharing' of personal information; we do not sell or share personal data.",
-    cookies_t:"11) Cookies & consent",
-    cookies_b: SETTINGS.hasCookiesBanner
-      ? "Our websites may use non-essential cookies/SDKs for analytics and ads. In regions where consent is required, we show a consent banner that lets you accept, reject, or change choices at any time."
-      : "Our websites do not use non-essential cookies/SDKs.",
-    sec_t:"12) Security",
-    sec_b:"We use technical and organizational measures appropriate to the risk (encryption in transit, access controls, logging). No system is 100% secure.",
-    chg_t:"13) Changes",
-    chg_b:"We may update this Policy from time to time. We will post a new version with a new effective date.",
-    ct_t:"14) Contact",
-    ct_b:`Data controller: ${SETTINGS.legalEntity}. Address: ${SETTINGS.address}. Email: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`
+  en: {
+    "pp_title": "Privacy Policy",
+    "updated": "Effective date",
+    "btn_expand": "Expand all",
+    "btn_collapse": "Collapse all",
+    "btn_print": "Print / Save PDF",
+    "btn_copy": "Copy link to this section",
+
+    "sum_global": "Applies worldwide to our games, apps and websites.",
+    "sum_sdks": "We use widely adopted services: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (if enabled), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "We do not sell personal data. We may 'share' certain identifiers and app events for targeted advertising as defined by US state laws. You can opt out in the app.",
+    "sum_optout": "You can opt out of targeted advertising and measurement.",
+    "sum_kids": "We do not knowingly collect data from children.",
+
+    "who_t": "1) Who we are",
+    "who_b": `${SETTINGS.legalEntity} (‘we’, ‘us’) develops and publishes video games and applications. We act as the data controller for the processing described in this Policy.`,
+
+    "scope_t": "2) Scope",
+    "scope_b": `This Policy covers ${SETTINGS.appsList} and our websites operated under the ‘${SETTINGS.companyName}’ brand, worldwide.`,
+
+    "data_t": "3) Data we process",
+    "d_usage": "Usage & diagnostics (events, sessions, IP address, coarse location/country, device/OS, app version) — analytics, crash detection, product improvement.",
+    "d_progress": "Game progress & identifiers (player/account ID, achievements, cloud saves, anti-cheat signals) — core functionality and sync.",
+    "d_account": "Account data (display name, avatar, email if provided, authentication tokens, age group) — account creation, login, safety.",
+    "d_ugc": "User-generated content and social features (chat messages, profiles, clan/guild names, reports) — gameplay features and moderation.",
+    "d_purchases": "Purchase information (SKU, region, purchase token/receipt) — purchase fulfillment, refunds, fraud prevention.",
+    "d_ads": "Ads/attribution data (ad impressions, clicks, resettable advertising IDs such as IDFA/AAID, SKAdNetwork postbacks, context signals) — showing ads, frequency capping, measurement (ad-supported titles).",
+    "d_support": "Support data (email, message content, attachments, device diagnostics you choose to send) — customer support and troubleshooting.",
+    "d_sensitive_note": "We do not collect precise location or sensitive categories unless you explicitly provide them to support.",
+
+    "legal_t": "4) Purposes & legal bases",
+    "legal_b": "Depending on your location, we rely on: (a) consent (where required for advertising/analytics cookies/SDKs in the EEA/UK, and for access to IDFA under Apple ATT); (b) performance of a contract (to deliver the game/app, cloud saves, and purchases); (c) legitimate interests (security, anti-fraud, crash diagnostics, non-personalized analytics); and (d) compliance with legal obligations (tax/accounting). You may withdraw consent at any time via in‑app settings or our consent banner (where shown).",
+
+    "optout_t": "5) Advertising choices (opt-out)",
+    "optout_b": "You can opt out of ‘targeted advertising’ and certain measurement at any time in **Settings → Privacy → Advertising choices**. For California and other US states, you can use the button **‘Do Not Sell or Share My Personal Information’** to opt out of ‘sharing’ for cross‑context behavioral advertising. On Android/iOS you can also reset or limit the advertising identifier in OS settings. We honor Apple ATT choices and SKAdNetwork measurement when IDFA is unavailable.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "On iOS, we request permission via Apple’s App Tracking Transparency. If you decline, we do not access the IDFA and only use contextual ads and privacy‑preserving measurement (e.g., SKAdNetwork).",
+
+    "sdks_t": "7) Third‑party services (processors)",
+    "sdk_firebase": "Firebase Analytics collects usage and stability metrics; Crashlytics helps diagnose crashes. Data may include device/OS info, app version, events, and crash logs.",
+    "sdk_ads": "Ad networks (e.g., Google AdMob, Unity Ads) show ads and measure performance using resettable advertising IDs and context signals. You can reset or limit ad tracking in your OS.",
+    "sdk_play": "Google Play Games Services for cloud saves, achievements, leaderboards, and platform integrations.",
+    "sdk_gc": "Apple Game Center and iCloud (if enabled) for authentication and cloud saves on Apple platforms.",
+    "sdk_af": "AppsFlyer provides install attribution and campaign performance using identifiers and non‑sensitive event data.",
+    "processors_note": "We engage these providers under data‑processing contracts; they must protect data and use it only on our instructions.",
+
+    "share_t": "8) Sharing",
+    "share_b": "We do not sell personal data. We disclose data to service providers (processors), platform providers (Google/Apple), and where required by law or to protect rights, safety, and integrity.",
+
+    "ret_t": "9) Retention",
+    "ret_b": `We retain data only as needed: crash logs ~ ${SETTINGS.retention.crashes}; analytics ~ ${SETTINGS.retention.analytics}; ads/measurement ~ ${SETTINGS.retention.ads}; attribution ~ ${SETTINGS.retention.attribution}; support ~ ${SETTINGS.retention.support}; account data for the life of the account, then deletion within 30 days; server logs ~ ${SETTINGS.retention.logs}; and financial records ${SETTINGS.retention.finance}. We may keep aggregated/de‑identified data and we commit not to re‑identify it.`,
+
+    "intl_t": "10) International transfers",
+    "intl_b": "Where data is transferred internationally, we use appropriate safeguards (e.g., Standard Contractual Clauses). Some providers participate in the EU‑US Data Privacy Framework. You can contact us to request information about these safeguards.",
+
+    "kids_t": "11) Children",
+    "kids_b": "We do not knowingly collect personal data from children. In mixed‑audience titles we apply an age gate and disable personalized ads/attribution for users identified as under the applicable age (e.g., under 13 in the US, under 16 in the EEA/UK for ad ‘sharing’). If you believe a child provided data to us, please contact us and we will delete it and disable personalization.",
+
+    "rights_t": "12) Your rights",
+    "rights_b": "Depending on your region, you may have rights to access, correct, delete, port, object, restrict, withdraw consent, or appeal our decision. To exercise rights, use the in‑app request form or contact us at the email below. We respond within 30 days (EEA/UK) or 45 days (US). California residents may use an authorized agent. You have the right not to be discriminated against for exercising your rights. EEA/UK residents can lodge a complaint with a supervisory authority.",
+
+    "cookies_t": "13) Cookies & consent",
+    "cookies_b": "Our websites currently do not use non‑essential cookies/SDKs. If this changes, we will show a consent banner that lets you accept, reject, or change choices at any time.",
+
+    "acct_t": "14) Accounts and deletion",
+    "acct_b": "You can create an in‑game account to sync progress and use social features. You can delete your account at any time in **Settings → Account → Delete account** or by contacting us. Deleting an account removes personal data and cloud saves linked to the account within 30 days (backups may persist for a limited period). You can also disconnect Google Play Games or Apple Game Center from their respective settings.",
+
+    "ugc_t": "15) User‑generated content (UGC) & moderation",
+    "ugc_b": "UGC (e.g., chat, profiles, guild names) is visible to other players as part of gameplay. We moderate to enforce our community rules and may take action on abuse reports. Do not share sensitive information in UGC.",
+
+    "sec_t": "16) Security",
+    "sec_b": "We use technical and organizational measures appropriate to the risk (encryption in transit, encryption at rest where applicable, access controls, least privilege, logging, regular patching, incident response). No system is 100% secure.",
+
+    "chg_t": "17) Changes",
+    "chg_b": "We may update this Policy from time to time. We will post a new version with a new effective date.",
+
+    "ct_t": "18) Contact",
+    "ct_b": `Data controller: ${SETTINGS.legalEntity}.<br>Address: ${SETTINGS.address}.<br>Email: <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Key definitions",
+    "defs_b": "‘Personal data’ means information that identifies or relates to an identifiable individual. ‘Processing’ means any operation performed on personal data. ‘Controller’ determines purposes and means; ‘processor’ processes on behalf of a controller. ‘Targeted advertising’ means displaying ads based on personal data obtained from activity across non‑affiliated apps or websites.",
+
+    "dnsmpi_btn": "Do Not Sell or Share My Personal Information",
+    "privacy_settings_t": "Privacy settings",
+    "privacy_settings_b": "You can manage consent, advertising choices, and data requests in **Settings → Privacy**."
   },
 
-  ru:{
-    pp_title:"Политика конфиденциальности",
-    updated:"Дата вступления в силу",
-    btn_expand:"Развернуть всё", btn_collapse:"Свернуть всё", btn_print:"Печать / PDF", btn_copy:"Скопировать ссылку на раздел",
-    sum_global:"Действует по всему миру и охватывает наши игры, приложения и сайты.",
-    sum_sdks:"Мы используем признанные сервисы: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"Мы не продаём и не передаём персональные данные для таргетированной рекламы.",
-    sum_kids:"Мы не собираем данные детей заведомо.",
-    who_t:"1) Кто мы",
-    who_b:`${SETTINGS.legalEntity} («мы») разрабатывает и публикует игры и приложения. Мы выступаем контролёром данных для операций, описанных в этой Политике.`,
-    scope_t:"2) Область действия",
-    scope_b:`Политика распространяется на ${SETTINGS.appsList} и сайты под брендом «${SETTINGS.companyName}» во всём мире.`,
-    data_t:"3) Какие данные мы обрабатываем",
-    d_usage:"Использование и диагностика (события, сессии, приблизительное местоположение, устройство/ОС) — аналитика, выявление сбоев, улучшение продукта.",
-    d_progress:"Игровой прогресс и идентификаторы (ID игрока, достижения, облачные сохранения, античит-сигналы) — базовый функционал и синхронизация.",
-    d_purchases:"Покупки (SKU, регион, токен/квитанция) — выполнение покупки, возвраты, предотвращение мошенничества.",
-    d_ads:"Данные рекламы (показы, сбрасываемые рекламные идентификаторы) — показ рекламы, ограничения частоты, измерение (для игр с рекламой).",
-    d_support:"Поддержка (email, содержание обращений, вложения) — ответы пользователям и диагностика проблем.",
-    legal_t:"4) Цели и правовые основания",
-    legal_b:"В зависимости от юрисдикции мы опираемся на согласие (там, где оно требуется для рекламы/аналитики), исполнение договора (для предоставления игры/приложения и покупок) и законные интересы (безопасность, антифрод, диагностика сбоев). Согласие можно отозвать через настройки в приложении или баннер согласия на сайте.",
-    sdks_t:"5) Сторонние сервисы (обработчики)",
-    sdk_firebase:"Аналитика использования и стабильности; Crashlytics помогает диагностировать сбои. Данные включают сведения об устройстве/ОС, версии приложения, события и логи сбоев.",
-    sdk_ads:"Рекламные сети показывают объявления и измеряют эффективность, используя сбрасываемые рекламные идентификаторы и контекстные сигналы. Идентификатор можно сбросить/ограничить в настройках ОС.",
-    sdk_play:"Облачные сохранения, достижения, таблицы лидеров и интеграции платформы Google Play Games Services.",
-    sdk_af:"Атрибуция установок и эффективность кампаний, чтобы понимать источники трафика и оптимизировать маркетинг.",
-    processors_note:"Эти провайдеры привлекаются как наши обработчики по договору и обязаны защищать данные и использовать их только по нашим инструкциям.",
-    share_t:"6) Передача данных",
-    share_b:"Мы не продаём и не «делимся» персональными данными. Раскрываем данные только обработчикам и в случаях, требуемых законом либо для защиты прав, безопасности и целостности.",
-    ret_t:"7) Сроки хранения",
-    ret_b:`Храним данные столько, сколько необходимо: логи сбоев ~ ${SETTINGS.retention.crashes}, аналитика ~ ${SETTINGS.retention.analytics}, финансовые документы — ${SETTINGS.retention.finance}. Затем удаляем или обезличиваем.`,
-    intl_t:"8) Международные передачи",
-    intl_b:"При международной передаче применяем надлежащие механизмы (например, стандартные договорные положения), как этого требует закон.",
-    kids_t:"9) Дети",
-    kids_b:"Мы не собираем персональные данные детей заведомо. Если вы считаете, что ребёнок предоставил нам данные, напишите нам — мы примем меры.",
-    rights_t:"10) Права пользователей",
-    rights_b:"В зависимости от страны вы можете иметь права на доступ, исправление, удаление, ограничение, возражение, отзыв согласия и получение копии ваших данных. Чтобы воспользоваться правами, свяжитесь с нами по e-mail ниже. Жители Калифорнии также могут отказаться от «продажи/совместного использования» данных; мы этого не делаем.",
-    cookies_t:"11) Cookies и согласие",
-    cookies_b: SETTINGS.hasCookiesBanner
-      ? "Наши сайты могут использовать нестрого необходимые cookies/SDK для аналитики и рекламы. В регионах, где это требуется, показываем баннер согласия с возможностью выбора и отзыва."
-      : "Наши сайты не используют нестрого необходимые cookies/SDK.",
-    sec_t:"12) Безопасность",
-    sec_b:"Мы применяем технические и организационные меры, соразмерные рискам (шифрование при передаче, контроль доступа, журналирование). 100% безопасности не бывает.",
-    chg_t:"13) Изменения",
-    chg_b:"Мы можем обновлять Политику. Новая версия будет опубликована с новой датой вступления в силу.",
-    ct_t:"14) Контакты",
-    ct_b:`Контролёр данных: ${SETTINGS.legalEntity}. Адрес: ${SETTINGS.address}. E-mail: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
-    foot_note:"Подсказка: клик по заголовку раздела скопирует прямую ссылку."
+  nl: {
+    "pp_title": "Privacybeleid",
+    "updated": "Ingangsdatum",
+    "btn_expand": "Alles uitklappen",
+    "btn_collapse": "Alles inklappen",
+    "btn_print": "Afdrukken / PDF opslaan",
+    "btn_copy": "Link naar deze sectie kopiëren",
+
+    "sum_global": "Geldt wereldwijd voor onze games, apps en websites.",
+    "sum_sdks": "We gebruiken breed toegepaste diensten: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (indien ingeschakeld), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "We verkopen geen persoonsgegevens. We kunnen bepaalde identificatoren en app-gebeurtenissen ‘delen’ voor gerichte reclame zoals gedefinieerd door Amerikaanse deelstaatwetten. Je kunt je hiervoor afmelden in de app.",
+    "sum_optout": "Je kunt je afmelden voor gerichte advertenties en meting.",
+    "sum_kids": "We verzamelen niet bewust gegevens van kinderen.",
+
+    "who_t": "1) Wie wij zijn",
+    "who_b": `${SETTINGS.legalEntity} (‘wij’, ‘ons’) ontwikkelt en publiceert videogames en applicaties. Wij treden op als verwerkingsverantwoordelijke voor de verwerking die in dit Beleid wordt beschreven.`,
+
+    "scope_t": "2) Reikwijdte",
+    "scope_b": `Dit Beleid is van toepassing op ${SETTINGS.appsList} en onze websites die wereldwijd worden geëxploiteerd onder het merk ‘${SETTINGS.companyName}’.`,
+
+    "data_t": "3) Gegevens die wij verwerken",
+    "d_usage": "Gebruik & diagnostiek (gebeurtenissen, sessies, IP-adres, grove locatie/land, apparaat/OS, app-versie) — analyse, crashdetectie, productverbetering.",
+    "d_progress": "Spelvoortgang & identificatoren (speler-/account-ID, prestaties, cloudopslag, anti-cheat-signalen) — kernfunctionaliteit en synchronisatie.",
+    "d_account": "Accountgegevens (weergavenaam, avatar, e-mail indien opgegeven, authenticatietokens, leeftijdsgroep) — aanmaken van account, inloggen, veiligheid.",
+    "d_ugc": "Door gebruikers gegenereerde inhoud en sociale functies (chatberichten, profielen, clan-/gildennamen, meldingen) — gameplay-functies en moderatie.",
+    "d_purchases": "Aankoopinformatie (SKU, regio, aankooptoken/bon) — afhandeling van aankopen, terugbetalingen, fraudepreventie.",
+    "d_ads": "Advertentie-/attributiegegevens (advertentieweergaven, klikken, resetbare advertentie-ID’s zoals IDFA/AAID, SKAdNetwork-postbacks, contextsignalen) — advertenties tonen, frequentiebeperking, meting (advertentie-ondersteunde titels).",
+    "d_support": "Supportgegevens (e-mail, berichtinhoud, bijlagen, apparaatsdiagnostiek die je kiest te verzenden) — klantenondersteuning en probleemoplossing.",
+    "d_sensitive_note": "We verzamelen geen precieze locatie of gevoelige categorieën tenzij je deze expliciet aan support verstrekt.",
+
+    "legal_t": "4) Doeleinden & rechtsgrondslagen",
+    "legal_b": "Afhankelijk van je locatie baseren wij ons op: (a) toestemming (waar vereist voor advertentie-/analysecookies/SDK’s in de EER/VK en voor toegang tot IDFA onder Apple ATT); (b) uitvoering van een overeenkomst (om de game/app, cloudopslag en aankopen te leveren); (c) gerechtvaardigde belangen (beveiliging, fraudebestrijding, crashdiagnostiek, niet-gepersonaliseerde analyses); en (d) naleving van wettelijke verplichtingen (belasting/boekhouding). Je kunt je toestemming op elk moment intrekken via de in-app instellingen of via onze toestemmingsbanner (waar getoond).",
+
+    "optout_t": "5) Advertentie-keuzes (opt-out)",
+    "optout_b": "Je kunt je op elk moment afmelden voor ‘gerichte advertenties’ en bepaalde metingen in **Instellingen → Privacy → Advertentie-keuzes**. Voor Californië en andere Amerikaanse staten kun je de knop **‘Do Not Sell or Share My Personal Information’** gebruiken om je af te melden voor ‘deling’ voor cross-contextuele gedragsreclame. Op Android/iOS kun je de advertentie-ID ook resetten of beperken in de OS-instellingen. We respecteren Apple ATT-keuzes en SKAdNetwork-meting wanneer IDFA niet beschikbaar is.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "Op iOS vragen we toestemming via Apple’s App Tracking Transparency. Als je weigert, hebben we geen toegang tot de IDFA en gebruiken we alleen contextuele advertenties en privacy-beschermende metingen (bijv. SKAdNetwork).",
+
+    "sdks_t": "7) Diensten van derden (verwerkers)",
+    "sdk_firebase": "Firebase Analytics verzamelt gebruiks- en stabiliteitsmetriek; Crashlytics helpt crashes te diagnosticeren. Gegevens kunnen apparaat-/OS-info, app-versie, gebeurtenissen en crashlogs omvatten.",
+    "sdk_ads": "Advertentienetwerken (bijv. Google AdMob, Unity Ads) tonen advertenties en meten prestaties met resetbare advertentie-ID’s en contextsignalen. Je kunt advertentietracking resetten of beperken in je OS.",
+    "sdk_play": "Google Play Games Services voor cloudopslag, prestaties, ranglijsten en platformintegraties.",
+    "sdk_gc": "Apple Game Center en iCloud (indien ingeschakeld) voor authenticatie en cloudopslag op Apple-platforms.",
+    "sdk_af": "AppsFlyer levert install-attributie en campagneprestaties met behulp van identificatoren en niet-gevoelige gebeurtenisgegevens.",
+    "processors_note": "We schakelen deze aanbieders in onder verwerkersovereenkomsten; zij moeten gegevens beschermen en deze alleen gebruiken volgens onze instructies.",
+
+    "share_t": "8) Delen",
+    "share_b": "We verkopen geen persoonsgegevens. We verstrekken gegevens aan dienstverleners (verwerkers), platformaanbieders (Google/Apple), en waar wettelijk vereist of om rechten, veiligheid en integriteit te beschermen.",
+
+    "ret_t": "9) Bewaartermijnen",
+    "ret_b": `We bewaren gegevens alleen zolang als nodig: crashlogs ~ ${SETTINGS.retention.crashes}; analyses ~ ${SETTINGS.retention.analytics}; advertenties/meting ~ ${SETTINGS.retention.ads}; attributie ~ ${SETTINGS.retention.attribution}; support ~ ${SETTINGS.retention.support}; accountgegevens gedurende de levensduur van het account, daarna verwijdering binnen 30 dagen; serverlogs ~ ${SETTINGS.retention.logs}; en financiële administratie ${SETTINGS.retention.finance}. We kunnen geaggregeerde/geanonimiseerde gegevens behouden en verbinden ons ertoe deze niet opnieuw te herleiden.`,
+
+    "intl_t": "10) Internationale doorgiften",
+    "intl_b": "Wanneer gegevens internationaal worden doorgegeven, gebruiken wij passende waarborgen (bijv. Standaardcontractbepalingen). Sommige aanbieders nemen deel aan het EU-VS Data Privacy Framework. Je kunt contact met ons opnemen om informatie over deze waarborgen op te vragen.",
+
+    "kids_t": "11) Kinderen",
+    "kids_b": "We verzamelen niet bewust persoonsgegevens van kinderen. In titels voor een gemengd publiek hanteren we een leeftijdscontrole en schakelen we gepersonaliseerde advertenties/attributie uit voor gebruikers die als jonger dan de toepasselijke leeftijd worden aangemerkt (bijv. jonger dan 13 in de VS, jonger dan 16 in de EER/VK voor advertentie-‘deling’). Als je denkt dat een kind ons gegevens heeft verstrekt, neem dan contact met ons op; we verwijderen deze en schakelen personalisatie uit.",
+
+    "rights_t": "12) Je rechten",
+    "rights_b": "Afhankelijk van je regio heb je mogelijk rechten om je gegevens in te zien, te corrigeren, te verwijderen, over te dragen, bezwaar te maken, de verwerking te beperken, toestemming in te trekken, of beroep aan te tekenen tegen onze beslissing. Om je rechten uit te oefenen, gebruik je het verzoekformulier in de app of neem je contact met ons op via het onderstaande e-mailadres. We reageren binnen 30 dagen (EER/VK) of 45 dagen (VS). Inwoners van Californië kunnen een gemachtigde inschakelen. Je hebt het recht niet te worden gediscrimineerd voor het uitoefenen van je rechten. Inwoners van de EER/VK kunnen een klacht indienen bij een toezichthoudende autoriteit.",
+
+    "cookies_t": "13) Cookies & toestemming",
+    "cookies_b": "Onze websites gebruiken momenteel geen niet-essentiële cookies/SDK’s. Als dit verandert, tonen we een toestemmingsbanner waarmee je op elk moment kunt accepteren, weigeren of je keuzes wijzigen.",
+
+    "acct_t": "14) Accounts en verwijdering",
+    "acct_b": "Je kunt een in-game account aanmaken om voortgang te synchroniseren en sociale functies te gebruiken. Je kunt je account op elk moment verwijderen via **Instellingen → Account → Account verwijderen** of door contact met ons op te nemen. Het verwijderen van een account verwijdert binnen 30 dagen de persoonsgegevens en cloudopslag die aan het account zijn gekoppeld (back-ups kunnen gedurende een beperkte periode blijven bestaan). Je kunt Google Play Games of Apple Game Center ook loskoppelen via hun respectieve instellingen.",
+
+    "ugc_t": "15) Door gebruikers gegenereerde inhoud (UGC) & moderatie",
+    "ugc_b": "UGC (bijv. chat, profielen, gildennamen) is zichtbaar voor andere spelers als onderdeel van de gameplay. We modereren om onze communityregels te handhaven en kunnen maatregelen nemen naar aanleiding van misbruikmeldingen. Deel geen gevoelige informatie in UGC.",
+
+    "sec_t": "16) Beveiliging",
+    "sec_b": "We gebruiken technische en organisatorische maatregelen die passend zijn voor het risico (versleuteling tijdens transport, versleuteling in rust waar van toepassing, toegangscontroles, least privilege, logging, regelmatige patching, incidentrespons). Geen enkel systeem is 100% veilig.",
+
+    "chg_t": "17) Wijzigingen",
+    "chg_b": "We kunnen dit Beleid van tijd tot tijd bijwerken. We publiceren dan een nieuwe versie met een nieuwe ingangsdatum.",
+
+    "ct_t": "18) Contact",
+    "ct_b": `Verwerkingsverantwoordelijke: ${SETTINGS.legalEntity}.<br>Adres: ${SETTINGS.address}.<br>E-mail: <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Belangrijke definities",
+    "defs_b": "‘Persoonsgegevens’ betekent informatie die betrekking heeft op een geïdentificeerde of identificeerbare persoon. ‘Verwerking’ betekent elke bewerking die op persoonsgegevens wordt uitgevoerd. ‘Verwerkingsverantwoordelijke’ bepaalt doeleinden en middelen; ‘verwerker’ verwerkt namens een verwerkingsverantwoordelijke. ‘Gerichte advertenties’ betekent het tonen van advertenties op basis van persoonsgegevens die zijn verkregen uit activiteiten over niet-verwante apps of websites heen.",
+
+    "dnsmpi_btn": "Verkoop of deel mijn persoonsgegevens niet",
+    "privacy_settings_t": "Privacy-instellingen",
+    "privacy_settings_b": "Je kunt toestemming, advertentie-keuzes en gegevensverzoeken beheren in **Instellingen → Privacy**."
   },
 
-  nl:{ pp_title:"Privacybeleid", updated:"Ingangsdatum",
-    btn_expand:"Alles uitklappen", btn_collapse:"Alles inklappen", btn_print:"Afdrukken / PDF", btn_copy:"Link naar deze sectie kopiëren",
-    sum_global:"Van toepassing wereldwijd op onze games, apps en websites.",
-    sum_sdks:"We gebruiken gangbare services: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"We verkopen of delen geen persoonsgegevens.",
-    sum_kids:"We verzamelen niet bewust gegevens van kinderen.",
-    who_t:"1) Wie wij zijn",
-    who_b:`${SETTINGS.legalEntity} (“wij”) ontwikkelt en publiceert games en apps. Wij zijn de verwerkingsverantwoordelijke.`,
-    scope_t:"2) Reikwijdte",
-    scope_b:`Dit beleid geldt voor ${SETTINGS.appsList} en onze websites onder het merk “${SETTINGS.companyName}”.`,
-    data_t:"3) Welke gegevens we verwerken",
-    d_usage:"Gebruik & diagnostiek (events, sessies, ruwe locatie, apparaat/OS) — analytics, crashdetectie, productverbetering.",
-    d_progress:"Voortgang & ID’s (speler-ID, achievements, cloud saves, anti-cheat) — functionaliteit en synchronisatie.",
-    d_purchases:"Aankoopgegevens (SKU, regio, token/bon) — afhandeling, terugbetalingen, fraudepreventie.",
-    d_ads:"Advertentiegegevens (impressies, resetbare advertentie-ID’s) — advertenties tonen, frequentiebeperking, meting.",
-    d_support:"Supportgegevens (e-mail, bericht, bijlagen) — klantenondersteuning.",
-    legal_t:"4) Doeleinden & rechtsgronden",
-    legal_b:"We baseren ons op toestemming (waar vereist), uitvoering van een overeenkomst en gerechtvaardigde belangen (beveiliging, anti-fraude, crashdiagnostiek).",
-    sdks_t:"5) Services van derden (verwerkers)",
-    sdk_firebase:"Analytics en Crashlytics voor stabiliteit.",
-    sdk_ads:"Ad-netwerken tonen advertenties en meten prestaties met advertentie-ID’s.",
-    sdk_play:"Cloudopslag, achievements en leaderboards via Google Play Games Services.",
-    sdk_af:"Attributie en campagneprestatie.",
-    processors_note:"Deze partijen handelen als verwerker onder contract.",
-    share_t:"6) Delen",
-    share_b:"Geen verkoop of ‘sharing’ van persoonsgegevens; alleen dienstverleners of waar wettelijk vereist.",
-    ret_t:"7) Bewaartermijnen",
-    ret_b:`Crashes ~ ${SETTINGS.retention.crashes}, analytics ~ ${SETTINGS.retention.analytics}, financiële stukken ${SETTINGS.retention.finance}; daarna wissen of anonimiseren.`,
-    intl_t:"8) Internationale doorgiften",
-    intl_b:"We passen passende waarborgen toe (bijv. SCC’s).",
-    kids_t:"9) Kinderen",
-    kids_b:"We verzamelen niet bewust gegevens van kinderen.",
-    rights_t:"10) Jouw rechten",
-    rights_b:"Toegang, correctie, verwijdering, bezwaar, beperking, kopie en intrekken van toestemming; neem contact op via e-mail hieronder.",
-    cookies_t:"11) Cookies & toestemming",
-    cookies_b: SETTINGS.hasCookiesBanner ? "We tonen een toestemmingsbanner waar vereist." : "Geen niet-essentiële cookies/SDK’s.",
-    sec_t:"12) Beveiliging", sec_b:"Technische en organisatorische maatregelen passend bij het risico.",
-    chg_t:"13) Wijzigingen", chg_b:"We kunnen dit beleid bijwerken.",
-    ct_t:"14) Contact", ct_b:`Verantwoordelijke: ${SETTINGS.legalEntity}. Adres: ${SETTINGS.address}. E-mail: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
-    foot_note:"Tip: klik op een sectietitel om een directe link te kopiëren."
+  fi: {
+    "pp_title": "Tietosuojakäytäntö",
+    "updated": "Voimaantulopäivä",
+    "btn_expand": "Laajenna kaikki",
+    "btn_collapse": "Supista kaikki",
+    "btn_print": "Tulosta / Tallenna PDF",
+    "btn_copy": "Kopioi linkki tähän osioon",
+
+    "sum_global": "Soveltuu maailmanlaajuisesti peleihimme, sovelluksiimme ja verkkosivuillemme.",
+    "sum_sdks": "Käytämme laajasti käytössä olevia palveluja: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (jos käytössä), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "Emme myy henkilötietoja. Voimme ”jakaa” tiettyjä tunnisteita ja sovellustapahtumia kohdennettua mainontaa varten Yhdysvaltain osavaltioiden lakien määritelmän mukaisesti. Voit kieltäytyä tästä sovelluksessa.",
+    "sum_optout": "Voit kieltäytyä kohdennetusta mainonnasta ja mittauksesta.",
+    "sum_kids": "Emme tietoisesti kerää tietoja lapsilta.",
+
+    "who_t": "1) Keitä olemme",
+    "who_b": `${SETTINGS.legalEntity} (”me”) kehittää ja julkaisee videopelejä ja sovelluksia. Toimimme rekisterinpitäjänä tässä käytännössä kuvatulle käsittelylle.`,
+
+    "scope_t": "2) Soveltamisala",
+    "scope_b": `Tämä käytäntö kattaa ${SETTINGS.appsList} sekä verkkosivustomme, joita ylläpidetään maailmanlaajuisesti ”${SETTINGS.companyName}”-brändin alla.`,
+
+    "data_t": "3) Käsittelemämme tiedot",
+    "d_usage": "Käyttö- ja diagnostiikkatiedot (tapahtumat, istunnot, IP-osoite, karkea sijainti/maa, laite/KJ, sovellusversio) — analytiikka, kaatumisten havaitseminen, tuotteen parantaminen.",
+    "d_progress": "Peliedistyminen ja tunnisteet (pelaaja-/tili-ID, saavutukset, pilvitallennus, huijaamisen eston signaalit) — ydintoiminnallisuus ja synkronointi.",
+    "d_account": "Tilitiedot (näyttönimi, avatar, sähköposti jos annettu, todennustunnisteet, ikäryhmä) — tilin luonti, kirjautuminen, turvallisuus.",
+    "d_ugc": "Käyttäjien tuottama sisältö ja sosiaaliset toiminnot (chat-viestit, profiilit, klaani-/kiltonimet, ilmoitukset) — pelitoiminnot ja moderointi.",
+    "d_purchases": "Ostotiedot (SKU, alue, ostotunnus/kuitti) — ostojen toteutus, hyvitykset, petosten estäminen.",
+    "d_ads": "Mainonta- ja attribuutiotiedot (mainosnäytöt, klikkaukset, nollattavat mainostunnisteet kuten IDFA/AAID, SKAdNetwork-palautteet, kontekstisignaalit) — mainosten näyttäminen, näyttökertojen rajoitus, mittaus (mainosrahoitteiset julkaisut).",
+    "d_support": "Tukitiedot (sähköposti, viestin sisältö, liitteet, laitteen diagnostiikka jonka päätät lähettää) — asiakastuki ja vianmääritys.",
+    "d_sensitive_note": "Emme kerää tarkkaa sijaintia tai arkaluonteisia tietoryhmiä, ellei niitä anneta meille nimenomaisesti tuen yhteydessä.",
+
+    "legal_t": "4) Tarkoitukset ja käsittelyn perusteet",
+    "legal_b": "Sijainnistasi riippuen tukeudumme: (a) suostumukseen (kun sitä vaaditaan mainonta-/analytiikkaevästeille/SDK:ille ETA:ssa/VK:ssa sekä IDFA-pääsyyn Apple ATT:n mukaisesti); (b) sopimuksen täytäntöönpanoon (pelin/sovelluksen, pilvitallennuksen ja ostojen toimittamiseksi); (c) oikeutettuihin etuihin (turvallisuus, petosten estäminen, kaatumisdiagnostiikka, ei-henkilökohtainen analytiikka); sekä (d) lakisääteisten velvoitteiden noudattamiseen (vero/kirjanpito). Voit peruuttaa suostumuksesi milloin tahansa sovelluksen asetuksissa tai suostumusbannerissamme (jos näytetään).",
+
+    "optout_t": "5) Mainosasetukset (opt-out)",
+    "optout_b": "Voit milloin tahansa kieltäytyä ”kohdennetusta mainonnasta” ja tietyistä mittauksista kohdassa **Asetukset → Tietosuoja → Mainosvalinnat**. Kaliforniassa ja muissa Yhdysvaltain osavaltioissa voit käyttää painiketta **‘Do Not Sell or Share My Personal Information’** kieltäytyäksesi ”jakamisesta” kontekstien väliseen käyttäytymiseen perustuvaa mainontaa varten. Androidissa/iOS:ssä voit myös nollata tai rajoittaa mainostunnisteen käyttöä käyttöjärjestelmän asetuksissa. Kunnioitamme Applen ATT-valintoja ja SKAdNetwork-mittausta, kun IDFA ei ole käytettävissä.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "iOS:ssä pyydämme luvan Applen App Tracking Transparency -järjestelmän kautta. Jos kieltäydyt, emme käytä IDFA:ta ja käytämme vain kontekstuaalista mainontaa ja yksityisyyttä suojaavaa mittausta (esim. SKAdNetwork).",
+
+    "sdks_t": "7) Kolmannen osapuolen palvelut (käsittelijät)",
+    "sdk_firebase": "Firebase Analytics kerää käyttö- ja vakautusmittareita; Crashlytics auttaa diagnosoimaan kaatumisia. Tietoihin voi sisältyä laite-/KJ-tiedot, sovellusversio, tapahtumat ja kaatumislokit.",
+    "sdk_ads": "Mainosverkostot (esim. Google AdMob, Unity Ads) näyttävät mainoksia ja mittaavat suorituskykyä nollattavien mainostunnisteiden ja kontekstisignaalien avulla. Voit nollata tai rajoittaa mainosseurantaa käyttöjärjestelmässäsi.",
+    "sdk_play": "Google Play Games Services pilvitallennuksille, saavutuksille, tuloslistoille ja alustan integraatioille.",
+    "sdk_gc": "Apple Game Center ja iCloud (jos käytössä) todennukseen ja pilvitallennuksiin Apple-alustoilla.",
+    "sdk_af": "AppsFlyer tarjoaa asennusattribuution ja kampanjasuorituskyvyn käyttäen tunnisteita ja ei-arkaluonteisia tapahtumatietoja.",
+    "processors_note": "Käytämme näitä palveluntarjoajia tietojenkäsittelysopimusten perusteella; niiden on suojattava tiedot ja käytettävä niitä vain ohjeidemme mukaisesti.",
+
+    "share_t": "8) Tietojen jakaminen",
+    "share_b": "Emme myy henkilötietoja. Luovutamme tietoja palveluntarjoajille (käsittelijöille), alustan tarjoajille (Google/Apple) sekä silloin kun laki sitä edellyttää tai oikeuksien, turvallisuuden ja eheyden suojaamiseksi.",
+
+    "ret_t": "9) Säilytys",
+    "ret_b": `Säilytämme tietoja vain tarpeellisen ajan: kaatumislokit ~ ${SETTINGS.retention.crashes}; analytiikka ~ ${SETTINGS.retention.analytics}; mainonta/mittaus ~ ${SETTINGS.retention.ads}; attribuutio ~ ${SETTINGS.retention.attribution}; tuki ~ ${SETTINGS.retention.support}; tilitiedot tilin voimassaolon ajan, minkä jälkeen poistetaan 30 päivän kuluessa; palvelinlokit ~ ${SETTINGS.retention.logs}; sekä talousasiakirjat ${SETTINGS.retention.finance}. Voimme säilyttää koottuja/pseudonymisoituja/anonynisoituja tietoja ja sitoudumme olemaan palauttamatta niitä takaisin tunnistettaviksi.`,
+
+    "intl_t": "10) Kansainväliset siirrot",
+    "intl_b": "Kun tietoja siirretään kansainvälisesti, käytämme asianmukaisia suojatoimia (esim. EU:n vakiosopimuslausekkeet). Osa palveluntarjoajista osallistuu EU–US Data Privacy Framework -järjestelyyn. Voit pyytää meiltä lisätietoja näistä suojatoimista.",
+
+    "kids_t": "11) Lapset",
+    "kids_b": "Emme tietoisesti kerää henkilötietoja lapsilta. Sekä aikuisille että lapsille suunnatuissa nimikkeissä käytämme ikärajasuodatusta ja poistamme personoidun mainonnan/attribuution käytöstä käyttäjiltä, jotka tunnistetaan alle soveltuvan iän (esim. alle 13 v. Yhdysvalloissa, alle 16 v. ETA/VK mainonnan ”jakamista” varten). Jos epäilet, että lapsi on antanut meille tietoja, ota yhteyttä — poistamme tiedot ja poistamme personoinnin käytöstä.",
+
+    "rights_t": "12) Oikeutesi",
+    "rights_b": "Alueestasi riippuen sinulla voi olla oikeus saada pääsy tietoihin, oikaista, poistaa, siirtää, vastustaa käsittelyä, rajoittaa käsittelyä, peruuttaa suostumus tai hakea muutosta päätökseemme. Käytä oikeuksiasi sovelluksen pyyntölomakkeella tai ottamalla yhteyttä alla olevaan sähköpostiin. Vastaamme 30 päivän kuluessa (ETA/VK) tai 45 päivän kuluessa (USA). Kalifornian asukkaat voivat käyttää valtuutettua edustajaa. Sinua ei syrjitä oikeuksiesi käyttämisen vuoksi. ETA/VK-asukkaat voivat tehdä valituksen valvontaviranomaiselle.",
+
+    "cookies_t": "13) Evästeet ja suostumus",
+    "cookies_b": "Verkkosivustomme eivät tällä hetkellä käytä ei-välttämättömiä evästeitä/SDK:ita. Jos tämä muuttuu, näytämme suostumusbannerin, jonka kautta voit hyväksyä, hylätä tai muuttaa valintojasi milloin tahansa.",
+
+    "acct_t": "14) Tilit ja poistaminen",
+    "acct_b": "Voit luoda pelitilin edistymisen synkronointia ja sosiaalisia toimintoja varten. Voit poistaa tilisi milloin tahansa kohdassa **Asetukset → Tili → Poista tili** tai ottamalla meihin yhteyttä. Tilin poistaminen poistaa henkilökohtaiset tiedot ja pilvitallennukset, jotka liittyvät tiliin, 30 päivän kuluessa (varmuuskopiot voivat säilyä rajoitetun ajan). Voit myös katkaista Google Play Gamesin tai Apple Game Centerin niiden omista asetuksista.",
+
+    "ugc_t": "15) Käyttäjien tuottama sisältö (UGC) ja moderointi",
+    "ugc_b": "UGC (esim. chat, profiilit, kiltojen nimet) on näkyvissä muille pelaajille osana pelaamista. Moderoimme yhteisösääntöjemme noudattamiseksi ja voimme ryhtyä toimiin väärinkäytösilmoitusten perusteella. Älä jaa arkaluonteisia tietoja UGC:ssa.",
+
+    "sec_t": "16) Turvallisuus",
+    "sec_b": "Käytämme riskiin nähden asianmukaisia teknisiä ja organisatorisia toimenpiteitä (salaus siirron aikana, salaus levossa soveltuvin osin, käyttöoikeuksien hallinta, vähimmän oikeuden periaate, lokitus, säännölliset päivitykset, incident-response). Mikään järjestelmä ei ole 100 % turvallinen.",
+
+    "chg_t": "17) Muutokset",
+    "chg_b": "Saatamme päivittää tätä käytäntöä ajoittain. Julkaisemme uuden version, jossa on uusi voimaantulopäivä.",
+
+    "ct_t": "18) Yhteystiedot",
+    "ct_b": `Rekisterinpitäjä: ${SETTINGS.legalEntity}.<br>Osoite: ${SETTINGS.address}.<br>Sähköposti: <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Keskeiset määritelmät",
+    "defs_b": "”Henkilötiedot” tarkoittavat tietoja, jotka tunnistavat tai liittyvät tunnistettavissa olevaan henkilöön. ”Käsittely” tarkoittaa mitä tahansa henkilötietoihin kohdistuvaa toimenpidettä. ”Rekisterinpitäjä” määrittää tarkoitukset ja keinot; ”käsittelijä” käsittelee rekisterinpitäjän lukuun. ”Kohdennettu mainonta” tarkoittaa mainosten näyttämistä henkilötietojen perusteella, jotka on saatu toiminnasta muissa kuin samaan ryhmään kuuluvissa sovelluksissa tai verkkosivustoissa.",
+
+    "dnsmpi_btn": "Älä myy tai jaa henkilötietojani",
+    "privacy_settings_t": "Tietosuoja-asetukset",
+    "privacy_settings_b": "Voit hallita suostumusta, mainosasetuksia ja tietopyyntöjä kohdassa **Asetukset → Tietosuoja**."
   },
 
-  fi:{ pp_title:"Tietosuojakäytäntö", updated:"Voimaantulopäivä",
-    btn_expand:"Laajenna kaikki", btn_collapse:"Supista kaikki", btn_print:"Tulosta / PDF", btn_copy:"Kopioi linkki tähän osioon",
-    sum_global:"Soveltuu maailmanlaajuisesti peleihimme, sovelluksiimme ja sivustoihimme.",
-    sum_sdks:"Käytämme yleisesti hyväksyttyjä palveluja: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"Emme myy tai jaa henkilötietoja.",
-    sum_kids:"Emme tietoisesti kerää lasten tietoja.",
-    who_t:"1) Keitä olemme",
-    who_b:`${SETTINGS.legalEntity} kehittää ja julkaisee pelejä ja sovelluksia. Toimimme rekisterinpitäjänä.`,
-    scope_t:"2) Soveltamisala",
-    scope_b:`Tämä käytäntö kattaa ${SETTINGS.appsList} ja “${SETTINGS.companyName}”-brändin sivustot.`,
-    data_t:"3) Käsiteltävät tiedot",
-    d_usage:"Käyttö ja diagnostiikka (tapahtumat, istunnot, karkea sijainti, laite/OS) — analytiikka, kaatumiset, parannukset.",
-    d_progress:"Pelitallennus ja tunnisteet (pelaaja-ID, saavutukset, pilvitallennus, anti-cheat) — ydintoiminnot ja synkronointi.",
-    d_purchases:"Ostotiedot (SKU, alue, kuitti) — toimitus, palautukset, petosten esto.",
-    d_ads:"Mainosdata (näyttökerrat, nollattavat mainostunnisteet) — mainosten näyttö ja mittaus.",
-    d_support:"Tuki (sähköposti, viestit, liitteet) — asiakastuki.",
-    legal_t:"4) Tarkoitukset ja oikeusperusteet",
-    legal_b:"Tukeudumme suostumukseen (tarvittaessa), sopimukseen ja oikeutettuun etuun (turvallisuus, petosten esto, kaatumisdiagnostiikka).",
-    sdks_t:"5) Kolmannen osapuolen palvelut",
-    sdk_firebase:"Analytiikka ja Crashlytics vakauden seurantaan.",
-    sdk_ads:"Mainosverkot käyttävät mainostunnisteita ja mittaavat suorituskykyä.",
-    sdk_play:"Google Play Games Services — pilvitallennus ym.",
-    sdk_af:"Asennusten attribuutio ja kampanjoiden mittaus.",
-    processors_note:"Toimivat henkilötietojen käsittelijöinä sopimuksen perusteella.",
-    share_t:"6) Tietojen jakaminen",
-    share_b:"Ei myyntiä tai ‘sharing’-jakoa; vain palveluntarjoajille tai lain niin vaatiessa.",
-    ret_t:"7) Säilytys",
-    ret_b:`Kaatumistiedot ~ ${SETTINGS.retention.crashes}, analytiikka ~ ${SETTINGS.retention.analytics}, talousasiakirjat ${SETTINGS.retention.finance}; sitten poistetaan/anonymisoidaan.`,
-    intl_t:"8) Kansainväliset siirrot", intl_b:"Käytämme asianmukaisia suojatoimia (esim. SCC).",
-    kids_t:"9) Lapset", kids_b:"Emme tietoisesti kerää lasten tietoja.",
-    rights_t:"10) Oikeutesi", rights_b:"Pääsy, oikaisu, poisto, vastustaminen, rajoittaminen, kopio ja suostumuksen peruuttaminen.",
-    cookies_t:"11) Evästeet ja suostumus",
-    cookies_b: SETTINGS.hasCookiesBanner ? "Näytämme suostumusbannerin alueilla, joissa sitä edellytetään." : "Ei ei-välttämättömiä evästeitä/SDK:ita.",
-    sec_t:"12) Tietoturva", sec_b:"Tekniset ja organisatoriset toimet riskin mukaan.",
-    chg_t:"13) Muutokset", chg_b:"Saatamme päivittää tämän käytännön.",
-    ct_t:"14) Yhteystiedot", ct_b:`Rekisterinpitäjä: ${SETTINGS.legalEntity}. Osoite: ${SETTINGS.address}. Sähköposti: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
-    foot_note:"Vinkki: napsauta osion otsikkoa kopioidaksesi suoran linkin."
+  fr: {
+    "pp_title": "Politique de confidentialité",
+    "updated": "Date d’entrée en vigueur",
+    "btn_expand": "Tout déplier",
+    "btn_collapse": "Tout replier",
+    "btn_print": "Imprimer / Enregistrer en PDF",
+    "btn_copy": "Copier le lien vers cette section",
+
+    "sum_global": "S’applique dans le monde entier à nos jeux, applications et sites web.",
+    "sum_sdks": "Nous utilisons des services largement adoptés : Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (si activé), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "Nous ne vendons pas de données personnelles. Nous pouvons « partager » certains identifiants et événements d’application pour la publicité ciblée telle que définie par les lois des États américains. Vous pouvez vous y opposer dans l’application.",
+    "sum_optout": "Vous pouvez refuser la publicité ciblée et la mesure.",
+    "sum_kids": "Nous ne collectons pas sciemment de données auprès d’enfants.",
+
+    "who_t": "1) Qui nous sommes",
+    "who_b": `${SETTINGS.legalEntity} (« nous ») développe et publie des jeux vidéo et des applications. Nous agissons en tant que responsable du traitement pour les traitements décrits dans la présente Politique.`,
+
+    "scope_t": "2) Champ d’application",
+    "scope_b": `La présente Politique couvre ${SETTINGS.appsList} et nos sites web exploités dans le monde entier sous la marque « ${SETTINGS.companyName} ».`,
+
+    "data_t": "3) Données que nous traitons",
+    "d_usage": "Utilisation et diagnostics (événements, sessions, adresse IP, localisation approximative/pays, appareil/OS, version de l’app) — analyses, détection des crashs, amélioration du produit.",
+    "d_progress": "Progression de jeu et identifiants (ID joueur/compte, succès, sauvegardes cloud, signaux anti-triche) — fonctionnalité de base et synchronisation.",
+    "d_account": "Données de compte (nom d’affichage, avatar, e-mail si fourni, jetons d’authentification, tranche d’âge) — création de compte, connexion, sécurité.",
+    "d_ugc": "Contenu généré par les utilisateurs et fonctionnalités sociales (messages de chat, profils, noms de clan/guilde, signalements) — fonctionnalités de jeu et modération.",
+    "d_purchases": "Informations d’achat (SKU, région, jeton d’achat/reçu) — exécution des achats, remboursements, prévention de la fraude.",
+    "d_ads": "Données publicitaires/attribution (impressions, clics, identifiants publicitaires réinitialisables tels que IDFA/AAID, postbacks SKAdNetwork, signaux contextuels) — affichage des publicités, limitation de fréquence, mesure (titres financés par la publicité).",
+    "d_support": "Données de support (e-mail, contenu du message, pièces jointes, diagnostics de l’appareil que vous choisissez d’envoyer) — assistance client et dépannage.",
+    "d_sensitive_note": "Nous ne collectons pas la localisation précise ni des catégories sensibles, sauf si vous nous les fournissez explicitement dans le cadre du support.",
+
+    "legal_t": "4) Finalités et bases juridiques",
+    "legal_b": "Selon votre lieu de résidence, nous nous appuyons : (a) sur le consentement (lorsqu’il est requis pour les cookies/SDK de publicité/analyse dans l’EEE/R.-Uni et pour l’accès à l’IDFA dans le cadre d’Apple ATT) ; (b) sur l’exécution d’un contrat (pour fournir le jeu/l’app, les sauvegardes cloud et les achats) ; (c) sur l’intérêt légitime (sécurité, lutte contre la fraude, diagnostics de crash, analyses non personnalisées) ; et (d) sur le respect d’obligations légales (fiscalité/comptabilité). Vous pouvez retirer votre consentement à tout moment via les paramètres in-app ou notre bandeau de consentement (le cas échéant).",
+
+    "optout_t": "5) Choix publicitaires (opt-out)",
+    "optout_b": "Vous pouvez à tout moment refuser la « publicité ciblée » et certaines mesures dans **Paramètres → Confidentialité → Choix publicitaires**. Pour la Californie et d’autres États américains, vous pouvez utiliser le bouton **‘Do Not Sell or Share My Personal Information’** pour refuser le « partage » à des fins de publicité comportementale inter-contextes. Sur Android/iOS, vous pouvez aussi réinitialiser ou limiter l’identifiant publicitaire dans les réglages du système. Nous respectons les choix ATT d’Apple et la mesure via SKAdNetwork lorsque l’IDFA n’est pas disponible.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "Sur iOS, nous sollicitons votre autorisation via l’App Tracking Transparency d’Apple. Si vous refusez, nous n’accédons pas à l’IDFA et n’utilisons que des publicités contextuelles et une mesure préservant la confidentialité (p. ex., SKAdNetwork).",
+
+    "sdks_t": "7) Services tiers (sous-traitants)",
+    "sdk_firebase": "Firebase Analytics collecte des métriques d’usage et de stabilité ; Crashlytics aide à diagnostiquer les crashs. Les données peuvent inclure des informations appareil/OS, la version de l’app, des événements et des journaux de crash.",
+    "sdk_ads": "Les réseaux publicitaires (p. ex., Google AdMob, Unity Ads) affichent des publicités et mesurent les performances à l’aide d’identifiants publicitaires réinitialisables et de signaux contextuels. Vous pouvez réinitialiser ou limiter le suivi publicitaire dans votre OS.",
+    "sdk_play": "Google Play Games Services pour les sauvegardes cloud, les succès, les classements et les intégrations de plateforme.",
+    "sdk_gc": "Apple Game Center et iCloud (si activé) pour l’authentification et les sauvegardes cloud sur les plateformes Apple.",
+    "sdk_af": "AppsFlyer fournit l’attribution d’installations et les performances de campagnes à l’aide d’identifiants et de données d’événements non sensibles.",
+    "processors_note": "Nous faisons appel à ces prestataires dans le cadre de contrats de sous-traitance ; ils doivent protéger les données et ne les utiliser que selon nos instructions.",
+
+    "share_t": "8) Partage",
+    "share_b": "Nous ne vendons pas de données personnelles. Nous divulguons des données à des prestataires de services (sous-traitants), aux fournisseurs de plateforme (Google/Apple), ainsi que lorsque la loi l’exige ou pour protéger les droits, la sécurité et l’intégrité.",
+
+    "ret_t": "9) Conservation",
+    "ret_b": `Nous ne conservons les données que le temps nécessaire : journaux de crash ~ ${SETTINGS.retention.crashes} ; analyses ~ ${SETTINGS.retention.analytics} ; publicité/mesure ~ ${SETTINGS.retention.ads} ; attribution ~ ${SETTINGS.retention.attribution} ; support ~ ${SETTINGS.retention.support} ; données de compte pendant la durée de vie du compte, puis suppression sous 30 jours ; journaux serveur ~ ${SETTINGS.retention.logs} ; et pièces comptables ${SETTINGS.retention.finance}. Nous pouvons conserver des données agrégées/dé-identifiées et nous nous engageons à ne pas les ré-identifier.`,
+
+    "intl_t": "10) Transferts internationaux",
+    "intl_b": "Lorsque des données sont transférées à l’international, nous utilisons des garanties appropriées (p. ex., clauses contractuelles types). Certains prestataires participent au Data Privacy Framework UE-États-Unis. Vous pouvez nous contacter pour obtenir des informations sur ces garanties.",
+
+    "kids_t": "11) Enfants",
+    "kids_b": "Nous ne collectons pas sciemment de données personnelles auprès d’enfants. Pour les titres à public mixte, nous appliquons une vérification d’âge et désactivons les publicités/attributions personnalisées pour les utilisateurs identifiés comme étant en dessous de l’âge applicable (p. ex., moins de 13 ans aux États-Unis, moins de 16 ans dans l’EEE/R.-Uni pour le « partage » publicitaire). Si vous pensez qu’un enfant nous a envoyé des données, contactez-nous : nous les supprimerons et désactiverons la personnalisation.",
+
+    "rights_t": "12) Vos droits",
+    "rights_b": "Selon votre région, vous pouvez avoir le droit d’accéder à vos données, de les rectifier, de les supprimer, de les porter, de vous opposer, d’en limiter le traitement, de retirer votre consentement ou de faire appel de notre décision. Pour exercer vos droits, utilisez le formulaire de demande dans l’app ou contactez-nous à l’adresse e-mail ci-dessous. Nous répondons sous 30 jours (EEE/R.-Uni) ou 45 jours (États-Unis). Les résidents de Californie peuvent recourir à un agent autorisé. Vous avez le droit de ne pas faire l’objet de discrimination pour l’exercice de vos droits. Les résidents de l’EEE/R.-Uni peuvent déposer une plainte auprès d’une autorité de contrôle.",
+
+    "cookies_t": "13) Cookies et consentement",
+    "cookies_b": "Nos sites web n’utilisent actuellement pas de cookies/SDK non essentiels. Si cela change, nous afficherons un bandeau de consentement vous permettant d’accepter, de refuser ou de modifier vos choix à tout moment.",
+
+    "acct_t": "14) Comptes et suppression",
+    "acct_b": "Vous pouvez créer un compte en jeu pour synchroniser la progression et utiliser les fonctionnalités sociales. Vous pouvez supprimer votre compte à tout moment via **Paramètres → Compte → Supprimer le compte** ou en nous contactant. La suppression d’un compte entraîne la suppression des données personnelles et des sauvegardes cloud liées au compte sous 30 jours (les sauvegardes peuvent persister pendant une période limitée). Vous pouvez aussi déconnecter Google Play Games ou Apple Game Center depuis leurs réglages respectifs.",
+
+    "ugc_t": "15) Contenu généré par les utilisateurs (UGC) et modération",
+    "ugc_b": "L’UGC (p. ex., chat, profils, noms de guildes) est visible par les autres joueurs dans le cadre du jeu. Nous modérons afin de faire respecter nos règles communautaires et pouvons agir suite à des signalements d’abus. Ne partagez pas d’informations sensibles dans l’UGC.",
+
+    "sec_t": "16) Sécurité",
+    "sec_b": "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées au risque (chiffrement en transit, chiffrement au repos le cas échéant, contrôles d’accès, principe du moindre privilège, journalisation, correctifs réguliers, réponse aux incidents). Aucun système n’est sécurisé à 100 %.",
+
+    "chg_t": "17) Modifications",
+    "chg_b": "Nous pouvons mettre à jour la présente Politique périodiquement. Nous publierons une nouvelle version avec une nouvelle date d’entrée en vigueur.",
+
+    "ct_t": "18) Contact",
+    "ct_b": `Responsable du traitement : ${SETTINGS.legalEntity}.<br>Adresse : ${SETTINGS.address}.<br>E-mail : <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Définitions clés",
+    "defs_b": "« Données personnelles » désigne toute information qui identifie ou se rapporte à une personne identifiable. « Traitement » désigne toute opération effectuée sur des données personnelles. Le « responsable du traitement » détermine les finalités et les moyens ; le « sous-traitant » traite pour le compte d’un responsable. La « publicité ciblée » consiste à afficher des publicités sur la base de données personnelles obtenues à partir d’activités sur des apps ou sites web non affiliés.",
+
+    "dnsmpi_btn": "Ne pas vendre ni partager mes informations personnelles",
+    "privacy_settings_t": "Paramètres de confidentialité",
+    "privacy_settings_b": "Vous pouvez gérer le consentement, les choix publicitaires et les demandes de données dans **Paramètres → Confidentialité**."
   },
 
-  fr:{ pp_title:"Politique de confidentialité", updated:"Date d’effet",
-    btn_expand:"Tout développer", btn_collapse:"Tout réduire", btn_print:"Imprimer / PDF", btn_copy:"Copier le lien de cette section",
-    sum_global:"S’applique dans le monde entier à nos jeux, applications et sites Web.",
-    sum_sdks:"Nous utilisons des services largement reconnus : Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"Nous ne vendons ni ne partageons les données personnelles.",
-    sum_kids:"Nous ne collectons pas sciemment des données d’enfants.",
-    who_t:"1) Qui nous sommes",
-    who_b:`${SETTINGS.legalEntity} (« nous ») développe et édite des jeux et applications. Nous agissons en tant que responsable du traitement.`,
-    scope_t:"2) Portée",
-    scope_b:`Cette politique couvre ${SETTINGS.appsList} et nos sites sous la marque « ${SETTINGS.companyName} ».`,
-    data_t:"3) Données traitées",
-    d_usage:"Utilisation & diagnostics (événements, sessions, localisation approximative, appareil/OS) — analytics, plantages, amélioration produit.",
-    d_progress:"Progression & identifiants (ID joueur, succès, sauvegardes cloud, anti-triche) — fonctionnalités et synchronisation.",
-    d_purchases:"Achats (SKU, région, jeton/reçu) — exécution, remboursements, prévention des fraudes.",
-    d_ads:"Publicité (impressions, identifiants publicitaires réinitialisables) — affichage et mesure.",
-    d_support:"Support (e-mail, contenu des messages, pièces jointes) — assistance.",
-    legal_t:"4) Finalités & bases légales",
-    legal_b:"Selon la région : consentement (si requis), exécution d’un contrat et intérêts légitimes (sécurité, anti-fraude, diagnostics).",
-    sdks_t:"5) Services tiers (sous-traitants)",
-    sdk_firebase:"Analytics et Crashlytics pour la stabilité.",
-    sdk_ads:"Réseaux publicitaires avec identifiants publicitaires réinitialisables.",
-    sdk_play:"Services Google Play Games (sauvegardes cloud, succès, classements).",
-    sdk_af:"Attribution des installations et performance des campagnes.",
-    processors_note:"Sous-traitants liés par contrat, utilisations limitées à nos instructions.",
-    share_t:"6) Partage",
-    share_b:"Pas de vente ni de « partage » de données; divulgation uniquement aux prestataires ou lorsque la loi l’exige.",
-    ret_t:"7) Conservation",
-    ret_b:`Crashes ~ ${SETTINGS.retention.crashes}, analytics ~ ${SETTINGS.retention.analytics}, documents financiers ${SETTINGS.retention.finance}, puis suppression/anonymisation.`,
-    intl_t:"8) Transferts internationaux", intl_b:"Mesures appropriées (p. ex. clauses contractuelles types).",
-    kids_t:"9) Enfants", kids_b:"Nous ne collectons pas sciemment les données d’enfants.",
-    rights_t:"10) Vos droits", rights_b:"Accès, rectification, effacement, opposition, limitation, copie, retrait du consentement.",
-    cookies_t:"11) Cookies & consentement",
-    cookies_b: SETTINGS.hasCookiesBanner ? "Bannière de consentement affichée là où la loi l’exige." : "Pas de cookies/SDK non essentiels.",
-    sec_t:"12) Sécurité", sec_b:"Mesures techniques et organisationnelles adaptées au risque.",
-    chg_t:"13) Modifications", chg_b:"Cette politique peut être mise à jour.",
-    ct_t:"14) Contact", ct_b:`Responsable du traitement : ${SETTINGS.legalEntity}. Adresse : ${SETTINGS.address}. E-mail : <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
-    foot_note:"Astuce : cliquez sur un titre pour copier le lien direct."
+  de: {
+    "pp_title": "Datenschutzrichtlinie",
+    "updated": "Datum des Inkrafttretens",
+    "btn_expand": "Alles ausklappen",
+    "btn_collapse": "Alles einklappen",
+    "btn_print": "Drucken / PDF speichern",
+    "btn_copy": "Link zu diesem Abschnitt kopieren",
+
+    "sum_global": "Gilt weltweit für unsere Spiele, Apps und Websites.",
+    "sum_sdks": "Wir verwenden weit verbreitete Dienste: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (falls aktiviert), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "Wir verkaufen keine personenbezogenen Daten. Wir können bestimmte Kennungen und App-Ereignisse für „zielgerichtete Werbung“ im Sinne der Gesetze einzelner US-Bundesstaaten „teilen“. Du kannst dies in der App abwählen.",
+    "sum_optout": "Du kannst zielgerichtete Werbung und Messungen deaktivieren.",
+    "sum_kids": "Wir erfassen nicht wissentlich Daten von Kindern.",
+
+    "who_t": "1) Wer wir sind",
+    "who_b": `${SETTINGS.legalEntity} („wir“, „uns“) entwickelt und veröffentlicht Videospiele und Anwendungen. Wir handeln als Verantwortlicher für die in dieser Richtlinie beschriebene Verarbeitung.`,
+
+    "scope_t": "2) Geltungsbereich",
+    "scope_b": `Diese Richtlinie gilt für ${SETTINGS.appsList} sowie für unsere Websites, die weltweit unter der Marke „${SETTINGS.companyName}“ betrieben werden.`,
+
+    "data_t": "3) Daten, die wir verarbeiten",
+    "d_usage": "Nutzungs- & Diagnosedaten (Ereignisse, Sitzungen, IP-Adresse, grober Standort/Land, Gerät/OS, App-Version) — Analysen, Crash-Erkennung, Produktverbesserung.",
+    "d_progress": "Spielfortschritt & Kennungen (Spieler-/Konto-ID, Erfolge, Cloud-Speicher, Anti-Cheat-Signale) — Kernfunktionalität und Synchronisierung.",
+    "d_account": "Kontodaten (Anzeigename, Avatar, E-Mail, falls angegeben, Authentifizierungs-Tokens, Altersgruppe) — Kontoerstellung, Anmeldung, Sicherheit.",
+    "d_ugc": "Von Nutzern erstellte Inhalte und soziale Funktionen (Chat-Nachrichten, Profile, Clan-/Gildennamen, Meldungen) — Gameplay-Funktionen und Moderation.",
+    "d_purchases": "Kaufinformationen (SKU, Region, Kauf-Token/Beleg) — Kaufabwicklung, Erstattungen, Betrugsprävention.",
+    "d_ads": "Werbe-/Attributionsdaten (Ad-Impressions, Klicks, zurücksetzbare Werbe-IDs wie IDFA/AAID, SKAdNetwork-Postbacks, Kontextsignale) — Anzeigenbereitstellung, Frequenzbegrenzung, Messung (werbefinanzierte Titel).",
+    "d_support": "Supportdaten (E-Mail, Nachrichteninhalt, Anhänge, Gerätediagnosen, die du zu senden auswählst) — Kundensupport und Fehlerbehebung.",
+    "d_sensitive_note": "Wir erfassen weder präzise Standortdaten noch besondere Kategorien, es sei denn, du stellst sie uns ausdrücklich im Rahmen des Supports bereit.",
+
+    "legal_t": "4) Zwecke & Rechtsgrundlagen",
+    "legal_b": "Je nach deinem Standort stützen wir uns auf: (a) Einwilligung (wo für Werbe-/Analyse-Cookies/SDKs im EWR/VK erforderlich und für den Zugriff auf die IDFA im Rahmen von Apple ATT); (b) Erfüllung eines Vertrags (Bereitstellung des Spiels/der App, Cloud-Speicher und Käufe); (c) berechtigte Interessen (Sicherheit, Betrugsbekämpfung, Crash-Diagnostik, nicht-personalisierte Analysen); sowie (d) Erfüllung gesetzlicher Pflichten (Steuern/Buchhaltung). Du kannst deine Einwilligung jederzeit über die In-App-Einstellungen oder unser Einwilligungsbanner (sofern angezeigt) widerrufen.",
+
+    "optout_t": "5) Werbeoptionen (Opt-out)",
+    "optout_b": "Du kannst „zielgerichtete Werbung“ und bestimmte Messungen jederzeit unter **Einstellungen → Datenschutz → Werbeoptionen** deaktivieren. Für Kalifornien und andere US-Bundesstaaten kannst du die Schaltfläche **‚Do Not Sell or Share My Personal Information‘** verwenden, um das „Teilen“ für kontextübergreifende verhaltensbezogene Werbung abzulehnen. Unter Android/iOS kannst du die Werbe-ID in den System­einstellungen auch zurücksetzen oder einschränken. Wir respektieren Apple-ATT-Entscheidungen und SKAdNetwork-Messungen, wenn die IDFA nicht verfügbar ist.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "Unter iOS bitten wir über Apple App Tracking Transparency um deine Erlaubnis. Wenn du ablehnst, greifen wir nicht auf die IDFA zu und verwenden nur kontextbezogene Werbung sowie datenschutzfreundliche Messungen (z. B. SKAdNetwork).",
+
+    "sdks_t": "7) Dienste Dritter (Auftragsverarbeiter)",
+    "sdk_firebase": "Firebase Analytics erfasst Nutzungs- und Stabilitätsmetriken; Crashlytics hilft bei der Diagnose von Abstürzen. Daten können Geräte-/OS-Infos, App-Version, Ereignisse und Crash-Protokolle umfassen.",
+    "sdk_ads": "Werbenetzwerke (z. B. Google AdMob, Unity Ads) zeigen Anzeigen und messen die Leistung mithilfe zurücksetzbarer Werbe-IDs und Kontextsignale. Du kannst Werbetracking in deinem Betriebssystem zurücksetzen oder einschränken.",
+    "sdk_play": "Google Play Games Services für Cloud-Speicher, Erfolge, Ranglisten und Plattformintegrationen.",
+    "sdk_gc": "Apple Game Center und iCloud (falls aktiviert) für Authentifizierung und Cloud-Speicher auf Apple-Plattformen.",
+    "sdk_af": "AppsFlyer stellt Installations-Attribution und Kampagnenleistung mithilfe von Kennungen und nicht sensitiven Ereignisdaten bereit.",
+    "processors_note": "Wir beauftragen diese Anbieter auf Grundlage von Auftragsverarbeitungsverträgen; sie müssen Daten schützen und sie nur gemäß unseren Weisungen verwenden.",
+
+    "share_t": "8) Weitergabe",
+    "share_b": "Wir verkaufen keine personenbezogenen Daten. Wir geben Daten an Dienstleister (Auftragsverarbeiter), Plattformanbieter (Google/Apple) sowie dort weiter, wo dies gesetzlich erforderlich ist oder um Rechte, Sicherheit und Integrität zu schützen.",
+
+    "ret_t": "9) Speicherdauer",
+    "ret_b": `Wir bewahren Daten nur so lange auf, wie nötig: Crash-Protokolle ~ ${SETTINGS.retention.crashes}; Analysen ~ ${SETTINGS.retention.analytics}; Werbung/Messung ~ ${SETTINGS.retention.ads}; Attribution ~ ${SETTINGS.retention.attribution}; Support ~ ${SETTINGS.retention.support}; Kontodaten für die Lebensdauer des Kontos, anschließend Löschung innerhalb von 30 Tagen; Server-Logs ~ ${SETTINGS.retention.logs}; sowie Finanzunterlagen ${SETTINGS.retention.finance}. Wir können aggregierte/de-identifizierte Daten aufbewahren und verpflichten uns, sie nicht erneut zu re-identifizieren.`,
+
+    "intl_t": "10) Internationale Übermittlungen",
+    "intl_b": "Bei internationalen Datenübermittlungen verwenden wir geeignete Schutzmaßnahmen (z. B. Standardvertragsklauseln). Einige Anbieter nehmen am EU-US Data Privacy Framework teil. Du kannst uns kontaktieren, um Informationen über diese Schutzmaßnahmen anzufordern.",
+
+    "kids_t": "11) Kinder",
+    "kids_b": "Wir erfassen nicht wissentlich personenbezogene Daten von Kindern. Bei Titeln für gemischte Zielgruppen setzen wir eine Altersabfrage ein und deaktivieren personalisierte Werbung/Attribution für Nutzer, die als unter dem jeweils geltenden Alter identifiziert werden (z. B. unter 13 in den USA, unter 16 im EWR/VK für Werbe-„Sharing“). Wenn du glaubst, dass uns ein Kind Daten übermittelt hat, kontaktiere uns — wir löschen sie und deaktivieren die Personalisierung.",
+
+    "rights_t": "12) Deine Rechte",
+    "rights_b": "Je nach Region kannst du Rechte auf Auskunft, Berichtigung, Löschung, Datenübertragbarkeit, Widerspruch, Einschränkung, Widerruf der Einwilligung oder Anfechtung unserer Entscheidung haben. Zur Ausübung deiner Rechte verwende das In-App-Formular oder kontaktiere uns unter der unten genannten E-Mail-Adresse. Wir antworten innerhalb von 30 Tagen (EWR/VK) bzw. 45 Tagen (USA). Einwohner Kaliforniens können einen bevollmächtigten Vertreter einsetzen. Du hast das Recht, wegen der Ausübung deiner Rechte nicht benachteiligt zu werden. Einwohner des EWR/VK können bei einer Aufsichtsbehörde Beschwerde einlegen.",
+
+    "cookies_t": "13) Cookies & Einwilligung",
+    "cookies_b": "Unsere Websites verwenden derzeit keine nicht unbedingt erforderlichen Cookies/SDKs. Falls sich dies ändert, blenden wir ein Einwilligungsbanner ein, über das du jederzeit akzeptieren, ablehnen oder deine Auswahl ändern kannst.",
+
+    "acct_t": "14) Konten und Löschung",
+    "acct_b": "Du kannst ein In-Game-Konto erstellen, um den Fortschritt zu synchronisieren und soziale Funktionen zu nutzen. Du kannst dein Konto jederzeit unter **Einstellungen → Konto → Konto löschen** oder durch Kontaktaufnahme mit uns löschen. Das Löschen eines Kontos entfernt personenbezogene Daten und zugehörige Cloud-Speicher innerhalb von 30 Tagen (Backups können für einen begrenzten Zeitraum bestehen bleiben). Du kannst Google Play Games oder Apple Game Center auch in deren jeweiligen Einstellungen trennen.",
+
+    "ugc_t": "15) Von Nutzern erstellte Inhalte (UGC) & Moderation",
+    "ugc_b": "UGC (z. B. Chats, Profile, Gildennamen) ist für andere Spieler als Teil des Gameplays sichtbar. Wir moderieren zur Durchsetzung unserer Community-Regeln und können auf Missbrauchsmeldungen reagieren. Teile keine sensiblen Informationen in UGC.",
+
+    "sec_t": "16) Sicherheit",
+    "sec_b": "Wir setzen dem Risiko angemessene technische und organisatorische Maßnahmen ein (Verschlüsselung während der Übertragung, Verschlüsselung im Ruhezustand, wo anwendbar, Zugriffskontrollen, Prinzip der minimalen Rechte, Protokollierung, regelmäßige Patches, Incident-Response). Kein System ist zu 100 % sicher.",
+
+    "chg_t": "17) Änderungen",
+    "chg_b": "Wir können diese Richtlinie von Zeit zu Zeit aktualisieren. Wir veröffentlichen dann eine neue Version mit einem neuen Datum des Inkrafttretens.",
+
+    "ct_t": "18) Kontakt",
+    "ct_b": `Verantwortlicher: ${SETTINGS.legalEntity}. Adresse:<br>${SETTINGS.address}.<br>E-Mail: <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Wichtige Definitionen",
+    "defs_b": "„Personenbezogene Daten“ sind Informationen, die eine identifizierte oder identifizierbare Person betreffen. „Verarbeitung“ ist jeder Vorgang, der an personenbezogenen Daten vorgenommen wird. Der „Verantwortliche“ bestimmt Zwecke und Mittel; ein „Auftragsverarbeiter“ verarbeitet im Auftrag eines Verantwortlichen. „Zielgerichtete Werbung“ bedeutet das Anzeigen von Werbung auf Basis personenbezogener Daten, die aus Aktivitäten über nicht verbundene Apps oder Websites hinweg gewonnen wurden.",
+
+    "dnsmpi_btn": "Meine personenbezogenen Daten nicht verkaufen oder teilen",
+    "privacy_settings_t": "Datenschutzeinstellungen",
+    "privacy_settings_b": "Du kannst Einwilligung, Werbeoptionen und Datenanfragen unter **Einstellungen → Datenschutz** verwalten."
   },
 
-  de:{ pp_title:"Datenschutzerklärung", updated:"Gültig ab",
-    btn_expand:"Alle aufklappen", btn_collapse:"Alle zuklappen", btn_print:"Drucken / PDF", btn_copy:"Link zu diesem Abschnitt kopieren",
-    sum_global:"Gilt weltweit für unsere Spiele, Apps und Websites.",
-    sum_sdks:"Wir nutzen etablierte Dienste: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"Wir verkaufen oder „teilen“ keine personenbezogenen Daten.",
-    sum_kids:"Wir erheben wissentlich keine Daten von Kindern.",
-    who_t:"1) Wer wir sind",
-    who_b:`${SETTINGS.legalEntity} („wir“) entwickelt und veröffentlicht Spiele und Apps. Wir sind Verantwortlicher im Sinne des Datenschutzrechts.`,
-    scope_t:"2) Geltungsbereich",
-    scope_b:`Diese Erklärung gilt für ${SETTINGS.appsList} und unsere Websites unter der Marke „${SETTINGS.companyName}“.`,
-    data_t:"3) Verarbeitete Daten",
-    d_usage:"Nutzungs- & Diagnosedaten (Ereignisse, Sitzungen, grober Standort, Gerät/OS) — Analyse, Absturzdiagnose, Produktverbesserung.",
-    d_progress:"Spielstände & Kennungen (Spieler-ID, Erfolge, Cloud-Speicher, Anti-Cheat) — Funktionen & Synchronisierung.",
-    d_purchases:"Kaufdaten (SKU, Region, Token/Beleg) — Abwicklung, Erstattungen, Betrugsprävention.",
-    d_ads:"Werbedaten (Impressions, zurücksetzbare Werbe-IDs) — Anzeige & Messung.",
-    d_support:"Supportdaten (E-Mail, Nachrichteninhalte, Anhänge) — Support.",
-    legal_t:"4) Zwecke & Rechtsgrundlagen",
-    legal_b:"Je nach Region: Einwilligung (soweit erforderlich), Vertragserfüllung sowie berechtigte Interessen (Sicherheit, Betrugsabwehr, Crashdiagnose).",
-    sdks_t:"5) Dienste von Dritten (Auftragsverarbeiter)",
-    sdk_firebase:"Analytics und Crashlytics zur Stabilität.",
-    sdk_ads:"Werbenetzwerke nutzen Werbe-IDs und Kontextsignale.",
-    sdk_play:"Google Play Games Services (Cloud-Speicher, Erfolge, Ranglisten).",
-    sdk_af:"Attribution und Kampagnenleistung.",
-    processors_note:"Eingesetzt als Auftragsverarbeiter auf Basis von Verträgen.",
-    share_t:"6) Weitergabe",
-    share_b:"Keine Datenverkäufe oder „Sharing“; Weitergabe nur an Dienstleister oder wenn gesetzlich erforderlich.",
-    ret_t:"7) Aufbewahrung",
-    ret_b:`Crashlogs ~ ${SETTINGS.retention.crashes}, Analysedaten ~ ${SETTINGS.retention.analytics}, Finanzunterlagen ${SETTINGS.retention.finance}; danach Löschung/Anonymisierung.`,
-    intl_t:"8) Internationale Übermittlungen", intl_b:"Angemessene Garantien (z. B. EU-Standardvertragsklauseln).",
-    kids_t:"9) Kinder", kids_b:"Keine wissentliche Erhebung von Kinderdaten.",
-    rights_t:"10) Ihre Rechte", rights_b:"Auskunft, Berichtigung, Löschung, Widerspruch, Einschränkung, Kopie, Widerruf der Einwilligung.",
-    cookies_t:"11) Cookies & Einwilligung",
-    cookies_b: SETTINGS.hasCookiesBanner ? "Einwilligungsbanner in Regionen, in denen dies vorgeschrieben ist." : "Keine nicht zwingenden Cookies/SDKs.",
-    sec_t:"12) Sicherheit", sec_b:"Technische und organisatorische Maßnahmen angemessen zum Risiko.",
-    chg_t:"13) Änderungen", chg_b:"Diese Erklärung kann aktualisiert werden.",
-    ct_t:"14) Kontakt", ct_b:`Verantwortlicher: ${SETTINGS.legalEntity}. Anschrift: ${SETTINGS.address}. E-Mail: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
-    foot_note:"Tipp: Auf einen Abschnittstitel klicken, um den direkten Link zu kopieren."
+  id: {
+    "pp_title": "Kebijakan Privasi",
+    "updated": "Tanggal berlaku",
+    "btn_expand": "Perluas semua",
+    "btn_collapse": "Ciutkan semua",
+    "btn_print": "Cetak / Simpan PDF",
+    "btn_copy": "Salin tautan ke bagian ini",
+
+    "sum_global": "Berlaku di seluruh dunia untuk gim, aplikasi, dan situs web kami.",
+    "sum_sdks": "Kami menggunakan layanan yang banyak diadopsi: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (jika diaktifkan), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "Kami tidak menjual data pribadi. Kami dapat ‘membagikan’ pengenal tertentu dan peristiwa aplikasi untuk periklanan bertarget sebagaimana didefinisikan oleh hukum negara bagian AS. Anda dapat melakukan opt-out di dalam aplikasi.",
+    "sum_optout": "Anda dapat melakukan opt-out dari periklanan bertarget dan pengukuran.",
+    "sum_kids": "Kami tidak dengan sengaja mengumpulkan data dari anak-anak.",
+
+    "who_t": "1) Siapa kami",
+    "who_b": `${SETTINGS.legalEntity} (‘kami’) mengembangkan dan menerbitkan video game dan aplikasi. Kami bertindak sebagai pengendali data untuk pemrosesan yang dijelaskan dalam Kebijakan ini.`,
+
+    "scope_t": "2) Cakupan",
+    "scope_b": `Kebijakan ini mencakup ${SETTINGS.appsList} dan situs web kami yang dioperasikan secara global di bawah merek ‘${SETTINGS.companyName}’.`,
+
+    "data_t": "3) Data yang kami proses",
+    "d_usage": "Penggunaan & diagnostik (peristiwa, sesi, alamat IP, lokasi kasar/negara, perangkat/OS, versi aplikasi) — analitik, deteksi crash, peningkatan produk.",
+    "d_progress": "Kemajuan gim & pengenal (ID pemain/akun, pencapaian, penyimpanan cloud, sinyal anti-cheat) — fungsionalitas inti dan sinkronisasi.",
+    "d_account": "Data akun (nama tampilan, avatar, email jika diberikan, token autentikasi, kelompok usia) — pembuatan akun, login, keamanan.",
+    "d_ugc": "Konten buatan pengguna dan fitur sosial (pesan chat, profil, nama klan/guild, laporan) — fitur gameplay dan moderasi.",
+    "d_purchases": "Informasi pembelian (SKU, wilayah, token/atau tanda terima pembelian) — pemenuhan pembelian, pengembalian dana, pencegahan penipuan.",
+    "d_ads": "Data iklan/atribusi (tayangan iklan, klik, ID periklanan yang dapat direset seperti IDFA/AAID, postback SKAdNetwork, sinyal konteks) — penayangan iklan, pembatasan frekuensi, pengukuran (judul yang didukung iklan).",
+    "d_support": "Data dukungan (email, isi pesan, lampiran, diagnostik perangkat yang Anda pilih untuk dikirim) — dukungan pelanggan dan pemecahan masalah.",
+    "d_sensitive_note": "Kami tidak mengumpulkan lokasi presisi atau kategori sensitif kecuali Anda memberikannya secara eksplisit kepada dukungan.",
+
+    "legal_t": "4) Tujuan & dasar hukum",
+    "legal_b": "Bergantung pada lokasi Anda, kami bergantung pada: (a) persetujuan (jika diwajibkan untuk cookie/SDK periklanan/analitik di EEA/UK, dan untuk akses ke IDFA di bawah Apple ATT); (b) pelaksanaan kontrak (untuk menyediakan gim/aplikasi, penyimpanan cloud, dan pembelian); (c) kepentingan yang sah (keamanan, pencegahan penipuan, diagnostik crash, analitik non-personal); dan (d) kepatuhan terhadap kewajiban hukum (pajak/pembukuan). Anda dapat menarik kembali persetujuan kapan saja melalui pengaturan dalam aplikasi atau banner persetujuan kami (jika ditampilkan).",
+
+    "optout_t": "5) Pilihan iklan (opt-out)",
+    "optout_b": "Anda dapat setiap saat melakukan opt-out dari ‘periklanan bertarget’ dan pengukuran tertentu di **Pengaturan → Privasi → Pilihan iklan**. Untuk California dan negara bagian AS lainnya, Anda dapat menggunakan tombol **‘Do Not Sell or Share My Personal Information’** untuk menolak ‘pembagian’ untuk periklanan perilaku lintas-konteks. Di Android/iOS Anda juga dapat mereset atau membatasi pengenal iklan di setelan OS. Kami menghormati pilihan Apple ATT dan pengukuran SKAdNetwork ketika IDFA tidak tersedia.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "Di iOS, kami meminta izin melalui App Tracking Transparency milik Apple. Jika Anda menolak, kami tidak mengakses IDFA dan hanya menggunakan iklan kontekstual serta pengukuran yang menjaga privasi (mis., SKAdNetwork).",
+
+    "sdks_t": "7) Layanan pihak ketiga (pemroses)",
+    "sdk_firebase": "Firebase Analytics mengumpulkan metrik penggunaan dan stabilitas; Crashlytics membantu mendiagnosis crash. Data dapat mencakup info perangkat/OS, versi aplikasi, peristiwa, dan log crash.",
+    "sdk_ads": "Jaringan iklan (mis., Google AdMob, Unity Ads) menayangkan iklan dan mengukur kinerja menggunakan ID periklanan yang dapat direset dan sinyal konteks. Anda dapat mereset atau membatasi pelacakan iklan di OS Anda.",
+    "sdk_play": "Google Play Games Services untuk penyimpanan cloud, pencapaian, papan peringkat, dan integrasi platform.",
+    "sdk_gc": "Apple Game Center dan iCloud (jika diaktifkan) untuk autentikasi dan penyimpanan cloud di platform Apple.",
+    "sdk_af": "AppsFlyer menyediakan atribusi instal dan kinerja kampanye menggunakan pengenal dan data peristiwa non-sensitif.",
+    "processors_note": "Kami melibatkan penyedia ini berdasarkan perjanjian pemrosesan data; mereka harus melindungi data dan menggunakannya hanya sesuai instruksi kami.",
+
+    "share_t": "8) Berbagi",
+    "share_b": "Kami tidak menjual data pribadi. Kami mengungkapkan data kepada penyedia layanan (pemroses), penyedia platform (Google/Apple), dan jika diwajibkan oleh hukum atau untuk melindungi hak, keamanan, dan integritas.",
+
+    "ret_t": "9) Retensi",
+    "ret_b": `Kami menyimpan data hanya sesuai kebutuhan: log crash ~ ${SETTINGS.retention.crashes}; analitik ~ ${SETTINGS.retention.analytics}; iklan/pengukuran ~ ${SETTINGS.retention.ads}; atribusi ~ ${SETTINGS.retention.attribution}; dukungan ~ ${SETTINGS.retention.support}; data akun selama masa aktif akun, kemudian penghapusan dalam 30 hari; log server ~ ${SETTINGS.retention.logs}; dan catatan keuangan ${SETTINGS.retention.finance}. Kami dapat menyimpan data teragregasi/tereduksi identitas dan kami berkomitmen untuk tidak mengidentifikasikannya kembali.`,
+
+    "intl_t": "10) Transfer internasional",
+    "intl_b": "Jika data ditransfer secara internasional, kami menggunakan perlindungan yang sesuai (mis., Klausul Kontrak Standar). Beberapa penyedia berpartisipasi dalam EU-US Data Privacy Framework. Anda dapat menghubungi kami untuk meminta informasi tentang perlindungan ini.",
+
+    "kids_t": "11) Anak-anak",
+    "kids_b": "Kami tidak dengan sengaja mengumpulkan data pribadi dari anak-anak. Dalam judul untuk audiens campuran, kami menerapkan gerbang usia dan menonaktifkan iklan/atribusi yang dipersonalisasi bagi pengguna yang diidentifikasi di bawah usia yang berlaku (mis., di bawah 13 tahun di AS, di bawah 16 tahun di EEA/UK untuk ‘pembagian’ iklan). Jika Anda yakin seorang anak telah memberikan data kepada kami, hubungi kami dan kami akan menghapusnya serta menonaktifkan personalisasi.",
+
+    "rights_t": "12) Hak Anda",
+    "rights_b": "Bergantung pada wilayah Anda, Anda mungkin memiliki hak untuk mengakses, memperbaiki, menghapus, memindahkan, menolak, membatasi, menarik persetujuan, atau mengajukan banding atas keputusan kami. Untuk menggunakan hak Anda, gunakan formulir permintaan dalam aplikasi atau hubungi kami melalui email di bawah. Kami merespons dalam 30 hari (EEA/UK) atau 45 hari (AS). Penduduk California dapat menggunakan agen resmi. Anda berhak untuk tidak didiskriminasi karena menggunakan hak Anda. Penduduk EEA/UK dapat mengajukan keluhan kepada otoritas pengawas.",
+
+    "cookies_t": "13) Cookie & persetujuan",
+    "cookies_b": "Situs web kami saat ini tidak menggunakan cookie/SDK non-esensial. Jika ini berubah, kami akan menampilkan banner persetujuan yang memungkinkan Anda menerima, menolak, atau mengubah pilihan kapan saja.",
+
+    "acct_t": "14) Akun dan penghapusan",
+    "acct_b": "Anda dapat membuat akun dalam gim untuk menyinkronkan kemajuan dan menggunakan fitur sosial. Anda dapat menghapus akun kapan saja di **Pengaturan → Akun → Hapus akun** atau dengan menghubungi kami. Menghapus akun akan menghapus data pribadi dan penyimpanan cloud yang ditautkan ke akun dalam 30 hari (cadangan dapat bertahan untuk jangka waktu terbatas). Anda juga dapat memutus Google Play Games atau Apple Game Center dari setelan masing-masing.",
+
+    "ugc_t": "15) Konten buatan pengguna (UGC) & moderasi",
+    "ugc_b": "UGC (mis., chat, profil, nama guild) terlihat oleh pemain lain sebagai bagian dari gameplay. Kami melakukan moderasi untuk menegakkan aturan komunitas dan dapat mengambil tindakan atas laporan penyalahgunaan. Jangan bagikan informasi sensitif dalam UGC.",
+
+    "sec_t": "16) Keamanan",
+    "sec_b": "Kami menggunakan langkah-langkah teknis dan organisasi yang sesuai dengan risiko (enkripsi saat transit, enkripsi saat disimpan jika berlaku, kontrol akses, prinsip hak minimum, pencatatan log, patch berkala, respons insiden). Tidak ada sistem yang 100% aman.",
+
+    "chg_t": "17) Perubahan",
+    "chg_b": "Kami dapat memperbarui Kebijakan ini dari waktu ke waktu. Kami akan memublikasikan versi baru dengan tanggal berlaku yang baru.",
+
+    "ct_t": "18) Kontak",
+    "ct_b": `Pengendali data: ${SETTINGS.legalEntity}.<br>Alamat: ${SETTINGS.address}.<br>Email: <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Definisi kunci",
+    "defs_b": "‘Data pribadi’ berarti informasi yang mengidentifikasi atau berkaitan dengan individu yang dapat diidentifikasi. ‘Pemrosesan’ berarti operasi apa pun yang dilakukan pada data pribadi. ‘Pengendali’ menentukan tujuan dan cara; ‘pemroses’ memproses atas nama pengendali. ‘Periklanan bertarget’ berarti menampilkan iklan berdasarkan data pribadi yang diperoleh dari aktivitas di aplikasi atau situs web yang tidak berafiliasi.",
+
+    "dnsmpi_btn": "Jangan jual atau bagikan informasi pribadi saya",
+    "privacy_settings_t": "Pengaturan privasi",
+    "privacy_settings_b": "Anda dapat mengelola persetujuan, pilihan iklan, dan permintaan data di **Pengaturan → Privasi**."
   },
 
-  id:{ pp_title:"Kebijakan Privasi", updated:"Tanggal berlaku",
-    btn_expand:"Buka semua", btn_collapse:"Tutup semua", btn_print:"Cetak / PDF", btn_copy:"Salin tautan ke bagian ini",
-    sum_global:"Berlaku di seluruh dunia untuk game, aplikasi, dan situs kami.",
-    sum_sdks:"Kami menggunakan layanan yang diakui luas: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"Kami tidak menjual atau membagikan data pribadi.",
-    sum_kids:"Kami tidak dengan sengaja mengumpulkan data anak-anak.",
-    who_t:"1) Tentang kami",
-    who_b:`${SETTINGS.legalEntity} mengembangkan dan menerbitkan game serta aplikasi. Kami adalah pengendali data.`,
-    scope_t:"2) Cakupan",
-    scope_b:`Kebijakan ini mencakup ${SETTINGS.appsList} dan situs kami dengan merek “${SETTINGS.companyName}”.`,
-    data_t:"3) Data yang diproses",
-    d_usage:"Penggunaan & diagnostik (event, sesi, lokasi kasar, perangkat/OS) — analitik, crash, peningkatan produk.",
-    d_progress:"Progres & ID (ID pemain, pencapaian, simpanan cloud, anti-cheat) — fungsi inti & sinkronisasi.",
-    d_purchases:"Pembelian (SKU, wilayah, token/struk) — pemenuhan, pengembalian, pencegahan penipuan.",
-    d_ads:"Data iklan (tayangan, ID iklan yang dapat direset) — penayangan & pengukuran iklan.",
-    d_support:"Data dukungan (email, isi pesan, lampiran) — layanan dukungan.",
-    legal_t:"4) Tujuan & dasar hukum",
-    legal_b:"Bergantung wilayah: persetujuan (jika diwajibkan), pelaksanaan kontrak, dan kepentingan sah (keamanan, anti-penipuan, diagnostik).",
-    sdks_t:"5) Layanan pihak ketiga (pemroses)",
-    sdk_firebase:"Analytics dan Crashlytics untuk stabilitas.",
-    sdk_ads:"Jaringan iklan menggunakan ID iklan yang dapat direset.",
-    sdk_play:"Google Play Games Services untuk fitur platform.",
-    sdk_af:"Atribusi pemasangan dan kinerja kampanye.",
-    processors_note:"Penyedia bertindak sebagai pemroses berdasarkan kontrak.",
-    share_t:"6) Berbagi data",
-    share_b:"Tidak ada penjualan atau ‘sharing’ data; pengungkapan hanya ke penyedia layanan atau jika diwajibkan hukum.",
-    ret_t:"7) Retensi",
-    ret_b:`Crash ~ ${SETTINGS.retention.crashes}, analitik ~ ${SETTINGS.retention.analytics}, catatan keuangan ${SETTINGS.retention.finance}; kemudian dihapus/di-anonimkan.`,
-    intl_t:"8) Transfer internasional", intl_b:"Perlindungan yang sesuai (mis. SCC).",
-    kids_t:"9) Anak-anak", kids_b:"Kami tidak dengan sengaja mengumpulkan data anak-anak.",
-    rights_t:"10) Hak Anda", rights_b:"Akses, perbaikan, penghapusan, keberatan, pembatasan, salinan, cabut persetujuan.",
-    cookies_t:"11) Cookie & persetujuan",
-    cookies_b: SETTINGS.hasCookiesBanner ? "Kami menampilkan banner persetujuan di wilayah yang mewajibkan." : "Tidak ada cookie/SDK non-esensial.",
-    sec_t:"12) Keamanan", sec_b:"Langkah teknis dan organisasi yang sesuai dengan risiko.",
-    chg_t:"13) Perubahan", chg_b:"Kebijakan dapat diperbarui.",
-    ct_t:"14) Kontak", ct_b:`Pengendali: ${SETTINGS.legalEntity}. Alamat: ${SETTINGS.address}. Email: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
-    foot_note:"Tip: klik judul bagian untuk menyalin tautan langsung."
+  it: {
+    "pp_title": "Informativa sulla privacy",
+    "updated": "Data di entrata in vigore",
+    "btn_expand": "Espandi tutto",
+    "btn_collapse": "Comprimi tutto",
+    "btn_print": "Stampa / Salva PDF",
+    "btn_copy": "Copia link a questa sezione",
+
+    "sum_global": "Si applica a livello mondiale ai nostri giochi, app e siti web.",
+    "sum_sdks": "Utilizziamo servizi ampiamente adottati: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (se abilitato), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "Non vendiamo dati personali. Possiamo \"condividere\" alcuni identificatori ed eventi dell’app per la pubblicità mirata come definita dalle leggi degli Stati degli USA. Puoi rinunciare nell’app.",
+    "sum_optout": "Puoi rinunciare alla pubblicità mirata e alla misurazione.",
+    "sum_kids": "Non raccogliamo consapevolmente dati dei bambini.",
+
+    "who_t": "1) Chi siamo",
+    "who_b": `${SETTINGS.legalEntity} (“noi”) sviluppa e pubblica videogiochi e applicazioni. Agiamo come titolare del trattamento per le attività descritte nella presente Informativa.`,
+
+    "scope_t": "2) Ambito di applicazione",
+    "scope_b": `La presente Informativa copre ${SETTINGS.appsList} e i nostri siti web gestiti a livello globale con il marchio “${SETTINGS.companyName}”.`,
+
+    "data_t": "3) Dati che trattiamo",
+    "d_usage": "Uso e diagnostica (eventi, sessioni, indirizzo IP, posizione approssimativa/Paese, dispositivo/OS, versione dell’app) — analisi, rilevamento degli arresti anomali, miglioramento del prodotto.",
+    "d_progress": "Progressi di gioco e identificatori (ID giocatore/account, obiettivi, salvataggi nel cloud, segnali anti-cheat) — funzionalità di base e sincronizzazione.",
+    "d_account": "Dati dell’account (nome visualizzato, avatar, e-mail se fornita, token di autenticazione, fascia d’età) — creazione dell’account, accesso, sicurezza.",
+    "d_ugc": "Contenuti generati dagli utenti e funzioni social (messaggi di chat, profili, nomi di clan/gilda, segnalazioni) — funzionalità di gioco e moderazione.",
+    "d_purchases": "Informazioni sugli acquisti (SKU, regione, token/scontrino d’acquisto) — esecuzione degli acquisti, rimborsi, prevenzione delle frodi.",
+    "d_ads": "Dati pubblicitari/di attribuzione (impression, clic, ID pubblicitari reimpostabili come IDFA/AAID, postback SKAdNetwork, segnali contestuali) — erogazione degli annunci, limitazione di frequenza, misurazione (titoli supportati dalla pubblicità).",
+    "d_support": "Dati di supporto (e-mail, contenuto del messaggio, allegati, diagnostica del dispositivo che scegli di inviare) — assistenza clienti e risoluzione dei problemi.",
+    "d_sensitive_note": "Non raccogliamo la posizione precisa né categorie sensibili a meno che non ce le fornisci esplicitamente per l’assistenza.",
+
+    "legal_t": "4) Finalità e basi giuridiche",
+    "legal_b": "A seconda della tua posizione, ci basiamo su: (a) consenso (quando richiesto per cookie/SDK pubblicitari/analitici nello SEE/Regno Unito e per l’accesso a IDFA ai sensi di Apple ATT); (b) esecuzione di un contratto (per fornire il gioco/l’app, i salvataggi nel cloud e gli acquisti); (c) legittimo interesse (sicurezza, prevenzione delle frodi, diagnostica degli arresti anomali, analisi non personalizzate); e (d) adempimento di obblighi legali (fiscali/contabili). Puoi revocare il consenso in qualsiasi momento tramite le impostazioni in-app o il nostro banner di consenso (ove mostrato).",
+
+    "optout_t": "5) Scelte pubblicitarie (opt-out)",
+    "optout_b": "Puoi rinunciare in qualsiasi momento alla “pubblicità mirata” e a determinate misurazioni in **Impostazioni → Privacy → Scelte pubblicitarie**. Per la California e altri Stati USA puoi usare il pulsante **‘Do Not Sell or Share My Personal Information’** per rinunciare alla “condivisione” per la pubblicità comportamentale tra contesti. Su Android/iOS puoi anche reimpostare o limitare l’identificatore pubblicitario nelle impostazioni del sistema. Rispettiamo le scelte Apple ATT e la misurazione SKAdNetwork quando l’IDFA non è disponibile.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "Su iOS richiediamo l’autorizzazione tramite Apple App Tracking Transparency. Se rifiuti, non accediamo all’IDFA e utilizziamo solo annunci contestuali e misurazioni rispettose della privacy (ad es. SKAdNetwork).",
+
+    "sdks_t": "7) Servizi di terze parti (responsabili del trattamento)",
+    "sdk_firebase": "Firebase Analytics raccoglie metriche di utilizzo e stabilità; Crashlytics aiuta a diagnosticare gli arresti anomali. I dati possono includere informazioni su dispositivo/OS, versione dell’app, eventi e log di crash.",
+    "sdk_ads": "Le reti pubblicitarie (ad es. Google AdMob, Unity Ads) mostrano annunci e misurano le prestazioni utilizzando ID pubblicitari reimpostabili e segnali contestuali. Puoi reimpostare o limitare il tracciamento pubblicitario nel tuo OS.",
+    "sdk_play": "Google Play Games Services per salvataggi nel cloud, obiettivi, classifiche e integrazioni di piattaforma.",
+    "sdk_gc": "Apple Game Center e iCloud (se abilitato) per l’autenticazione e i salvataggi nel cloud sulle piattaforme Apple.",
+    "sdk_af": "AppsFlyer fornisce l’attribuzione delle installazioni e le prestazioni delle campagne utilizzando identificatori e dati evento non sensibili.",
+    "processors_note": "Coinvolgiamo questi fornitori tramite accordi di trattamento; devono proteggere i dati e usarli solo secondo le nostre istruzioni.",
+
+    "share_t": "8) Condivisione",
+    "share_b": "Non vendiamo dati personali. Divulghiamo dati a fornitori di servizi (responsabili del trattamento), ai fornitori della piattaforma (Google/Apple) e ove richiesto dalla legge o per proteggere diritti, sicurezza e integrità.",
+
+    "ret_t": "9) Conservazione",
+    "ret_b": `Conserviamo i dati solo per il tempo necessario: log di crash ~ ${SETTINGS.retention.crashes}; analisi ~ ${SETTINGS.retention.analytics}; pubblicità/misurazione ~ ${SETTINGS.retention.ads}; attribuzione ~ ${SETTINGS.retention.attribution}; supporto ~ ${SETTINGS.retention.support}; dati dell’account per la durata dell’account, quindi eliminazione entro 30 giorni; log del server ~ ${SETTINGS.retention.logs}; e documenti contabili ${SETTINGS.retention.finance}. Possiamo conservare dati aggregati/de-identificati e ci impegniamo a non ri-identificarli.`,
+
+    "intl_t": "10) Trasferimenti internazionali",
+    "intl_b": "Quando i dati vengono trasferiti a livello internazionale, utilizziamo garanzie adeguate (ad es. Clausole Contrattuali Standard). Alcuni fornitori aderiscono al Data Privacy Framework UE-USA. Puoi contattarci per richiedere informazioni su tali garanzie.",
+
+    "kids_t": "11) Bambini",
+    "kids_b": "Non raccogliamo consapevolmente dati personali dei bambini. Nei titoli per pubblico misto applichiamo un controllo dell’età e disabilitiamo pubblicità/attribuzione personalizzate per gli utenti identificati come al di sotto dell’età applicabile (ad es. sotto i 13 anni negli USA, sotto i 16 anni nello SEE/Regno Unito per la “condivisione” pubblicitaria). Se ritieni che un bambino ci abbia fornito dati, contattaci: li elimineremo e disabiliteremo la personalizzazione.",
+
+    "rights_t": "12) I tuoi diritti",
+    "rights_b": "A seconda della tua regione, potresti avere il diritto di accedere, rettificare, eliminare, portare i dati, opporti, limitarne il trattamento, revocare il consenso o ricorrere contro la nostra decisione. Per esercitare i diritti, usa il modulo di richiesta in-app o contattaci all’e-mail sotto indicata. Rispondiamo entro 30 giorni (SEE/Regno Unito) o 45 giorni (USA). I residenti in California possono avvalersi di un agente autorizzato. Hai il diritto di non subire discriminazioni per l’esercizio dei tuoi diritti. I residenti nello SEE/Regno Unito possono presentare reclamo a un’autorità di controllo.",
+
+    "cookies_t": "13) Cookie e consenso",
+    "cookies_b": "I nostri siti web attualmente non utilizzano cookie/SDK non essenziali. Se ciò cambia, mostreremo un banner di consenso che ti permetterà di accettare, rifiutare o modificare le scelte in qualsiasi momento.",
+
+    "acct_t": "14) Account ed eliminazione",
+    "acct_b": "Puoi creare un account di gioco per sincronizzare i progressi e usare le funzioni social. Puoi eliminare l’account in qualsiasi momento in **Impostazioni → Account → Elimina account** o contattandoci. L’eliminazione dell’account rimuove i dati personali e i salvataggi nel cloud collegati all’account entro 30 giorni (i backup possono persistere per un periodo limitato). Puoi anche scollegare Google Play Games o Apple Game Center dalle rispettive impostazioni.",
+
+    "ugc_t": "15) Contenuti generati dagli utenti (UGC) e moderazione",
+    "ugc_b": "L’UGC (ad es. chat, profili, nomi delle gilde) è visibile agli altri giocatori come parte del gameplay. Moderaimo per far rispettare le regole della community e possiamo intervenire a seguito di segnalazioni di abusi. Non condividere informazioni sensibili nell’UGC.",
+
+    "sec_t": "16) Sicurezza",
+    "sec_b": "Adottiamo misure tecniche e organizzative adeguate al rischio (cifratura in transito, cifratura a riposo ove applicabile, controlli di accesso, principio del minimo privilegio, registrazione, patch regolari, risposta agli incidenti). Nessun sistema è sicuro al 100%.",
+
+    "chg_t": "17) Modifiche",
+    "chg_b": "Potremmo aggiornare periodicamente la presente Informativa. Pubblicheremo una nuova versione con una nuova data di entrata in vigore.",
+
+    "ct_t": "18) Contatti",
+    "ct_b": `Titolare del trattamento: ${SETTINGS.legalEntity}.<br>Indirizzo: ${SETTINGS.address}.<br>E-mail: <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Definizioni chiave",
+    "defs_b": "“Dati personali” indica le informazioni che identificano o si riferiscono a una persona identificabile. “Trattamento” indica qualsiasi operazione effettuata sui dati personali. Il “titolare” determina finalità e mezzi; il “responsabile del trattamento” tratta per conto del titolare. “Pubblicità mirata” significa mostrare annunci basati su dati personali ottenuti da attività su app o siti web non affiliati.",
+
+    "dnsmpi_btn": "Non vendere né condividere le mie informazioni personali",
+    "privacy_settings_t": "Impostazioni sulla privacy",
+    "privacy_settings_b": "Puoi gestire consenso, scelte pubblicitarie e richieste sui dati in **Impostazioni → Privacy**."
   },
 
-  it:{ pp_title:"Informativa sulla privacy", updated:"Data di efficacia",
-    btn_expand:"Espandi tutto", btn_collapse:"Comprimi tutto", btn_print:"Stampa / PDF", btn_copy:"Copia link alla sezione",
-    sum_global:"Valida in tutto il mondo per i nostri giochi, app e siti.",
-    sum_sdks:"Usiamo servizi ampiamente riconosciuti: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"Non vendiamo né condividiamo dati personali.",
-    sum_kids:"Non raccogliamo consapevolmente dati di minori.",
-    who_t:"1) Chi siamo",
-    who_b:`${SETTINGS.legalEntity} sviluppa e pubblica giochi e app. Agiamo come titolare del trattamento.`,
-    scope_t:"2) Ambito",
-    scope_b:`Questa informativa copre ${SETTINGS.appsList} e i nostri siti a marchio “${SETTINGS.companyName}”.`,
-    data_t:"3) Dati trattati",
-    d_usage:"Uso & diagnostica (eventi, sessioni, posizione approssimativa, dispositivo/OS) — analisi, crash, miglioramento prodotto.",
-    d_progress:"Progressi & identificatori (ID giocatore, obiettivi, salvataggi cloud, anti-cheat) — funzionalità e sincronizzazione.",
-    d_purchases:"Acquisti (SKU, regione, token/ricevuta) — esecuzione, rimborsi, prevenzione frodi.",
-    d_ads:"Dati pubblicitari (impression, ID pubblicitari reimpostabili) — erogazione e misurazione degli annunci.",
-    d_support:"Assistenza (email, contenuto messaggi, allegati) — supporto clienti.",
-    legal_t:"4) Finalità & basi giuridiche",
-    legal_b:"A seconda dell’area: consenso (se richiesto), contratto e legittimo interesse (sicurezza, anti-frode, diagnostica).",
-    sdks_t:"5) Servizi terzi (responsabili)",
-    sdk_firebase:"Analytics e Crashlytics per stabilità.",
-    sdk_ads:"Ad network con ID pubblicitari reimpostabili.",
-    sdk_play:"Google Play Games Services per funzioni di piattaforma.",
-    sdk_af:"Attribuzione installazioni e performance campagne.",
-    processors_note:"Operano come responsabili del trattamento in base a contratto.",
-    share_t:"6) Condivisioni",
-    share_b:"Nessuna vendita o ‘sharing’; comunicazione solo a fornitori di servizi o se richiesto dalla legge.",
-    ret_t:"7) Conservazione",
-    ret_b:`Crash ~ ${SETTINGS.retention.crashes}, analytics ~ ${SETTINGS.retention.analytics}, documenti fiscali ${SETTINGS.retention.finance}; poi cancellazione/anonimizzazione.`,
-    intl_t:"8) Trasferimenti internazionali", intl_b:"Adeguate garanzie (es. SCC).",
-    kids_t:"9) Minori", kids_b:"Non raccogliamo consapevolmente dati di minori.",
-    rights_t:"10) I tuoi diritti", rights_b:"Accesso, rettifica, cancellazione, opposizione, limitazione, copia, revoca del consenso.",
-    cookies_t:"11) Cookie & consenso",
-    cookies_b: SETTINGS.hasCookiesBanner ? "Mostriamo un banner di consenso dove richiesto." : "Nessun cookie/SDK non essenziale.",
-    sec_t:"12) Sicurezza", sec_b:"Misure tecniche e organizzative adeguate al rischio.",
-    chg_t:"13) Modifiche", chg_b:"Possiamo aggiornare la presente informativa.",
-    ct_t:"14) Contatti", ct_b:`Titolare: ${SETTINGS.legalEntity}. Indirizzo: ${SETTINGS.address}. Email: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
-    foot_note:"Suggerimento: clic sul titolo per copiare il link diretto."
+  ms: {
+    "pp_title": "Dasar Privasi",
+    "updated": "Tarikh berkuat kuasa",
+    "btn_expand": "Kembangkan semua",
+    "btn_collapse": "Kuncupkan semua",
+    "btn_print": "Cetak / Simpan PDF",
+    "btn_copy": "Salin pautan ke seksyen ini",
+
+    "sum_global": "Terpakai di seluruh dunia untuk permainan, aplikasi dan laman web kami.",
+    "sum_sdks": "Kami menggunakan perkhidmatan yang meluas penggunaannya: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (jika didayakan), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "Kami tidak menjual data peribadi. Kami mungkin ‘berkongsi’ pengecam tertentu dan peristiwa apl untuk pengiklanan tersasar seperti yang ditakrifkan oleh undang-undang negeri di AS. Anda boleh pilih keluar dalam apl.",
+    "sum_optout": "Anda boleh pilih keluar daripada pengiklanan tersasar dan pengukuran.",
+    "sum_kids": "Kami tidak dengan sengaja mengumpul data daripada kanak-kanak.",
+
+    "who_t": "1) Siapa kami",
+    "who_b": `${SETTINGS.legalEntity} (‘kami’) membangunkan dan menerbitkan permainan video serta aplikasi. Kami bertindak sebagai pengawal data bagi pemprosesan yang dihuraikan dalam Dasar ini.`,
+
+    "scope_t": "2) Skop",
+    "scope_b": `Dasar ini merangkumi ${SETTINGS.appsList} dan laman web kami yang dikendalikan di seluruh dunia di bawah jenama ‘${SETTINGS.companyName}’.`,
+
+    "data_t": "3) Data yang kami proses",
+    "d_usage": "Penggunaan & diagnostik (peristiwa, sesi, alamat IP, lokasi kasar/negara, peranti/OS, versi apl) — analitik, pengesanan ranap, penambahbaikan produk.",
+    "d_progress": "Kemajuan permainan & pengecam (ID pemain/akaun, pencapaian, simpanan awan, isyarat anti-penipuan) — fungsi teras dan penyegerakan.",
+    "d_account": "Data akaun (nama paparan, avatar, e-mel jika diberikan, token pengesahan, kumpulan umur) — penciptaan akaun, log masuk, keselamatan.",
+    "d_ugc": "Kandungan yang dijana pengguna dan ciri sosial (mesej sembang, profil, nama klan/guild, laporan) — ciri permainan dan pemoderasian.",
+    "d_purchases": "Maklumat pembelian (SKU, wilayah, token/resit pembelian) — pemenuhan pembelian, bayaran balik, pencegahan penipuan.",
+    "d_ads": "Data iklan/atribusi (paparan iklan, klik, ID pengiklanan boleh ditetapkan semula seperti IDFA/AAID, hantaran balik SKAdNetwork, isyarat konteks) — paparan iklan, had kekerapan, pengukuran (tajuk disokong iklan).",
+    "d_support": "Data sokongan (e-mel, kandungan mesej, lampiran, diagnostik peranti yang anda pilih untuk dihantar) — sokongan pelanggan dan penyelesaian masalah.",
+    "d_sensitive_note": "Kami tidak mengumpul lokasi tepat atau kategori sensitif melainkan anda memberikannya secara jelas kepada sokongan.",
+
+    "legal_t": "4) Tujuan & asas undang-undang",
+    "legal_b": "Bergantung pada lokasi anda, kami bergantung pada: (a) persetujuan (jika diperlukan untuk kuki/SDK pengiklanan/analitik di EEA/UK, dan untuk akses kepada IDFA di bawah Apple ATT); (b) pelaksanaan kontrak (untuk menyampaikan permainan/apl, simpanan awan dan pembelian); (c) kepentingan yang sah (keselamatan, pencegahan penipuan, diagnostik ranap, analitik tidak diperibadikan); dan (d) pematuhan kewajipan undang-undang (cukai/perakaunan). Anda boleh menarik balik persetujuan pada bila-bila masa melalui tetapan dalam apl atau sepanduk persetujuan kami (jika dipaparkan).",
+
+    "optout_t": "5) Pilihan pengiklanan (opt keluar)",
+    "optout_b": "Anda boleh pada bila-bila masa pilih keluar daripada ‘pengiklanan tersasar’ dan pengukuran tertentu di **Tetapan → Privasi → Pilihan pengiklanan**. Untuk California dan negeri-negeri AS lain, anda boleh menggunakan butang **‘Do Not Sell or Share My Personal Information’** untuk memilih keluar daripada ‘perkongsian’ bagi pengiklanan tingkah laku rentas konteks. Pada Android/iOS anda juga boleh menetapkan semula atau mengehadkan pengecam pengiklanan dalam tetapan OS. Kami menghormati pilihan Apple ATT dan pengukuran SKAdNetwork apabila IDFA tidak tersedia.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "Di iOS, kami meminta kebenaran melalui Apple App Tracking Transparency. Jika anda menolak, kami tidak mengakses IDFA dan hanya menggunakan iklan berasaskan konteks serta pengukuran yang memelihara privasi (cth. SKAdNetwork).",
+
+    "sdks_t": "7) Perkhidmatan pihak ketiga (pemproses)",
+    "sdk_firebase": "Firebase Analytics mengumpul metrik penggunaan dan kestabilan; Crashlytics membantu mendiagnosis ranap. Data mungkin termasuk maklumat peranti/OS, versi apl, peristiwa dan log ranap.",
+    "sdk_ads": "Rangkaian iklan (cth. Google AdMob, Unity Ads) memaparkan iklan dan mengukur prestasi menggunakan ID pengiklanan yang boleh ditetapkan semula dan isyarat konteks. Anda boleh menetapkan semula atau mengehadkan penjejakan iklan dalam OS anda.",
+    "sdk_play": "Google Play Games Services untuk simpanan awan, pencapaian, papan pendahulu dan integrasi platform.",
+    "sdk_gc": "Apple Game Center dan iCloud (jika didayakan) untuk pengesahan dan simpanan awan pada platform Apple.",
+    "sdk_af": "AppsFlyer menyediakan atribusi pemasangan dan prestasi kempen menggunakan pengecam dan data peristiwa tidak sensitif.",
+    "processors_note": "Kami melibatkan penyedia ini di bawah kontrak pemprosesan data; mereka mesti melindungi data dan menggunakannya hanya mengikut arahan kami.",
+
+    "share_t": "8) Perkongsian",
+    "share_b": "Kami tidak menjual data peribadi. Kami mendedahkan data kepada penyedia perkhidmatan (pemproses), penyedia platform (Google/Apple), dan apabila dikehendaki oleh undang-undang atau untuk melindungi hak, keselamatan dan integriti.",
+
+    "ret_t": "9) Penyimpanan",
+    "ret_b": `Kami mengekalkan data hanya setakat diperlukan: log ranap ~ ${SETTINGS.retention.crashes}; analitik ~ ${SETTINGS.retention.analytics}; iklan/pengukuran ~ ${SETTINGS.retention.ads}; atribusi ~ ${SETTINGS.retention.attribution}; sokongan ~ ${SETTINGS.retention.support}; data akaun sepanjang hayat akaun, kemudian dipadam dalam masa 30 hari; log pelayan ~ ${SETTINGS.retention.logs}; dan rekod kewangan ${SETTINGS.retention.finance}. Kami mungkin mengekalkan data teragregat/nyahpengenal dan kami komited untuk tidak mengenal pasti semula.`,
+
+    "intl_t": "10) Pemindahan antarabangsa",
+    "intl_b": "Apabila data dipindahkan merentas sempadan, kami menggunakan perlindungan yang sesuai (cth. Klausa Kontrak Piawai). Sesetengah penyedia mengambil bahagian dalam EU-US Data Privacy Framework. Anda boleh menghubungi kami untuk meminta maklumat tentang perlindungan ini.",
+
+    "kids_t": "11) Kanak-kanak",
+    "kids_b": "Kami tidak dengan sengaja mengumpul data peribadi daripada kanak-kanak. Untuk tajuk khalayak bercampur, kami melaksanakan pengesahan umur dan mematikan iklan/atribusi diperibadikan untuk pengguna yang dikenal pasti di bawah umur yang berkenaan (cth. bawah 13 tahun di AS, bawah 16 tahun di EEA/UK untuk ‘perkongsian’ iklan). Jika anda percaya seorang kanak-kanak telah memberikan data kepada kami, sila hubungi kami dan kami akan memadamkannya serta mematikan pemperibadian.",
+
+    "rights_t": "12) Hak anda",
+    "rights_b": "Bergantung pada rantau anda, anda mungkin mempunyai hak untuk mengakses, membetulkan, memadam, memindahkan, membantah, mengehadkan, menarik balik persetujuan, atau merayu keputusan kami. Untuk melaksanakan hak, gunakan borang permintaan dalam apl atau hubungi kami di e-mel di bawah. Kami akan membalas dalam 30 hari (EEA/UK) atau 45 hari (AS). Penduduk California boleh menggunakan ejen yang diberi kuasa. Anda berhak untuk tidak didiskriminasi kerana menggunakan hak anda. Penduduk EEA/UK boleh membuat aduan kepada pihak berkuasa penyelia.",
+
+    "cookies_t": "13) Kuki & persetujuan",
+    "cookies_b": "Laman web kami pada masa ini tidak menggunakan kuki/SDK yang tidak penting. Jika ini berubah, kami akan memaparkan sepanduk persetujuan yang membolehkan anda menerima, menolak atau menukar pilihan pada bila-bila masa.",
+
+    "acct_t": "14) Akaun dan pemadaman",
+    "acct_b": "Anda boleh mencipta akaun dalam permainan untuk menyegerakkan kemajuan dan menggunakan ciri sosial. Anda boleh memadam akaun pada bila-bila masa di **Tetapan → Akaun → Padam akaun** atau dengan menghubungi kami. Memadam akaun akan mengalih keluar data peribadi dan simpanan awan yang dipautkan kepada akaun dalam masa 30 hari (sandaran mungkin kekal untuk tempoh terhad). Anda juga boleh menanggalkan Google Play Games atau Apple Game Center daripada tetapan masing-masing.",
+
+    "ugc_t": "15) Kandungan Dijana Pengguna (UGC) & pemoderasian",
+    "ugc_b": "UGC (cth. sembang, profil, nama guild) boleh dilihat oleh pemain lain sebagai sebahagian daripada permainan. Kami memoderasi untuk menguatkuasakan peraturan komuniti dan boleh mengambil tindakan atas laporan penyalahgunaan. Jangan kongsi maklumat sensitif dalam UGC.",
+
+    "sec_t": "16) Keselamatan",
+    "sec_b": "Kami menggunakan langkah teknikal dan organisasi yang sesuai dengan risiko (penyulitan semasa transit, penyulitan semasa rehat jika berkenaan, kawalan akses, prinsip keistimewaan minimum, pencatatan log, tampalan berkala, tindak balas insiden). Tiada sistem yang 100% selamat.",
+
+    "chg_t": "17) Perubahan",
+    "chg_b": "Kami mungkin mengemas kini Dasar ini dari semasa ke semasa. Kami akan menyiarkan versi baharu dengan tarikh berkuat kuasa yang baharu.",
+
+    "ct_t": "18) Hubungi",
+    "ct_b": `Pengawal data: ${SETTINGS.legalEntity}.<br>Alamat: ${SETTINGS.address}.<br>E-mel: <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Takrifan utama",
+    "defs_b": "‘Data peribadi’ bermaksud maklumat yang mengenal pasti atau berkaitan dengan individu yang boleh dikenal pasti. ‘Pemprosesan’ bermaksud sebarang operasi yang dilakukan pada data peribadi. ‘Pengawal’ menentukan tujuan dan cara; ‘pemproses’ memproses bagi pihak pengawal. ‘Pengiklanan tersasar’ bermaksud memaparkan iklan berdasarkan data peribadi yang diperoleh daripada aktiviti merentasi apl atau laman web yang tidak berafiliasi.",
+
+    "dnsmpi_btn": "Jangan jual atau kongsi maklumat peribadi saya",
+    "privacy_settings_t": "Tetapan privasi",
+    "privacy_settings_b": "Anda boleh mengurus persetujuan, pilihan pengiklanan dan permintaan data dalam **Tetapan → Privasi**."
   },
 
-  ms:{ pp_title:"Dasar Privasi", updated:"Tarikh berkuat kuasa",
-    btn_expand:"Kembang semua", btn_collapse:"Lipat semua", btn_print:"Cetak / PDF", btn_copy:"Salin pautan ke seksyen ini",
-    sum_global:"Terpakai di seluruh dunia untuk permainan, aplikasi dan laman kami.",
-    sum_sdks:"Kami menggunakan perkhidmatan yang diiktiraf: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"Kami tidak menjual atau berkongsi data peribadi.",
-    sum_kids:"Kami tidak dengan sengaja mengumpul data kanak-kanak.",
-    who_t:"1) Siapa kami",
-    who_b:`${SETTINGS.legalEntity} membangunkan dan menerbitkan permainan serta aplikasi. Kami ialah pengawal data.`,
-    scope_t:"2) Skop",
-    scope_b:`Dasar ini meliputi ${SETTINGS.appsList} dan laman kami di bawah jenama “${SETTINGS.companyName}”.`,
-    data_t:"3) Data yang diproses",
-    d_usage:"Penggunaan & diagnostik (peristiwa, sesi, lokasi kasar, peranti/OS) — analitik, kerosakan, penambahbaikan produk.",
-    d_progress:"Kemajuan & pengecam (ID pemain, pencapaian, simpanan awan, anti-cheat) — fungsi teras & penyegerakan.",
-    d_purchases:"Pembelian (SKU, wilayah, token/resit) — pemenuhan, bayaran balik, pencegahan penipuan.",
-    d_ads:"Data iklan (tangkapan, ID iklan boleh set semula) — paparan & pengukuran iklan.",
-    d_support:"Sokongan (e-mel, mesej, lampiran) — sokongan pelanggan.",
-    legal_t:"4) Tujuan & asas undang-undang",
-    legal_b:"Bergantung wilayah: persetujuan (jika diperlukan), kontrak dan kepentingan yang sah (keselamatan, anti-penipuan, diagnostik).",
-    sdks_t:"5) Perkhidmatan pihak ketiga (pemproses)",
-    sdk_firebase:"Analytics dan Crashlytics untuk kestabilan.",
-    sdk_ads:"Rangkaian iklan menggunakan ID iklan boleh set semula.",
-    sdk_play:"Google Play Games Services untuk ciri platform.",
-    sdk_af:"Atribusi pemasangan dan prestasi kempen.",
-    processors_note:"Bertindak sebagai pemproses data di bawah kontrak.",
-    share_t:"6) Perkongsian", share_b:"Tiada penjualan atau ‘sharing’; pendedahan hanya kepada penyedia perkhidmatan atau jika dikehendaki undang-undang.",
-    ret_t:"7) Penyimpanan",
-    ret_b:`Crash ~ ${SETTINGS.retention.crashes}, analitik ~ ${SETTINGS.retention.analytics}, rekod kewangan ${SETTINGS.retention.finance}; kemudian dipadam/ dianonimkan.`,
-    intl_t:"8) Pemindahan antarabangsa", intl_b:"Perlindungan yang sesuai (cth. SCC).",
-    kids_t:"9) Kanak-kanak", kids_b:"Kami tidak mengumpul data kanak-kanak secara sengaja.",
-    rights_t:"10) Hak anda", rights_b:"Akses, pembetulan, pemadaman, bantahan, sekatan, salinan, tarik balik persetujuan.",
-    cookies_t:"11) Kuki & persetujuan",
-    cookies_b: SETTINGS.hasCookiesBanner ? "Kami memaparkan sepanduk persetujuan di wilayah yang diperlukan." : "Tiada kuki/SDK tidak penting.",
-    sec_t:"12) Keselamatan", sec_b:"Langkah teknikal dan organisasi mengikut risiko.",
-    chg_t:"13) Perubahan", chg_b:"Dasar ini boleh dikemas kini.",
-    ct_t:"14) Hubungi", ct_b:`Pengawal: ${SETTINGS.legalEntity}. Alamat: ${SETTINGS.address}. E-mel: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
-    foot_note:"Petua: klik tajuk seksyen untuk menyalin pautan terus."
+  pl: {
+    "pp_title": "Polityka prywatności",
+    "updated": "Data wejścia w życie",
+    "btn_expand": "Rozwiń wszystkie",
+    "btn_collapse": "Zwiń wszystkie",
+    "btn_print": "Drukuj / Zapisz PDF",
+    "btn_copy": "Skopiuj link do tej sekcji",
+
+    "sum_global": "Obowiązuje na całym świecie i dotyczy naszych gier, aplikacji i stron internetowych.",
+    "sum_sdks": "Korzystamy z powszechnie używanych usług: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (jeśli włączone), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "Nie sprzedajemy danych osobowych. Możemy „udostępniać” niektóre identyfikatory i zdarzenia aplikacji na potrzeby reklam ukierunkowanych zgodnie z przepisami stanowymi w USA. Możesz zrezygnować w aplikacji.",
+    "sum_optout": "Możesz zrezygnować z reklam ukierunkowanych i pomiaru.",
+    "sum_kids": "Nie gromadzimy świadomie danych od dzieci.",
+
+    "who_t": "1) Kim jesteśmy",
+    "who_b": `${SETTINGS.legalEntity} („my”, „nas”) rozwija i publikuje gry wideo oraz aplikacje. Działamy jako administrator danych w zakresie przetwarzania opisanego w niniejszej Polityce.`,
+
+    "scope_t": "2) Zakres",
+    "scope_b": `Niniejsza Polityka obejmuje ${SETTINGS.appsList} oraz nasze witryny prowadzone na całym świecie pod marką „${SETTINGS.companyName}”.`,
+
+    "data_t": "3) Dane, które przetwarzamy",
+    "d_usage": "Dane o użytkowaniu i diagnostyce (zdarzenia, sesje, adres IP, przybliżona lokalizacja/kraj, urządzenie/system operacyjny, wersja aplikacji) — analityka, wykrywanie awarii, ulepszanie produktu.",
+    "d_progress": "Postępy w grze i identyfikatory (ID gracza/konta, osiągnięcia, zapisy w chmurze, sygnały anty-cheat) — podstawowa funkcjonalność i synchronizacja.",
+    "d_account": "Dane konta (nazwa wyświetlana, awatar, e-mail — jeśli podany, tokeny uwierzytelniania, grupa wiekowa) — tworzenie konta, logowanie, bezpieczeństwo.",
+    "d_ugc": "Treści tworzone przez użytkowników oraz funkcje społecznościowe (wiadomości czatu, profile, nazwy klanów/gildii, zgłoszenia) — funkcje rozgrywki i moderacja.",
+    "d_purchases": "Informacje o zakupach (SKU, region, token/rachunek zakupu) — realizacja zakupów, zwroty, zapobieganie oszustwom.",
+    "d_ads": "Dane reklamowe/atrybucyjne (wyświetlenia reklam, kliknięcia, resetowalne identyfikatory reklamowe, takie jak IDFA/AAID, postbacki SKAdNetwork, sygnały kontekstowe) — wyświetlanie reklam, ograniczanie częstotliwości, pomiar (tytuły wspierane reklamami).",
+    "d_support": "Dane wsparcia (e-mail, treść wiadomości, załączniki, diagnostyka urządzenia, którą zdecydujesz się wysłać) — obsługa klienta i rozwiązywanie problemów.",
+    "d_sensitive_note": "Nie zbieramy dokładnej lokalizacji ani szczególnych kategorii danych, chyba że przekażesz je nam wyraźnie w ramach wsparcia.",
+
+    "legal_t": "4) Cele i podstawy prawne",
+    "legal_b": "W zależności od Twojej lokalizacji opieramy się na: (a) zgodzie (gdy jest wymagana dla plików cookie/SDK reklamowych/analitycznych w EOG/Wielkiej Brytanii oraz dla dostępu do IDFA w ramach Apple ATT); (b) wykonaniu umowy (aby dostarczyć grę/aplikację, zapisy w chmurze i zakupy); (c) uzasadnionym interesie (bezpieczeństwo, przeciwdziałanie nadużyciom, diagnostyka awarii, niepersonalizowana analityka); oraz (d) wypełnianiu obowiązków prawnych (podatki/księgowość). Zgodę możesz wycofać w dowolnym momencie w ustawieniach aplikacji lub za pośrednictwem naszego banera zgody (jeśli jest wyświetlany).",
+
+    "optout_t": "5) Wybory dotyczące reklam (rezygnacja)",
+    "optout_b": "Możesz w każdej chwili zrezygnować z „reklam ukierunkowanych” i niektórych pomiarów w **Ustawienia → Prywatność → Wybory dotyczące reklam**. Dla Kalifornii i innych stanów USA możesz użyć przycisku **‘Do Not Sell or Share My Personal Information’**, aby zrezygnować z „udostępniania” na potrzeby reklamowania behawioralnego w różnych kontekstach. W Androidzie/iOS możesz także zresetować lub ograniczyć identyfikator reklamowy w ustawieniach systemu. Szanujemy wybory Apple ATT i pomiar SKAdNetwork, gdy IDFA nie jest dostępna.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "W systemie iOS prosimy o zgodę za pośrednictwem Apple App Tracking Transparency. Jeśli odmówisz, nie uzyskujemy dostępu do IDFA i korzystamy wyłącznie z reklam kontekstowych oraz pomiaru z poszanowaniem prywatności (np. SKAdNetwork).",
+
+    "sdks_t": "7) Usługi stron trzecich (podmioty przetwarzające)",
+    "sdk_firebase": "Firebase Analytics zbiera metryki użycia i stabilności; Crashlytics pomaga diagnozować awarie. Dane mogą obejmować informacje o urządzeniu/systemie, wersję aplikacji, zdarzenia i dzienniki awarii.",
+    "sdk_ads": "Sieci reklamowe (np. Google AdMob, Unity Ads) wyświetlają reklamy i mierzą skuteczność, wykorzystując resetowalne identyfikatory reklamowe i sygnały kontekstowe. Możesz zresetować lub ograniczyć śledzenie reklam w swoim systemie operacyjnym.",
+    "sdk_play": "Google Play Games Services do zapisów w chmurze, osiągnięć, rankingów i integracji z platformą.",
+    "sdk_gc": "Apple Game Center i iCloud (jeśli włączone) do uwierzytelniania i zapisów w chmurze na platformach Apple.",
+    "sdk_af": "AppsFlyer zapewnia atrybucję instalacji i pomiar skuteczności kampanii, używając identyfikatorów oraz niewrażliwych danych zdarzeń.",
+    "processors_note": "Współpracujemy z tymi dostawcami na podstawie umów powierzenia przetwarzania danych; muszą oni chronić dane i używać ich wyłącznie zgodnie z naszymi instrukcjami.",
+
+    "share_t": "8) Udostępnianie",
+    "share_b": "Nie sprzedajemy danych osobowych. Ujawniany dane dostawcom usług (podmiotom przetwarzającym), dostawcom platform (Google/Apple) oraz gdy jest to wymagane prawem lub w celu ochrony praw, bezpieczeństwa i integralności.",
+
+    "ret_t": "9) Przechowywanie",
+    "ret_b": `Przechowujemy dane tylko tak długo, jak to konieczne: dzienniki awarii ~ ${SETTINGS.retention.crashes}; analityka ~ ${SETTINGS.retention.analytics}; reklamy/pomiar ~ ${SETTINGS.retention.ads}; atrybucja ~ ${SETTINGS.retention.attribution}; wsparcie ~ ${SETTINGS.retention.support}; dane konta przez okres życia konta, następnie usunięcie w ciągu 30 dni; logi serwera ~ ${SETTINGS.retention.logs}; oraz dokumenty finansowe ${SETTINGS.retention.finance}. Możemy zachować dane zagregowane/pozbawione identyfikatorów i zobowiązujemy się nie podejmować próby ich ponownej identyfikacji.`,
+
+    "intl_t": "10) Transfery międzynarodowe",
+    "intl_b": "W przypadku przekazywania danych za granicę stosujemy odpowiednie zabezpieczenia (np. standardowe klauzule umowne). Niektórzy dostawcy uczestniczą w EU-US Data Privacy Framework. Możesz skontaktować się z nami, aby uzyskać informacje o tych zabezpieczeniach.",
+
+    "kids_t": "11) Dzieci",
+    "kids_b": "Nie zbieramy świadomie danych osobowych dzieci. W tytułach dla odbiorców mieszanych stosujemy weryfikację wieku i wyłączamy spersonalizowane reklamy/atrybucję dla użytkowników zidentyfikowanych jako poniżej odpowiedniego wieku (np. poniżej 13 lat w USA, poniżej 16 lat w EOG/Wielkiej Brytanii w zakresie „udostępniania” reklam). Jeśli uważasz, że dziecko przekazało nam dane, skontaktuj się z nami — usuniemy je i wyłączymy personalizację.",
+
+    "rights_t": "12) Twoje prawa",
+    "rights_b": "W zależności od regionu możesz mieć prawo do dostępu, sprostowania, usunięcia, przenoszenia, sprzeciwu, ograniczenia, wycofania zgody lub odwołania się od naszej decyzji. Aby skorzystać z praw, użyj formularza w aplikacji lub skontaktuj się z nami na poniższy adres e-mail. Odpowiadamy w ciągu 30 dni (EOG/Wielka Brytania) lub 45 dni (USA). Mieszkańcy Kalifornii mogą skorzystać z upoważnionego przedstawiciela. Przysługuje Ci prawo do niedyskryminacji za korzystanie ze swoich praw. Mieszkańcy EOG/Wielkiej Brytanii mogą złożyć skargę do organu nadzorczego.",
+
+    "cookies_t": "13) Pliki cookie i zgoda",
+    "cookies_b": "Nasze strony internetowe obecnie nie używają niekoniecznych plików cookie/SDK. Jeśli się to zmieni, wyświetlimy baner zgody, który pozwoli Ci w każdej chwili zaakceptować, odrzucić lub zmienić wybory.",
+
+    "acct_t": "14) Konta i usuwanie",
+    "acct_b": "Możesz utworzyć konto w grze, aby synchronizować postępy i korzystać z funkcji społecznościowych. Możesz usunąć konto w dowolnym momencie w **Ustawienia → Konto → Usuń konto** lub kontaktując się z nami. Usunięcie konta powoduje usunięcie danych osobowych i zapisów w chmurze powiązanych z kontem w ciągu 30 dni (kopie zapasowe mogą być przechowywane przez ograniczony czas). Możesz też odłączyć Google Play Games lub Apple Game Center w ich odpowiednich ustawieniach.",
+
+    "ugc_t": "15) Treści tworzone przez użytkowników (UGC) i moderacja",
+    "ugc_b": "UGC (np. czat, profile, nazwy gildii) jest widoczny dla innych graczy jako część rozgrywki. Moderujemy w celu egzekwowania zasad społeczności i możemy podejmować działania w odpowiedzi na zgłoszenia nadużyć. Nie udostępniaj w UGC informacji wrażliwych.",
+
+    "sec_t": "16) Bezpieczeństwo",
+    "sec_b": "Stosujemy środki techniczne i organizacyjne odpowiednie do ryzyka (szyfrowanie w tranzycie, szyfrowanie danych w spoczynku — gdzie ma zastosowanie, kontrola dostępu, zasada minimalnych uprawnień, rejestrowanie, regularne aktualizacje, reagowanie na incydenty). Żaden system nie jest w 100% bezpieczny.",
+
+    "chg_t": "17) Zmiany",
+    "chg_b": "Możemy od czasu do czasu aktualizować niniejszą Politykę. Opublikujemy nową wersję z nową datą wejścia w życie.",
+
+    "ct_t": "18) Kontakt",
+    "ct_b": `Administrator danych: ${SETTINGS.legalEntity}.<br>Adres: ${SETTINGS.address}.<br>E-mail: <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Kluczowe definicje",
+    "defs_b": "„Dane osobowe” oznaczają informacje identyfikujące lub dotyczące możliwej do zidentyfikowania osoby. „Przetwarzanie” oznacza wszelkie operacje wykonywane na danych osobowych. „Administrator” określa cele i sposoby; „podmiot przetwarzający” przetwarza w imieniu administratora. „Reklama ukierunkowana” oznacza wyświetlanie reklam na podstawie danych osobowych uzyskanych z aktywności w niepowiązanych aplikacjach lub witrynach.",
+    
+    "dnsmpi_btn": "Nie sprzedawaj ani nie udostępniaj moich danych osobowych",
+    "privacy_settings_t": "Ustawienia prywatności",
+    "privacy_settings_b": "Możesz zarządzać zgodą, wyborami dotyczącymi reklam i żądaniami dotyczącymi danych w **Ustawienia → Prywatność**."
   },
 
-  pl:{ pp_title:"Polityka prywatności", updated:"Data obowiązywania",
-    btn_expand:"Rozwiń wszystko", btn_collapse:"Zwiń wszystko", btn_print:"Drukuj / PDF", btn_copy:"Kopiuj link do sekcji",
-    sum_global:"Obowiązuje na całym świecie dla naszych gier, aplikacji i witryn.",
-    sum_sdks:"Korzystamy z powszechnie stosowanych usług: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"Nie sprzedajemy ani nie „udostępniamy” danych osobowych.",
-    sum_kids:"Nie zbieramy świadomie danych dzieci.",
-    who_t:"1) Kim jesteśmy",
-    who_b:`${SETTINGS.legalEntity} („my”) tworzy i wydaje gry oraz aplikacje. Jesteśmy administratorem danych.`,
-    scope_t:"2) Zakres",
-    scope_b:`Polityka obejmuje ${SETTINGS.appsList} i nasze witryny w ramach marki „${SETTINGS.companyName}”.`,
-    data_t:"3) Przetwarzane dane",
-    d_usage:"Użycie i diagnostyka (zdarzenia, sesje, przybliżona lokalizacja, urządzenie/OS) — analityka, awarie, ulepszanie produktu.",
-    d_progress:"Postępy i identyfikatory (ID gracza, osiągnięcia, zapisy w chmurze, anti-cheat) — funkcjonalność i synchronizacja.",
-    d_purchases:"Zakupy (SKU, region, token/paragon) — realizacja, zwroty, zapobieganie nadużyciom.",
-    d_ads:"Dane reklamowe (wyświetlenia, możliwe do zresetowania identyfikatory reklamowe) — emisja i pomiar.",
-    d_support:"Wsparcie (e-mail, treść wiadomości, załączniki) — obsługa klienta.",
-    legal_t:"4) Cele i podstawy prawne",
-    legal_b:"W zależności od regionu: zgoda (jeśli wymagana), wykonanie umowy oraz uzasadniony interes (bezpieczeństwo, antyfraud, diagnostyka awarii).",
-    sdks_t:"5) Usługi stron trzecich (podmioty przetwarzające)",
-    sdk_firebase:"Analytics i Crashlytics dla stabilności.",
-    sdk_ads:"Sieci reklamowe korzystają z identyfikatorów reklamowych.",
-    sdk_play:"Google Play Games Services — funkcje platformy.",
-    sdk_af:"Atrybucja instalacji i wyniki kampanii.",
-    processors_note:"Działają jako podmioty przetwarzające na podstawie umów.",
-    share_t:"6) Udostępnianie", share_b:"Brak sprzedaży/„sharingu”; ujawnienie jedynie usługodawcom lub gdy wymaga tego prawo.",
-    ret_t:"7) Przechowywanie",
-    ret_b:`Awarie ~ ${SETTINGS.retention.crashes}, analityka ~ ${SETTINGS.retention.analytics}, dokumenty finansowe ${SETTINGS.retention.finance}; następnie usuwamy/anonimizujemy.`,
-    intl_t:"8) Transfery międzynarodowe", intl_b:"Stosujemy odpowiednie zabezpieczenia (np. SCC).",
-    kids_t:"9) Dzieci", kids_b:"Nie zbieramy świadomie danych dzieci.",
-    rights_t:"10) Twoje prawa", rights_b:"Dostęp, sprostowanie, usunięcie, sprzeciw, ograniczenie, kopia, wycofanie zgody.",
-    cookies_t:"11) Pliki cookie i zgoda",
-    cookies_b: SETTINGS.hasCookiesBanner ? "Wyświetlamy baner zgody tam, gdzie jest to wymagane." : "Brak niekoniecznych ciasteczek/SDK.",
-    sec_t:"12) Bezpieczeństwo", sec_b:"Środki techniczne i organizacyjne adekwatne do ryzyka.",
-    chg_t:"13) Zmiany", chg_b:"Polityka może być aktualizowana.",
-    ct_t:"14) Kontakt", ct_b:`Administrator: ${SETTINGS.legalEntity}. Adres: ${SETTINGS.address}. E-mail: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
-    foot_note:"Wskazówka: kliknij tytuł sekcji, aby skopiować bezpośredni link."
+  pt: {
+    "pp_title": "Política de Privacidade",
+    "updated": "Data de entrada em vigor",
+    "btn_expand": "Expandir tudo",
+    "btn_collapse": "Recolher tudo",
+    "btn_print": "Imprimir / Guardar PDF",
+    "btn_copy": "Copiar ligação para esta secção",
+
+    "sum_global": "Aplica-se em todo o mundo aos nossos jogos, aplicações e sites.",
+    "sum_sdks": "Utilizamos serviços amplamente adotados: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (se ativado), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "Não vendemos dados pessoais. Podemos ‘partilhar’ certos identificadores e eventos da aplicação para publicidade direcionada, tal como definido pelas leis estaduais dos EUA. Pode optar por não participar na aplicação.",
+    "sum_optout": "Pode optar por não receber publicidade direcionada e medições.",
+    "sum_kids": "Não recolhemos intencionalmente dados de crianças.",
+
+    "who_t": "1) Quem somos",
+    "who_b": `${SETTINGS.legalEntity} (‘nós’) desenvolve e publica videojogos e aplicações. Atuamos como responsável pelo tratamento para o tratamento descrito nesta Política.`,
+
+    "scope_t": "2) Âmbito",
+    "scope_b": `Esta Política abrange ${SETTINGS.appsList} e os nossos sites operados globalmente sob a marca ‘${SETTINGS.companyName}’.`,
+
+    "data_t": "3) Dados que processamos",
+    "d_usage": "Utilização e diagnóstico (eventos, sessões, endereço IP, localização aproximada/país, dispositivo/SO, versão da aplicação) — análises, deteção de falhas, melhoria do produto.",
+    "d_progress": "Progresso de jogo e identificadores (ID de jogador/conta, conquistas, gravações na nuvem, sinais anti-batota) — funcionalidade nuclear e sincronização.",
+    "d_account": "Dados da conta (nome de exibição, avatar, e-mail se fornecido, tokens de autenticação, faixa etária) — criação de conta, início de sessão, segurança.",
+    "d_ugc": "Conteúdo gerado pelo utilizador e funcionalidades sociais (mensagens de chat, perfis, nomes de clã/guilda, denúncias) — funcionalidades de jogo e moderação.",
+    "d_purchases": "Informações de compra (SKU, região, token/recibo de compra) — processamento de compras, reembolsos, prevenção de fraude.",
+    "d_ads": "Dados de publicidade/atribuição (impressões de anúncios, cliques, identificadores de publicidade reinicializáveis como IDFA/AAID, postbacks SKAdNetwork, sinais contextuais) — apresentação de anúncios, limitação de frequência, medição (títulos suportados por publicidade).",
+    "d_support": "Dados de suporte (e-mail, conteúdo da mensagem, anexos, diagnósticos do dispositivo que optar por enviar) — apoio ao cliente e resolução de problemas.",
+    "d_sensitive_note": "Não recolhemos localização precisa nem categorias sensíveis, a menos que as forneça explicitamente ao suporte.",
+
+    "legal_t": "4) Finalidades e bases legais",
+    "legal_b": "Consoante a sua localização, baseamo-nos em: (a) consentimento (quando exigido para cookies/SDKs de publicidade/análise no EEE/RU e para acesso ao IDFA ao abrigo do Apple ATT); (b) execução de um contrato (para fornecer o jogo/aplicação, gravações na nuvem e compras); (c) interesses legítimos (segurança, prevenção de fraude, diagnóstico de falhas, análises não personalizadas); e (d) cumprimento de obrigações legais (fiscais/contabilísticas). Pode retirar o consentimento a qualquer momento através das definições in-app ou do nosso banner de consentimento (quando apresentado).",
+
+    "optout_t": "5) Opções de publicidade (opt-out)",
+    "optout_b": "Pode, a qualquer momento, optar por não receber ‘publicidade direcionada’ e determinadas medições em **Definições → Privacidade → Opções de publicidade**. Para a Califórnia e outros estados dos EUA, pode usar o botão **‘Do Not Sell or Share My Personal Information’** para optar por não participar na ‘partilha’ para publicidade comportamental entre contextos. No Android/iOS, também pode repor ou limitar o identificador de publicidade nas definições do sistema. Respeitamos as escolhas do Apple ATT e a medição via SKAdNetwork quando o IDFA não está disponível.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "No iOS, solicitamos permissão através do App Tracking Transparency da Apple. Se recusar, não acedemos ao IDFA e utilizamos apenas anúncios contextuais e medição que preserva a privacidade (por exemplo, SKAdNetwork).",
+
+    "sdks_t": "7) Serviços de terceiros (subcontratantes)",
+    "sdk_firebase": "Firebase Analytics recolhe métricas de utilização e estabilidade; Crashlytics ajuda a diagnosticar falhas. Os dados podem incluir informações do dispositivo/SO, versão da aplicação, eventos e registos de falhas.",
+    "sdk_ads": "Redes de publicidade (por ex., Google AdMob, Unity Ads) exibem anúncios e medem o desempenho usando identificadores de publicidade reinicializáveis e sinais contextuais. Pode repor ou limitar o rastreio publicitário no seu SO.",
+    "sdk_play": "Google Play Games Services para gravações na nuvem, conquistas, tabelas de classificação e integrações de plataforma.",
+    "sdk_gc": "Apple Game Center e iCloud (se ativado) para autenticação e gravações na nuvem em plataformas Apple.",
+    "sdk_af": "AppsFlyer fornece atribuição de instalação e desempenho de campanhas utilizando identificadores e dados de eventos não sensíveis.",
+    "processors_note": "Contratamos estes fornecedores ao abrigo de acordos de tratamento de dados; devem proteger os dados e utilizá-los apenas segundo as nossas instruções.",
+
+    "share_t": "8) Partilha",
+    "share_b": "Não vendemos dados pessoais. Divulgamos dados a prestadores de serviços (subcontratantes), fornecedores de plataforma (Google/Apple) e quando exigido por lei ou para proteger direitos, segurança e integridade.",
+
+    "ret_t": "9) Conservação",
+    "ret_b": `Conservamos os dados apenas pelo tempo necessário: registos de falhas ~ ${SETTINGS.retention.crashes}; análises ~ ${SETTINGS.retention.analytics}; publicidade/medições ~ ${SETTINGS.retention.ads}; atribuição ~ ${SETTINGS.retention.attribution}; suporte ~ ${SETTINGS.retention.support}; dados da conta durante a vida útil da conta, sendo depois eliminados em 30 dias; registos do servidor ~ ${SETTINGS.retention.logs}; e documentos financeiros ${SETTINGS.retention.finance}. Podemos manter dados agregados/desidentificados e comprometemo-nos a não os reidentificar.`,
+
+    "intl_t": "10) Transferências internacionais",
+    "intl_b": "Quando os dados são transferidos internacionalmente, utilizamos salvaguardas adequadas (por ex., Cláusulas Contratuais-Tipo). Alguns fornecedores participam no EU-US Data Privacy Framework. Pode contactar-nos para solicitar informações sobre estas salvaguardas.",
+
+    "kids_t": "11) Crianças",
+    "kids_b": "Não recolhemos conscientemente dados pessoais de crianças. Em títulos de audiência mista, aplicamos um controlo de idade e desativamos publicidade/atribuição personalizadas para utilizadores identificados como abaixo da idade aplicável (por ex., inferiores a 13 anos nos EUA, inferiores a 16 anos no EEE/RU para ‘partilha’ publicitária). Se considerar que uma criança nos forneceu dados, contacte-nos e iremos eliminá-los e desativar a personalização.",
+
+    "rights_t": "12) Os seus direitos",
+    "rights_b": "Consoante a sua região, poderá ter direitos de acesso, retificação, eliminação, portabilidade, oposição, limitação, retirada de consentimento ou recurso da nossa decisão. Para exercer os seus direitos, utilize o formulário de pedido in-app ou contacte-nos através do e-mail abaixo. Respondemos no prazo de 30 dias (EEE/RU) ou 45 dias (EUA). Os residentes na Califórnia podem usar um agente autorizado. Tem o direito de não ser discriminado por exercer os seus direitos. Os residentes do EEE/RU podem apresentar queixa a uma autoridade de controlo.",
+
+    "cookies_t": "13) Cookies e consentimento",
+    "cookies_b": "Os nossos sites atualmente não utilizam cookies/SDKs não essenciais. Se isto mudar, apresentaremos um banner de consentimento que lhe permite aceitar, recusar ou alterar as escolhas a qualquer momento.",
+
+    "acct_t": "14) Contas e eliminação",
+    "acct_b": "Pode criar uma conta no jogo para sincronizar o progresso e utilizar funcionalidades sociais. Pode eliminar a sua conta a qualquer momento em **Definições → Conta → Eliminar conta** ou contactando-nos. A eliminação de uma conta remove os dados pessoais e as gravações na nuvem associadas à conta no prazo de 30 dias (as cópias de segurança podem persistir por um período limitado). Também pode desligar o Google Play Games ou o Apple Game Center nas respetivas definições.",
+
+    "ugc_t": "15) Conteúdo gerado pelo utilizador (UGC) e moderação",
+    "ugc_b": "O UGC (por ex., chat, perfis, nomes de guildas) é visível para outros jogadores como parte do jogo. Fazemos moderação para aplicar as nossas regras da comunidade e podemos atuar com base em denúncias de abuso. Não partilhe informações sensíveis no UGC.",
+
+    "sec_t": "16) Segurança",
+    "sec_b": "Utilizamos medidas técnicas e organizativas adequadas ao risco (encriptação em trânsito, encriptação em repouso quando aplicável, controlos de acesso, princípio do menor privilégio, registo, correções regulares, resposta a incidentes). Nenhum sistema é 100% seguro.",
+
+    "chg_t": "17) Alterações",
+    "chg_b": "Podemos atualizar esta Política periodicamente. Publicaremos uma nova versão com uma nova data de entrada em vigor.",
+
+    "ct_t": "18) Contacto",
+    "ct_b": `Responsável pelo tratamento: ${SETTINGS.legalEntity}.<br>Endereço: ${SETTINGS.address}.<br>E-mail: <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Definições-chave",
+    "defs_b": "‘Dados pessoais’ significa informação que identifica ou se refere a um indivíduo identificável. ‘Tratamento’ significa qualquer operação efetuada sobre dados pessoais. O ‘responsável pelo tratamento’ determina as finalidades e os meios; o ‘subcontratante’ trata os dados por conta do responsável. ‘Publicidade direcionada’ significa apresentar anúncios com base em dados pessoais obtidos a partir de atividade em aplicações ou sites não afiliados.",
+
+    "dnsmpi_btn": "Não vender nem partilhar as minhas informações pessoais",
+    "privacy_settings_t": "Definições de privacidade",
+    "privacy_settings_b": "Pode gerir o consentimento, as opções de publicidade e os pedidos de dados em **Definições → Privacidade**."
   },
 
-  pt:{ pp_title:"Política de Privacidade", updated:"Data de vigência",
-    btn_expand:"Expandir tudo", btn_collapse:"Recolher tudo", btn_print:"Imprimir / PDF", btn_copy:"Copiar link desta seção",
-    sum_global:"Aplica-se globalmente aos nossos jogos, apps e sites.",
-    sum_sdks:"Usamos serviços amplamente reconhecidos: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"Não vendemos nem “compartilhamos” dados pessoais.",
-    sum_kids:"Não coletamos intencionalmente dados de crianças.",
-    who_t:"1) Quem somos",
-    who_b:`${SETTINGS.legalEntity} (“nós”) desenvolve e publica jogos e apps. Atuamos como controlador de dados.`,
-    scope_t:"2) Escopo",
-    scope_b:`Esta política abrange ${SETTINGS.appsList} e nossos sites sob a marca “${SETTINGS.companyName}”.`,
-    data_t:"3) Dados processados",
-    d_usage:"Uso & diagnóstico (eventos, sessões, localização aproximada, dispositivo/OS) — analytics, falhas, melhoria do produto.",
-    d_progress:"Progresso & identificadores (ID do jogador, conquistas, salvamentos em nuvem, anti-cheat) — funcionalidade e sincronização.",
-    d_purchases:"Compras (SKU, região, token/recibo) — execução, reembolsos, prevenção de fraudes.",
-    d_ads:"Dados de anúncios (impressões, IDs de publicidade reinicializáveis) — exibição e medição.",
-    d_support:"Suporte (e-mail, conteúdo de mensagens, anexos) — atendimento ao cliente.",
-    legal_t:"4) Finalidades & bases legais",
-    legal_b:"Dependendo da região: consentimento (quando exigido), contrato e interesses legítimos (segurança, antifraude, diagnósticos).",
-    sdks_t:"5) Serviços de terceiros (operadores)",
-    sdk_firebase:"Analytics e Crashlytics para estabilidade.",
-    sdk_ads:"Redes de anúncios com IDs de publicidade.",
-    sdk_play:"Serviços Google Play Games.",
-    sdk_af:"Atribuição de instalações e desempenho de campanhas.",
-    processors_note:"Atuam como operadores sob contrato.",
-    share_t:"6) Compartilhamento", share_b:"Sem venda/“sharing”; divulgação apenas a prestadores de serviços ou quando exigido por lei.",
-    ret_t:"7) Retenção",
-    ret_b:`Falhas ~ ${SETTINGS.retention.crashes}, analytics ~ ${SETTINGS.retention.analytics}, registros financeiros ${SETTINGS.retention.finance}; depois excluímos/anonimizamos.`,
-    intl_t:"8) Transferências internacionais", intl_b:"Salvaguardas apropriadas (ex.: SCC).",
-    kids_t:"9) Crianças", kids_b:"Não coletamos intencionalmente dados de crianças.",
-    rights_t:"10) Seus direitos", rights_b:"Acesso, correção, exclusão, oposição, restrição, cópia, retirada de consentimento.",
-    cookies_t:"11) Cookies & consentimento",
-    cookies_b: SETTINGS.hasCookiesBanner ? "Exibimos um banner de consentimento onde exigido." : "Sem cookies/SDKs não essenciais.",
-    sec_t:"12) Segurança", sec_b:"Medidas técnicas e organizacionais proporcionais ao risco.",
-    chg_t:"13) Alterações", chg_b:"Esta política pode ser atualizada.",
-    ct_t:"14) Contato", ct_b:`Controlador: ${SETTINGS.legalEntity}. Endereço: ${SETTINGS.address}. E-mail: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
-    foot_note:"Dica: clique no título de uma seção para copiar o link direto."
+  es: {
+    "pp_title": "Política de privacidad",
+    "updated": "Fecha de entrada en vigor",
+    "btn_expand": "Expandir todo",
+    "btn_collapse": "Contraer todo",
+    "btn_print": "Imprimir / Guardar PDF",
+    "btn_copy": "Copiar enlace a esta sección",
+
+    "sum_global": "Aplica en todo el mundo a nuestros juegos, aplicaciones y sitios web.",
+    "sum_sdks": "Usamos servicios ampliamente adoptados: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (si está habilitado), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "No vendemos datos personales. Podemos ‘compartir’ ciertos identificadores y eventos de la app para publicidad dirigida, tal como la definen las leyes estatales de EE. UU. Puedes darte de baja en la app.",
+    "sum_optout": "Puedes optar por no recibir publicidad dirigida y medición.",
+    "sum_kids": "No recopilamos deliberadamente datos de niños.",
+
+    "who_t": "1) Quiénes somos",
+    "who_b": `${SETTINGS.legalEntity} (‘nosotros’) desarrolla y publica videojuegos y aplicaciones. Actuamos como responsable del tratamiento para el procesamiento descrito en esta Política.`,
+
+    "scope_t": "2) Ámbito",
+    "scope_b": `Esta Política cubre ${SETTINGS.appsList} y nuestros sitios web operados a nivel mundial bajo la marca ‘${SETTINGS.companyName}’.`,
+
+    "data_t": "3) Datos que tratamos",
+    "d_usage": "Uso y diagnósticos (eventos, sesiones, dirección IP, ubicación aproximada/país, dispositivo/SO, versión de la app) — analítica, detección de fallos, mejora del producto.",
+    "d_progress": "Progreso del juego e identificadores (ID de jugador/cuenta, logros, guardados en la nube, señales anti-trampas) — funcionalidad básica y sincronización.",
+    "d_account": "Datos de la cuenta (nombre para mostrar, avatar, correo electrónico si se proporciona, tokens de autenticación, grupo de edad) — creación de cuenta, inicio de sesión, seguridad.",
+    "d_ugc": "Contenido generado por el usuario y funciones sociales (mensajes de chat, perfiles, nombres de clan/gremio, reportes) — funciones de juego y moderación.",
+    "d_purchases": "Información de compras (SKU, región, token/recibo de compra) — cumplimiento de compras, reembolsos, prevención de fraude.",
+    "d_ads": "Datos de anuncios/atribución (impresiones, clics, identificadores publicitarios restablecibles como IDFA/AAID, postbacks de SKAdNetwork, señales contextuales) — mostrar anuncios, limitación de frecuencia, medición (títulos con publicidad).",
+    "d_support": "Datos de soporte (correo electrónico, contenido del mensaje, adjuntos, diagnósticos del dispositivo que elijas enviar) — atención al cliente y resolución de problemas.",
+    "d_sensitive_note": "No recopilamos ubicación precisa ni categorías sensibles a menos que las proporciones explícitamente al soporte.",
+
+    "legal_t": "4) Finalidades y bases legales",
+    "legal_b": "Según tu ubicación, nos basamos en: (a) el consentimiento (cuando se requiere para cookies/SDK de publicidad/analítica en el EEE/Reino Unido y para acceder a IDFA conforme a Apple ATT); (b) la ejecución de un contrato (para proporcionar el juego/la app, guardados en la nube y compras); (c) intereses legítimos (seguridad, prevención del fraude, diagnósticos de fallos, analítica no personalizada); y (d) el cumplimiento de obligaciones legales (fiscales/contables). Puedes retirar tu consentimiento en cualquier momento desde los ajustes de la app o nuestro banner de consentimiento (si se muestra).",
+
+    "optout_t": "5) Opciones de publicidad (opt-out)",
+    "optout_b": "Puedes optar en cualquier momento por no recibir ‘publicidad dirigida’ y ciertas mediciones en **Ajustes → Privacidad → Opciones de publicidad**. Para California y otros estados de EE. UU., puedes usar el botón **‘No vender ni compartir mi información personal’** para rechazar el ‘compartir’ con fines de publicidad conductual entre contextos. En Android/iOS también puedes restablecer o limitar el identificador publicitario en los ajustes del sistema. Respetamos las elecciones de Apple ATT y la medición mediante SKAdNetwork cuando IDFA no esté disponible.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "En iOS solicitamos permiso a través de App Tracking Transparency de Apple. Si lo rechazas, no accedemos a IDFA y solo usamos anuncios contextuales y medición que preserva la privacidad (p. ej., SKAdNetwork).",
+
+    "sdks_t": "7) Servicios de terceros (encargados del tratamiento)",
+    "sdk_firebase": "Firebase Analytics recopila métricas de uso y estabilidad; Crashlytics ayuda a diagnosticar fallos. Los datos pueden incluir información del dispositivo/SO, versión de la app, eventos y registros de fallos.",
+    "sdk_ads": "Las redes publicitarias (p. ej., Google AdMob, Unity Ads) muestran anuncios y miden el rendimiento usando identificadores publicitarios restablecibles y señales contextuales. Puedes restablecer o limitar el seguimiento publicitario en tu SO.",
+    "sdk_play": "Google Play Games Services para guardados en la nube, logros, clasificaciones e integraciones de plataforma.",
+    "sdk_gc": "Apple Game Center e iCloud (si están habilitados) para autenticación y guardados en la nube en plataformas Apple.",
+    "sdk_af": "AppsFlyer proporciona atribución de instalaciones y rendimiento de campañas usando identificadores y datos de eventos no sensibles.",
+    "processors_note": "Contratamos a estos proveedores mediante acuerdos de tratamiento de datos; deben proteger los datos y usarlos solo siguiendo nuestras instrucciones.",
+
+    "share_t": "8) Compartición",
+    "share_b": "No vendemos datos personales. Divulgamos datos a proveedores de servicios (encargados del tratamiento), proveedores de plataforma (Google/Apple) y cuando lo exige la ley o para proteger derechos, seguridad e integridad.",
+
+    "ret_t": "9) Conservación",
+    "ret_b": `Conservamos los datos solo el tiempo necesario: registros de fallos ~ ${SETTINGS.retention.crashes}; analítica ~ ${SETTINGS.retention.analytics}; publicidad/medición ~ ${SETTINGS.retention.ads}; atribución ~ ${SETTINGS.retention.attribution}; soporte ~ ${SETTINGS.retention.support}; datos de la cuenta durante la vida de la cuenta, luego eliminación en un plazo de 30 días; registros del servidor ~ ${SETTINGS.retention.logs}; y documentos financieros ${SETTINGS.retention.finance}. Podemos conservar datos agregados/desidentificados y nos comprometemos a no volver a identificarlos.`,
+
+    "intl_t": "10) Transferencias internacionales",
+    "intl_b": "Cuando los datos se transfieren internacionalmente, utilizamos garantías adecuadas (p. ej., Cláusulas Contractuales Tipo). Algunos proveedores participan en el EU-US Data Privacy Framework. Puedes contactarnos para solicitar información sobre estas garantías.",
+
+    "kids_t": "11) Niños",
+    "kids_b": "No recopilamos conscientemente datos personales de niños. En títulos para audiencia mixta aplicamos una verificación de edad y desactivamos la publicidad/atribución personalizadas para usuarios identificados como menores de la edad aplicable (p. ej., menores de 13 en EE. UU., menores de 16 en el EEE/Reino Unido para el «compartir» publicitario). Si crees que un niño nos ha proporcionado datos, contáctanos y los eliminaremos y desactivaremos la personalización.",
+
+    "rights_t": "12) Tus derechos",
+    "rights_b": "Según tu región, puedes tener derechos de acceso, rectificación, supresión, portabilidad, oposición, limitación, retirada del consentimiento o apelación de nuestra decisión. Para ejercerlos, usa el formulario de solicitud dentro de la app o contáctanos en el correo indicado abajo. Respondemos en 30 días (EEE/Reino Unido) o 45 días (EE. UU.). Los residentes de California pueden usar un agente autorizado. Tienes derecho a no sufrir discriminación por ejercer tus derechos. Los residentes del EEE/Reino Unido pueden presentar una reclamación ante una autoridad de control.",
+
+    "cookies_t": "13) Cookies y consentimiento",
+    "cookies_b": "Nuestros sitios web no utilizan actualmente cookies/SDK no esenciales. Si esto cambia, mostraremos un banner de consentimiento que te permitirá aceptar, rechazar o modificar tus elecciones en cualquier momento.",
+
+    "acct_t": "14) Cuentas y eliminación",
+    "acct_b": "Puedes crear una cuenta en el juego para sincronizar el progreso y usar funciones sociales. Puedes eliminar tu cuenta en cualquier momento en **Ajustes → Cuenta → Eliminar cuenta** o contactándonos. La eliminación de la cuenta elimina los datos personales y los guardados en la nube vinculados a la cuenta en un plazo de 30 días (las copias de seguridad pueden persistir por un periodo limitado). También puedes desconectar Google Play Games o Apple Game Center desde sus ajustes respectivos.",
+
+    "ugc_t": "15) Contenido generado por el usuario (UGC) y moderación",
+    "ugc_b": "El UGC (p. ej., chat, perfiles, nombres de gremios) es visible para otros jugadores como parte del juego. Moderamos para hacer cumplir nuestras normas comunitarias y podemos actuar ante reportes de abusos. No compartas información sensible en el UGC.",
+
+    "sec_t": "16) Seguridad",
+    "sec_b": "Usamos medidas técnicas y organizativas adecuadas al riesgo (cifrado en tránsito, cifrado en reposo cuando corresponda, controles de acceso, principio de mínimo privilegio, registro, parches regulares, respuesta a incidentes). Ningún sistema es 100 % seguro.",
+
+    "chg_t": "17) Cambios",
+    "chg_b": "Podemos actualizar esta Política periódicamente. Publicaremos una nueva versión con una nueva fecha de entrada en vigor.",
+
+    "ct_t": "18) Contacto",
+    "ct_b": `Responsable del tratamiento: ${SETTINGS.legalEntity}.<br>Dirección: ${SETTINGS.address}.<br>Correo electrónico: <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Definiciones clave",
+    "defs_b": "‘Datos personales’ significa información que identifica o se relaciona con una persona identificable. ‘Tratamiento’ significa cualquier operación realizada sobre datos personales. El ‘responsable del tratamiento’ determina los fines y medios; el ‘encargado del tratamiento’ trata los datos por cuenta del responsable. ‘Publicidad dirigida’ significa mostrar anuncios basados en datos personales obtenidos de la actividad en apps o sitios web no afiliados.",
+
+    "dnsmpi_btn": "No vender ni compartir mi información personal",
+    "privacy_settings_t": "Ajustes de privacidad",
+    "privacy_settings_b": "Puedes gestionar el consentimiento, las opciones de publicidad y las solicitudes de datos en **Ajustes → Privacidad**."
   },
 
-  es:{ pp_title:"Política de Privacidad", updated:"Fecha de vigencia",
-    btn_expand:"Expandir todo", btn_collapse:"Contraer todo", btn_print:"Imprimir / PDF", btn_copy:"Copiar enlace de esta sección",
-    sum_global:"Se aplica en todo el mundo a nuestros juegos, apps y sitios.",
-    sum_sdks:"Usamos servicios ampliamente reconocidos: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"No vendemos ni “compartimos” datos personales.",
-    sum_kids:"No recopilamos deliberadamente datos de menores.",
-    who_t:"1) Quiénes somos",
-    who_b:`${SETTINGS.legalEntity} (“nosotros”) desarrolla y publica juegos y aplicaciones. Actuamos como responsable del tratamiento.`,
-    scope_t:"2) Ámbito",
-    scope_b:`Esta política cubre ${SETTINGS.appsList} y nuestros sitios bajo la marca “${SETTINGS.companyName}”.`,
-    data_t:"3) Datos tratados",
-    d_usage:"Uso y diagnóstico (eventos, sesiones, ubicación aproximada, dispositivo/OS) — analítica, fallos, mejora del producto.",
-    d_progress:"Progreso e identificadores (ID de jugador, logros, guardados en la nube, anti-cheat) — funciones y sincronización.",
-    d_purchases:"Compras (SKU, región, token/recibo) — ejecución, reembolsos, prevención de fraude.",
-    d_ads:"Datos publicitarios (impresiones, ID publicitarios restablecibles) — entrega y medición de anuncios.",
-    d_support:"Soporte (correo, contenido de mensajes, adjuntos) — atención al usuario.",
-    legal_t:"4) Finalidades y bases legales",
-    legal_b:"Según la región: consentimiento (cuando se requiera), contrato e intereses legítimos (seguridad, antifraude, diagnósticos).",
-    sdks_t:"5) Servicios de terceros (encargados)",
-    sdk_firebase:"Analytics y Crashlytics para estabilidad.",
-    sdk_ads:"Redes de anuncios con ID publicitarios.",
-    sdk_play:"Servicios de Google Play Games.",
-    sdk_af:"Atribución de instalaciones y rendimiento de campañas.",
-    processors_note:"Actúan como encargados bajo contrato.",
-    share_t:"6) Cesiones", share_b:"Sin venta/“sharing”; divulgación solo a proveedores o cuando lo exige la ley.",
-    ret_t:"7) Conservación",
-    ret_b:`Registros de fallos ~ ${SETTINGS.retention.crashes}, analítica ~ ${SETTINGS.retention.analytics}, registros financieros ${SETTINGS.retention.finance}; luego se eliminan/anonimizan.`,
-    intl_t:"8) Transferencias internacionales", intl_b:"Garantías adecuadas (p. ej., SCC).",
-    kids_t:"9) Menores", kids_b:"No recopilamos deliberadamente datos de menores.",
-    rights_t:"10) Tus derechos", rights_b:"Acceso, rectificación, supresión, oposición, limitación, copia, retirada del consentimiento.",
-    cookies_t:"11) Cookies y consentimiento",
-    cookies_b: SETTINGS.hasCookiesBanner ? "Mostramos un banner de consentimiento donde sea requerido." : "Sin cookies/SDK no esenciales.",
-    sec_t:"12) Seguridad", sec_b:"Medidas técnicas y organizativas acordes al riesgo.",
-    chg_t:"13) Cambios", chg_b:"Podemos actualizar esta política.",
-    ct_t:"14) Contacto", ct_b:`Responsable: ${SETTINGS.legalEntity}. Dirección: ${SETTINGS.address}. Correo: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
-    foot_note:"Sugerencia: haz clic en el título de una sección para copiar el enlace directo."
+  ru: {
+    "pp_title": "Политика конфиденциальности",
+    "updated": "Дата вступления в силу",
+    "btn_expand": "Развернуть все",
+    "btn_collapse": "Свернуть все",
+    "btn_print": "Печать / Сохранить PDF",
+    "btn_copy": "Скопировать ссылку на этот раздел",
+
+    "sum_global": "Применяется во всем мире к нашим играм, приложениям и веб-сайтам.",
+    "sum_sdks": "Мы используем широко распространенные сервисы: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (если включено), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "Мы не продаем персональные данные. Мы можем «делиться» определенными идентификаторами и событиями приложения для таргетированной рекламы, как это определено законами отдельных штатов США. Вы можете отказаться от этого в приложении.",
+    "sum_optout": "Вы можете отказаться от таргетированной рекламы и измерения эффективности.",
+    "sum_kids": "Мы сознательно не собираем данные от детей.",
+
+    "who_t": "1) Кто мы",
+    "who_b": `${SETTINGS.legalEntity} («мы») разрабатывает и публикует видеоигры и приложения. Мы выступаем в качестве контролера данных для обработки, описанной в настоящей Политике.`,
+
+    "scope_t": "2) Сфера действия",
+    "scope_b": `Эта Политика охватывает ${SETTINGS.appsList} и наши веб-сайты, работающие во всем мире под брендом «${SETTINGS.companyName}».`,
+
+    "data_t": "3) Данные, которые мы обрабатываем",
+    "d_usage": "Данные об использовании и диагностике (события, сессии, IP-адрес, приблизительное местоположение/страна, устройство/ОС, версия приложения) — аналитика, обнаружение сбоев, улучшение продукта.",
+    "d_progress": "Прогресс в игре и идентификаторы (ID игрока/аккаунта, достижения, облачные сохранения, сигналы анти-чит) — базовая функциональность и синхронизация.",
+    "d_account": "Данные аккаунта (отображаемое имя, аватар, e-mail при наличии, токены аутентификации, возрастная категория) — создание аккаунта, вход, безопасность.",
+    "d_ugc": "Контент, созданный пользователями, и социальные функции (сообщения чата, профили, названия кланов/гильдий, жалобы) — игровые функции и модерация.",
+    "d_purchases": "Информация о покупках (SKU, регион, токен/квитанция покупки) — выполнение покупок, возвраты, предотвращение мошенничества.",
+    "d_ads": "Данные рекламы/атрибуции (показы, клики, сбрасываемые рекламные идентификаторы, такие как IDFA/AAID, постбеки SKAdNetwork, контекстные сигналы) — показ рекламы, ограничение частоты, измерение (проекты с рекламной монетизацией).",
+    "d_support": "Данные поддержки (e-mail, содержание сообщений, вложения, диагностика устройства, которую вы решите отправить) — поддержка пользователей и устранение неполадок.",
+    "d_sensitive_note": "Мы не собираем точное местоположение или особые категории данных, если вы явно не предоставите их службе поддержки.",
+
+    "legal_t": "4) Цели и правовые основания",
+    "legal_b": "В зависимости от вашего местоположения мы полагаемся на: (a) согласие (когда требуется для рекламных/аналитических файлов cookie/SDK в ЕЭЗ/Великобритании и для доступа к IDFA в рамках Apple ATT); (b) исполнение договора (для предоставления игры/приложения, облачных сохранений и покупок); (c) законные интересы (безопасность, предотвращение мошенничества, диагностика сбоев, неперсонализированная аналитика); и (d) соблюдение юридических обязательств (налоги/бухучет). Вы можете отозвать согласие в любое время через настройки в приложении или наш баннер согласия (если отображается).",
+
+    "optout_t": "5) Рекламные настройки (отказ)",
+    "optout_b": "Вы можете в любое время отказаться от «таргетированной рекламы» и определенных измерений в **Настройки → Конфиденциальность → Рекламные настройки**. Для Калифорнии и других штатов США можно использовать кнопку **‘Do Not Sell or Share My Personal Information’**, чтобы отказаться от «обмена» для межконтекстной поведенческой рекламы. В Android/iOS вы также можете сбросить или ограничить рекламный идентификатор в настройках ОС. Мы соблюдаем выборы Apple ATT и измерения SKAdNetwork при недоступности IDFA.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "В iOS мы запрашиваем разрешение через App Tracking Transparency от Apple. Если вы откажете, мы не обращаемся к IDFA и используем только контекстную рекламу и конфиденциальные методы измерения (например, SKAdNetwork).",
+
+    "sdks_t": "7) Сторонние сервисы (обработчики)",
+    "sdk_firebase": "Firebase Analytics собирает метрики использования и стабильности; Crashlytics помогает диагностировать сбои. Данные могут включать информацию об устройстве/ОС, версии приложения, событиях и журналах сбоев.",
+    "sdk_ads": "Рекламные сети (например, Google AdMob, Unity Ads) показывают объявления и измеряют эффективность с использованием сбрасываемых рекламных ID и контекстных сигналов. Вы можете сбросить или ограничить рекламное отслеживание в вашей ОС.",
+    "sdk_play": "Google Play Games Services для облачных сохранений, достижений, таблиц лидеров и интеграций платформы.",
+    "sdk_gc": "Apple Game Center и iCloud (если включено) для аутентификации и облачных сохранений на платформах Apple.",
+    "sdk_af": "AppsFlyer предоставляет атрибуцию установок и показатели кампаний, используя идентификаторы и нечувствительные данные о событиях.",
+    "processors_note": "Мы привлекаем этих поставщиков по договорам об обработке данных; они обязаны защищать данные и использовать их только по нашим указаниям.",
+
+    "share_t": "8) Передача данных",
+    "share_b": "Мы не продаем персональные данные. Мы раскрываем данные поставщикам услуг (обработчикам), поставщикам платформ (Google/Apple), а также когда это требуется по закону либо для защиты прав, безопасности и целостности.",
+
+    "ret_t": "9) Сроки хранения",
+    "ret_b": `Мы храним данные только по мере необходимости: логи сбоев ~ ${SETTINGS.retention.crashes}; аналитика ~ ${SETTINGS.retention.analytics}; реклама/измерения ~ ${SETTINGS.retention.ads}; атрибуция ~ ${SETTINGS.retention.attribution}; поддержка ~ ${SETTINGS.retention.support}; данные аккаунта — на срок жизни аккаунта, затем удаление в течение 30 дней; серверные логи ~ ${SETTINGS.retention.logs}; и финансовые записи ${SETTINGS.retention.finance}. Мы можем сохранять агрегированные/деидентифицированные данные и обязуемся не проводить их повторную идентификацию.`,
+
+    "intl_t": "10) Международные передачи",
+    "intl_b": "При международной передаче данных мы используем надлежащие гарантии (например, Стандартные договорные положения). Некоторые поставщики участвуют в EU-US Data Privacy Framework. Вы можете связаться с нами, чтобы запросить информацию об этих гарантиях.",
+
+    "kids_t": "11) Дети",
+    "kids_b": "Мы сознательно не собираем персональные данные детей. В продуктах для смешанной аудитории мы применяем возрастное ограничение и отключаем персонализированную рекламу/атрибуцию для пользователей, признанных младше установленного возраста (например, младше 13 лет в США, младше 16 лет в ЕЭЗ/Великобритании для рекламного «обмена»). Если вы считаете, что ребенок предоставил нам данные, свяжитесь с нами — мы удалим их и отключим персонализацию.",
+
+    "rights_t": "12) Ваши права",
+    "rights_b": "В зависимости от региона у вас могут быть права на доступ, исправление, удаление, переносимость, возражение, ограничение обработки, отзыв согласия или обжалование нашего решения. Чтобы воспользоваться правами, используйте форму запроса в приложении или свяжитесь с нами по e-mail ниже. Мы отвечаем в течение 30 дней (ЕЭЗ/Великобритания) или 45 дней (США). Жители Калифорнии могут воспользоваться уполномоченным представителем. Вы имеете право не подвергаться дискриминации за осуществление своих прав. Жители ЕЭЗ/Великобритании могут подать жалобу в надзорный орган.",
+
+    "cookies_t": "13) Файлы cookie и согласие",
+    "cookies_b": "Наши веб-сайты в настоящее время не используют несущественные файлы cookie/SDK. Если это изменится, мы покажем баннер согласия, который позволит в любой момент принять, отклонить или изменить выбор.",
+
+    "acct_t": "14) Аккаунты и удаление",
+    "acct_b": "Вы можете создать внутриигровой аккаунт для синхронизации прогресса и использования социальных функций. Вы можете удалить аккаунт в любое время в **Настройки → Аккаунт → Удалить аккаунт** или связавшись с нами. Удаление аккаунта удаляет персональные данные и облачные сохранения, связанные с аккаунтом, в течение 30 дней (резервные копии могут сохраняться ограниченное время). Вы также можете отключить Google Play Games или Apple Game Center в их соответствующих настройках.",
+
+    "ugc_t": "15) Контент, созданный пользователями (UGC), и модерация",
+    "ugc_b": "UGC (например, чат, профили, названия гильдий) виден другим игрокам как часть игрового процесса. Мы проводим модерацию для соблюдения правил сообщества и можем принимать меры по жалобам на злоупотребления. Не публикуйте в UGC конфиденциальную информацию.",
+
+    "sec_t": "16) Безопасность",
+    "sec_b": "Мы используем технические и организационные меры, соразмерные риску (шифрование при передаче, шифрование на хранении — где применимо, контроль доступа, принцип наименьших привилегий, ведение журналов, регулярные обновления, реагирование на инциденты). Ни одна система не может быть безопасной на 100%.",
+
+    "chg_t": "17) Изменения",
+    "chg_b": "Мы можем периодически обновлять настоящую Политику. Мы опубликуем новую версию с новой датой вступления в силу.",
+
+    "ct_t": "18) Контакты",
+    "ct_b": `Контролер данных: ${SETTINGS.legalEntity}.<br>Адрес: ${SETTINGS.address}.<br>E-mail: <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Основные определения",
+    "defs_b": "«Персональные данные» — информация, которая идентифицирует или относится к идентифицируемому лицу. «Обработка» — любая операция с персональными данными. «Контролер» определяет цели и средства; «обработчик» обрабатывает данные от имени контролера. «Таргетированная реклама» — показ рекламы на основе персональных данных, полученных из активности в несвязанных приложениях или на веб-сайтах.",
+
+    "dnsmpi_btn": "Не продавать и не передавать мои персональные данные",
+    "privacy_settings_t": "Настройки конфиденциальности",
+    "privacy_settings_b": "Вы можете управлять согласием, рекламными настройками и запросами данных в **Настройки → Конфиденциальность**."
   },
 
-  tr:{ pp_title:"Gizlilik Politikası", updated:"Yürürlük tarihi",
-    btn_expand:"Tümünü genişlet", btn_collapse:"Tümünü daralt", btn_print:"Yazdır / PDF", btn_copy:"Bu bölümün bağlantısını kopyala",
-    sum_global:"Dünya genelinde oyunlarımız, uygulamalarımız ve sitelerimiz için geçerlidir.",
-    sum_sdks:"Yaygın hizmetler kullanıyoruz: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
-    sum_no_sell:"Kişisel verileri satmıyor veya ‘paylaşmıyoruz’.",
-    sum_kids:"Çocuklardan bilerek veri toplamıyoruz.",
-    who_t:"1) Biz kimiz",
-    who_b:`${SETTINGS.legalEntity} (“biz”) oyun ve uygulamalar geliştirip yayımlar. Bu politikada açıklanan işlemler için veri sorumlusuyuz.`,
-    scope_t:"2) Kapsam",
-    scope_b:`Bu politika, ${SETTINGS.appsList} ve “${SETTINGS.companyName}” markalı web sitelerimizi kapsar.`,
-    data_t:"3) İşlenen veriler",
-    d_usage:"Kullanım & tanılama (olaylar, oturumlar, yaklaşık konum, cihaz/OS) — analiz, çökme tespiti, ürün iyileştirme.",
-    d_progress:"Oyun ilerlemesi & tanımlayıcılar (oyuncu ID’si, başarılar, bulut kayıtları, anti-cheat) — işlevsellik ve senkronizasyon.",
-    d_purchases:"Satın almalar (SKU, bölge, jeton/makbuz) — gerçekleştirme, iade, dolandırıcılık önleme.",
-    d_ads:"Reklam verileri (gösterimler, sıfırlanabilir reklam kimlikleri) — reklam gösterimi ve ölçüm.",
-    d_support:"Destek verileri (e-posta, mesaj içeriği, ekler) — müşteri desteği.",
-    legal_t:"4) Amaçlar & hukuki dayanaklar",
-    legal_b:"Bölgeye göre: rıza (gerektiğinde), sözleşmenin ifası ve meşru menfaat (güvenlik, sahteciliği önleme, çökme tanılama).",
-    sdks_t:"5) Üçüncü taraf hizmetleri (veri işleyenler)",
-    sdk_firebase:"Analitik ve Crashlytics ile kararlılık.",
-    sdk_ads:"Reklam ağları, reklam kimlikleriyle performansı ölçer.",
-    sdk_play:"Google Play Games Services platform özellikleri.",
-    sdk_af:"Yükleme atfı ve kampanya performansı.",
-    processors_note:"Bu sağlayıcılar, sözleşme kapsamında veri işleyen olarak hareket eder.",
-    share_t:"6) Paylaşım", share_b:"Satış veya ‘paylaşım’ yok; yalnızca hizmet sağlayıcılar veya yasal gereklilikler.",
-    ret_t:"7) Saklama", ret_b:`Çökme günlükleri ~ ${SETTINGS.retention.crashes}, analiz ~ ${SETTINGS.retention.analytics}, mali kayıtlar ${SETTINGS.retention.finance}; ardından silme/anonimleştirme.`,
-    intl_t:"8) Uluslararası aktarımlar", intl_b:"Uygun güvenceler (örn. SCC) uygulanır.",
-    kids_t:"9) Çocuklar", kids_b:"Çocuklardan bilerek veri toplamıyoruz.",
-    rights_t:"10) Haklarınız", rights_b:"Erişim, düzeltme, silme, itiraz, kısıtlama, kopya, rızayı geri çekme.",
-    cookies_t:"11) Çerezler & rıza",
-    cookies_b: SETTINGS.hasCookiesBanner ? "Gereken bölgelerde rıza banner’ı gösteriyoruz." : "Gerekli olmayan çerez/SDK yok.",
-    sec_t:"12) Güvenlik", sec_b:"Riske uygun teknik ve organizasyonel önlemler.",
-    chg_t:"13) Değişiklikler", chg_b:"Bu politika güncellenebilir.",
-    ct_t:"14) İletişim", ct_b:`Veri sorumlusu: ${SETTINGS.legalEntity}. Adres: ${SETTINGS.address}. E-posta: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
-    foot_note:"İpucu: doğrudan bağlantı kopyalamak için başlığa tıklayın."
+  tr: {
+    "pp_title": "Gizlilik Politikası",
+    "updated": "Yürürlük tarihi",
+    "btn_expand": "Tümünü genişlet",
+    "btn_collapse": "Tümünü daralt",
+    "btn_print": "Yazdır / PDF olarak kaydet",
+    "btn_copy": "Bu bölüme bağlantıyı kopyala",
+
+    "sum_global": "Oyunlarımıza, uygulamalarımıza ve web sitelerimize dünya çapında uygulanır.",
+    "sum_sdks": "Yaygın olarak benimsenen hizmetleri kullanırız: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (etkinleştirilmişse), AppsFlyer, SKAdNetwork.",
+    "sum_no_sell": "Kişisel verileri satmayız. ABD eyalet yasalarında tanımlandığı şekilde hedefli reklamcılık için bazı tanımlayıcıları ve uygulama olaylarını “paylaşabiliriz”. Uygulama içinden vazgeçebilirsiniz.",
+    "sum_optout": "Hedefli reklamcılık ve ölçümden vazgeçebilirsiniz.",
+    "sum_kids": "Bilerek çocuklardan veri toplamıyoruz.",
+
+    "who_t": "1) Biz kimiz",
+    "who_b": `${SETTINGS.legalEntity} (“biz”) video oyunları ve uygulamalar geliştirir ve yayımlar. Bu Politikada açıklanan işleme faaliyetleri için veri sorumlusu olarak hareket ederiz.`,
+
+    "scope_t": "2) Kapsam",
+    "scope_b": `Bu Politika, ${SETTINGS.appsList} ile dünya genelinde “${SETTINGS.companyName}” markası altında işletilen web sitelerimizi kapsar.`,
+
+    "data_t": "3) İşlediğimiz veriler",
+    "d_usage": "Kullanım ve tanılama (olaylar, oturumlar, IP adresi, yaklaşık konum/ülke, cihaz/OS, uygulama sürümü) — analiz, çökme tespiti, ürün iyileştirme.",
+    "d_progress": "Oyun ilerlemesi ve tanımlayıcılar (oyuncu/hesap kimliği, başarımlar, bulut kayıtları, hile karşıtı sinyaller) — temel işlevsellik ve eşitleme.",
+    "d_account": "Hesap verileri (görünen ad, avatar, sağlanmışsa e-posta, kimlik doğrulama belirteçleri, yaş grubu) — hesap oluşturma, oturum açma, güvenlik.",
+    "d_ugc": "Kullanıcı tarafından oluşturulan içerik ve sosyal özellikler (sohbet mesajları, profiller, klan/lonca adları, raporlar) — oynanış özellikleri ve moderasyon.",
+    "d_purchases": "Satın alma bilgileri (SKU, bölge, satın alma jetonu/makbuzu) — satın alma gerçekleştirme, iadeler, dolandırıcılığı önleme.",
+    "d_ads": "Reklam/atfetme verileri (reklam gösterimleri, tıklamalar, IDFA/AAID gibi sıfırlanabilir reklam kimlikleri, SKAdNetwork geri bildirimleri, bağlamsal sinyaller) — reklam gösterimi, frekans sınırlandırma, ölçüm (reklam destekli başlıklar).",
+    "d_support": "Destek verileri (e-posta, mesaj içeriği, ekler, göndermeyi seçtiğiniz cihaz tanılama bilgileri) — müşteri desteği ve sorun giderme.",
+    "d_sensitive_note": "Destek kapsamında bize açıkça sağlamadığınız sürece hassas kategoriler veya kesin konum toplamayız.",
+
+    "legal_t": "4) Amaçlar ve hukuki dayanaklar",
+    "legal_b": "Konumunuza bağlı olarak şu dayanaklara güveniriz: (a) rıza (AEA/Birleşik Krallık’ta reklam/analitik çerezleri/SDK’leri ve Apple ATT kapsamında IDFA erişimi için gerektiğinde); (b) sözleşmenin ifası (oyunu/uygulamayı, bulut kayıtlarını ve satın almaları sunmak için); (c) meşru menfaatler (güvenlik, dolandırıcılığın önlenmesi, çökme tanılaması, kişiselleştirilmemiş analiz); ve (d) yasal yükümlülüklerin yerine getirilmesi (vergi/muhasebe). Rızayı, uygulama içi ayarlardan veya (gösterildiğinde) onay bandımızdan dilediğiniz zaman geri çekebilirsiniz.",
+
+    "optout_t": "5) Reklam tercihleri (vazgeçme)",
+    "optout_b": "“Hedefli reklamcılık”tan ve belirli ölçümlerden dilediğiniz zaman **Ayarlar → Gizlilik → Reklam tercihleri** bölümünden vazgeçebilirsiniz. Kaliforniya ve diğer ABD eyaletleri için **‘Kişisel Bilgilerimi Satma veya Paylaşma’** düğmesini kullanarak bağlamlar arası davranışsal reklamcılık için “paylaşım”dan vazgeçebilirsiniz. Android/iOS’ta reklam tanımlayıcısını sistem ayarlarından sıfırlayabilir veya sınırlandırabilirsiniz. IDFA kullanılamadığında Apple ATT tercihlerinize ve SKAdNetwork ölçümüne saygı duyarız.",
+
+    "att_t": "6) Apple App Tracking Transparency (iOS)",
+    "att_b": "iOS’ta, Apple’ın App Tracking Transparency mekanizmasıyla izin isteriz. Reddederseniz IDFA’ya erişmeyiz ve yalnızca bağlamsal reklamlar ile gizliliği koruyan ölçümleri (örn. SKAdNetwork) kullanırız.",
+
+    "sdks_t": "7) Üçüncü taraf hizmetler (veri işleyenler)",
+    "sdk_firebase": "Firebase Analytics kullanım ve kararlılık metrikleri toplar; Crashlytics çökmelerin tanılanmasına yardımcı olur. Veriler; cihaz/OS bilgileri, uygulama sürümü, olaylar ve çökme günlüklerini içerebilir.",
+    "sdk_ads": "Reklam ağları (örn. Google AdMob, Unity Ads) sıfırlanabilir reklam kimlikleri ve bağlamsal sinyaller kullanarak reklam gösterir ve performansı ölçer. İşletim sisteminizde reklam takibini sıfırlayabilir veya sınırlayabilirsiniz.",
+    "sdk_play": "Google Play Games Services; bulut kayıtları, başarımlar, lider tabloları ve platform entegrasyonları için.",
+    "sdk_gc": "Apple Game Center ve iCloud (etkinse) Apple platformlarında kimlik doğrulama ve bulut kayıtları için.",
+    "sdk_af": "AppsFlyer, tanımlayıcılar ve hassas olmayan olay verileri kullanarak kurulum atfı ve kampanya performansı sağlar.",
+    "processors_note": "Bu sağlayıcıları veri işleme sözleşmeleri kapsamında görevlendiriyoruz; verileri korumalı ve yalnızca talimatlarımız doğrultusunda kullanmalıdırlar.",
+
+    "share_t": "8) Paylaşım",
+    "share_b": "Kişisel verileri satmayız. Verileri hizmet sağlayıcılarına (veri işleyenler), platform sağlayıcılarına (Google/Apple) ve kanunen gerektiğinde veya hakları, güvenliği ve bütünlüğü korumak için açıklarız.",
+
+    "ret_t": "9) Saklama",
+    "ret_b": `Verileri yalnızca gerektiği süre boyunca saklarız: çökme günlükleri ~ ${SETTINGS.retention.crashes}; analitik ~ ${SETTINGS.retention.analytics}; reklam/ölçüm ~ ${SETTINGS.retention.ads}; atıf ~ ${SETTINGS.retention.attribution}; destek ~ ${SETTINGS.retention.support}; hesap verileri hesabın ömrü boyunca, ardından 30 gün içinde silinir; sunucu günlükleri ~ ${SETTINGS.retention.logs}; ve finansal kayıtlar ${SETTINGS.retention.finance}. Toplu/kimliği kaldırılmış verileri tutabilir ve yeniden kimliklendirmeme taahhüdünde bulunuruz.`,
+
+    "intl_t": "10) Uluslararası aktarımlar",
+    "intl_b": "Veriler uluslararası olarak aktarılırken uygun güvenceler kullanırız (örn. Standart Sözleşme Maddeleri). Bazı sağlayıcılar AB-ABD Veri Gizliliği Çerçevesine katılmaktadır. Bu güvenceler hakkında bilgi talep etmek için bizimle iletişime geçebilirsiniz.",
+
+    "kids_t": "11) Çocuklar",
+    "kids_b": "Bilerek çocuklardan kişisel veri toplamayız. Karma kitleli başlıklarda yaş doğrulaması uygular ve geçerli yaşın altında olduğu belirlenen kullanıcılar için kişiselleştirilmiş reklam/atıfı devre dışı bırakırız (örn. ABD’de 13 yaş altı, AEA/BK’de reklam “paylaşımı” için 16 yaş altı). Bir çocuğun bize veri verdiğini düşünüyorsanız, lütfen iletişime geçin; verileri siler ve kişiselleştirmeyi devre dışı bırakırız.",
+
+    "rights_t": "12) Haklarınız",
+    "rights_b": "Bölgenize bağlı olarak verilere erişme, düzeltme, silme, taşınabilirlik, itiraz, işlemenin kısıtlanması, rızayı geri çekme veya kararımıza itiraz etme haklarına sahip olabilirsiniz. Haklarınızı kullanmak için uygulama içi talep formunu kullanın veya aşağıdaki e-posta üzerinden bize ulaşın. 30 gün (AEA/BK) veya 45 gün (ABD) içinde yanıt veririz. Kaliforniya sakinleri yetkili bir temsilci kullanabilir. Haklarınızı kullandığınız için ayrımcılığa uğramama hakkına sahipsiniz. AEA/BK sakinleri bir denetim otoritesine şikâyette bulunabilir.",
+
+    "cookies_t": "13) Çerezler ve onay",
+    "cookies_b": "Web sitelerimiz şu anda zorunlu olmayan çerezler/SDK’ler kullanmamaktadır. Bu değişirse, istediğiniz zaman kabul etmenizi, reddetmenizi veya tercihlerinizi değiştirmenizi sağlayan bir onay bandı gösteririz.",
+
+    "acct_t": "14) Hesaplar ve silme",
+    "acct_b": "İlerlemeyi eşitlemek ve sosyal özellikleri kullanmak için oyun içi bir hesap oluşturabilirsiniz. **Ayarlar → Hesap → Hesabı sil** bölümünden veya bizimle iletişime geçerek hesabınızı dilediğiniz zaman silebilirsiniz. Hesabın silinmesi, hesaba bağlı kişisel verileri ve bulut kayıtlarını 30 gün içinde kaldırır (yedekler sınırlı bir süre kalabilir). Google Play Games veya Apple Game Center’ı da kendi ayarlarından bağlantısını kesebilirsiniz.",
+
+    "ugc_t": "15) Kullanıcı tarafından oluşturulan içerik (UGC) ve moderasyon",
+    "ugc_b": "UGC (örn. sohbet, profiller, lonca adları) oynanışın bir parçası olarak diğer oyuncular tarafından görülebilir. Topluluk kurallarımızı uygulamak için moderasyon yapar ve kötüye kullanım bildirimlerine göre işlem yapabiliriz. UGC’de hassas bilgiler paylaşmayın.",
+
+    "sec_t": "16) Güvenlik",
+    "sec_b": "Riske uygun teknik ve organizasyonel önlemler kullanırız (iletişim sırasında şifreleme, uygulanabildiğinde depoda şifreleme, erişim kontrolleri, asgari ayrıcalık ilkesi, günlükleme, düzenli yamalar, olay müdahalesi). Hiçbir sistem %100 güvenli değildir.",
+
+    "chg_t": "17) Değişiklikler",
+    "chg_b": "Bu Politikayı zaman zaman güncelleyebiliriz. Yeni yürürlük tarihiyle birlikte yeni bir sürüm yayımlayacağız.",
+
+    "ct_t": "18) İletişim",
+    "ct_b": `Veri sorumlusu: ${SETTINGS.legalEntity}.<br>Adres: ${SETTINGS.address}.<br>E-posta: <a href=\"mailto:${SETTINGS.contact}\">${SETTINGS.contact}</a>.`,
+
+    "defs_t": "19) Temel tanımlar",
+    "defs_b": "“Kişisel veri”, kimliği belirli veya belirlenebilir bir kişiyle ilgili bilgileri ifade eder. “İşleme”, kişisel veriler üzerinde gerçekleştirilen her türlü işlemdir. “Veri sorumlusu” amaç ve vasıtaları belirler; “veri işleyen” veri sorumlusu adına işler. “Hedefli reklamcılık”, bağlantısız uygulama veya web sitelerindeki faaliyetlerden elde edilen kişisel verilere dayalı reklam gösterimini ifade eder.",
+
+    "dnsmpi_btn": "Kişisel Bilgilerimi Satma veya Paylaşma",
+    "privacy_settings_t": "Gizlilik ayarları",
+    "privacy_settings_b": "Rızayı, reklam tercihlerini ve veri taleplerini **Ayarlar → Gizlilik** bölümünden yönetebilirsiniz."
   }
 };
 
