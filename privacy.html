@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#5f4088">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.5.0/css/flag-icons.min.css">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -1484,13 +1490,30 @@ const I18N = {
 const $ = (s,root=document)=>root.querySelector(s);
 const $$ = (s,root=document)=>[...root.querySelectorAll(s)];
 
+
+function formatEffectiveDate(lang){
+  // SETTINGS.effective имеет вид "YYYY-MM-DD"
+  const iso = SETTINGS.effective;          // напр. "2025-08-10"
+  const [y, m, d] = iso.split("-").map(n => parseInt(n, 10));
+  // Создаём дату в UTC, чтобы не «съезжал» день в разных часовых поясах
+  const dt = new Date(Date.UTC(y, m - 1, d));
+
+  try {
+    // Красивый локализованный формат (длинная дата), привязываем рендер к UTC
+    return new Intl.DateTimeFormat(lang, { dateStyle: "long", timeZone: "UTC" }).format(dt);
+  } catch {
+    // Фоллбэк для старых движков
+    return dt.toLocaleDateString(lang, { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+  }
+}
+
 function setLang(lang){
   const dict = I18N[lang] || I18N.en;
   $$("[data-i18n]").forEach(el=>{
     const k = el.getAttribute("data-i18n");
     if (dict[k]) el.innerHTML = dict[k];
   });
-  $("#effective").textContent = SETTINGS.effective;
+  $("#effective").textContent = formatEffectiveDate(lang);
   localStorage.setItem("ls.privacy.lang", lang);
 }
 
