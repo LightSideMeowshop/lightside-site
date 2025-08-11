@@ -32,7 +32,7 @@
     flex: 0 0 auto;           /* чтобы не сжимался во флексе */
     margin-right: 8px;        /* небольшой отступ от текста бренда */
   }
-  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:.2px}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:.2px;white-space: nowrap}
   .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg, var(--accent), #cc7f14)}
   .controls{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
   .btn, select{
@@ -53,6 +53,7 @@
   .k{font-family:ui-monospace,Consolas,Menlo,monospace;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:.05em .4em;border-radius:6px}
   .copy{margin-left:6px;font-size:12px}
   .grid2{display:grid;gap:10px}
+  .brandline{ display:flex; align-items:center; gap:10px; }
   @media (max-width: 640px){
   .header .wrap{
     flex-direction: column;     /* было в ряд — стало колонкой */
@@ -66,7 +67,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;    /* чтобы длинный заголовок не ломал верстку */
-  }
+  }  
+  .brandline{ order:0; }
   .controls{
     order: 1;                   /* под заголовком */
     width: 100%;
@@ -129,8 +131,10 @@
 
 <header class="header">
   <div class="wrap">
-    <div class="logo" aria-hidden="true"></div>
-    <div class="brand">Light Side</div>
+    <div class="brandline">
+      <div class="logo" aria-hidden="true"></div>
+      <div class="brand">Light Side</div>
+    </div>
     <div class="controls">
     <div class="lang-dd">
       <input type="hidden" id="lang">
