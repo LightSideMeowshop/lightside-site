@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.1.0/css/flag-icons.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LIGHT SIDE — game development studio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>html,body{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}</style>
+
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { future:{ hoverOnlyWhenSupported:true } };
+    </script>
+
+    <!-- Brand variables fallback -->
+    <style>
+      :root{ --brand-accent:#ff9f1b; --brand-base:#5f4088; }
+      /* Выделение текста */
+      ::selection { background: var(--brand-accent); color: #111; }
+      ::-moz-selection { background: var(--brand-accent); color: #111; }
+
+      /* Видимый фокус (клавиатура/доступность) */
+      :focus-visible { outline: 2px solid var(--brand-accent); outline-offset: 2px; }
+
+      /* Ссылки — подсветка ховера/подчёркивания */
+      a { text-underline-offset: .18em; text-decoration-thickness: .08em;
+          text-decoration-color: var(--brand-accent); }
+      a:hover { color: var(--brand-accent); text-decoration-color: var(--brand-accent); }
+
+      /* Формы: цвет курсора и акцент чекбоксов/радиокнопок/прогресса/ренджа */
+      input, textarea, select { caret-color: var(--brand-accent); }
+      input[type="checkbox"], input[type="radio"], progress, input[type="range"] { accent-color: var(--brand-accent); }
+
+      /* (Опционально) Скроллбары */
+      * { scrollbar-color: var(--brand-accent) transparent; }            /* Firefox */
+      *::-webkit-scrollbar { width: 10px; height: 10px; }
+      *::-webkit-scrollbar-thumb { background: var(--brand-accent); }    /* Chromium/Safari */
+
+      .lang-dd{ position:relative; }
+      .lang-trigger{
+        display:flex; align-items:center; gap:8px;
+        background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.06));
+        border:1px solid rgba(255,255,255,.22); color:#fff; padding:8px 12px; border-radius:12px;
+        font-weight:600; letter-spacing:.2px; cursor:pointer;
+        box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);
+      }
+      .lang-trigger svg{ opacity:.8; transition:transform .2s; }
+      .lang-trigger[aria-expanded="true"] svg{ transform:rotate(180deg); }
+
+      .lang-menu{
+        position:absolute; right:0; top:110%;
+        min-width:220px; max-height:280px; overflow:auto; padding:6px;
+        border-radius:12px; display:none; z-index:40;
+        background:linear-gradient(180deg, rgba(95,64,136,.98), rgba(95,64,136,.96)); /* var(--brand-base) */
+        background:linear-gradient(180deg, var(--brand-base, #5f4088), color-mix(in oklab, var(--brand-base, #5f4088) 96%, black));
+        border:1px solid rgba(255,255,255,.15); box-shadow:0 12px 32px rgba(0,0,0,.35);
+        backdrop-filter:blur(8px);
+      }
+      .lang-menu.open{ display:block; }
+
+      .lang-option{
+        display:flex; align-items:center; gap:10px; width:100%;
+        padding:8px 10px; border-radius:10px; color:#fff; background:transparent; border:0; text-align:left; cursor:pointer;
+      }
+      .lang-option:hover, .lang-option[aria-selected="true"], .lang-option:focus{
+        background:rgba(255,255,255,.10); outline:2px solid transparent;
+      }
+      #langLabel .fi, .lang-option .fi{
+        margin-right:8px; border-radius:2px; box-shadow:inset 0 0 0 1px rgba(0,0,0,.25); vertical-align:-0.1em;
+      }
+    </style>
+
+    <!-- React & Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- lucide icons UMD -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  </head>
+  <body class="bg-[var(--brand-base)] text-white">
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useEffect, useState } = React;
+
+      // === i18n loader bound to your Google Sheet ===
+      const SHEET_ID = "1uSCWtOcas7MDbZhAZ0YjUqqKYNntERvB1gtiyswZIm0";
+      const GID = "1160203870";
+      const GVIZ_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?gid=${GID}&headers=1&tqx=out:json`;
+
+      function useLocalStorage(key, initial) {
+        const [val, setVal] = useState(() => {
+          try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : initial; } catch { return initial; }
+        });
+        useEffect(()=>{ try{ localStorage.setItem(key, JSON.stringify(val)); }catch{} }, [key, val]);
+        return [val, setVal];
+      }
+
+      function useI18n() {
+        const [locale, setLocale] = useLocalStorage("ls.locale", (navigator.language||"en").split("-")[0].toLowerCase());
+        const [map, setMap] = useState({});
+        const [status, setStatus] = useState("idle"); // idle|loading|ok|error
+        const [error, setError] = useState("");
+
+        useEffect(() => {
+          let cancelled = false;
+          async function load() {
+            setStatus("loading"); setError("");
+            try {
+              const res = await fetch(GVIZ_URL, { cache:"no-store" });
+              const text = await res.text();
+              const start = text.indexOf("{"); const end = text.lastIndexOf("}");
+              if (start === -1 || end === -1) throw new Error("Bad gviz response");
+              const data = JSON.parse(text.slice(start, end+1));
+              const cols = (data.table.cols||[]).map(c => (c.label||"").toString().trim().toLowerCase());
+              console.log(cols);
+              const keyIdx = cols.indexOf("key");
+              if (keyIdx === -1) throw new Error('Missing "key" column');
+              const langIdx = cols.indexOf(locale);
+              const enIdx = cols.indexOf("en");
+              const m = {};
+              (data.table.rows||[]).forEach(r => {
+                const cells = r.c || [];
+                const k = (cells[keyIdx]?.v ?? "").toString();
+                if (!k) return;
+                const v = (langIdx >= 0 ? (cells[langIdx]?.v) : null) ?? (enIdx >= 0 ? (cells[enIdx]?.v) : null);
+                m[k] = (v==null || v==="") ? k : v;
+              });
+              if (!cancelled) { setMap(m); setStatus("ok"); }
+            } catch (e) {
+              if (!cancelled) { setStatus("error"); setError(e.message||String(e)); }
+              console.error(e);
+            }
+          }
+          load();
+          return () => { cancelled = true; };
+        }, [locale]);
+
+        const t = React.useCallback((key) => (map[key] ?? key), [map]);
+        return { t, locale, setLocale, status, error };
+      }
+
+      const SectionTitle = ({ kicker, title, subtitle }) => (
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <div className="flex items-center justify-center gap-2 text-[var(--brand-accent)] uppercase tracking-widest text-xs font-semibold">
+            <i data-lucide="rocket" class="w-4 h-4"></i><span>{kicker}</span>
+          </div>
+          <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">{title}</h2>
+          {subtitle && <p className="mt-3 text-white/70">{subtitle}</p>}
+        </div>
+      );
+
+      function LangDropdown({ locale, setLocale }) {
+        const [open, setOpen] = React.useState(false);
+        const menuRef = React.useRef(null);
+        const btnRef = React.useRef(null);
+
+        // те же языки и флаги, что в privacy.html
+        const LANGS = React.useMemo(()=>[
+          ["en","English","gb"],
+          ["ru","Русский","ru"],
+          ["nl","Nederlands","nl"],
+          ["fi","Suomi","fi"],
+          ["fr","Français","fr"],
+          ["de","Deutsch","de"],
+          ["id","Bahasa Indonesia","id"],
+          ["it","Italiano","it"],
+          ["ms","Bahasa Melayu","my"],
+          ["pl","Polski","pl"],
+          ["pt","Português","pt"],
+          ["es","Español","es"],
+          ["tr","Türkçe","tr"],
+        ], []);
+
+        function getMeta(code){
+          const f = LANGS.find(([c])=>c===code);
+          return f ? { code:f[0], label:f[1], flag:f[2] } : { code, label:code, flag:"us" };
+        }
+
+        // начальное значение — приводим к списку, иначе "en"
+        const currentCode = LANGS.some(([c])=>c===locale) ? locale : "en";
+        const current = getMeta(currentCode);
+
+        function toggle(){ setOpen(v=>!v); }
+        function close(){ setOpen(false); }
+
+        function select(code){
+          setLocale(code); // синхронно с вашим useI18n (ключ ls.locale)
+          close();
+        }
+
+        React.useEffect(()=>{
+          function onDocClick(e){
+            if (!menuRef.current || !btnRef.current) return;
+            if (!menuRef.current.contains(e.target) && !btnRef.current.contains(e.target)) close();
+          }
+          function onKey(e){ if (e.key === "Escape") close(); }
+          document.addEventListener("click", onDocClick);
+          document.addEventListener("keydown", onKey);
+          return ()=>{ document.removeEventListener("click", onDocClick); document.removeEventListener("keydown", onKey); };
+        }, []);
+
+        React.useEffect(()=>{
+          if (open) menuRef.current?.focus();
+        }, [open]);
+
+        function onMenuKeyDown(e){
+          const opts = Array.from(menuRef.current.querySelectorAll(".lang-option"));
+          const idx = opts.findIndex(o=>o===document.activeElement);
+          if(e.key==="ArrowDown"){ e.preventDefault(); (opts[idx+1]||opts[0])?.focus(); }
+          if(e.key==="ArrowUp"){ e.preventDefault(); (opts[idx-1]||opts[opts.length-1])?.focus(); }
+          if(e.key==="Enter" && document.activeElement.classList.contains("lang-option")){
+            e.preventDefault(); document.activeElement.click();
+          }
+        }
+
+        return (
+          <div className="lang-dd">
+            <button
+              ref={btnRef}
+              id="langBtn"
+              type="button"
+              className="lang-trigger"
+              aria-haspopup="listbox"
+              aria-expanded={open ? "true" : "false"}
+              onClick={toggle}
+              title="Language"
+            >
+              <span id="langLabel">
+                <span className={`fi fi-${current.flag}`}></span>
+                <span>{current.label}</span>
+              </span>
+              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+
+            <div
+              id="langMenu"
+              ref={menuRef}
+              className={`lang-menu ${open ? "open" : ""}`}
+              role="listbox"
+              tabIndex="-1"
+              aria-labelledby="langBtn"
+              onKeyDown={onMenuKeyDown}
+            >
+              {LANGS.map(([code, label])=>{
+                const m = getMeta(code);
+                return (
+                  <button
+                    key={code}
+                    type="button"
+                    className="lang-option"
+                    role="option"
+                    aria-selected={code===currentCode ? "true" : "false"}
+                    onClick={()=>select(code)}
+                  >
+                    <span className={`fi fi-${m.flag}`}></span>
+                    <span>{m.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        );
+      }
+
+
+      function App(){
+        const { t, locale, setLocale, status, error } = useI18n();
+
+        useEffect(() => {
+          try { window.lucide && window.lucide.createIcons(); } catch {}
+        });
+
+        const games = [
+          { id:"solar", title:t("games.solar_run.title"), desc:t("games.solar_run.description"), status:t("games.solar_run.status"), tags:[t("games.tags.roguelite"), t("games.tags.singleplayer"), t("games.tags.pc_console")] },
+          { id:"dusk",  title:t("games.dusk_valley.title"), desc:t("games.dusk_valley.description"), status:t("games.dusk_valley.status"), tags:[t("games.tags.adventure"), t("games.tags.choices_matter"), t("games.tags.narrative")] },
+          { id:"neon",  title:t("games.neon_forge.title"), desc:t("games.neon_forge.description"), status:t("games.neon_forge.status"), tags:[t("games.tags.action"), t("games.tags.tactics"), t("games.tags.indie")] },
+        ];
+
+        const news = [
+          { date:"2025-05-18", title:t("news.items.0.title"), summary:t("news.items.0.summary") },
+          { date:"2025-03-02", title:t("news.items.1.title"), summary:t("news.items.1.summary") },
+          { date:"2024-11-21", title:t("news.items.2.title"), summary:t("news.items.2.summary") },
+        ];
+
+        return (
+          <div className="min-h-screen scroll-smooth">
+            <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[var(--brand-base)]/60 border-b border-white/10">
+              <div className="mx-auto max-w-7xl px-4 py-3 flex items-center gap-3">
+                <div className="h-10 w-10 rounded-lg ring-1 ring-white/20 bg-[var(--brand-accent)]/30 flex items-center justify-center">
+                  <i data-lucide="sun-medium" class="w-5 h-5"></i>
+                </div>
+                <div className="font-bold tracking-tight text-lg">LIGHT SIDE</div>
+
+                <nav className="ml-auto hidden md:flex items-center gap-2">
+                  {["nav.about","nav.games","nav.team","nav.careers","nav.news","nav.press","nav.contact"].map(k => (
+                    <a key={k} href={"#"+k.split(".")[1]} className="px-3 py-2 rounded-xl text-sm hover:text-[var(--brand-accent)] hover:bg-white/5 transition">{t(k)}</a>
+                  ))}
+                  <LangDropdown locale={locale} setLocale={setLocale} />
+                </nav>
+              </div>
+            </header>
+
+            <section className="relative">
+              <div className="absolute inset-0 -z-10">
+                <div className="h-[40rem] bg-gradient-to-b from-[var(--brand-accent)]/20 via-white/5 to-transparent blur-3xl"></div>
+              </div>
+              <div className="relative mx-auto max-w-7xl px-4 py-20 md:py-28">
+                <div className="max-w-3xl">
+                  <div className="flex items-center gap-3 text-[var(--brand-accent)]/90">
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs bg-[var(--brand-accent)]/15 text-[var(--brand-accent)] ring-1 ring-[var(--brand-accent)]/30">
+                      <i data-lucide="trophy" class="w-3.5 h-3.5 mr-1"></i> {t("hero.pill.indie_studio")}
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs bg-[var(--brand-accent)]/15 text-[var(--brand-accent)] ring-1 ring-[var(--brand-accent)]/30">
+                      <i data-lucide="rocket" class="w-3.5 h-3.5 mr-1"></i> {t("hero.pill.meaningful_games")}
+                    </span>
+                  </div>
+                  <h1 className="mt-6 text-4xl md:text-6xl font-extrabold leading-[1.05]">{t("hero.title")}</h1>
+                  <p className="mt-5 text-lg md:text-xl text-white/80">{t("hero.subtitle")}</p>
+
+                  <div className="mt-8 flex flex-wrap items-center gap-3">
+                    <a href="#games" className="group inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-[var(--brand-accent)] text-slate-900 font-semibold hover:translate-y-[-1px] transition">
+                      <i data-lucide="gamepad-2" class="w-5 h-5"></i> {t("hero.cta.games")}
+                    </a>
+                    <a href="#careers" className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl border border-white/20 hover:bg-white/10">
+                      <i data-lucide="briefcase" class="w-5 h-5"></i> {t("hero.cta.careers")}
+                    </a>
+                    <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl border border-white/20 hover:bg-white/10">
+                      <i data-lucide="mail" class="w-5 h-5"></i> {t("hero.cta.contact")}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="about" className="mx-auto max-w-7xl px-4 py-20">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <div className="flex items-center justify-center gap-2 text-[var(--brand-accent)] uppercase tracking-widest text-xs font-semibold">
+                  <i data-lucide="rocket" class="w-4 h-4"></i><span>{t("about.kicker")}</span>
+                </div>
+                <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">{t("about.title")}</h2>
+                <p className="mt-3 text-white/70">{t("about.subtitle")}</p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  { title:t("about.bullets.technical.title"), text:t("about.bullets.technical.text") },
+                  { title:t("about.bullets.prototype.title"), text:t("about.bullets.prototype.text") },
+                  { title:t("about.bullets.aesthetics.title"), text:t("about.bullets.aesthetics.text") },
+                ].map((b,i)=>(
+                  <div key={i} className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+                    <h3 className="text-lg font-semibold">{b.title}</h3>
+                    <p className="mt-2 text-white/70">{b.text}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="games" className="mx-auto max-w-7xl px-4 py-20">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <div className="flex items-center justify-center gap-2 text-[var(--brand-accent)] uppercase tracking-widest text-xs font-semibold">
+                  <i data-lucide="gamepad-2" class="w-4 h-4"></i><span>{t("games.kicker")}</span>
+                </div>
+                <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">{t("games.title")}</h2>
+                <p className="mt-3 text-white/70">{t("games.subtitle")}</p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  { id:"solar", title:t("games.solar_run.title"), desc:t("games.solar_run.description"), status:t("games.solar_run.status"), tags:[t("games.tags.roguelite"), t("games.tags.singleplayer"), t("games.tags.pc_console")] },
+                  { id:"dusk",  title:t("games.dusk_valley.title"), desc:t("games.dusk_valley.description"), status:t("games.dusk_valley.status"), tags:[t("games.tags.adventure"), t("games.tags.choices_matter"), t("games.tags.narrative")] },
+                  { id:"neon",  title:t("games.neon_forge.title"), desc:t("games.neon_forge.description"), status:t("games.neon_forge.status"), tags:[t("games.tags.action"), t("games.tags.tactics"), t("games.tags.indie")] },
+                ].map(g=>(
+                  <a key={g.id} href="#" className="group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10">
+                    <div className="relative aspect-[3/4] overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-accent)]/10 to-transparent"></div>
+                      <div className="absolute left-3 top-3"><span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs bg-[var(--brand-accent)]/15 text-[var(--brand-accent)] ring-1 ring-[var(--brand-accent)]/30">{g.status}</span></div>
+                      <div className="absolute inset-0 flex items-center justify-center text-4xl font-extrabold opacity-70">{g.title}</div>
+                      <button className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/60 text-white text-xs backdrop-blur">
+                        <i data-lucide="play-circle" class="w-4 h-4"></i> {t("games.trailer")}
+                      </button>
+                    </div>
+                    <div className="p-4">
+                      <p className="text-white/80 text-sm">{g.desc}</p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {g.tags.map(tag => <span key={tag} className="px-2 py-1 rounded-lg bg-white/5 border border-white/10 text-xs">{tag}</span>)}
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+              <div className="mt-8 flex items-center justify-center">
+                <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl border border-white/15 hover:bg-white/10">{t("games.request_build")}</a>
+              </div>
+            </section>
+
+            <section id="team" className="mx-auto max-w-7xl px-4 py-20">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <div className="flex items-center justify-center gap-2 text-[var(--brand-accent)] uppercase tracking-widest text-xs font-semibold">
+                  <i data-lucide="users" class="w-4 h-4"></i><span>{t("team.kicker")}</span>
+                </div>
+                <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">{t("team.title")}</h2>
+                <p className="mt-3 text-white/70">{t("team.subtitle")}</p>
+              </div>
+              <div className="grid md:grid-cols-4 gap-6">
+                {[0,1,2,3].map(i => (
+                  <div key={i} className="rounded-2xl p-5 border border-white/10 bg-white/5">
+                    <div className="h-28 w-28 rounded-2xl bg-[var(--brand-accent)]/30 mx-auto"></div>
+                    <h3 className="mt-4 text-center font-semibold">{t(`team.members.${i}.name`)}</h3>
+                    <p className="text-center text-sm text-white/70">{t(`team.members.${i}.role`)}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="careers" className="mx-auto max-w-7xl px-4 py-20">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <div className="flex items-center justify-center gap-2 text-[var(--brand-accent)] uppercase tracking-widest text-xs font-semibold">
+                  <i data-lucide="briefcase" class="w-4 h-4"></i><span>{t("careers.kicker")}</span>
+                </div>
+                <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">{t("careers.title")}</h2>
+                <p className="mt-3 text-white/70">{t("careers.subtitle")}</p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  { t1:"careers.jobs.senior_engineer.title", t2:"careers.jobs.senior_engineer.type", t3:"careers.jobs.senior_engineer.description" },
+                  { t1:"careers.jobs.game_designer.title", t2:"careers.jobs.game_designer.type", t3:"careers.jobs.game_designer.description" },
+                  { t1:"careers.jobs.hard_surface_artist.title", t2:"careers.jobs.hard_surface_artist.type", t3:"careers.jobs.hard_surface_artist.description" },
+                ].map((j,i)=>(
+                  <div key={i} className="rounded-2xl p-5 border border-white/10 bg-white/5">
+                    <h3 className="text-lg font-semibold">{t(j.t1)}</h3>
+                    <p className="mt-1 text-[var(--brand-accent)] text-sm">{t(j.t2)}</p>
+                    <p className="mt-3 text-white/70 text-sm">{t(j.t3)}</p>
+                    <a href="#contact" className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/15 hover:bg-white/10">{t("careers.apply")}</a>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="news" className="mx-auto max-w-7xl px-4 py-20">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <div className="flex items-center justify-center gap-2 text-[var(--brand-accent)] uppercase tracking-widest text-xs font-semibold">
+                  <i data-lucide="newspaper" class="w-4 h-4"></i><span>{t("news.kicker")}</span>
+                </div>
+                <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">{t("news.title")}</h2>
+                <p className="mt-3 text-white/70">{t("news.subtitle")}</p>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { date:"2025-05-18", title:t("news.items.0.title"), summary:t("news.items.0.summary") },
+                  { date:"2025-03-02", title:t("news.items.1.title"), summary:t("news.items.1.summary") },
+                  { date:"2024-11-21", title:t("news.items.2.title"), summary:t("news.items.2.summary") },
+                ].map((n,i)=>(
+                  <div key={i} className="rounded-2xl p-5 border border-white/10 bg-white/5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                      <div className="text-sm text-white/70">{new Date(n.date).toLocaleDateString()}</div>
+                      <h3 className="text-lg font-semibold mt-1">{n.title}</h3>
+                      <p className="text-white/70 mt-1">{n.summary}</p>
+                    </div>
+                    <a href="#" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/15 hover:bg-white/10">{t("news.read")}</a>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="press" className="mx-auto max-w-7xl px-4 py-20">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <div className="flex items-center justify-center gap-2 text-[var(--brand-accent)] uppercase tracking-widest text-xs font-semibold">
+                  <i data-lucide="newspaper" class="w-4 h-4"></i><span>{t("press.kicker")}</span>
+                </div>
+                <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">{t("press.title")}</h2>
+                <p className="mt-3 text-white/70">{t("press.subtitle")}</p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="rounded-2xl p-5 border border-white/10 bg-white/5">
+                  <h3 className="font-semibold">{t("press.logo")}</h3>
+                  <div className="mt-3 aspect-[3/1] rounded-xl border border-white/10 bg-white/5 flex items-center justify-center overflow-hidden">
+                    <div className="h-24 w-24 bg-[var(--brand-accent)]/30 rounded-lg"></div>
+                  </div>
+                  <div className="mt-3 flex gap-3">
+                    <a href="#" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/15 hover:bg-white/10"><i data-lucide="download" class="w-4 h-4"></i>{t("press.download_png")}</a>
+                  </div>
+                </div>
+                <div className="rounded-2xl p-5 border border-white/10 bg-white/5">
+                  <h3 className="font-semibold">{t("press.banner")}</h3>
+                  <div className="mt-3 aspect-[3/1] rounded-xl border border-white/10 bg-white/5 overflow-hidden"></div>
+                  <div className="mt-3 flex gap-3">
+                    <a href="#" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/15 hover:bg-white/10"><i data-lucide="download" class="w-4 h-4"></i>{t("press.download_image")}</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="contact" className="mx-auto max-w-7xl px-4 py-20">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <div className="flex items-center justify-center gap-2 text-[var(--brand-accent)] uppercase tracking-widest text-xs font-semibold">
+                  <i data-lucide="mail" class="w-4 h-4"></i><span>{t("contact.kicker")}</span>
+                </div>
+                <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">{t("contact.title")}</h2>
+                <p className="mt-3 text-white/70">{t("contact.subtitle")}</p>
+              </div>
+              <form onSubmit={(e)=>e.preventDefault()} className="grid md:grid-cols-2 gap-6">
+                <div className="grid gap-3">
+                  <input placeholder={t("contact.form.name")} required className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]" />
+                  <input type="email" placeholder={t("contact.form.email")} required className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]" />
+                  <input placeholder={t("contact.form.subject")} className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]" />
+                </div>
+                <div className="grid gap-3">
+                  <textarea placeholder={t("contact.form.message")} rows="6" className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]"></textarea>
+                  <div className="flex items-center gap-3">
+                    <button className="px-5 py-3 rounded-xl bg-[var(--brand-accent)] text-slate-900 font-semibold">{t("contact.form.send")}</button>
+                    <span className="text-sm text-white/70">{t("contact.reply_time")}</span>
+                  </div>
+                </div>
+              </form>
+            </section>
+
+            <footer className="border-t border-white/10">
+              <div className="mx-auto max-w-7xl px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="h-8 w-8 rounded-lg ring-1 ring-white/10 bg-[var(--brand-accent)]/30"></div>
+                  <span className="text-sm text-white/70">© {new Date().getFullYear()} {t("footer.copyright")}</span>
+                </div>
+                <div className="text-sm text-white/70">{t("footer.made_with_love")}</div>
+              </div>
+            </footer>
+
+            <div className="fixed bottom-3 right-3 text-xs px-2 py-1 rounded bg-black/50 backdrop-blur border border-white/10">
+              i18n: {status}{error ? " — " + error : ""}
+            </div>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+    </script>
+  </body>
+</html>

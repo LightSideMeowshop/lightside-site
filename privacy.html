@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.5.0/css/flag-icons.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy — Light Side</title>
+<style>
+  :root{
+    --accent:#ff9f1b;          /* акцент */
+    --base:#5f4088;            /* фон */
+    --ink:#0b0b0f;
+    --paper:#ffffff;
+  }
+  html,body{margin:0;padding:0;background:#170f24;color:#f7f7fb;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+  a{color:var(--accent);text-decoration-thickness:.08em;text-underline-offset:.18em}
+  ::selection{background:var(--accent);color:#111}
+  .wrap{max-width:980px;margin:0 auto;padding:24px}
+  .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px}
+  .header{position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);background:rgba(95,64,136,.65);border-bottom:1px solid rgba(255,255,255,.15)}
+  .header{
+    transition: transform .24s ease, box-shadow .2s ease;
+  }
+  .header.is-hidden{
+    transform: translateY(-100%);
+  }
+  .header .wrap{display:flex;gap:12px;align-items:center}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:.2px}
+  .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg, var(--accent), #cc7f14)}
+  .controls{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+  .btn, select{
+    appearance:none;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18);
+    border-radius:10px;padding:8px 12px;cursor:pointer
+  }
+  .btn:hover{background:rgba(255,255,255,.14)}
+  .title{font-size:28px;font-weight:800;margin:22px 0 8px}
+  .muted{color:#d9d9e6}
+  .summary{display:grid;gap:10px;padding:12px 14px}
+  .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,159,27,.14);color:#ffd199;border:1px solid rgba(255,159,27,.35);padding:4px 8px;border-radius:10px;font-size:16px}
+  details{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:14px 16px}
+  details+details{margin-top:12px}
+  summary{cursor:pointer;font-weight:700}
+  h2.section{font-size:20px;margin:26px 0 8px}
+  .foot{margin-top:28px;padding:14px 16px}
+  .note{font-size:13px;color:#e8e8f3}
+  .k{font-family:ui-monospace,Consolas,Menlo,monospace;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:.05em .4em;border-radius:6px}
+  .copy{margin-left:6px;font-size:12px}
+  .grid2{display:grid;gap:10px}
+  @media (max-width: 640px){
+  .header .wrap{
+    flex-direction: column;     /* было в ряд — стало колонкой */
+    align-items: stretch;
+    gap: 8px;
+  }
+  .brand{
+    order: 0;
+    width: 100%;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    /* чтобы длинный заголовок не ломал верстку */
+  }
+  .controls{
+    order: 1;                   /* под заголовком */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;            /* переносим кнопки на следующую строку при нехватке места */
+    gap: 8px;
+    justify-content: flex-start;
+  }
+  .controls > *{
+    flex: 0 0 auto;             /* не растягивать кнопки на всю ширину */
+  }
+}
+  @media print{
+    .header,.controls,.copy{display:none!important}
+    body{background:#fff;color:#000}
+    .card,details{background:#fff;border-color:#ddd}
+    a{color:#000}
+  }
+  .lang-dd{ position:relative; }
+  .lang-trigger{
+    display:flex; align-items:center; gap:8px;
+    background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.06));
+    border:1px solid rgba(255,255,255,.22); color:#fff; padding:8px 12px; border-radius:12px;
+    font-weight:600; letter-spacing:.2px; cursor:pointer;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);
+  }
+  .lang-trigger svg{ opacity:.8; transition:transform .2s; }
+  .lang-trigger[aria-expanded="true"] svg{ transform:rotate(180deg); }
+
+  .lang-menu{
+    position:absolute; right:0; top:110%;
+    min-width:220px; max-height:280px; overflow:auto; padding:6px;
+    border-radius:12px; display:none; z-index:40;
+    background:linear-gradient(180deg, rgba(95,64,136,.98), rgba(95,64,136,.96)); /* var(--base) */
+    border:1px solid rgba(255,255,255,.15); box-shadow:0 12px 32px rgba(0,0,0,.35);
+    backdrop-filter:blur(8px);
+  }
+  .lang-menu.open{ display:block; }
+
+  .lang-option{
+    display:flex; align-items:center; gap:10px; width:100%;
+    padding:8px 10px; border-radius:10px; color:#fff; background:transparent; border:0; text-align:left; cursor:pointer;
+  }
+  .lang-option:hover, .lang-option[aria-selected="true"], .lang-option:focus{
+    background:rgba(255,255,255,.10); outline:2px solid transparent;
+  }
+  * { scrollbar-color: var(--accent) transparent; }            /* Firefox */
+  *::-webkit-scrollbar { width: 10px; height: 10px; }
+  *::-webkit-scrollbar-thumb { background: var(--accent); }    /* Chromium/Safari */
+  #langLabel .fi,
+  .lang-option .fi{
+    margin-right:8px;
+    border-radius:2px;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.25);
+    vertical-align:-0.1em;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <div class="logo" aria-hidden="true"></div>
+    <div class="brand">Light Side — <span data-i18n="pp_title">Privacy Policy</span></div>
+    <div class="controls">
+    <div class="lang-dd">
+      <input type="hidden" id="lang">
+      <button class="btn lang-trigger" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+        <span id="langLabel">Language</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div id="langMenu" class="lang-menu" role="listbox" tabindex="-1" aria-labelledby="langBtn"></div>
+    </div>
+      <button class="btn" id="expandAll" data-i18n="btn_expand">Expand all</button>
+      <button class="btn" id="collapseAll" data-i18n="btn_collapse">Collapse all</button>
+      <button class="btn" id="print" data-i18n="btn_print">Print / Save PDF</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="card" style="padding:18px 20px">
+    <div class="title" data-i18n="pp_title">Privacy Policy</div>
+    <div class="muted"><span data-i18n="updated">Effective date</span>: <span id="effective"></span></div>
+
+    <div class="summary card" style="margin-top:14px">
+      <div class="badge">✔ <div data-i18n="sum_global">Applies worldwide to our games, apps and websites.</div></div>
+      <div class="badge">🧰 <div data-i18n="sum_sdks">We use widely adopted services: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.</div></div>
+      <div class="badge">🚫 <div data-i18n="sum_no_sell">We do not sell or share personal data.</div></div>
+      <div class="badge">👶 <div data-i18n="sum_kids">We do not knowingly collect data from children.</div></div>
+    </div>
+  </div>
+
+  <section style="margin-top:18px">
+    <details open>
+      <summary id="who" class="section" data-i18n="who_t">1) Who we are</summary>
+      <div data-i18n="who_b"></div>
+    </details>
+
+    <details open>
+      <summary id="scope" class="section" data-i18n="scope_t">2) Scope</summary>
+      <div data-i18n="scope_b"></div>
+    </details>
+
+    <details>
+      <summary id="data" class="section" data-i18n="data_t">3) Data we process</summary>
+      <div>
+        <ul>
+          <li data-i18n="d_usage"></li>
+          <li data-i18n="d_progress"></li>
+          <li data-i18n="d_purchases"></li>
+          <li data-i18n="d_ads"></li>
+          <li data-i18n="d_support"></li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary id="legal" class="section" data-i18n="legal_t">4) Purposes & legal bases</summary>
+      <div data-i18n="legal_b"></div>
+    </details>
+
+    <details>
+      <summary id="sdks" class="section" data-i18n="sdks_t">5) Third-party services (processors)</summary>
+      <div class="grid2">
+        <div>
+          <h3>Firebase Analytics / Crashlytics</h3>
+          <p data-i18n="sdk_firebase"></p>
+        </div>
+        <div>
+          <h3>Google AdMob / Unity Ads</h3>
+          <p data-i18n="sdk_ads"></p>
+        </div>
+        <div>
+          <h3>Google Play Games Services</h3>
+          <p data-i18n="sdk_play"></p>
+        </div>
+        <div>
+          <h3>AppsFlyer</h3>
+          <p data-i18n="sdk_af"></p>
+        </div>
+      </div>
+      <p class="note" data-i18n="processors_note"></p>
+    </details>
+
+    <details>
+      <summary id="sharing" class="section" data-i18n="share_t">6) Sharing</summary>
+      <div data-i18n="share_b"></div>
+    </details>
+
+    <details>
+      <summary id="retention" class="section" data-i18n="ret_t">7) Retention</summary>
+      <div data-i18n="ret_b"></div>
+    </details>
+
+    <details>
+      <summary id="intl" class="section" data-i18n="intl_t">8) International transfers</summary>
+      <div data-i18n="intl_b"></div>
+    </details>
+
+    <details>
+      <summary id="kids" class="section" data-i18n="kids_t">9) Children</summary>
+      <div data-i18n="kids_b"></div>
+    </details>
+
+    <details>
+      <summary id="rights" class="section" data-i18n="rights_t">10) Your rights</summary>
+      <div data-i18n="rights_b"></div>
+    </details>
+
+    <details>
+      <summary id="cookies" class="section" data-i18n="cookies_t">11) Cookies & consent</summary>
+      <div data-i18n="cookies_b"></div>
+    </details>
+
+    <details>
+      <summary id="security" class="section" data-i18n="sec_t">12) Security</summary>
+      <div data-i18n="sec_b"></div>
+    </details>
+
+    <details>
+      <summary id="changes" class="section" data-i18n="chg_t">13) Changes</summary>
+      <div data-i18n="chg_b"></div>
+    </details>
+
+    <details>
+      <summary id="contact" class="section" data-i18n="ct_t">14) Contact</summary>
+      <div data-i18n="ct_b"></div>
+    </details>
+  </section>
+
+  <div class="foot card">
+    <div class="note">
+      <span data-i18n="foot_note">Tip: click any section title to copy a direct link.</span>
+      <button class="btn copy" id="copyLink" data-i18n="btn_copy">Copy link to this section</button>
+    </div>
+  </div>
+</main>
+
+<script>
+/* ====== SETTINGS (замени под себя) ====== */
+const SETTINGS = {
+  companyName: "Light Side",
+  legalEntity: "Light Side",
+  address: "—",                          // укажи адрес регистрации
+  contact: "privacy@lightside.games",    // e-mail для прав субъектов
+  effective: "2025-08-10",               // дата вступления в силу
+  appsList: "our published games and apps", // перечисли проекты при желании
+  hasAccounts: false,                    // есть ли учётные записи в продуктах
+  retention: { crashes: "90 days", analytics: "14 months", finance: "as required by tax law" },
+  hasCookiesBanner: true                 // если используешь баннер согласия на сайте
+};
+
+/* ====== I18N ====== */
+const LANGS = [
+  ["en","English","gb"],
+  ["ru","Русский","ru"],
+  ["nl","Nederlands","nl"],
+  ["fi","Suomi","fi"],
+  ["fr","Français","fr"],
+  ["de","Deutsch","de"],
+  ["id","Bahasa Indonesia","id"],
+  ["it","Italiano","it"],
+  ["ms","Bahasa Melayu","my"],
+  ["pl","Polski","pl"],
+  ["pt","Português","pt"],
+  ["es","Español","es"],
+  ["tr","Türkçe","tr"]
+];
+
+const I18N = {
+  en:{
+    pp_title:"Privacy Policy",
+    updated:"Effective date",
+    btn_expand:"Expand all", btn_collapse:"Collapse all", btn_print:"Print / Save PDF", btn_copy:"Copy link to this section",
+    sum_global:"Applies worldwide to our games, apps and websites.",
+    sum_sdks:"We use widely adopted services: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"We do not sell or share personal data.",
+    sum_kids:"We do not knowingly collect data from children.",
+    who_t:"1) Who we are",
+    who_b: `${SETTINGS.legalEntity} (“we”, “us”) develops and publishes video games and applications. We act as the data controller for processing described in this Policy.`,
+    scope_t:"2) Scope",
+    scope_b:`This Policy covers ${SETTINGS.appsList} and our websites operated under the “${SETTINGS.companyName}” brand, worldwide.`,
+    data_t:"3) Data we process",
+    d_usage:"Usage & diagnostics (events, sessions, coarse location, device/OS) — analytics, crash detection, product improvement.",
+    d_progress:"Game progress & identifiers (player ID, achievements, cloud saves, anti-cheat signals) — core functionality and sync.",
+    d_purchases:"Purchase information (SKU, region, purchase token/receipt) — purchase fulfillment, refunds, fraud prevention.",
+    d_ads:"Ads data (ad impressions, resettable advertising IDs) — showing ads, frequency capping, measurement (ad-supported titles).",
+    d_support:"Support data (email, message content, attachments) — customer support and troubleshooting.",
+    legal_t:"4) Purposes & legal bases",
+    legal_b:"Depending on your location, we rely on consent (where required for ads/analytics), performance of a contract (to deliver the game/app and purchases), and legitimate interests (security, anti-fraud, crash diagnostics). You may withdraw consent at any time via in-app settings or our cookie/consent banner.",
+    sdks_t:"5) Third-party services (processors)",
+    sdk_firebase:"Analytics of usage and stability; Crashlytics to diagnose crashes. Data may include device/OS info, app version, events, and crash logs.",
+    sdk_ads:"Ad networks show ads and measure performance using resettable advertising IDs and context signals. You can reset or limit ad tracking in your OS.",
+    sdk_play:"Cloud saves, achievements, leaderboards, and platform integrations as provided by Google Play Games Services.",
+    sdk_af:"Attribution and campaign performance to understand installs and optimize marketing. Uses identifiers and non-sensitive event data.",
+    processors_note:"We engage these providers under contracts as our processors; they must protect data and use it only on our instructions.",
+    share_t:"6) Sharing",
+    share_b:"We do not sell or share personal data. We disclose data only to service providers (processors) and where required by law or to protect rights, safety and integrity.",
+    ret_t:"7) Retention",
+    ret_b:`We retain data only as needed: crash logs ~ ${SETTINGS.retention.crashes}, analytics ~ ${SETTINGS.retention.analytics}, and financial records ${SETTINGS.retention.finance}. Then we delete or anonymize.`,
+    intl_t:"8) International transfers",
+    intl_b:"Where data is transferred internationally, we apply appropriate safeguards (e.g., Standard Contractual Clauses) as required by law.",
+    kids_t:"9) Children",
+    kids_b:"We do not knowingly collect personal data from children. If you believe a child provided data to us, please contact us and we will take appropriate action.",
+    rights_t:"10) Your rights",
+    rights_b:"Depending on your region, you may have rights to access, correct, delete, object, restrict, withdraw consent, or get a copy of your data. To exercise rights, contact us via the email below. California residents can also opt out of 'sale'/'sharing' of personal information; we do not sell or share personal data.",
+    cookies_t:"11) Cookies & consent",
+    cookies_b: SETTINGS.hasCookiesBanner
+      ? "Our websites may use non-essential cookies/SDKs for analytics and ads. In regions where consent is required, we show a consent banner that lets you accept, reject, or change choices at any time."
+      : "Our websites do not use non-essential cookies/SDKs.",
+    sec_t:"12) Security",
+    sec_b:"We use technical and organizational measures appropriate to the risk (encryption in transit, access controls, logging). No system is 100% secure.",
+    chg_t:"13) Changes",
+    chg_b:"We may update this Policy from time to time. We will post a new version with a new effective date.",
+    ct_t:"14) Contact",
+    ct_b:`Data controller: ${SETTINGS.legalEntity}. Address: ${SETTINGS.address}. Email: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`
+  },
+
+  ru:{
+    pp_title:"Политика конфиденциальности",
+    updated:"Дата вступления в силу",
+    btn_expand:"Развернуть всё", btn_collapse:"Свернуть всё", btn_print:"Печать / PDF", btn_copy:"Скопировать ссылку на раздел",
+    sum_global:"Действует по всему миру и охватывает наши игры, приложения и сайты.",
+    sum_sdks:"Мы используем признанные сервисы: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"Мы не продаём и не передаём персональные данные для таргетированной рекламы.",
+    sum_kids:"Мы не собираем данные детей заведомо.",
+    who_t:"1) Кто мы",
+    who_b:`${SETTINGS.legalEntity} («мы») разрабатывает и публикует игры и приложения. Мы выступаем контролёром данных для операций, описанных в этой Политике.`,
+    scope_t:"2) Область действия",
+    scope_b:`Политика распространяется на ${SETTINGS.appsList} и сайты под брендом «${SETTINGS.companyName}» во всём мире.`,
+    data_t:"3) Какие данные мы обрабатываем",
+    d_usage:"Использование и диагностика (события, сессии, приблизительное местоположение, устройство/ОС) — аналитика, выявление сбоев, улучшение продукта.",
+    d_progress:"Игровой прогресс и идентификаторы (ID игрока, достижения, облачные сохранения, античит-сигналы) — базовый функционал и синхронизация.",
+    d_purchases:"Покупки (SKU, регион, токен/квитанция) — выполнение покупки, возвраты, предотвращение мошенничества.",
+    d_ads:"Данные рекламы (показы, сбрасываемые рекламные идентификаторы) — показ рекламы, ограничения частоты, измерение (для игр с рекламой).",
+    d_support:"Поддержка (email, содержание обращений, вложения) — ответы пользователям и диагностика проблем.",
+    legal_t:"4) Цели и правовые основания",
+    legal_b:"В зависимости от юрисдикции мы опираемся на согласие (там, где оно требуется для рекламы/аналитики), исполнение договора (для предоставления игры/приложения и покупок) и законные интересы (безопасность, антифрод, диагностика сбоев). Согласие можно отозвать через настройки в приложении или баннер согласия на сайте.",
+    sdks_t:"5) Сторонние сервисы (обработчики)",
+    sdk_firebase:"Аналитика использования и стабильности; Crashlytics помогает диагностировать сбои. Данные включают сведения об устройстве/ОС, версии приложения, события и логи сбоев.",
+    sdk_ads:"Рекламные сети показывают объявления и измеряют эффективность, используя сбрасываемые рекламные идентификаторы и контекстные сигналы. Идентификатор можно сбросить/ограничить в настройках ОС.",
+    sdk_play:"Облачные сохранения, достижения, таблицы лидеров и интеграции платформы Google Play Games Services.",
+    sdk_af:"Атрибуция установок и эффективность кампаний, чтобы понимать источники трафика и оптимизировать маркетинг.",
+    processors_note:"Эти провайдеры привлекаются как наши обработчики по договору и обязаны защищать данные и использовать их только по нашим инструкциям.",
+    share_t:"6) Передача данных",
+    share_b:"Мы не продаём и не «делимся» персональными данными. Раскрываем данные только обработчикам и в случаях, требуемых законом либо для защиты прав, безопасности и целостности.",
+    ret_t:"7) Сроки хранения",
+    ret_b:`Храним данные столько, сколько необходимо: логи сбоев ~ ${SETTINGS.retention.crashes}, аналитика ~ ${SETTINGS.retention.analytics}, финансовые документы — ${SETTINGS.retention.finance}. Затем удаляем или обезличиваем.`,
+    intl_t:"8) Международные передачи",
+    intl_b:"При международной передаче применяем надлежащие механизмы (например, стандартные договорные положения), как этого требует закон.",
+    kids_t:"9) Дети",
+    kids_b:"Мы не собираем персональные данные детей заведомо. Если вы считаете, что ребёнок предоставил нам данные, напишите нам — мы примем меры.",
+    rights_t:"10) Права пользователей",
+    rights_b:"В зависимости от страны вы можете иметь права на доступ, исправление, удаление, ограничение, возражение, отзыв согласия и получение копии ваших данных. Чтобы воспользоваться правами, свяжитесь с нами по e-mail ниже. Жители Калифорнии также могут отказаться от «продажи/совместного использования» данных; мы этого не делаем.",
+    cookies_t:"11) Cookies и согласие",
+    cookies_b: SETTINGS.hasCookiesBanner
+      ? "Наши сайты могут использовать нестрого необходимые cookies/SDK для аналитики и рекламы. В регионах, где это требуется, показываем баннер согласия с возможностью выбора и отзыва."
+      : "Наши сайты не используют нестрого необходимые cookies/SDK.",
+    sec_t:"12) Безопасность",
+    sec_b:"Мы применяем технические и организационные меры, соразмерные рискам (шифрование при передаче, контроль доступа, журналирование). 100% безопасности не бывает.",
+    chg_t:"13) Изменения",
+    chg_b:"Мы можем обновлять Политику. Новая версия будет опубликована с новой датой вступления в силу.",
+    ct_t:"14) Контакты",
+    ct_b:`Контролёр данных: ${SETTINGS.legalEntity}. Адрес: ${SETTINGS.address}. E-mail: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
+    foot_note:"Подсказка: клик по заголовку раздела скопирует прямую ссылку."
+  },
+
+  nl:{ pp_title:"Privacybeleid", updated:"Ingangsdatum",
+    btn_expand:"Alles uitklappen", btn_collapse:"Alles inklappen", btn_print:"Afdrukken / PDF", btn_copy:"Link naar deze sectie kopiëren",
+    sum_global:"Van toepassing wereldwijd op onze games, apps en websites.",
+    sum_sdks:"We gebruiken gangbare services: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"We verkopen of delen geen persoonsgegevens.",
+    sum_kids:"We verzamelen niet bewust gegevens van kinderen.",
+    who_t:"1) Wie wij zijn",
+    who_b:`${SETTINGS.legalEntity} (“wij”) ontwikkelt en publiceert games en apps. Wij zijn de verwerkingsverantwoordelijke.`,
+    scope_t:"2) Reikwijdte",
+    scope_b:`Dit beleid geldt voor ${SETTINGS.appsList} en onze websites onder het merk “${SETTINGS.companyName}”.`,
+    data_t:"3) Welke gegevens we verwerken",
+    d_usage:"Gebruik & diagnostiek (events, sessies, ruwe locatie, apparaat/OS) — analytics, crashdetectie, productverbetering.",
+    d_progress:"Voortgang & ID’s (speler-ID, achievements, cloud saves, anti-cheat) — functionaliteit en synchronisatie.",
+    d_purchases:"Aankoopgegevens (SKU, regio, token/bon) — afhandeling, terugbetalingen, fraudepreventie.",
+    d_ads:"Advertentiegegevens (impressies, resetbare advertentie-ID’s) — advertenties tonen, frequentiebeperking, meting.",
+    d_support:"Supportgegevens (e-mail, bericht, bijlagen) — klantenondersteuning.",
+    legal_t:"4) Doeleinden & rechtsgronden",
+    legal_b:"We baseren ons op toestemming (waar vereist), uitvoering van een overeenkomst en gerechtvaardigde belangen (beveiliging, anti-fraude, crashdiagnostiek).",
+    sdks_t:"5) Services van derden (verwerkers)",
+    sdk_firebase:"Analytics en Crashlytics voor stabiliteit.",
+    sdk_ads:"Ad-netwerken tonen advertenties en meten prestaties met advertentie-ID’s.",
+    sdk_play:"Cloudopslag, achievements en leaderboards via Google Play Games Services.",
+    sdk_af:"Attributie en campagneprestatie.",
+    processors_note:"Deze partijen handelen als verwerker onder contract.",
+    share_t:"6) Delen",
+    share_b:"Geen verkoop of ‘sharing’ van persoonsgegevens; alleen dienstverleners of waar wettelijk vereist.",
+    ret_t:"7) Bewaartermijnen",
+    ret_b:`Crashes ~ ${SETTINGS.retention.crashes}, analytics ~ ${SETTINGS.retention.analytics}, financiële stukken ${SETTINGS.retention.finance}; daarna wissen of anonimiseren.`,
+    intl_t:"8) Internationale doorgiften",
+    intl_b:"We passen passende waarborgen toe (bijv. SCC’s).",
+    kids_t:"9) Kinderen",
+    kids_b:"We verzamelen niet bewust gegevens van kinderen.",
+    rights_t:"10) Jouw rechten",
+    rights_b:"Toegang, correctie, verwijdering, bezwaar, beperking, kopie en intrekken van toestemming; neem contact op via e-mail hieronder.",
+    cookies_t:"11) Cookies & toestemming",
+    cookies_b: SETTINGS.hasCookiesBanner ? "We tonen een toestemmingsbanner waar vereist." : "Geen niet-essentiële cookies/SDK’s.",
+    sec_t:"12) Beveiliging", sec_b:"Technische en organisatorische maatregelen passend bij het risico.",
+    chg_t:"13) Wijzigingen", chg_b:"We kunnen dit beleid bijwerken.",
+    ct_t:"14) Contact", ct_b:`Verantwoordelijke: ${SETTINGS.legalEntity}. Adres: ${SETTINGS.address}. E-mail: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
+    foot_note:"Tip: klik op een sectietitel om een directe link te kopiëren."
+  },
+
+  fi:{ pp_title:"Tietosuojakäytäntö", updated:"Voimaantulopäivä",
+    btn_expand:"Laajenna kaikki", btn_collapse:"Supista kaikki", btn_print:"Tulosta / PDF", btn_copy:"Kopioi linkki tähän osioon",
+    sum_global:"Soveltuu maailmanlaajuisesti peleihimme, sovelluksiimme ja sivustoihimme.",
+    sum_sdks:"Käytämme yleisesti hyväksyttyjä palveluja: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"Emme myy tai jaa henkilötietoja.",
+    sum_kids:"Emme tietoisesti kerää lasten tietoja.",
+    who_t:"1) Keitä olemme",
+    who_b:`${SETTINGS.legalEntity} kehittää ja julkaisee pelejä ja sovelluksia. Toimimme rekisterinpitäjänä.`,
+    scope_t:"2) Soveltamisala",
+    scope_b:`Tämä käytäntö kattaa ${SETTINGS.appsList} ja “${SETTINGS.companyName}”-brändin sivustot.`,
+    data_t:"3) Käsiteltävät tiedot",
+    d_usage:"Käyttö ja diagnostiikka (tapahtumat, istunnot, karkea sijainti, laite/OS) — analytiikka, kaatumiset, parannukset.",
+    d_progress:"Pelitallennus ja tunnisteet (pelaaja-ID, saavutukset, pilvitallennus, anti-cheat) — ydintoiminnot ja synkronointi.",
+    d_purchases:"Ostotiedot (SKU, alue, kuitti) — toimitus, palautukset, petosten esto.",
+    d_ads:"Mainosdata (näyttökerrat, nollattavat mainostunnisteet) — mainosten näyttö ja mittaus.",
+    d_support:"Tuki (sähköposti, viestit, liitteet) — asiakastuki.",
+    legal_t:"4) Tarkoitukset ja oikeusperusteet",
+    legal_b:"Tukeudumme suostumukseen (tarvittaessa), sopimukseen ja oikeutettuun etuun (turvallisuus, petosten esto, kaatumisdiagnostiikka).",
+    sdks_t:"5) Kolmannen osapuolen palvelut",
+    sdk_firebase:"Analytiikka ja Crashlytics vakauden seurantaan.",
+    sdk_ads:"Mainosverkot käyttävät mainostunnisteita ja mittaavat suorituskykyä.",
+    sdk_play:"Google Play Games Services — pilvitallennus ym.",
+    sdk_af:"Asennusten attribuutio ja kampanjoiden mittaus.",
+    processors_note:"Toimivat henkilötietojen käsittelijöinä sopimuksen perusteella.",
+    share_t:"6) Tietojen jakaminen",
+    share_b:"Ei myyntiä tai ‘sharing’-jakoa; vain palveluntarjoajille tai lain niin vaatiessa.",
+    ret_t:"7) Säilytys",
+    ret_b:`Kaatumistiedot ~ ${SETTINGS.retention.crashes}, analytiikka ~ ${SETTINGS.retention.analytics}, talousasiakirjat ${SETTINGS.retention.finance}; sitten poistetaan/anonymisoidaan.`,
+    intl_t:"8) Kansainväliset siirrot", intl_b:"Käytämme asianmukaisia suojatoimia (esim. SCC).",
+    kids_t:"9) Lapset", kids_b:"Emme tietoisesti kerää lasten tietoja.",
+    rights_t:"10) Oikeutesi", rights_b:"Pääsy, oikaisu, poisto, vastustaminen, rajoittaminen, kopio ja suostumuksen peruuttaminen.",
+    cookies_t:"11) Evästeet ja suostumus",
+    cookies_b: SETTINGS.hasCookiesBanner ? "Näytämme suostumusbannerin alueilla, joissa sitä edellytetään." : "Ei ei-välttämättömiä evästeitä/SDK:ita.",
+    sec_t:"12) Tietoturva", sec_b:"Tekniset ja organisatoriset toimet riskin mukaan.",
+    chg_t:"13) Muutokset", chg_b:"Saatamme päivittää tämän käytännön.",
+    ct_t:"14) Yhteystiedot", ct_b:`Rekisterinpitäjä: ${SETTINGS.legalEntity}. Osoite: ${SETTINGS.address}. Sähköposti: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
+    foot_note:"Vinkki: napsauta osion otsikkoa kopioidaksesi suoran linkin."
+  },
+
+  fr:{ pp_title:"Politique de confidentialité", updated:"Date d’effet",
+    btn_expand:"Tout développer", btn_collapse:"Tout réduire", btn_print:"Imprimer / PDF", btn_copy:"Copier le lien de cette section",
+    sum_global:"S’applique dans le monde entier à nos jeux, applications et sites Web.",
+    sum_sdks:"Nous utilisons des services largement reconnus : Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"Nous ne vendons ni ne partageons les données personnelles.",
+    sum_kids:"Nous ne collectons pas sciemment des données d’enfants.",
+    who_t:"1) Qui nous sommes",
+    who_b:`${SETTINGS.legalEntity} (« nous ») développe et édite des jeux et applications. Nous agissons en tant que responsable du traitement.`,
+    scope_t:"2) Portée",
+    scope_b:`Cette politique couvre ${SETTINGS.appsList} et nos sites sous la marque « ${SETTINGS.companyName} ».`,
+    data_t:"3) Données traitées",
+    d_usage:"Utilisation & diagnostics (événements, sessions, localisation approximative, appareil/OS) — analytics, plantages, amélioration produit.",
+    d_progress:"Progression & identifiants (ID joueur, succès, sauvegardes cloud, anti-triche) — fonctionnalités et synchronisation.",
+    d_purchases:"Achats (SKU, région, jeton/reçu) — exécution, remboursements, prévention des fraudes.",
+    d_ads:"Publicité (impressions, identifiants publicitaires réinitialisables) — affichage et mesure.",
+    d_support:"Support (e-mail, contenu des messages, pièces jointes) — assistance.",
+    legal_t:"4) Finalités & bases légales",
+    legal_b:"Selon la région : consentement (si requis), exécution d’un contrat et intérêts légitimes (sécurité, anti-fraude, diagnostics).",
+    sdks_t:"5) Services tiers (sous-traitants)",
+    sdk_firebase:"Analytics et Crashlytics pour la stabilité.",
+    sdk_ads:"Réseaux publicitaires avec identifiants publicitaires réinitialisables.",
+    sdk_play:"Services Google Play Games (sauvegardes cloud, succès, classements).",
+    sdk_af:"Attribution des installations et performance des campagnes.",
+    processors_note:"Sous-traitants liés par contrat, utilisations limitées à nos instructions.",
+    share_t:"6) Partage",
+    share_b:"Pas de vente ni de « partage » de données; divulgation uniquement aux prestataires ou lorsque la loi l’exige.",
+    ret_t:"7) Conservation",
+    ret_b:`Crashes ~ ${SETTINGS.retention.crashes}, analytics ~ ${SETTINGS.retention.analytics}, documents financiers ${SETTINGS.retention.finance}, puis suppression/anonymisation.`,
+    intl_t:"8) Transferts internationaux", intl_b:"Mesures appropriées (p. ex. clauses contractuelles types).",
+    kids_t:"9) Enfants", kids_b:"Nous ne collectons pas sciemment les données d’enfants.",
+    rights_t:"10) Vos droits", rights_b:"Accès, rectification, effacement, opposition, limitation, copie, retrait du consentement.",
+    cookies_t:"11) Cookies & consentement",
+    cookies_b: SETTINGS.hasCookiesBanner ? "Bannière de consentement affichée là où la loi l’exige." : "Pas de cookies/SDK non essentiels.",
+    sec_t:"12) Sécurité", sec_b:"Mesures techniques et organisationnelles adaptées au risque.",
+    chg_t:"13) Modifications", chg_b:"Cette politique peut être mise à jour.",
+    ct_t:"14) Contact", ct_b:`Responsable du traitement : ${SETTINGS.legalEntity}. Adresse : ${SETTINGS.address}. E-mail : <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
+    foot_note:"Astuce : cliquez sur un titre pour copier le lien direct."
+  },
+
+  de:{ pp_title:"Datenschutzerklärung", updated:"Gültig ab",
+    btn_expand:"Alle aufklappen", btn_collapse:"Alle zuklappen", btn_print:"Drucken / PDF", btn_copy:"Link zu diesem Abschnitt kopieren",
+    sum_global:"Gilt weltweit für unsere Spiele, Apps und Websites.",
+    sum_sdks:"Wir nutzen etablierte Dienste: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"Wir verkaufen oder „teilen“ keine personenbezogenen Daten.",
+    sum_kids:"Wir erheben wissentlich keine Daten von Kindern.",
+    who_t:"1) Wer wir sind",
+    who_b:`${SETTINGS.legalEntity} („wir“) entwickelt und veröffentlicht Spiele und Apps. Wir sind Verantwortlicher im Sinne des Datenschutzrechts.`,
+    scope_t:"2) Geltungsbereich",
+    scope_b:`Diese Erklärung gilt für ${SETTINGS.appsList} und unsere Websites unter der Marke „${SETTINGS.companyName}“.`,
+    data_t:"3) Verarbeitete Daten",
+    d_usage:"Nutzungs- & Diagnosedaten (Ereignisse, Sitzungen, grober Standort, Gerät/OS) — Analyse, Absturzdiagnose, Produktverbesserung.",
+    d_progress:"Spielstände & Kennungen (Spieler-ID, Erfolge, Cloud-Speicher, Anti-Cheat) — Funktionen & Synchronisierung.",
+    d_purchases:"Kaufdaten (SKU, Region, Token/Beleg) — Abwicklung, Erstattungen, Betrugsprävention.",
+    d_ads:"Werbedaten (Impressions, zurücksetzbare Werbe-IDs) — Anzeige & Messung.",
+    d_support:"Supportdaten (E-Mail, Nachrichteninhalte, Anhänge) — Support.",
+    legal_t:"4) Zwecke & Rechtsgrundlagen",
+    legal_b:"Je nach Region: Einwilligung (soweit erforderlich), Vertragserfüllung sowie berechtigte Interessen (Sicherheit, Betrugsabwehr, Crashdiagnose).",
+    sdks_t:"5) Dienste von Dritten (Auftragsverarbeiter)",
+    sdk_firebase:"Analytics und Crashlytics zur Stabilität.",
+    sdk_ads:"Werbenetzwerke nutzen Werbe-IDs und Kontextsignale.",
+    sdk_play:"Google Play Games Services (Cloud-Speicher, Erfolge, Ranglisten).",
+    sdk_af:"Attribution und Kampagnenleistung.",
+    processors_note:"Eingesetzt als Auftragsverarbeiter auf Basis von Verträgen.",
+    share_t:"6) Weitergabe",
+    share_b:"Keine Datenverkäufe oder „Sharing“; Weitergabe nur an Dienstleister oder wenn gesetzlich erforderlich.",
+    ret_t:"7) Aufbewahrung",
+    ret_b:`Crashlogs ~ ${SETTINGS.retention.crashes}, Analysedaten ~ ${SETTINGS.retention.analytics}, Finanzunterlagen ${SETTINGS.retention.finance}; danach Löschung/Anonymisierung.`,
+    intl_t:"8) Internationale Übermittlungen", intl_b:"Angemessene Garantien (z. B. EU-Standardvertragsklauseln).",
+    kids_t:"9) Kinder", kids_b:"Keine wissentliche Erhebung von Kinderdaten.",
+    rights_t:"10) Ihre Rechte", rights_b:"Auskunft, Berichtigung, Löschung, Widerspruch, Einschränkung, Kopie, Widerruf der Einwilligung.",
+    cookies_t:"11) Cookies & Einwilligung",
+    cookies_b: SETTINGS.hasCookiesBanner ? "Einwilligungsbanner in Regionen, in denen dies vorgeschrieben ist." : "Keine nicht zwingenden Cookies/SDKs.",
+    sec_t:"12) Sicherheit", sec_b:"Technische und organisatorische Maßnahmen angemessen zum Risiko.",
+    chg_t:"13) Änderungen", chg_b:"Diese Erklärung kann aktualisiert werden.",
+    ct_t:"14) Kontakt", ct_b:`Verantwortlicher: ${SETTINGS.legalEntity}. Anschrift: ${SETTINGS.address}. E-Mail: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
+    foot_note:"Tipp: Auf einen Abschnittstitel klicken, um den direkten Link zu kopieren."
+  },
+
+  id:{ pp_title:"Kebijakan Privasi", updated:"Tanggal berlaku",
+    btn_expand:"Buka semua", btn_collapse:"Tutup semua", btn_print:"Cetak / PDF", btn_copy:"Salin tautan ke bagian ini",
+    sum_global:"Berlaku di seluruh dunia untuk game, aplikasi, dan situs kami.",
+    sum_sdks:"Kami menggunakan layanan yang diakui luas: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"Kami tidak menjual atau membagikan data pribadi.",
+    sum_kids:"Kami tidak dengan sengaja mengumpulkan data anak-anak.",
+    who_t:"1) Tentang kami",
+    who_b:`${SETTINGS.legalEntity} mengembangkan dan menerbitkan game serta aplikasi. Kami adalah pengendali data.`,
+    scope_t:"2) Cakupan",
+    scope_b:`Kebijakan ini mencakup ${SETTINGS.appsList} dan situs kami dengan merek “${SETTINGS.companyName}”.`,
+    data_t:"3) Data yang diproses",
+    d_usage:"Penggunaan & diagnostik (event, sesi, lokasi kasar, perangkat/OS) — analitik, crash, peningkatan produk.",
+    d_progress:"Progres & ID (ID pemain, pencapaian, simpanan cloud, anti-cheat) — fungsi inti & sinkronisasi.",
+    d_purchases:"Pembelian (SKU, wilayah, token/struk) — pemenuhan, pengembalian, pencegahan penipuan.",
+    d_ads:"Data iklan (tayangan, ID iklan yang dapat direset) — penayangan & pengukuran iklan.",
+    d_support:"Data dukungan (email, isi pesan, lampiran) — layanan dukungan.",
+    legal_t:"4) Tujuan & dasar hukum",
+    legal_b:"Bergantung wilayah: persetujuan (jika diwajibkan), pelaksanaan kontrak, dan kepentingan sah (keamanan, anti-penipuan, diagnostik).",
+    sdks_t:"5) Layanan pihak ketiga (pemroses)",
+    sdk_firebase:"Analytics dan Crashlytics untuk stabilitas.",
+    sdk_ads:"Jaringan iklan menggunakan ID iklan yang dapat direset.",
+    sdk_play:"Google Play Games Services untuk fitur platform.",
+    sdk_af:"Atribusi pemasangan dan kinerja kampanye.",
+    processors_note:"Penyedia bertindak sebagai pemroses berdasarkan kontrak.",
+    share_t:"6) Berbagi data",
+    share_b:"Tidak ada penjualan atau ‘sharing’ data; pengungkapan hanya ke penyedia layanan atau jika diwajibkan hukum.",
+    ret_t:"7) Retensi",
+    ret_b:`Crash ~ ${SETTINGS.retention.crashes}, analitik ~ ${SETTINGS.retention.analytics}, catatan keuangan ${SETTINGS.retention.finance}; kemudian dihapus/di-anonimkan.`,
+    intl_t:"8) Transfer internasional", intl_b:"Perlindungan yang sesuai (mis. SCC).",
+    kids_t:"9) Anak-anak", kids_b:"Kami tidak dengan sengaja mengumpulkan data anak-anak.",
+    rights_t:"10) Hak Anda", rights_b:"Akses, perbaikan, penghapusan, keberatan, pembatasan, salinan, cabut persetujuan.",
+    cookies_t:"11) Cookie & persetujuan",
+    cookies_b: SETTINGS.hasCookiesBanner ? "Kami menampilkan banner persetujuan di wilayah yang mewajibkan." : "Tidak ada cookie/SDK non-esensial.",
+    sec_t:"12) Keamanan", sec_b:"Langkah teknis dan organisasi yang sesuai dengan risiko.",
+    chg_t:"13) Perubahan", chg_b:"Kebijakan dapat diperbarui.",
+    ct_t:"14) Kontak", ct_b:`Pengendali: ${SETTINGS.legalEntity}. Alamat: ${SETTINGS.address}. Email: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
+    foot_note:"Tip: klik judul bagian untuk menyalin tautan langsung."
+  },
+
+  it:{ pp_title:"Informativa sulla privacy", updated:"Data di efficacia",
+    btn_expand:"Espandi tutto", btn_collapse:"Comprimi tutto", btn_print:"Stampa / PDF", btn_copy:"Copia link alla sezione",
+    sum_global:"Valida in tutto il mondo per i nostri giochi, app e siti.",
+    sum_sdks:"Usiamo servizi ampiamente riconosciuti: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"Non vendiamo né condividiamo dati personali.",
+    sum_kids:"Non raccogliamo consapevolmente dati di minori.",
+    who_t:"1) Chi siamo",
+    who_b:`${SETTINGS.legalEntity} sviluppa e pubblica giochi e app. Agiamo come titolare del trattamento.`,
+    scope_t:"2) Ambito",
+    scope_b:`Questa informativa copre ${SETTINGS.appsList} e i nostri siti a marchio “${SETTINGS.companyName}”.`,
+    data_t:"3) Dati trattati",
+    d_usage:"Uso & diagnostica (eventi, sessioni, posizione approssimativa, dispositivo/OS) — analisi, crash, miglioramento prodotto.",
+    d_progress:"Progressi & identificatori (ID giocatore, obiettivi, salvataggi cloud, anti-cheat) — funzionalità e sincronizzazione.",
+    d_purchases:"Acquisti (SKU, regione, token/ricevuta) — esecuzione, rimborsi, prevenzione frodi.",
+    d_ads:"Dati pubblicitari (impression, ID pubblicitari reimpostabili) — erogazione e misurazione degli annunci.",
+    d_support:"Assistenza (email, contenuto messaggi, allegati) — supporto clienti.",
+    legal_t:"4) Finalità & basi giuridiche",
+    legal_b:"A seconda dell’area: consenso (se richiesto), contratto e legittimo interesse (sicurezza, anti-frode, diagnostica).",
+    sdks_t:"5) Servizi terzi (responsabili)",
+    sdk_firebase:"Analytics e Crashlytics per stabilità.",
+    sdk_ads:"Ad network con ID pubblicitari reimpostabili.",
+    sdk_play:"Google Play Games Services per funzioni di piattaforma.",
+    sdk_af:"Attribuzione installazioni e performance campagne.",
+    processors_note:"Operano come responsabili del trattamento in base a contratto.",
+    share_t:"6) Condivisioni",
+    share_b:"Nessuna vendita o ‘sharing’; comunicazione solo a fornitori di servizi o se richiesto dalla legge.",
+    ret_t:"7) Conservazione",
+    ret_b:`Crash ~ ${SETTINGS.retention.crashes}, analytics ~ ${SETTINGS.retention.analytics}, documenti fiscali ${SETTINGS.retention.finance}; poi cancellazione/anonimizzazione.`,
+    intl_t:"8) Trasferimenti internazionali", intl_b:"Adeguate garanzie (es. SCC).",
+    kids_t:"9) Minori", kids_b:"Non raccogliamo consapevolmente dati di minori.",
+    rights_t:"10) I tuoi diritti", rights_b:"Accesso, rettifica, cancellazione, opposizione, limitazione, copia, revoca del consenso.",
+    cookies_t:"11) Cookie & consenso",
+    cookies_b: SETTINGS.hasCookiesBanner ? "Mostriamo un banner di consenso dove richiesto." : "Nessun cookie/SDK non essenziale.",
+    sec_t:"12) Sicurezza", sec_b:"Misure tecniche e organizzative adeguate al rischio.",
+    chg_t:"13) Modifiche", chg_b:"Possiamo aggiornare la presente informativa.",
+    ct_t:"14) Contatti", ct_b:`Titolare: ${SETTINGS.legalEntity}. Indirizzo: ${SETTINGS.address}. Email: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
+    foot_note:"Suggerimento: clic sul titolo per copiare il link diretto."
+  },
+
+  ms:{ pp_title:"Dasar Privasi", updated:"Tarikh berkuat kuasa",
+    btn_expand:"Kembang semua", btn_collapse:"Lipat semua", btn_print:"Cetak / PDF", btn_copy:"Salin pautan ke seksyen ini",
+    sum_global:"Terpakai di seluruh dunia untuk permainan, aplikasi dan laman kami.",
+    sum_sdks:"Kami menggunakan perkhidmatan yang diiktiraf: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"Kami tidak menjual atau berkongsi data peribadi.",
+    sum_kids:"Kami tidak dengan sengaja mengumpul data kanak-kanak.",
+    who_t:"1) Siapa kami",
+    who_b:`${SETTINGS.legalEntity} membangunkan dan menerbitkan permainan serta aplikasi. Kami ialah pengawal data.`,
+    scope_t:"2) Skop",
+    scope_b:`Dasar ini meliputi ${SETTINGS.appsList} dan laman kami di bawah jenama “${SETTINGS.companyName}”.`,
+    data_t:"3) Data yang diproses",
+    d_usage:"Penggunaan & diagnostik (peristiwa, sesi, lokasi kasar, peranti/OS) — analitik, kerosakan, penambahbaikan produk.",
+    d_progress:"Kemajuan & pengecam (ID pemain, pencapaian, simpanan awan, anti-cheat) — fungsi teras & penyegerakan.",
+    d_purchases:"Pembelian (SKU, wilayah, token/resit) — pemenuhan, bayaran balik, pencegahan penipuan.",
+    d_ads:"Data iklan (tangkapan, ID iklan boleh set semula) — paparan & pengukuran iklan.",
+    d_support:"Sokongan (e-mel, mesej, lampiran) — sokongan pelanggan.",
+    legal_t:"4) Tujuan & asas undang-undang",
+    legal_b:"Bergantung wilayah: persetujuan (jika diperlukan), kontrak dan kepentingan yang sah (keselamatan, anti-penipuan, diagnostik).",
+    sdks_t:"5) Perkhidmatan pihak ketiga (pemproses)",
+    sdk_firebase:"Analytics dan Crashlytics untuk kestabilan.",
+    sdk_ads:"Rangkaian iklan menggunakan ID iklan boleh set semula.",
+    sdk_play:"Google Play Games Services untuk ciri platform.",
+    sdk_af:"Atribusi pemasangan dan prestasi kempen.",
+    processors_note:"Bertindak sebagai pemproses data di bawah kontrak.",
+    share_t:"6) Perkongsian", share_b:"Tiada penjualan atau ‘sharing’; pendedahan hanya kepada penyedia perkhidmatan atau jika dikehendaki undang-undang.",
+    ret_t:"7) Penyimpanan",
+    ret_b:`Crash ~ ${SETTINGS.retention.crashes}, analitik ~ ${SETTINGS.retention.analytics}, rekod kewangan ${SETTINGS.retention.finance}; kemudian dipadam/ dianonimkan.`,
+    intl_t:"8) Pemindahan antarabangsa", intl_b:"Perlindungan yang sesuai (cth. SCC).",
+    kids_t:"9) Kanak-kanak", kids_b:"Kami tidak mengumpul data kanak-kanak secara sengaja.",
+    rights_t:"10) Hak anda", rights_b:"Akses, pembetulan, pemadaman, bantahan, sekatan, salinan, tarik balik persetujuan.",
+    cookies_t:"11) Kuki & persetujuan",
+    cookies_b: SETTINGS.hasCookiesBanner ? "Kami memaparkan sepanduk persetujuan di wilayah yang diperlukan." : "Tiada kuki/SDK tidak penting.",
+    sec_t:"12) Keselamatan", sec_b:"Langkah teknikal dan organisasi mengikut risiko.",
+    chg_t:"13) Perubahan", chg_b:"Dasar ini boleh dikemas kini.",
+    ct_t:"14) Hubungi", ct_b:`Pengawal: ${SETTINGS.legalEntity}. Alamat: ${SETTINGS.address}. E-mel: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
+    foot_note:"Petua: klik tajuk seksyen untuk menyalin pautan terus."
+  },
+
+  pl:{ pp_title:"Polityka prywatności", updated:"Data obowiązywania",
+    btn_expand:"Rozwiń wszystko", btn_collapse:"Zwiń wszystko", btn_print:"Drukuj / PDF", btn_copy:"Kopiuj link do sekcji",
+    sum_global:"Obowiązuje na całym świecie dla naszych gier, aplikacji i witryn.",
+    sum_sdks:"Korzystamy z powszechnie stosowanych usług: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"Nie sprzedajemy ani nie „udostępniamy” danych osobowych.",
+    sum_kids:"Nie zbieramy świadomie danych dzieci.",
+    who_t:"1) Kim jesteśmy",
+    who_b:`${SETTINGS.legalEntity} („my”) tworzy i wydaje gry oraz aplikacje. Jesteśmy administratorem danych.`,
+    scope_t:"2) Zakres",
+    scope_b:`Polityka obejmuje ${SETTINGS.appsList} i nasze witryny w ramach marki „${SETTINGS.companyName}”.`,
+    data_t:"3) Przetwarzane dane",
+    d_usage:"Użycie i diagnostyka (zdarzenia, sesje, przybliżona lokalizacja, urządzenie/OS) — analityka, awarie, ulepszanie produktu.",
+    d_progress:"Postępy i identyfikatory (ID gracza, osiągnięcia, zapisy w chmurze, anti-cheat) — funkcjonalność i synchronizacja.",
+    d_purchases:"Zakupy (SKU, region, token/paragon) — realizacja, zwroty, zapobieganie nadużyciom.",
+    d_ads:"Dane reklamowe (wyświetlenia, możliwe do zresetowania identyfikatory reklamowe) — emisja i pomiar.",
+    d_support:"Wsparcie (e-mail, treść wiadomości, załączniki) — obsługa klienta.",
+    legal_t:"4) Cele i podstawy prawne",
+    legal_b:"W zależności od regionu: zgoda (jeśli wymagana), wykonanie umowy oraz uzasadniony interes (bezpieczeństwo, antyfraud, diagnostyka awarii).",
+    sdks_t:"5) Usługi stron trzecich (podmioty przetwarzające)",
+    sdk_firebase:"Analytics i Crashlytics dla stabilności.",
+    sdk_ads:"Sieci reklamowe korzystają z identyfikatorów reklamowych.",
+    sdk_play:"Google Play Games Services — funkcje platformy.",
+    sdk_af:"Atrybucja instalacji i wyniki kampanii.",
+    processors_note:"Działają jako podmioty przetwarzające na podstawie umów.",
+    share_t:"6) Udostępnianie", share_b:"Brak sprzedaży/„sharingu”; ujawnienie jedynie usługodawcom lub gdy wymaga tego prawo.",
+    ret_t:"7) Przechowywanie",
+    ret_b:`Awarie ~ ${SETTINGS.retention.crashes}, analityka ~ ${SETTINGS.retention.analytics}, dokumenty finansowe ${SETTINGS.retention.finance}; następnie usuwamy/anonimizujemy.`,
+    intl_t:"8) Transfery międzynarodowe", intl_b:"Stosujemy odpowiednie zabezpieczenia (np. SCC).",
+    kids_t:"9) Dzieci", kids_b:"Nie zbieramy świadomie danych dzieci.",
+    rights_t:"10) Twoje prawa", rights_b:"Dostęp, sprostowanie, usunięcie, sprzeciw, ograniczenie, kopia, wycofanie zgody.",
+    cookies_t:"11) Pliki cookie i zgoda",
+    cookies_b: SETTINGS.hasCookiesBanner ? "Wyświetlamy baner zgody tam, gdzie jest to wymagane." : "Brak niekoniecznych ciasteczek/SDK.",
+    sec_t:"12) Bezpieczeństwo", sec_b:"Środki techniczne i organizacyjne adekwatne do ryzyka.",
+    chg_t:"13) Zmiany", chg_b:"Polityka może być aktualizowana.",
+    ct_t:"14) Kontakt", ct_b:`Administrator: ${SETTINGS.legalEntity}. Adres: ${SETTINGS.address}. E-mail: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
+    foot_note:"Wskazówka: kliknij tytuł sekcji, aby skopiować bezpośredni link."
+  },
+
+  pt:{ pp_title:"Política de Privacidade", updated:"Data de vigência",
+    btn_expand:"Expandir tudo", btn_collapse:"Recolher tudo", btn_print:"Imprimir / PDF", btn_copy:"Copiar link desta seção",
+    sum_global:"Aplica-se globalmente aos nossos jogos, apps e sites.",
+    sum_sdks:"Usamos serviços amplamente reconhecidos: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"Não vendemos nem “compartilhamos” dados pessoais.",
+    sum_kids:"Não coletamos intencionalmente dados de crianças.",
+    who_t:"1) Quem somos",
+    who_b:`${SETTINGS.legalEntity} (“nós”) desenvolve e publica jogos e apps. Atuamos como controlador de dados.`,
+    scope_t:"2) Escopo",
+    scope_b:`Esta política abrange ${SETTINGS.appsList} e nossos sites sob a marca “${SETTINGS.companyName}”.`,
+    data_t:"3) Dados processados",
+    d_usage:"Uso & diagnóstico (eventos, sessões, localização aproximada, dispositivo/OS) — analytics, falhas, melhoria do produto.",
+    d_progress:"Progresso & identificadores (ID do jogador, conquistas, salvamentos em nuvem, anti-cheat) — funcionalidade e sincronização.",
+    d_purchases:"Compras (SKU, região, token/recibo) — execução, reembolsos, prevenção de fraudes.",
+    d_ads:"Dados de anúncios (impressões, IDs de publicidade reinicializáveis) — exibição e medição.",
+    d_support:"Suporte (e-mail, conteúdo de mensagens, anexos) — atendimento ao cliente.",
+    legal_t:"4) Finalidades & bases legais",
+    legal_b:"Dependendo da região: consentimento (quando exigido), contrato e interesses legítimos (segurança, antifraude, diagnósticos).",
+    sdks_t:"5) Serviços de terceiros (operadores)",
+    sdk_firebase:"Analytics e Crashlytics para estabilidade.",
+    sdk_ads:"Redes de anúncios com IDs de publicidade.",
+    sdk_play:"Serviços Google Play Games.",
+    sdk_af:"Atribuição de instalações e desempenho de campanhas.",
+    processors_note:"Atuam como operadores sob contrato.",
+    share_t:"6) Compartilhamento", share_b:"Sem venda/“sharing”; divulgação apenas a prestadores de serviços ou quando exigido por lei.",
+    ret_t:"7) Retenção",
+    ret_b:`Falhas ~ ${SETTINGS.retention.crashes}, analytics ~ ${SETTINGS.retention.analytics}, registros financeiros ${SETTINGS.retention.finance}; depois excluímos/anonimizamos.`,
+    intl_t:"8) Transferências internacionais", intl_b:"Salvaguardas apropriadas (ex.: SCC).",
+    kids_t:"9) Crianças", kids_b:"Não coletamos intencionalmente dados de crianças.",
+    rights_t:"10) Seus direitos", rights_b:"Acesso, correção, exclusão, oposição, restrição, cópia, retirada de consentimento.",
+    cookies_t:"11) Cookies & consentimento",
+    cookies_b: SETTINGS.hasCookiesBanner ? "Exibimos um banner de consentimento onde exigido." : "Sem cookies/SDKs não essenciais.",
+    sec_t:"12) Segurança", sec_b:"Medidas técnicas e organizacionais proporcionais ao risco.",
+    chg_t:"13) Alterações", chg_b:"Esta política pode ser atualizada.",
+    ct_t:"14) Contato", ct_b:`Controlador: ${SETTINGS.legalEntity}. Endereço: ${SETTINGS.address}. E-mail: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
+    foot_note:"Dica: clique no título de uma seção para copiar o link direto."
+  },
+
+  es:{ pp_title:"Política de Privacidad", updated:"Fecha de vigencia",
+    btn_expand:"Expandir todo", btn_collapse:"Contraer todo", btn_print:"Imprimir / PDF", btn_copy:"Copiar enlace de esta sección",
+    sum_global:"Se aplica en todo el mundo a nuestros juegos, apps y sitios.",
+    sum_sdks:"Usamos servicios ampliamente reconocidos: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"No vendemos ni “compartimos” datos personales.",
+    sum_kids:"No recopilamos deliberadamente datos de menores.",
+    who_t:"1) Quiénes somos",
+    who_b:`${SETTINGS.legalEntity} (“nosotros”) desarrolla y publica juegos y aplicaciones. Actuamos como responsable del tratamiento.`,
+    scope_t:"2) Ámbito",
+    scope_b:`Esta política cubre ${SETTINGS.appsList} y nuestros sitios bajo la marca “${SETTINGS.companyName}”.`,
+    data_t:"3) Datos tratados",
+    d_usage:"Uso y diagnóstico (eventos, sesiones, ubicación aproximada, dispositivo/OS) — analítica, fallos, mejora del producto.",
+    d_progress:"Progreso e identificadores (ID de jugador, logros, guardados en la nube, anti-cheat) — funciones y sincronización.",
+    d_purchases:"Compras (SKU, región, token/recibo) — ejecución, reembolsos, prevención de fraude.",
+    d_ads:"Datos publicitarios (impresiones, ID publicitarios restablecibles) — entrega y medición de anuncios.",
+    d_support:"Soporte (correo, contenido de mensajes, adjuntos) — atención al usuario.",
+    legal_t:"4) Finalidades y bases legales",
+    legal_b:"Según la región: consentimiento (cuando se requiera), contrato e intereses legítimos (seguridad, antifraude, diagnósticos).",
+    sdks_t:"5) Servicios de terceros (encargados)",
+    sdk_firebase:"Analytics y Crashlytics para estabilidad.",
+    sdk_ads:"Redes de anuncios con ID publicitarios.",
+    sdk_play:"Servicios de Google Play Games.",
+    sdk_af:"Atribución de instalaciones y rendimiento de campañas.",
+    processors_note:"Actúan como encargados bajo contrato.",
+    share_t:"6) Cesiones", share_b:"Sin venta/“sharing”; divulgación solo a proveedores o cuando lo exige la ley.",
+    ret_t:"7) Conservación",
+    ret_b:`Registros de fallos ~ ${SETTINGS.retention.crashes}, analítica ~ ${SETTINGS.retention.analytics}, registros financieros ${SETTINGS.retention.finance}; luego se eliminan/anonimizan.`,
+    intl_t:"8) Transferencias internacionales", intl_b:"Garantías adecuadas (p. ej., SCC).",
+    kids_t:"9) Menores", kids_b:"No recopilamos deliberadamente datos de menores.",
+    rights_t:"10) Tus derechos", rights_b:"Acceso, rectificación, supresión, oposición, limitación, copia, retirada del consentimiento.",
+    cookies_t:"11) Cookies y consentimiento",
+    cookies_b: SETTINGS.hasCookiesBanner ? "Mostramos un banner de consentimiento donde sea requerido." : "Sin cookies/SDK no esenciales.",
+    sec_t:"12) Seguridad", sec_b:"Medidas técnicas y organizativas acordes al riesgo.",
+    chg_t:"13) Cambios", chg_b:"Podemos actualizar esta política.",
+    ct_t:"14) Contacto", ct_b:`Responsable: ${SETTINGS.legalEntity}. Dirección: ${SETTINGS.address}. Correo: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
+    foot_note:"Sugerencia: haz clic en el título de una sección para copiar el enlace directo."
+  },
+
+  tr:{ pp_title:"Gizlilik Politikası", updated:"Yürürlük tarihi",
+    btn_expand:"Tümünü genişlet", btn_collapse:"Tümünü daralt", btn_print:"Yazdır / PDF", btn_copy:"Bu bölümün bağlantısını kopyala",
+    sum_global:"Dünya genelinde oyunlarımız, uygulamalarımız ve sitelerimiz için geçerlidir.",
+    sum_sdks:"Yaygın hizmetler kullanıyoruz: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, AppsFlyer.",
+    sum_no_sell:"Kişisel verileri satmıyor veya ‘paylaşmıyoruz’.",
+    sum_kids:"Çocuklardan bilerek veri toplamıyoruz.",
+    who_t:"1) Biz kimiz",
+    who_b:`${SETTINGS.legalEntity} (“biz”) oyun ve uygulamalar geliştirip yayımlar. Bu politikada açıklanan işlemler için veri sorumlusuyuz.`,
+    scope_t:"2) Kapsam",
+    scope_b:`Bu politika, ${SETTINGS.appsList} ve “${SETTINGS.companyName}” markalı web sitelerimizi kapsar.`,
+    data_t:"3) İşlenen veriler",
+    d_usage:"Kullanım & tanılama (olaylar, oturumlar, yaklaşık konum, cihaz/OS) — analiz, çökme tespiti, ürün iyileştirme.",
+    d_progress:"Oyun ilerlemesi & tanımlayıcılar (oyuncu ID’si, başarılar, bulut kayıtları, anti-cheat) — işlevsellik ve senkronizasyon.",
+    d_purchases:"Satın almalar (SKU, bölge, jeton/makbuz) — gerçekleştirme, iade, dolandırıcılık önleme.",
+    d_ads:"Reklam verileri (gösterimler, sıfırlanabilir reklam kimlikleri) — reklam gösterimi ve ölçüm.",
+    d_support:"Destek verileri (e-posta, mesaj içeriği, ekler) — müşteri desteği.",
+    legal_t:"4) Amaçlar & hukuki dayanaklar",
+    legal_b:"Bölgeye göre: rıza (gerektiğinde), sözleşmenin ifası ve meşru menfaat (güvenlik, sahteciliği önleme, çökme tanılama).",
+    sdks_t:"5) Üçüncü taraf hizmetleri (veri işleyenler)",
+    sdk_firebase:"Analitik ve Crashlytics ile kararlılık.",
+    sdk_ads:"Reklam ağları, reklam kimlikleriyle performansı ölçer.",
+    sdk_play:"Google Play Games Services platform özellikleri.",
+    sdk_af:"Yükleme atfı ve kampanya performansı.",
+    processors_note:"Bu sağlayıcılar, sözleşme kapsamında veri işleyen olarak hareket eder.",
+    share_t:"6) Paylaşım", share_b:"Satış veya ‘paylaşım’ yok; yalnızca hizmet sağlayıcılar veya yasal gereklilikler.",
+    ret_t:"7) Saklama", ret_b:`Çökme günlükleri ~ ${SETTINGS.retention.crashes}, analiz ~ ${SETTINGS.retention.analytics}, mali kayıtlar ${SETTINGS.retention.finance}; ardından silme/anonimleştirme.`,
+    intl_t:"8) Uluslararası aktarımlar", intl_b:"Uygun güvenceler (örn. SCC) uygulanır.",
+    kids_t:"9) Çocuklar", kids_b:"Çocuklardan bilerek veri toplamıyoruz.",
+    rights_t:"10) Haklarınız", rights_b:"Erişim, düzeltme, silme, itiraz, kısıtlama, kopya, rızayı geri çekme.",
+    cookies_t:"11) Çerezler & rıza",
+    cookies_b: SETTINGS.hasCookiesBanner ? "Gereken bölgelerde rıza banner’ı gösteriyoruz." : "Gerekli olmayan çerez/SDK yok.",
+    sec_t:"12) Güvenlik", sec_b:"Riske uygun teknik ve organizasyonel önlemler.",
+    chg_t:"13) Değişiklikler", chg_b:"Bu politika güncellenebilir.",
+    ct_t:"14) İletişim", ct_b:`Veri sorumlusu: ${SETTINGS.legalEntity}. Adres: ${SETTINGS.address}. E-posta: <a href="mailto:${SETTINGS.contact}">${SETTINGS.contact}</a>.`,
+    foot_note:"İpucu: doğrudan bağlantı kopyalamak için başlığa tıklayın."
+  }
+};
+
+// (Создадим недостающие языки на основе en, чтобы не валилось если что)
+["en","ru","nl","fi","fr","de","id","it","ms","pl","pt","es","tr"].forEach(lang=>{
+  if(!I18N[lang]) I18N[lang]=I18N.en;
+});
+
+/* ====== RUNTIME ====== */
+const $ = (s,root=document)=>root.querySelector(s);
+const $$ = (s,root=document)=>[...root.querySelectorAll(s)];
+
+function setLang(lang){
+  const dict = I18N[lang] || I18N.en;
+  $$("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if (dict[k]) el.innerHTML = dict[k];
+  });
+  $("#effective").textContent = SETTINGS.effective;
+  localStorage.setItem("ls.privacy.lang", lang);
+}
+
+function getLangMeta(code){
+  const f = LANGS.find(([c])=>c===code);
+  return f ? { code:f[0], label:f[1], flag:f[2] } : { code, label:code, flag:"us" };
+}
+
+function initLangDropdown(){
+  const hidden = document.querySelector("#lang");
+  const btn = document.querySelector("#langBtn");
+  const menu = document.querySelector("#langMenu");
+  const labelEl = document.querySelector("#langLabel");
+
+  const saved = localStorage.getItem("ls.privacy.lang") || (navigator.language||"en").split("-")[0].toLowerCase();
+  const initial = (LANGS.some(([c])=>c===saved) ? saved : "en");
+  hidden.value = initial;
+  setLang(initial);
+  {
+    const m = getLangMeta(initial);
+    labelEl.innerHTML = `<span class="fi fi-${m.flag}"></span><span>${m.label}</span>`;
+  }
+
+  function render(){
+    menu.innerHTML = "";
+    LANGS.forEach(([code, label])=>{
+      const opt = document.createElement("button");
+      opt.type = "button";
+      opt.className = "lang-option";
+      opt.setAttribute("role","option");
+      opt.dataset.val = code;
+      if(code===hidden.value) opt.setAttribute("aria-selected","true");
+      const m = getLangMeta(code);
+      opt.innerHTML = `<span class="fi fi-${m.flag}"></span><span>${m.label}</span>`;
+      opt.addEventListener("click", ()=>select(code));
+      menu.appendChild(opt);
+    });
+  }
+
+  function open(){ render(); menu.classList.add("open"); btn.setAttribute("aria-expanded","true"); menu.focus(); }
+  function close(){ menu.classList.remove("open"); btn.setAttribute("aria-expanded","false"); }
+  function toggle(){ menu.classList.contains("open") ? close() : open(); }
+
+  function select(code){
+    hidden.value = code;
+    setLang(code);
+    const m = getLangMeta(code);
+    labelEl.innerHTML = `<span class="fi fi-${m.flag}"></span><span>${m.label}</span>`;
+    close();
+  }
+
+  btn.addEventListener("click", toggle);
+  document.addEventListener("click", (e)=>{ if(!menu.contains(e.target) && !btn.contains(e.target)) close(); });
+  document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") close(); });
+
+  // клавиатурная навигация по пунктам меню
+  menu.addEventListener("keydown", (e)=>{
+    const opts = [...menu.querySelectorAll(".lang-option")];
+    const idx = opts.findIndex(o=>o===document.activeElement);
+    if(e.key==="ArrowDown"){ e.preventDefault(); (opts[idx+1]||opts[0]).focus(); }
+    if(e.key==="ArrowUp"){ e.preventDefault(); (opts[idx-1]||opts[opts.length-1]).focus(); }
+    if(e.key==="Enter" && document.activeElement.classList.contains("lang-option")){
+      e.preventDefault(); document.activeElement.click();
+    }
+  });
+}
+
+function expandAll(flag){
+  $$("details").forEach(d=>d.open = flag);
+}
+
+function copyCurrentSectionLink(){
+  const open = $$("details").find(d=>d.open) || $$("details")[0];
+  if(!open){ return; }
+  const sum = $("summary", open);
+  const id = sum && sum.id ? sum.id : "";
+  const url = location.origin + location.pathname + (id ? "#"+id : "");
+  navigator.clipboard.writeText(url).then(()=>{
+    const btn = $("#copyLink"); btn.textContent = (I18N[$("#lang").value]||I18N.en).btn_copy + " ✓";
+    setTimeout(()=>btn.textContent=(I18N[$("#lang").value]||I18N.en).btn_copy,1200);
+  });
+}
+
+$("#expandAll").addEventListener("click", ()=>expandAll(true));
+$("#collapseAll").addEventListener("click", ()=>expandAll(false));
+$("#print").addEventListener("click", ()=>window.print());
+$("#copyLink").addEventListener("click", copyCurrentSectionLink);
+
+initLangDropdown();
+
+(() => {
+  const header = document.querySelector('.header');
+  if (!header) return;
+
+  let lastY = window.scrollY;
+  const showOnUpDelta = 8;   // сколько пикселей вверх нужно «покрутить», чтобы показать шапку
+  const startHideAfter = 64; // начинать прятать только после небольшой прокрутки
+
+  let ticking = false;
+  function onScroll() {
+    const y = window.scrollY;
+    const goingDown = y > lastY;
+    const delta = Math.abs(y - lastY);
+
+    if (goingDown && y > startHideAfter && delta > 2) {
+      header.classList.add('is-hidden');
+    } else if (!goingDown && delta > showOnUpDelta) {
+      header.classList.remove('is-hidden');
+    }
+    lastY = y;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
+// клик по заголовку — копировать ссылку на раздел
+$$("summary").forEach(s=>{
+  s.addEventListener("click", (e)=>{
+    // если уже открыт — копируем ссылку
+    setTimeout(()=>{
+      if (e.currentTarget.parentElement.open){
+        const url = location.origin + location.pathname + "#" + e.currentTarget.id;
+        navigator.clipboard.writeText(url);
+      }
+    }, 0);
+  });
+});
+
+</script>
+</body>
+</html>
