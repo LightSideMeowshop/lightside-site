@@ -1,0 +1,197 @@
+{
+  "nav": {
+    "about": "Hakkımızda",
+    "games": "Oyunlar",
+    "team": "Ekip",
+    "careers": "Kariyer",
+    "news": "Haberler",
+    "press": "Basın",
+    "contact": "İletişim",
+    "brand": "Marka",
+    "theme": "Tema"
+  },
+  "alt": {
+    "logo": "Logo",
+    "banner": "Afiş"
+  },
+  "brand": {
+    "name": "LIGHT SIDE",
+    "modal": {
+      "title": "Marka varlıkları",
+      "subtitle": "Logonu ve afişini yükle — sayfa anında güncellenir."
+    },
+    "logo": "Logo",
+    "upload": "Yükle",
+    "banner": "Afiş",
+    "done": "Bitti"
+  },
+  "hero": {
+    "pill": {
+      "indie_studio": "Bağımsız stüdyo",
+      "meaningful_games": "Anlamlı oyunlar yapıyoruz"
+    },
+    "title": "LIGHT SIDE — oyun geliştirme stüdyosu",
+    "subtitle": "Mekanikleri fikirleri aydınlatan şık ve cilalı oyunlar yapıyoruz. Prototipten çıkışa — ışığın tarafında büyü.",
+    "cta": {
+      "games": "Oyunlarımız",
+      "careers": "Kariyer",
+      "contact": "İletişim"
+    }
+  },
+  "about": {
+    "kicker": "Hakkımızda",
+    "title": "Mekanikleriyle parlayan oyunlar",
+    "subtitle": "Ekibimiz; mühendisler, sanatçılar ve yazarlar: oynanış özdür, stil iletilir, oyuncu eş‑yazardır.",
+    "bullets": {
+      "technical": {
+        "title": "Teknik olgunluk",
+        "text": "Özel pipeline, CI/CD, ticket’lar — sıkıcı değil, hızlı."
+      },
+      "prototype": {
+        "title": "Prototiple tasarım",
+        "text": "Erken build’ler, telemetri, haftalık iterasyonlar."
+      },
+      "aesthetics": {
+        "title": "Estetik & ses",
+        "text": "Sanat ve ses uyumuyla duygular daha güçlü."
+      }
+    }
+  },
+  "games": {
+    "kicker": "Portföy",
+    "title": "Oyunlarımız",
+    "subtitle": "Şu an bunları geliştiriyoruz. Build iste — gönderelim ve playtest ayarlayalım.",
+    "solar_run": {
+      "title": "Tetra Crush",
+      "description": "Block Blast ruhunda: klasik mod ve hedefli seviyeler, arka plan, tahta ve müzik temaları; güçlendiriciler — bomba, roket, çekiç vb.; ve özel bloklar — taş, ahşap, metal vb. Topla, patlat, kazan!",
+      "status": "Üretimde"
+    },
+    "dusk_valley": {
+      "title": "DUSK VALLEY",
+      "description": "Sürükleyici mekaniklere sahip noir dedektif oyunu. Şehri keşfet, komploları açığa çıkar, ışığın tarafını seç.",
+      "status": "Ön‑üretim"
+    },
+    "neon_forge": {
+      "title": "NEON FORGE",
+      "description": "Silah atölyeli taktik aksiyon: build’ler döv, düşmanları kıvılcıma çevir, en parlak sen ol.",
+      "status": "Prototip"
+    },
+    "tags": {
+      "roguelite": "Roguelite",
+      "singleplayer": "Tek oyunculu",
+      "pc_console": "PC/Konsol",
+      "adventure": "Macera",
+      "choices_matter": "Seçimler Önemli",
+      "narrative": "Anlatı",
+      "action": "Aksiyon",
+      "tactics": "Taktik",
+      "indie": "Bağımsız"
+    },
+    "trailer": "Fragman",
+    "request_build": "Build iste"
+  },
+  "team": {
+    "kicker": "Kültür",
+    "title": "Küçük ekip — büyük hedefler",
+    "subtitle": "Senior’lar, mid’ler ve junior’lar bir arada. Mentorluk ve büyüme — kasvet yok.",
+    "members": {
+      "0": {
+        "name": "Egor",
+        "role": "Teknik Direktör"
+      },
+      "1": {
+        "name": "Anna",
+        "role": "Sanat Yönetmeni"
+      },
+      "2": {
+        "name": "Roman",
+        "role": "Oyun Tasarımcısı"
+      },
+      "3": {
+        "name": "Maria",
+        "role": "Yapımcı"
+      }
+    }
+  },
+  "careers": {
+    "kicker": "Kariyer",
+    "title": "Ekibe katıl",
+    "subtitle": "Esnek saatler, uzaktan çalışma, net süreçler. İletişim bırak — görüşme planıyla döneriz.",
+    "jobs": {
+      "senior_engineer": {
+        "title": "Kıdemli Unity/Unreal Mühendisi",
+        "type": "Uzaktan / Tam zamanlı",
+        "description": "Oyun sistem mimarisi, optimizasyon, varlık hattı, çoklu platform build’leri."
+      },
+      "game_designer": {
+        "title": "Oyun Tasarımcısı (Core/Systems)",
+        "type": "Hibrit / Tam zamanlı",
+        "description": "Çekirdek döngüler, denge, ekonomi, meta, A/B, telemetri."
+      },
+      "hard_surface_artist": {
+        "title": "3D Sanatçı (Hard Surface)",
+        "type": "Uzaktan / Sözleşmeli",
+        "description": "Modelleme, UV, PBR, konsol/mobil optimizasyon; shader bilgisi artı."
+      }
+    },
+    "apply": "Başvur"
+  },
+  "news": {
+    "kicker": "Güncellemeler",
+    "title": "Stüdyo haberleri",
+    "subtitle": "Bültene abone ol — demo ve kapalı playtest’leri kaçırma.",
+    "items": {
+      "0": {
+        "title": "Light Side, Solar Run’ı duyurdu",
+        "summary": "İlk teaser, oynanabilir build ve bu yaz playtest’ler."
+      },
+      "1": {
+        "title": "Büyüyoruz: 3 açık pozisyon",
+        "summary": "Engine mühendisi, oyun tasarımcısı ve hard‑surface sanatçısı arıyoruz. Esnek şartlar."
+      },
+      "2": {
+        "title": "Light Side DevGAMM’de",
+        "summary": "Pitch deck, demo standı, yayıncılarla buluşmalar."
+      }
+    },
+    "read": "Oku"
+  },
+  "newsletter": {
+    "placeholder": "Güncellemeler için e‑postan",
+    "subscribe": "Abone ol"
+  },
+  "press": {
+    "kicker": "Basın & iş ortakları",
+    "title": "Medya kiti & basın iletişimi",
+    "subtitle": "Logolar, afişler, ekran görüntüleri, pitch deck — gerekli her şey.",
+    "logo": "Logo",
+    "download_png": "PNG indir",
+    "banner": "Afiş",
+    "download_image": "Görsel indir"
+  },
+  "contact": {
+    "kicker": "İletişim",
+    "title": "Bize yaz",
+    "subtitle": "Ortaklık, yayıncılık, playtest, medya — açığız.",
+    "form": {
+      "name": "Adın",
+      "email": "E‑posta",
+      "subject": "Konu",
+      "message": "Mesaj",
+      "sending": "Gönderiliyor…",
+      "sent": "Gönderildi ✓",
+      "send": "Gönder"
+    },
+    "reply_time": "1–2 iş günü içinde yanıtlıyoruz."
+  },
+  "footer": {
+    "copyright": "Light Side. Tüm hakları saklıdır.",
+    "made_with_love": "❤ ile ışığın tarafında yapıldı."
+  },
+  "social": {
+    "twitter": "X / Twitter",
+    "youtube": "YouTube",
+    "twitch": "Twitch",
+    "github": "GitHub"
+  }
+}

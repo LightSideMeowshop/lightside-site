@@ -1,0 +1,197 @@
+{
+  "nav": {
+    "about": "À propos",
+    "games": "Jeux",
+    "team": "Équipe",
+    "careers": "Carrières",
+    "news": "Actualités",
+    "press": "Presse",
+    "contact": "Contact",
+    "brand": "Marque",
+    "theme": "Thème"
+  },
+  "alt": {
+    "logo": "Logo",
+    "banner": "Bannière"
+  },
+  "brand": {
+    "name": "LIGHT SIDE",
+    "modal": {
+      "title": "Assets de marque",
+      "subtitle": "Téléversez votre logo et bannière — la page se met à jour instantanément."
+    },
+    "logo": "Logo",
+    "upload": "Téléverser",
+    "banner": "Bannière",
+    "done": "Terminé"
+  },
+  "hero": {
+    "pill": {
+      "indie_studio": "Studio indie",
+      "meaningful_games": "Nous créons des jeux porteurs de sens"
+    },
+    "title": "LIGHT SIDE — studio de développement de jeux",
+    "subtitle": "Nous concevons des jeux élégants et soignés où les mécaniques éclairent les idées. Du prototype à la sortie — grandissez du côté lumineux.",
+    "cta": {
+      "games": "Nos jeux",
+      "careers": "Carrières",
+      "contact": "Contact"
+    }
+  },
+  "about": {
+    "kicker": "À propos",
+    "title": "Des jeux qui brillent par leurs mécaniques",
+    "subtitle": "Notre équipe réunit ingénieurs, artistes et auteurs autour d’un principe simple : le gameplay est le cœur, le style est le vecteur, le joueur est co‑auteur.",
+    "bullets": {
+      "technical": {
+        "title": "Maturité technique",
+        "text": "Pipeline maison, CI/CD, tickets — pas ennuyeux, juste rapide."
+      },
+      "prototype": {
+        "title": "Conception par prototypage",
+        "text": "Playables précoces, télémétrie, itérations hebdomadaires."
+      },
+      "aesthetics": {
+        "title": "Esthétique & son",
+        "text": "Art et audio en synergie pour des émotions plus fortes."
+      }
+    }
+  },
+  "games": {
+    "kicker": "Portfolio",
+    "title": "Nos jeux",
+    "subtitle": "Voici ce que nous développons actuellement. Demandez un build — nous l’enverrons et organiserons un playtest.",
+    "solar_run": {
+      "title": "Tetra Crush",
+      "description": "Dans l’esprit de Block Blast : mode classique et niveaux à objectifs, thèmes pour arrière-plans, plateaux et musique ; boosters — bombe, fusée, marteau, etc. ; et blocs spéciaux — pierre, bois, métal, etc. Collecte, explose, gagne !",
+      "status": "En production"
+    },
+    "dusk_valley": {
+      "title": "DUSK VALLEY",
+      "description": "Polar noir aux mécaniques immersives. Explorez la ville, dévoilez les complots, choisissez le côté lumineux.",
+      "status": "Pré‑production"
+    },
+    "neon_forge": {
+      "title": "NEON FORGE",
+      "description": "Action tactique avec atelier d’armes : forgez des builds, réduisez vos ennemis en étincelles, brillez plus fort que tous.",
+      "status": "Prototype"
+    },
+    "tags": {
+      "roguelite": "Roguelite",
+      "singleplayer": "Solo",
+      "pc_console": "PC/Console",
+      "adventure": "Aventure",
+      "choices_matter": "Choix importants",
+      "narrative": "Narratif",
+      "action": "Action",
+      "tactics": "Tactique",
+      "indie": "Indé"
+    },
+    "trailer": "Bande‑annonce",
+    "request_build": "Demander un build"
+  },
+  "team": {
+    "kicker": "Culture",
+    "title": "Petite équipe — grandes ambitions",
+    "subtitle": "Seniors, mids et juniors côte à côte. Nous mentorons et grandissons — sans morosité.",
+    "members": {
+      "0": {
+        "name": "Egor",
+        "role": "Directeur technique"
+      },
+      "1": {
+        "name": "Anna",
+        "role": "Directrice artistique"
+      },
+      "2": {
+        "name": "Roman",
+        "role": "Game Designer"
+      },
+      "3": {
+        "name": "Maria",
+        "role": "Productrice"
+      }
+    }
+  },
+  "careers": {
+    "kicker": "Carrières",
+    "title": "Nous recrutons",
+    "subtitle": "Horaires flexibles, télétravail, processus clairs. Laissez vos coordonnées — nous reviendrons avec un plan d’entretien.",
+    "jobs": {
+      "senior_engineer": {
+        "title": "Ingénieur·e Senior Unity/Unreal",
+        "type": "Télétravail / Temps plein",
+        "description": "Architecture des systèmes de jeu, optimisation, pipeline d’assets, builds multi‑plateformes."
+      },
+      "game_designer": {
+        "title": "Game Designer (Core/Systems)",
+        "type": "Hybride / Temps plein",
+        "description": "Loops de base, équilibrage, économie, méta, A/B, télémétrie."
+      },
+      "hard_surface_artist": {
+        "title": "Artiste 3D (Hard Surface)",
+        "type": "Télétravail / Contrat",
+        "description": "Modélisation, UV, PBR, optimisation console/mobile ; maîtrise des shaders appréciée."
+      }
+    },
+    "apply": "Postuler"
+  },
+  "news": {
+    "kicker": "Mises à jour",
+    "title": "Actualités du studio",
+    "subtitle": "Abonnez‑vous pour ne rien manquer des démos et playtests fermés.",
+    "items": {
+      "0": {
+        "title": "Light Side annonce Solar Run",
+        "summary": "Premier teaser, build jouable et playtests cet été."
+      },
+      "1": {
+        "title": "Le studio grandit : 3 postes ouverts",
+        "summary": "Nous recherchons un·e ingénieur·e moteur, un·e game designer et un·e artiste hard‑surface. Conditions flexibles."
+      },
+      "2": {
+        "title": "Light Side à DevGAMM",
+        "summary": "Pitch deck, stand démo, rencontres avec des éditeurs."
+      }
+    },
+    "read": "Lire"
+  },
+  "newsletter": {
+    "placeholder": "Votre email pour les mises à jour",
+    "subscribe": "S’abonner"
+  },
+  "press": {
+    "kicker": "Presse & partenaires",
+    "title": "Media kit & contacts presse",
+    "subtitle": "Logos, bannières, captures, pitch deck — tout pour vos articles.",
+    "logo": "Logo",
+    "download_png": "Télécharger PNG",
+    "banner": "Bannière",
+    "download_image": "Télécharger l’image"
+  },
+  "contact": {
+    "kicker": "Contacts",
+    "title": "Écrivez‑nous",
+    "subtitle": "Partenariats, publishing, playtests, médias — nous sommes ouverts.",
+    "form": {
+      "name": "Votre nom",
+      "email": "Email",
+      "subject": "Objet",
+      "message": "Message",
+      "sending": "Envoi…",
+      "sent": "Envoyé ✓",
+      "send": "Envoyer"
+    },
+    "reply_time": "Nous répondons sous 1–2 jours ouvrés."
+  },
+  "footer": {
+    "copyright": "Light Side. Tous droits réservés.",
+    "made_with_love": "Fait avec ❤ du côté lumineux."
+  },
+  "social": {
+    "twitter": "X / Twitter",
+    "youtube": "YouTube",
+    "twitch": "Twitch",
+    "github": "GitHub"
+  }
+}

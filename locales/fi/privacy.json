@@ -1,0 +1,87 @@
+{
+"pp_title": "Tietosuojakäytäntö",
+"updated": "Voimaantulopäivä",
+"btn_expand": "Laajenna kaikki",
+"btn_collapse": "Supista kaikki",
+"btn_print": "Tulosta / Tallenna PDF",
+"btn_copy": "Kopioi linkki tähän osioon",
+
+"sum_global": "Soveltuu maailmanlaajuisesti peleihimme, sovelluksiimme ja verkkosivuillemme.",
+"sum_sdks": "Käytämme laajasti käytössä olevia palveluja: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (jos käytössä), AppsFlyer, SKAdNetwork.",
+"sum_no_sell": "Emme myy henkilötietoja. Voimme ”jakaa” tiettyjä tunnisteita ja sovellustapahtumia kohdennettua mainontaa varten Yhdysvaltain osavaltioiden lakien määritelmän mukaisesti. Voit kieltäytyä tästä sovelluksessa.",
+"sum_optout": "Voit kieltäytyä kohdennetusta mainonnasta ja mittauksesta.",
+"sum_kids": "Emme tietoisesti kerää tietoja lapsilta.",
+
+"who_t": "1) Keitä olemme",
+"who_b": "{{legalEntity}} (”me”) kehittää ja julkaisee videopelejä ja sovelluksia. Toimimme rekisterinpitäjänä tässä käytännössä kuvatulle käsittelylle.",
+
+"scope_t": "2) Soveltamisala",
+"scope_b": "Tämä käytäntö kattaa {{appsList}} sekä verkkosivustomme, joita ylläpidetään maailmanlaajuisesti ”{{companyName}}”-brändin alla.",
+
+"data_t": "3) Käsittelemämme tiedot",
+"d_usage": "Käyttö- ja diagnostiikkatiedot (tapahtumat, istunnot, IP-osoite, karkea sijainti/maa, laite/KJ, sovellusversio) — analytiikka, kaatumisten havaitseminen, tuotteen parantaminen.",
+"d_progress": "Peliedistyminen ja tunnisteet (pelaaja-/tili-ID, saavutukset, pilvitallennus, huijaamisen eston signaalit) — ydintoiminnallisuus ja synkronointi.",
+"d_account": "Tilitiedot (näyttönimi, avatar, sähköposti jos annettu, todennustunnisteet, ikäryhmä) — tilin luonti, kirjautuminen, turvallisuus.",
+"d_ugc": "Käyttäjien tuottama sisältö ja sosiaaliset toiminnot (chat-viestit, profiilit, klaani-/kiltonimet, ilmoitukset) — pelitoiminnot ja moderointi.",
+"d_purchases": "Ostotiedot (SKU, alue, ostotunnus/kuitti) — ostojen toteutus, hyvitykset, petosten estäminen.",
+"d_ads": "Mainonta- ja attribuutiotiedot (mainosnäytöt, klikkaukset, nollattavat mainostunnisteet kuten IDFA/AAID, SKAdNetwork-palautteet, kontekstisignaalit) — mainosten näyttäminen, näyttökertojen rajoitus, mittaus (mainosrahoitteiset julkaisut).",
+"d_support": "Tukitiedot (sähköposti, viestin sisältö, liitteet, laitteen diagnostiikka jonka päätät lähettää) — asiakastuki ja vianmääritys.",
+"d_sensitive_note": "Emme kerää tarkkaa sijaintia tai arkaluonteisia tietoryhmiä, ellei niitä anneta meille nimenomaisesti tuen yhteydessä.",
+
+"legal_t": "4) Tarkoitukset ja käsittelyn perusteet",
+"legal_b": "Sijainnistasi riippuen tukeudumme: (a) suostumukseen (kun sitä vaaditaan mainonta-/analytiikkaevästeille/SDK:ille ETA:ssa/VK:ssa sekä IDFA-pääsyyn Apple ATT:n mukaisesti); (b) sopimuksen täytäntöönpanoon (pelin/sovelluksen, pilvitallennuksen ja ostojen toimittamiseksi); (c) oikeutettuihin etuihin (turvallisuus, petosten estäminen, kaatumisdiagnostiikka, ei-henkilökohtainen analytiikka); sekä (d) lakisääteisten velvoitteiden noudattamiseen (vero/kirjanpito). Voit peruuttaa suostumuksesi milloin tahansa sovelluksen asetuksissa tai suostumusbannerissamme (jos näytetään).",
+
+"optout_t": "5) Mainosasetukset (opt-out)",
+"optout_b": "Voit milloin tahansa kieltäytyä ”kohdennetusta mainonnasta” ja tietyistä mittauksista kohdassa **Asetukset → Tietosuoja → Mainosvalinnat**. Kaliforniassa ja muissa Yhdysvaltain osavaltioissa voit käyttää painiketta **‘Do Not Sell or Share My Personal Information’** kieltäytyäksesi ”jakamisesta” kontekstien väliseen käyttäytymiseen perustuvaa mainontaa varten. Androidissa/iOS:ssä voit myös nollata tai rajoittaa mainostunnisteen käyttöä käyttöjärjestelmän asetuksissa. Kunnioitamme Applen ATT-valintoja ja SKAdNetwork-mittausta, kun IDFA ei ole käytettävissä.",
+
+"att_t": "6) Apple App Tracking Transparency (iOS)",
+"att_b": "iOS:ssä pyydämme luvan Applen App Tracking Transparency -järjestelmän kautta. Jos kieltäydyt, emme käytä IDFA:ta ja käytämme vain kontekstuaalista mainontaa ja yksityisyyttä suojaavaa mittausta (esim. SKAdNetwork).",
+
+"sdks_t": "7) Kolmannen osapuolen palvelut (käsittelijät)",
+"sdk_firebase": "Firebase Analytics kerää käyttö- ja vakautusmittareita; Crashlytics auttaa diagnosoimaan kaatumisia. Tietoihin voi sisältyä laite-/KJ-tiedot, sovellusversio, tapahtumat ja kaatumislokit.",
+"sdk_ads": "Mainosverkostot (esim. Google AdMob, Unity Ads) näyttävät mainoksia ja mittaavat suorituskykyä nollattavien mainostunnisteiden ja kontekstisignaalien avulla. Voit nollata tai rajoittaa mainosseurantaa käyttöjärjestelmässäsi.",
+"sdk_play": "Google Play Games Services pilvitallennuksille, saavutuksille, tuloslistoille ja alustan integraatioille.",
+"sdk_gc": "Apple Game Center ja iCloud (jos käytössä) todennukseen ja pilvitallennuksiin Apple-alustoilla.",
+"sdk_af": "AppsFlyer tarjoaa asennusattribuution ja kampanjasuorituskyvyn käyttäen tunnisteita ja ei-arkaluonteisia tapahtumatietoja.",
+"processors_note": "Käytämme näitä palveluntarjoajia tietojenkäsittelysopimusten perusteella; niiden on suojattava tiedot ja käytettävä niitä vain ohjeidemme mukaisesti.",
+
+"share_t": "8) Tietojen jakaminen",
+"share_b": "Emme myy henkilötietoja. Luovutamme tietoja palveluntarjoajille (käsittelijöille), alustan tarjoajille (Google/Apple) sekä silloin kun laki sitä edellyttää tai oikeuksien, turvallisuuden ja eheyden suojaamiseksi.",
+
+
+
+
+"intl_t": "9) Kansainväliset siirrot",
+"intl_b": "Kun tietoja siirretään kansainvälisesti, käytämme asianmukaisia suojatoimia (esim. EU:n vakiosopimuslausekkeet). Osa palveluntarjoajista osallistuu EU–US Data Privacy Framework -järjestelyyn. Voit pyytää meiltä lisätietoja näistä suojatoimista.",
+
+"kids_t": "10) Lapset",
+"kids_b": "Emme tietoisesti kerää henkilötietoja lapsilta. Sekä aikuisille että lapsille suunnatuissa nimikkeissä käytämme ikärajasuodatusta ja poistamme personoidun mainonnan/attribuution käytöstä käyttäjiltä, jotka tunnistetaan alle soveltuvan iän (esim. alle 13 v. Yhdysvalloissa, alle 16 v. ETA/VK mainonnan ”jakamista” varten). Jos epäilet, että lapsi on antanut meille tietoja, ota yhteyttä — poistamme tiedot ja poistamme personoinnin käytöstä.",
+
+"rights_t": "11) Oikeutesi",
+"rights_b": "Alueestasi riippuen sinulla voi olla oikeus saada pääsy tietoihin, oikaista, poistaa, siirtää, vastustaa käsittelyä, rajoittaa käsittelyä, peruuttaa suostumus tai hakea muutosta päätökseemme. Käytä oikeuksiasi sovelluksen pyyntölomakkeella tai ottamalla yhteyttä alla olevaan sähköpostiin. Vastaamme 30 päivän kuluessa (ETA/VK) tai 45 päivän kuluessa (USA). Kalifornian asukkaat voivat käyttää valtuutettua edustajaa. Sinua ei syrjitä oikeuksiesi käyttämisen vuoksi. ETA/VK-asukkaat voivat tehdä valituksen valvontaviranomaiselle.",
+
+"cookies_t": "12) Evästeet ja suostumus",
+"cookies_b": "Verkkosivustomme eivät tällä hetkellä käytä ei-välttämättömiä evästeitä/SDK:ita. Jos tämä muuttuu, näytämme suostumusbannerin, jonka kautta voit hyväksyä, hylätä tai muuttaa valintojasi milloin tahansa.",
+
+"acct_t": "13) Tilit ja poistaminen",
+"acct_b": "Voit luoda pelitilin edistymisen synkronointia ja sosiaalisia toimintoja varten. Voit poistaa tilisi milloin tahansa kohdassa **Asetukset → Tili → Poista tili** tai ottamalla meihin yhteyttä. Tilin poistaminen poistaa henkilökohtaiset tiedot ja pilvitallennukset, jotka liittyvät tiliin, 30 päivän kuluessa (varmuuskopiot voivat säilyä rajoitetun ajan). Voit myös katkaista Google Play Gamesin tai Apple Game Centerin niiden omista asetuksista.",
+
+"ugc_t": "14) Käyttäjien tuottama sisältö (UGC) ja moderointi",
+"ugc_b": "UGC (esim. chat, profiilit, kiltojen nimet) on näkyvissä muille pelaajille osana pelaamista. Moderoimme yhteisösääntöjemme noudattamiseksi ja voimme ryhtyä toimiin väärinkäytösilmoitusten perusteella. Älä jaa arkaluonteisia tietoja UGC:ssa.",
+
+"sec_t": "15) Turvallisuus",
+"sec_b": "Käytämme riskiin nähden asianmukaisia teknisiä ja organisatorisia toimenpiteitä (salaus siirron aikana, salaus levossa soveltuvin osin, käyttöoikeuksien hallinta, vähimmän oikeuden periaate, lokitus, säännölliset päivitykset, incident-response). Mikään järjestelmä ei ole 100 % turvallinen.",
+
+"chg_t": "16) Muutokset",
+"chg_b": "Saatamme päivittää tätä käytäntöä ajoittain. Julkaisemme uuden version, jossa on uusi voimaantulopäivä.",
+
+"ct_t": "17) Yhteystiedot",
+"ct_b": "Rekisterinpitäjä: {{legalEntity}}.<br>Osoite: {{address}}.<br>Sähköposti: <a href=\"mailto:{{contact}}\">{{contact}}</a>.",
+
+"defs_t": "18) Keskeiset määritelmät",
+"defs_b": "”Henkilötiedot” tarkoittavat tietoja, jotka tunnistavat tai liittyvät tunnistettavissa olevaan henkilöön. ”Käsittely” tarkoittaa mitä tahansa henkilötietoihin kohdistuvaa toimenpidettä. ”Rekisterinpitäjä” määrittää tarkoitukset ja keinot; ”käsittelijä” käsittelee rekisterinpitäjän lukuun. ”Kohdennettu mainonta” tarkoittaa mainosten näyttämistä henkilötietojen perusteella, jotka on saatu toiminnasta muissa kuin samaan ryhmään kuuluvissa sovelluksissa tai verkkosivustoissa.",
+
+"dnsmpi_btn": "Älä myy tai jaa henkilötietojani",
+"privacy_settings_t": "Tietosuoja-asetukset",
+"privacy_settings_b": "Voit hallita suostumusta, mainosasetuksia ja tietopyyntöjä kohdassa **Asetukset → Tietosuoja**."
+}

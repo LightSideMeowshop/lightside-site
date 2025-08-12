@@ -1,0 +1,87 @@
+{
+  "pp_title": "Polityka prywatności",
+  "updated": "Data wejścia w życie",
+  "btn_expand": "Rozwiń wszystkie",
+  "btn_collapse": "Zwiń wszystkie",
+  "btn_print": "Drukuj / Zapisz PDF",
+  "btn_copy": "Skopiuj link do tej sekcji",
+
+  "sum_global": "Obowiązuje na całym świecie i dotyczy naszych gier, aplikacji i stron internetowych.",
+  "sum_sdks": "Korzystamy z powszechnie używanych usług: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (jeśli włączone), AppsFlyer, SKAdNetwork.",
+  "sum_no_sell": "Nie sprzedajemy danych osobowych. Możemy „udostępniać” niektóre identyfikatory i zdarzenia aplikacji na potrzeby reklam ukierunkowanych zgodnie z przepisami stanowymi w USA. Możesz zrezygnować w aplikacji.",
+  "sum_optout": "Możesz zrezygnować z reklam ukierunkowanych i pomiaru.",
+  "sum_kids": "Nie gromadzimy świadomie danych od dzieci.",
+
+  "who_t": "1) Kim jesteśmy",
+  "who_b": "{{legalEntity}} („my”, „nas”) rozwija i publikuje gry wideo oraz aplikacje. Działamy jako administrator danych w zakresie przetwarzania opisanego w niniejszej Polityce.",
+
+  "scope_t": "2) Zakres",
+  "scope_b": "Niniejsza Polityka obejmuje {{appsList}} oraz nasze witryny prowadzone na całym świecie pod marką „{{companyName}}”.",
+
+  "data_t": "3) Dane, które przetwarzamy",
+  "d_usage": "Dane o użytkowaniu i diagnostyce (zdarzenia, sesje, adres IP, przybliżona lokalizacja/kraj, urządzenie/system operacyjny, wersja aplikacji) — analityka, wykrywanie awarii, ulepszanie produktu.",
+  "d_progress": "Postępy w grze i identyfikatory (ID gracza/konta, osiągnięcia, zapisy w chmurze, sygnały anty-cheat) — podstawowa funkcjonalność i synchronizacja.",
+  "d_account": "Dane konta (nazwa wyświetlana, awatar, e-mail — jeśli podany, tokeny uwierzytelniania, grupa wiekowa) — tworzenie konta, logowanie, bezpieczeństwo.",
+  "d_ugc": "Treści tworzone przez użytkowników oraz funkcje społecznościowe (wiadomości czatu, profile, nazwy klanów/gildii, zgłoszenia) — funkcje rozgrywki i moderacja.",
+  "d_purchases": "Informacje o zakupach (SKU, region, token/rachunek zakupu) — realizacja zakupów, zwroty, zapobieganie oszustwom.",
+  "d_ads": "Dane reklamowe/atrybucyjne (wyświetlenia reklam, kliknięcia, resetowalne identyfikatory reklamowe, takie jak IDFA/AAID, postbacki SKAdNetwork, sygnały kontekstowe) — wyświetlanie reklam, ograniczanie częstotliwości, pomiar (tytuły wspierane reklamami).",
+  "d_support": "Dane wsparcia (e-mail, treść wiadomości, załączniki, diagnostyka urządzenia, którą zdecydujesz się wysłać) — obsługa klienta i rozwiązywanie problemów.",
+  "d_sensitive_note": "Nie zbieramy dokładnej lokalizacji ani szczególnych kategorii danych, chyba że przekażesz je nam wyraźnie w ramach wsparcia.",
+
+  "legal_t": "4) Cele i podstawy prawne",
+  "legal_b": "W zależności od Twojej lokalizacji opieramy się na: (a) zgodzie (gdy jest wymagana dla plików cookie/SDK reklamowych/analitycznych w EOG/Wielkiej Brytanii oraz dla dostępu do IDFA w ramach Apple ATT); (b) wykonaniu umowy (aby dostarczyć grę/aplikację, zapisy w chmurze i zakupy); (c) uzasadnionym interesie (bezpieczeństwo, przeciwdziałanie nadużyciom, diagnostyka awarii, niepersonalizowana analityka); oraz (d) wypełnianiu obowiązków prawnych (podatki/księgowość). Zgodę możesz wycofać w dowolnym momencie w ustawieniach aplikacji lub za pośrednictwem naszego banera zgody (jeśli jest wyświetlany).",
+
+  "optout_t": "5) Wybory dotyczące reklam (rezygnacja)",
+  "optout_b": "Możesz w każdej chwili zrezygnować z „reklam ukierunkowanych” i niektórych pomiarów w **Ustawienia → Prywatność → Wybory dotyczące reklam**. Dla Kalifornii i innych stanów USA możesz użyć przycisku **‘Do Not Sell or Share My Personal Information’**, aby zrezygnować z „udostępniania” na potrzeby reklamowania behawioralnego w różnych kontekstach. W Androidzie/iOS możesz także zresetować lub ograniczyć identyfikator reklamowy w ustawieniach systemu. Szanujemy wybory Apple ATT i pomiar SKAdNetwork, gdy IDFA nie jest dostępna.",
+
+  "att_t": "6) Apple App Tracking Transparency (iOS)",
+  "att_b": "W systemie iOS prosimy o zgodę za pośrednictwem Apple App Tracking Transparency. Jeśli odmówisz, nie uzyskujemy dostępu do IDFA i korzystamy wyłącznie z reklam kontekstowych oraz pomiaru z poszanowaniem prywatności (np. SKAdNetwork).",
+
+  "sdks_t": "7) Usługi stron trzecich (podmioty przetwarzające)",
+  "sdk_firebase": "Firebase Analytics zbiera metryki użycia i stabilności; Crashlytics pomaga diagnozować awarie. Dane mogą obejmować informacje o urządzeniu/systemie, wersję aplikacji, zdarzenia i dzienniki awarii.",
+  "sdk_ads": "Sieci reklamowe (np. Google AdMob, Unity Ads) wyświetlają reklamy i mierzą skuteczność, wykorzystując resetowalne identyfikatory reklamowe i sygnały kontekstowe. Możesz zresetować lub ograniczyć śledzenie reklam w swoim systemie operacyjnym.",
+  "sdk_play": "Google Play Games Services do zapisów w chmurze, osiągnięć, rankingów i integracji z platformą.",
+  "sdk_gc": "Apple Game Center i iCloud (jeśli włączone) do uwierzytelniania i zapisów w chmurze na platformach Apple.",
+  "sdk_af": "AppsFlyer zapewnia atrybucję instalacji i pomiar skuteczności kampanii, używając identyfikatorów oraz niewrażliwych danych zdarzeń.",
+  "processors_note": "Współpracujemy z tymi dostawcami na podstawie umów powierzenia przetwarzania danych; muszą oni chronić dane i używać ich wyłącznie zgodnie z naszymi instrukcjami.",
+
+  "share_t": "8) Udostępnianie",
+  "share_b": "Nie sprzedajemy danych osobowych. Ujawniany dane dostawcom usług (podmiotom przetwarzającym), dostawcom platform (Google/Apple) oraz gdy jest to wymagane prawem lub w celu ochrony praw, bezpieczeństwa i integralności.",
+
+
+
+
+  "intl_t": "9) Transfery międzynarodowe",
+  "intl_b": "W przypadku przekazywania danych za granicę stosujemy odpowiednie zabezpieczenia (np. standardowe klauzule umowne). Niektórzy dostawcy uczestniczą w EU-US Data Privacy Framework. Możesz skontaktować się z nami, aby uzyskać informacje o tych zabezpieczeniach.",
+
+  "kids_t": "10) Dzieci",
+  "kids_b": "Nie zbieramy świadomie danych osobowych dzieci. W tytułach dla odbiorców mieszanych stosujemy weryfikację wieku i wyłączamy spersonalizowane reklamy/atrybucję dla użytkowników zidentyfikowanych jako poniżej odpowiedniego wieku (np. poniżej 13 lat w USA, poniżej 16 lat w EOG/Wielkiej Brytanii w zakresie „udostępniania” reklam). Jeśli uważasz, że dziecko przekazało nam dane, skontaktuj się z nami — usuniemy je i wyłączymy personalizację.",
+
+  "rights_t": "11) Twoje prawa",
+  "rights_b": "W zależności od regionu możesz mieć prawo do dostępu, sprostowania, usunięcia, przenoszenia, sprzeciwu, ograniczenia, wycofania zgody lub odwołania się od naszej decyzji. Aby skorzystać z praw, użyj formularza w aplikacji lub skontaktuj się z nami na poniższy adres e-mail. Odpowiadamy w ciągu 30 dni (EOG/Wielka Brytania) lub 45 dni (USA). Mieszkańcy Kalifornii mogą skorzystać z upoważnionego przedstawiciela. Przysługuje Ci prawo do niedyskryminacji za korzystanie ze swoich praw. Mieszkańcy EOG/Wielkiej Brytanii mogą złożyć skargę do organu nadzorczego.",
+
+  "cookies_t": "12) Pliki cookie i zgoda",
+  "cookies_b": "Nasze strony internetowe obecnie nie używają niekoniecznych plików cookie/SDK. Jeśli się to zmieni, wyświetlimy baner zgody, który pozwoli Ci w każdej chwili zaakceptować, odrzucić lub zmienić wybory.",
+
+  "acct_t": "13) Konta i usuwanie",
+  "acct_b": "Możesz utworzyć konto w grze, aby synchronizować postępy i korzystać z funkcji społecznościowych. Możesz usunąć konto w dowolnym momencie w **Ustawienia → Konto → Usuń konto** lub kontaktując się z nami. Usunięcie konta powoduje usunięcie danych osobowych i zapisów w chmurze powiązanych z kontem w ciągu 30 dni (kopie zapasowe mogą być przechowywane przez ograniczony czas). Możesz też odłączyć Google Play Games lub Apple Game Center w ich odpowiednich ustawieniach.",
+
+  "ugc_t": "14) Treści tworzone przez użytkowników (UGC) i moderacja",
+  "ugc_b": "UGC (np. czat, profile, nazwy gildii) jest widoczny dla innych graczy jako część rozgrywki. Moderujemy w celu egzekwowania zasad społeczności i możemy podejmować działania w odpowiedzi na zgłoszenia nadużyć. Nie udostępniaj w UGC informacji wrażliwych.",
+
+  "sec_t": "15) Bezpieczeństwo",
+  "sec_b": "Stosujemy środki techniczne i organizacyjne odpowiednie do ryzyka (szyfrowanie w tranzycie, szyfrowanie danych w spoczynku — gdzie ma zastosowanie, kontrola dostępu, zasada minimalnych uprawnień, rejestrowanie, regularne aktualizacje, reagowanie na incydenty). Żaden system nie jest w 100% bezpieczny.",
+
+  "chg_t": "16) Zmiany",
+  "chg_b": "Możemy od czasu do czasu aktualizować niniejszą Politykę. Opublikujemy nową wersję z nową datą wejścia w życie.",
+
+  "ct_t": "17) Kontakt",
+  "ct_b": "Administrator danych: {{legalEntity}}.<br>Adres: {{address}}.<br>E-mail: <a href=\"mailto:{{contact}}\">{{contact}}</a>.",
+
+  "defs_t": "18) Kluczowe definicje",
+  "defs_b": "„Dane osobowe” oznaczają informacje identyfikujące lub dotyczące możliwej do zidentyfikowania osoby. „Przetwarzanie” oznacza wszelkie operacje wykonywane na danych osobowych. „Administrator” określa cele i sposoby; „podmiot przetwarzający” przetwarza w imieniu administratora. „Reklama ukierunkowana” oznacza wyświetlanie reklam na podstawie danych osobowych uzyskanych z aktywności w niepowiązanych aplikacjach lub witrynach.",
+
+  "dnsmpi_btn": "Nie sprzedawaj ani nie udostępniaj moich danych osobowych",
+  "privacy_settings_t": "Ustawienia prywatności",
+  "privacy_settings_b": "Możesz zarządzać zgodą, wyborami dotyczącymi reklam i żądaniami dotyczącymi danych w **Ustawienia → Prywatność**."
+}

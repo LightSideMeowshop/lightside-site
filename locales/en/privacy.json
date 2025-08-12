@@ -1,0 +1,87 @@
+{
+  "pp_title": "Privacy Policy",
+  "updated": "Effective date",
+  "btn_expand": "Expand all",
+  "btn_collapse": "Collapse all",
+  "btn_print": "Print / Save PDF",
+  "btn_copy": "Copy link to this section",
+
+  "sum_global": "Applies worldwide to our games, apps and websites.",
+  "sum_sdks": "We use widely adopted services: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (if enabled), AppsFlyer, SKAdNetwork.",
+  "sum_no_sell": "We do not sell personal data. We may 'share' certain identifiers and app events for targeted advertising as defined by US state laws. You can opt out in the app.",
+  "sum_optout": "You can opt out of targeted advertising and measurement.",
+  "sum_kids": "We do not knowingly collect data from children.",
+
+  "who_t": "1) Who we are",
+  "who_b": "{{legalEntity}} (‘we’, ‘us’) develops and publishes video games and applications. We act as the data controller for the processing described in this Policy.",
+
+"scope_t": "2) Scope",
+"scope_b": "This Policy covers {{appsList}} and our websites operated under the {{companyName}} brand, worldwide.",
+
+"data_t": "3) Data we process",
+"d_usage": "Usage & diagnostics (events, sessions, IP address, coarse location/country, device/OS, app version) — analytics, crash detection, product improvement.",
+"d_progress": "Game progress & identifiers (player/account ID, achievements, cloud saves, anti-cheat signals) — core functionality and sync.",
+"d_account": "Account data (display name, avatar, email if provided, authentication tokens, age group) — account creation, login, safety.",
+"d_ugc": "User-generated content and social features (chat messages, profiles, clan/guild names, reports) — gameplay features and moderation.",
+"d_purchases": "Purchase information (SKU, region, purchase token/receipt) — purchase fulfillment, refunds, fraud prevention.",
+"d_ads": "Ads/attribution data (ad impressions, clicks, resettable advertising IDs such as IDFA/AAID, SKAdNetwork postbacks, context signals) — showing ads, frequency capping, measurement (ad-supported titles).",
+"d_support": "Support data (email, message content, attachments, device diagnostics you choose to send) — customer support and troubleshooting.",
+"d_sensitive_note": "We do not collect precise location or sensitive categories unless you explicitly provide them to support.",
+
+"legal_t": "4) Purposes & legal bases",
+"legal_b": "Depending on your location, we rely on: (a) consent (where required for advertising/analytics cookies/SDKs in the EEA/UK, and for access to IDFA under Apple ATT); (b) performance of a contract (to deliver the game/app, cloud saves, and purchases); (c) legitimate interests (security, anti-fraud, crash diagnostics, non-personalized analytics); and (d) compliance with legal obligations (tax/accounting). You may withdraw consent at any time via in‑app settings or our consent banner (where shown).",
+
+"optout_t": "5) Advertising choices (opt-out)",
+"optout_b": "You can opt out of ‘targeted advertising’ and certain measurement at any time in **Settings → Privacy → Advertising choices**. For California and other US states, you can use the button **‘Do Not Sell or Share My Personal Information’** to opt out of ‘sharing’ for cross‑context behavioral advertising. On Android/iOS you can also reset or limit the advertising identifier in OS settings. We honor Apple ATT choices and SKAdNetwork measurement when IDFA is unavailable.",
+
+"att_t": "6) Apple App Tracking Transparency (iOS)",
+"att_b": "On iOS, we request permission via Apple’s App Tracking Transparency. If you decline, we do not access the IDFA and only use contextual ads and privacy‑preserving measurement (e.g., SKAdNetwork).",
+
+"sdks_t": "7) Third‑party services (processors)",
+"sdk_firebase": "Firebase Analytics collects usage and stability metrics; Crashlytics helps diagnose crashes. Data may include device/OS info, app version, events, and crash logs.",
+"sdk_ads": "Ad networks (e.g., Google AdMob, Unity Ads) show ads and measure performance using resettable advertising IDs and context signals. You can reset or limit ad tracking in your OS.",
+"sdk_play": "Google Play Games Services for cloud saves, achievements, leaderboards, and platform integrations.",
+"sdk_gc": "Apple Game Center and iCloud (if enabled) for authentication and cloud saves on Apple platforms.",
+"sdk_af": "AppsFlyer provides install attribution and campaign performance using identifiers and non‑sensitive event data.",
+"processors_note": "We engage these providers under data‑processing contracts; they must protect data and use it only on our instructions.",
+
+"share_t": "8) Sharing",
+"share_b": "We do not sell personal data. We disclose data to service providers (processors), platform providers (Google/Apple), and where required by law or to protect rights, safety, and integrity.",
+
+"ret_t": "9) Retention",
+"ret_b": "We retain data only as needed: crash logs ~ {{retention.crashes}}; analytics ~ {{retention.analytics}}; ads/measurement ~ {{retention.ads}}; attribution ~ {{retention.attribution}}; support ~ {{retention.support}}; account data for the life of the account, then deletion within 30 days; server logs ~ ${{retention.logs}}; and financial records ${{retention.finance}}. We may keep aggregated/de‑identified data and we commit not to re‑identify it.",
+
+"intl_t": "10) International transfers",
+"intl_b": "Where data is transferred internationally, we use appropriate safeguards (e.g., Standard Contractual Clauses). Some providers participate in the EU‑US Data Privacy Framework. You can contact us to request information about these safeguards.",
+
+"kids_t": "11) Children",
+"kids_b": "We do not knowingly collect personal data from children. In mixed‑audience titles we apply an age gate and disable personalized ads/attribution for users identified as under the applicable age (e.g., under 13 in the US, under 16 in the EEA/UK for ad ‘sharing’). If you believe a child provided data to us, please contact us and we will delete it and disable personalization.",
+
+"rights_t": "12) Your rights",
+"rights_b": "Depending on your region, you may have rights to access, correct, delete, port, object, restrict, withdraw consent, or appeal our decision. To exercise rights, use the in‑app request form or contact us at the email below. We respond within 30 days (EEA/UK) or 45 days (US). California residents may use an authorized agent. You have the right not to be discriminated against for exercising your rights. EEA/UK residents can lodge a complaint with a supervisory authority.",
+
+"cookies_t": "13) Cookies & consent",
+"cookies_b": "Our websites currently do not use non‑essential cookies/SDKs. If this changes, we will show a consent banner that lets you accept, reject, or change choices at any time.",
+
+"acct_t": "14) Accounts and deletion",
+"acct_b": "You can create an in‑game account to sync progress and use social features. You can delete your account at any time in **Settings → Account → Delete account** or by contacting us. Deleting an account removes personal data and cloud saves linked to the account within 30 days (backups may persist for a limited period). You can also disconnect Google Play Games or Apple Game Center from their respective settings.",
+
+"ugc_t": "15) User‑generated content (UGC) & moderation",
+"ugc_b": "UGC (e.g., chat, profiles, guild names) is visible to other players as part of gameplay. We moderate to enforce our community rules and may take action on abuse reports. Do not share sensitive information in UGC.",
+
+"sec_t": "16) Security",
+"sec_b": "We use technical and organizational measures appropriate to the risk (encryption in transit, encryption at rest where applicable, access controls, least privilege, logging, regular patching, incident response). No system is 100% secure.",
+
+"chg_t": "17) Changes",
+"chg_b": "We may update this Policy from time to time. We will post a new version with a new effective date.",
+
+"ct_t": "18) Contact",
+"ct_b": "Data controller: {{legalEntity}}.<br>Address: {{address}}.<br>Email: <a href=\"mailto:{{contact}}\">{{contact}}</a>.",
+
+"defs_t": "19) Key definitions",
+"defs_b": "‘Personal data’ means information that identifies or relates to an identifiable individual. ‘Processing’ means any operation performed on personal data. ‘Controller’ determines purposes and means; ‘processor’ processes on behalf of a controller. ‘Targeted advertising’ means displaying ads based on personal data obtained from activity across non‑affiliated apps or websites.",
+
+"dnsmpi_btn": "Do Not Sell or Share My Personal Information",
+"privacy_settings_t": "Privacy settings",
+"privacy_settings_b": "You can manage consent, advertising choices, and data requests in **Settings → Privacy**."
+}

@@ -1,0 +1,197 @@
+{
+  "nav": {
+    "about": "Tentang",
+    "games": "Permainan",
+    "team": "Pasukan",
+    "careers": "Kerjaya",
+    "news": "Berita",
+    "press": "Media",
+    "contact": "Hubungi",
+    "brand": "Jenama",
+    "theme": "Tema"
+  },
+  "alt": {
+    "logo": "Logo",
+    "banner": "Sepanduk"
+  },
+  "brand": {
+    "name": "LIGHT SIDE",
+    "modal": {
+      "title": "Aset jenama",
+      "subtitle": "Muat naik logo dan sepanduk — halaman dikemas kini serta‑merta."
+    },
+    "logo": "Logo",
+    "upload": "Muat naik",
+    "banner": "Sepanduk",
+    "done": "Selesai"
+  },
+  "hero": {
+    "pill": {
+      "indie_studio": "Studio indie",
+      "meaningful_games": "Kami cipta permainan bermakna"
+    },
+    "title": "LIGHT SIDE — studio pembangunan permainan",
+    "subtitle": "Kami membina permainan bergaya dan kemas, di mana mekanik menerangi idea. Dari prototaip ke keluaran — berkembang di sisi cahaya.",
+    "cta": {
+      "games": "Permainan kami",
+      "careers": "Kerjaya",
+      "contact": "Hubungi"
+    }
+  },
+  "about": {
+    "kicker": "Tentang",
+    "title": "Permainan yang bersinar melalui mekanik",
+    "subtitle": "Pasukan kami menyatukan jurutera, artis dan penulis: gameplay ialah teras, gaya ialah saluran, pemain ialah rakan‑pencipta.",
+    "bullets": {
+      "technical": {
+        "title": "Kematangan teknikal",
+        "text": "Saluran paip tersuai, CI/CD, tiket — tidak membosankan, cuma pantas."
+      },
+      "prototype": {
+        "title": "Reka bentuk melalui prototaip",
+        "text": "Build awal, telemetri, iterasi mingguan."
+      },
+      "aesthetics": {
+        "title": "Estetika & bunyi",
+        "text": "Seni dan audio bersinergi agar emosi lebih kuat."
+      }
+    }
+  },
+  "games": {
+    "kicker": "Portfolio",
+    "title": "Permainan kami",
+    "subtitle": "Inilah yang kami bangunkan sekarang. Minta build — kami hantar dan aturkan playtest.",
+    "solar_run": {
+      "title": "Tetra Crush",
+      "description": "Dalam semangat Block Blast: mod klasik dan tahap berasaskan matlamat, tema untuk latar belakang, papan dan muzik; booster — bom, roket, tukul, dsb.; serta blok khas — batu, kayu, logam, dsb. Kumpul, letupkan, menang!",
+      "status": "Dalam produksi"
+    },
+    "dusk_valley": {
+      "title": "DUSK VALLEY",
+      "description": "Detektif noir dengan mekanik imersif. Terokai bandar, bongkar konspirasi, pilih sisi cahaya.",
+      "status": "Pra‑produksi"
+    },
+    "neon_forge": {
+      "title": "NEON FORGE",
+      "description": "Aksi taktikal dengan bengkel senjata: tempa build, jadikan musuh percikan, bersinar paling terang.",
+      "status": "Prototip"
+    },
+    "tags": {
+      "roguelite": "Roguelite",
+      "singleplayer": "Pemain tunggal",
+      "pc_console": "PC/Konsol",
+      "adventure": "Pengembaraan",
+      "choices_matter": "Pilihan Penting",
+      "narrative": "Naratif",
+      "action": "Aksi",
+      "tactics": "Taktik",
+      "indie": "Indie"
+    },
+    "trailer": "Treler",
+    "request_build": "Minta build"
+  },
+  "team": {
+    "kicker": "Budaya",
+    "title": "Pasukan kecil — cita‑cita besar",
+    "subtitle": "Senior bersama mid dan junior. Kami membimbing dan berkembang — tanpa suram.",
+    "members": {
+      "0": {
+        "name": "Egor",
+        "role": "Pengarah Teknikal"
+      },
+      "1": {
+        "name": "Anna",
+        "role": "Pengarah Artistik"
+      },
+      "2": {
+        "name": "Roman",
+        "role": "Pereka Permainan"
+      },
+      "3": {
+        "name": "Maria",
+        "role": "Penerbit"
+      }
+    }
+  },
+  "careers": {
+    "kicker": "Kerjaya",
+    "title": "Kami sedang mengupah",
+    "subtitle": "Jadual fleksibel, mesra jauh, proses jelas. Tinggalkan kontak — kami hubungi dengan pelan temu duga.",
+    "jobs": {
+      "senior_engineer": {
+        "title": "Jurutera Kanan Unity/Unreal",
+        "type": "Jauh / Sepenuh masa",
+        "description": "Seni bina sistem permainan, pengoptimuman, saluran aset, build berbilang platform."
+      },
+      "game_designer": {
+        "title": "Pereka Permainan (Core/Systems)",
+        "type": "Hibrid / Sepenuh masa",
+        "description": "Core loop, imbangan, model ekonomi, meta, A/B, telemetri."
+      },
+      "hard_surface_artist": {
+        "title": "Artis 3D (Hard Surface)",
+        "type": "Jauh / Kontrak",
+        "description": "Pemodelan, UV, PBR, pengoptimuman untuk konsol/telefon; kemahiran shader digalakkan."
+      }
+    },
+    "apply": "Mohon"
+  },
+  "news": {
+    "kicker": "Kemas kini",
+    "title": "Berita studio",
+    "subtitle": "Langgan supaya tidak terlepas demo dan playtest tertutup.",
+    "items": {
+      "0": {
+        "title": "Light Side mengumumkan Solar Run",
+        "summary": "Teaser pertama, build boleh dimainkan dan playtest musim panas ini."
+      },
+      "1": {
+        "title": "Kami berkembang: 3 jawatan dibuka",
+        "summary": "Mencari jurutera enjin, pereka permainan dan artis hard‑surface. Syarat fleksibel."
+      },
+      "2": {
+        "title": "Light Side di DevGAMM",
+        "summary": "Pitch deck, booth demo, pertemuan dengan penerbit."
+      }
+    },
+    "read": "Baca"
+  },
+  "newsletter": {
+    "placeholder": "E‑mel anda untuk kemas kini",
+    "subscribe": "Langgan"
+  },
+  "press": {
+    "kicker": "Media & rakan",
+    "title": "Pakej media & kontak press",
+    "subtitle": "Logo, sepanduk, tangkapan skrin, pitch deck — semua yang diperlukan.",
+    "logo": "Logo",
+    "download_png": "Muat turun PNG",
+    "banner": "Sepanduk",
+    "download_image": "Muat turun imej"
+  },
+  "contact": {
+    "kicker": "Hubungi",
+    "title": "Tulis kepada kami",
+    "subtitle": "Kerjasama, penerbitan, playtest, media — kami terbuka.",
+    "form": {
+      "name": "Nama anda",
+      "email": "E‑mel",
+      "subject": "Subjek",
+      "message": "Mesej",
+      "sending": "Menghantar…",
+      "sent": "Dihantar ✓",
+      "send": "Hantar"
+    },
+    "reply_time": "Kami membalas dalam 1–2 hari bekerja."
+  },
+  "footer": {
+    "copyright": "Light Side. Hak cipta terpelihara.",
+    "made_with_love": "Dibuat dengan ❤ di sisi cahaya."
+  },
+  "social": {
+    "twitter": "X / Twitter",
+    "youtube": "YouTube",
+    "twitch": "Twitch",
+    "github": "GitHub"
+  }
+}

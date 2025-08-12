@@ -1,0 +1,197 @@
+{
+  "nav": {
+    "about": "Tietoa",
+    "games": "Pelit",
+    "team": "Tiimi",
+    "careers": "Ura",
+    "news": "Uutiset",
+    "press": "Lehdistö",
+    "contact": "Yhteys",
+    "brand": "Brändi",
+    "theme": "Teema"
+  },
+  "alt": {
+    "logo": "Logo",
+    "banner": "Banneri"
+  },
+  "brand": {
+    "name": "LIGHT SIDE",
+    "modal": {
+      "title": "Brändi‑assetit",
+      "subtitle": "Lataa logo ja banneri — sivu päivittyy heti."
+    },
+    "logo": "Logo",
+    "upload": "Lataa",
+    "banner": "Banneri",
+    "done": "Valmis"
+  },
+  "hero": {
+    "pill": {
+      "indie_studio": "Indiestudio",
+      "meaningful_games": "Teemme merkityksellisiä pelejä"
+    },
+    "title": "LIGHT SIDE — pelistudio",
+    "subtitle": "Rakennamme tyylikkäitä, viimeisteltyjä pelejä, joissa mekaniikat valaisevat ideat. Prototyypistä julkaisuun — kasva valon puolella.",
+    "cta": {
+      "games": "Pelit",
+      "careers": "Ura",
+      "contact": "Ota yhteyttä"
+    }
+  },
+  "about": {
+    "kicker": "Tietoa",
+    "title": "Pelit, jotka loistavat mekaniikoilla",
+    "subtitle": "Tiimimme yhdistää insinöörit, taiteilijat ja kirjoittajat yhden periaatteen ympärille: pelattavuus on ydin, tyyli on väylä, pelaaja on kanssatekijä.",
+    "bullets": {
+      "technical": {
+        "title": "Tekninen kypsyys",
+        "text": "Oma pipeline, CI/CD, tiketöinti — ei tylsää, vain nopeaa."
+      },
+      "prototype": {
+        "title": "Suunnittelu prototypoimalla",
+        "text": "Varhaiset buildit, telemetria, viikoittaiset iteroinnit."
+      },
+      "aesthetics": {
+        "title": "Estetiikka & ääni",
+        "text": "Taide ja audio synkassa, jotta tunne osuu kovempaa."
+      }
+    }
+  },
+  "games": {
+    "kicker": "Portfolio",
+    "title": "Pelit",
+    "subtitle": "Tätä rakennamme juuri nyt. Pyydä buildi — lähetämme ja järjestämme playtestin.",
+    "solar_run": {
+      "title": "Tetra Crush",
+      "description": "Block Blast -hengessä: klassinen tila ja tavoitteelliset tasot, teemoja taustoihin, pelilautoihin ja musiikkiin; tehosteet — pommi, raketti, vasara jne.; sekä erikoispalikat — kivi, puu, metalli jne. Kerää, räjäytä, voita!",
+      "status": "Tuotannossa"
+    },
+    "dusk_valley": {
+      "title": "DUSK VALLEY",
+      "description": "Noir‑etsiväpeli immersiivisillä mekaniikoilla. Tutki kaupunkia, paljasta salaliitot, valitse valon puoli.",
+      "status": "Esituotanto"
+    },
+    "neon_forge": {
+      "title": "NEON FORGE",
+      "description": "Taktinen toiminta asepajalla: takoa buildit, kipinöi viholliset, loista kirkkaimmin.",
+      "status": "Prototyyppi"
+    },
+    "tags": {
+      "roguelite": "Roguelite",
+      "singleplayer": "Yhden pelaajan",
+      "pc_console": "PC/Konsoli",
+      "adventure": "Seikkailu",
+      "choices_matter": "Valinnoilla on väliä",
+      "narrative": "Kerronnallinen",
+      "action": "Toiminta",
+      "tactics": "Taktiikka",
+      "indie": "Indie"
+    },
+    "trailer": "Traileri",
+    "request_build": "Pyydä buildi"
+  },
+  "team": {
+    "kicker": "Kulttuuri",
+    "title": "Pieni tiimi — suuret tavoitteet",
+    "subtitle": "Seniorit, midit ja juniorit yhdessä. Mentoroimme ja kasvamme — ilman synkkyyttä.",
+    "members": {
+      "0": {
+        "name": "Egor",
+        "role": "Tekninen johtaja"
+      },
+      "1": {
+        "name": "Anna",
+        "role": "Taiteellinen johtaja"
+      },
+      "2": {
+        "name": "Roman",
+        "role": "Pelisuunnittelija"
+      },
+      "3": {
+        "name": "Maria",
+        "role": "Tuottaja"
+      }
+    }
+  },
+  "careers": {
+    "kicker": "Ura",
+    "title": "Rekrytoimme",
+    "subtitle": "Joustavat työajat, etätyö, selkeät prosessit. Jätä yhteystietosi — palaamme haastattelusuunnitelmalla.",
+    "jobs": {
+      "senior_engineer": {
+        "title": "Senior Unity/Unreal ‑insinööri",
+        "type": "Etä / Kokoaikainen",
+        "description": "Pelijärjestelmien arkkitehtuuri, optimointi, asset‑pipeline, monialustaiset buildit."
+      },
+      "game_designer": {
+        "title": "Game Designer (Core/Systems)",
+        "type": "Hybridi / Kokoaikainen",
+        "description": "Core‑loopit, balanssi, talousmallit, meta, A/B, telemetria."
+      },
+      "hard_surface_artist": {
+        "title": "3D‑artisti (Hard Surface)",
+        "type": "Etä / Sopimus",
+        "description": "Mallinnus, UV, PBR, optimointi konsolille/mobiilille; shader‑taidot plussaa."
+      }
+    },
+    "apply": "Hae"
+  },
+  "news": {
+    "kicker": "Päivitykset",
+    "title": "Studion uutiset",
+    "subtitle": "Tilaa uutiskirje — et missaa demoja ja suljettuja playtesteja.",
+    "items": {
+      "0": {
+        "title": "Light Side julkistaa Solar Runin",
+        "summary": "Ensimmäinen teaseri, pelattava buildi ja playtestit tänä kesänä."
+      },
+      "1": {
+        "title": "Laajennumme: 3 avointa paikkaa",
+        "summary": "Etsimme engine‑insinööriä, game designeria ja hard‑surface‑artistia. Joustavat ehdot."
+      },
+      "2": {
+        "title": "Light Side @ DevGAMM",
+        "summary": "Pitch‑deck, demoständi, tapaamiset julkaisijoiden kanssa."
+      }
+    },
+    "read": "Lue"
+  },
+  "newsletter": {
+    "placeholder": "Sähköpostisi päivityksiin",
+    "subscribe": "Tilaa"
+  },
+  "press": {
+    "kicker": "Lehdistö & kumppanit",
+    "title": "Mediapaketti & lehdistöyhteydet",
+    "subtitle": "Logot, bannerit, kuvakaappaukset, pitch‑deck — kaikki julkaisuja varten.",
+    "logo": "Logo",
+    "download_png": "Lataa PNG",
+    "banner": "Banneri",
+    "download_image": "Lataa kuva"
+  },
+  "contact": {
+    "kicker": "Yhteys",
+    "title": "Kirjoita meille",
+    "subtitle": "Kumppanuus, julkaisu, playtestit, media — olemme avoimia.",
+    "form": {
+      "name": "Nimesi",
+      "email": "Sähköposti",
+      "subject": "Aihe",
+      "message": "Viesti",
+      "sending": "Lähetetään…",
+      "sent": "Lähetetty ✓",
+      "send": "Lähetä"
+    },
+    "reply_time": "Vastaamme 1–2 arkipäivässä."
+  },
+  "footer": {
+    "copyright": "Light Side. Kaikki oikeudet pidätetään.",
+    "made_with_love": "Tehty ❤ valon puolella."
+  },
+  "social": {
+    "twitter": "X / Twitter",
+    "youtube": "YouTube",
+    "twitch": "Twitch",
+    "github": "GitHub"
+  }
+}

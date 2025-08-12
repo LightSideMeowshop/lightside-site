@@ -1,0 +1,197 @@
+{
+  "nav": {
+    "about": "O nas",
+    "games": "Gry",
+    "team": "Zespół",
+    "careers": "Kariera",
+    "news": "Aktualności",
+    "press": "Prasa",
+    "contact": "Kontakt",
+    "brand": "Marka",
+    "theme": "Motyw"
+  },
+  "alt": {
+    "logo": "Logo",
+    "banner": "Baner"
+  },
+  "brand": {
+    "name": "LIGHT SIDE",
+    "modal": {
+      "title": "Zasoby marki",
+      "subtitle": "Prześlij logo i baner — strona odświeży się natychmiast."
+    },
+    "logo": "Logo",
+    "upload": "Prześlij",
+    "banner": "Baner",
+    "done": "Gotowe"
+  },
+  "hero": {
+    "pill": {
+      "indie_studio": "Studio indie",
+      "meaningful_games": "Tworzymy gry z sensem"
+    },
+    "title": "LIGHT SIDE — studio tworzenia gier",
+    "subtitle": "Budujemy stylowe, dopracowane gry, w których mechaniki rozświetlają idee. Od prototypu do premiery — rośnij po jasnej stronie.",
+    "cta": {
+      "games": "Nasze gry",
+      "careers": "Kariera",
+      "contact": "Kontakt"
+    }
+  },
+  "about": {
+    "kicker": "O nas",
+    "title": "Gry, które błyszczą mechaniką",
+    "subtitle": "Łączymy inżynierów, artystów i scenarzystów wokół zasady: gameplay to rdzeń, styl to nośnik, gracz to współautor.",
+    "bullets": {
+      "technical": {
+        "title": "Dojrzałość techniczna",
+        "text": "Własny pipeline, CI/CD, tickety — szybko, nie nudno."
+      },
+      "prototype": {
+        "title": "Projektowanie przez prototypowanie",
+        "text": "Wczesne buildy, telemetria, cotygodniowe iteracje."
+      },
+      "aesthetics": {
+        "title": "Estetyka i dźwięk",
+        "text": "Sztuka i audio w synergii — silniejsze emocje."
+      }
+    }
+  },
+  "games": {
+    "kicker": "Portfolio",
+    "title": "Nasze gry",
+    "subtitle": "Nad tym pracujemy teraz. Poproś o build — wyślemy i zorganizujemy playtest.",
+    "solar_run": {
+      "title": "Tetra Crush",
+      "description": "W duchu Block Blast: tryb klasyczny i poziomy z celami, motywy tła, plansz i muzyki; boostery — bomba, rakieta, młotek itp.; oraz specjalne klocki — kamień, drewno, metal itp. Zbieraj, wysadzaj, wygrywaj!",
+      "status": "W produkcji"
+    },
+    "dusk_valley": {
+      "title": "DUSK VALLEY",
+      "description": "Detektywistyczny noir z imersyjną mechaniką. Zwiedzaj miasto, demaskuj spiski, wybierz jasną stronę.",
+      "status": "Pre‑produkcja"
+    },
+    "neon_forge": {
+      "title": "NEON FORGE",
+      "description": "Taktyczna akcja z warsztatem broni: kuj buildy, iskrz wrogów, świeć najmocniej.",
+      "status": "Prototyp"
+    },
+    "tags": {
+      "roguelite": "Roguelite",
+      "singleplayer": "Jednoosobowa",
+      "pc_console": "PC/Konsola",
+      "adventure": "Przygodowa",
+      "choices_matter": "Wybory mają znaczenie",
+      "narrative": "Narracyjna",
+      "action": "Akcja",
+      "tactics": "Taktyka",
+      "indie": "Indie"
+    },
+    "trailer": "Zwiastun",
+    "request_build": "Poproś o build"
+  },
+  "team": {
+    "kicker": "Kultura",
+    "title": "Mały zespół — wielkie ambicje",
+    "subtitle": "Seniorzy obok midów i juniorów. Mentoring i rozwój — bez ponuractwa.",
+    "members": {
+      "0": {
+        "name": "Egor",
+        "role": "Dyrektor techniczny"
+      },
+      "1": {
+        "name": "Anna",
+        "role": "Dyrektor artystyczny"
+      },
+      "2": {
+        "name": "Roman",
+        "role": "Projektant gier"
+      },
+      "3": {
+        "name": "Maria",
+        "role": "Producent"
+      }
+    }
+  },
+  "careers": {
+    "kicker": "Kariera",
+    "title": "Rekrutujemy",
+    "subtitle": "Elastyczny grafik, praca zdalna, jasne procesy. Zostaw kontakt — wrócimy z planem rozmowy.",
+    "jobs": {
+      "senior_engineer": {
+        "title": "Starszy Inżynier Unity/Unreal",
+        "type": "Zdalnie / Pełny etat",
+        "description": "Architektura systemów gry, optymalizacja, pipeline assetów, buildy wieloplatformowe."
+      },
+      "game_designer": {
+        "title": "Game Designer (Core/Systems)",
+        "type": "Hybrydowo / Pełny etat",
+        "description": "Pętle rdzeniowe, balans, ekonomia, meta, A/B, telemetria."
+      },
+      "hard_surface_artist": {
+        "title": "Artysta 3D (Hard Surface)",
+        "type": "Zdalnie / Kontrakt",
+        "description": "Modelowanie, UV, PBR, optymalizacja pod konsole/mobile; mile widziane shadery."
+      }
+    },
+    "apply": "Aplikuj"
+  },
+  "news": {
+    "kicker": "Aktualizacje",
+    "title": "Nowości studia",
+    "subtitle": "Zapisz się, by nie przegapić dem i zamkniętych playtestów.",
+    "items": {
+      "0": {
+        "title": "Light Side ogłasza Solar Run",
+        "summary": "Pierwszy teaser, grywalny build i playtesty tego lata."
+      },
+      "1": {
+        "title": "Rozszerzamy się: 3 oferty pracy",
+        "summary": "Szukamy inżyniera silnika, projektanta gier i hard‑surface artysty. Elastyczne warunki."
+      },
+      "2": {
+        "title": "Light Side na DevGAMM",
+        "summary": "Pitch deck, stoisko demo, spotkania z wydawcami."
+      }
+    },
+    "read": "Czytaj"
+  },
+  "newsletter": {
+    "placeholder": "Twój e‑mail do aktualizacji",
+    "subscribe": "Subskrybuj"
+  },
+  "press": {
+    "kicker": "Prasa i partnerzy",
+    "title": "Media kit i kontakty prasowe",
+    "subtitle": "Logotypy, banery, zrzuty ekranu, pitch deck — wszystko do publikacji.",
+    "logo": "Logo",
+    "download_png": "Pobierz PNG",
+    "banner": "Baner",
+    "download_image": "Pobierz obraz"
+  },
+  "contact": {
+    "kicker": "Kontakt",
+    "title": "Napisz do nas",
+    "subtitle": "Partnerstwa, wydawanie, playtesty, media — jesteśmy otwarci.",
+    "form": {
+      "name": "Twoje imię",
+      "email": "E‑mail",
+      "subject": "Temat",
+      "message": "Wiadomość",
+      "sending": "Wysyłanie…",
+      "sent": "Wysłano ✓",
+      "send": "Wyślij"
+    },
+    "reply_time": "Odpowiadamy w ciągu 1–2 dni roboczych."
+  },
+  "footer": {
+    "copyright": "Light Side. Wszelkie prawa zastrzeżone.",
+    "made_with_love": "Stworzone z ❤ po jasnej stronie."
+  },
+  "social": {
+    "twitter": "X / Twitter",
+    "youtube": "YouTube",
+    "twitch": "Twitch",
+    "github": "GitHub"
+  }
+}

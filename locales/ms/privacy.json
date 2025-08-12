@@ -1,0 +1,87 @@
+{
+  "pp_title": "Dasar Privasi",
+  "updated": "Tarikh berkuat kuasa",
+  "btn_expand": "Kembangkan semua",
+  "btn_collapse": "Kuncupkan semua",
+  "btn_print": "Cetak / Simpan PDF",
+  "btn_copy": "Salin pautan ke seksyen ini",
+
+  "sum_global": "Terpakai di seluruh dunia untuk permainan, aplikasi dan laman web kami.",
+  "sum_sdks": "Kami menggunakan perkhidmatan yang meluas penggunaannya: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (jika didayakan), AppsFlyer, SKAdNetwork.",
+  "sum_no_sell": "Kami tidak menjual data peribadi. Kami mungkin ‘berkongsi’ pengecam tertentu dan peristiwa apl untuk pengiklanan tersasar seperti yang ditakrifkan oleh undang-undang negeri di AS. Anda boleh pilih keluar dalam apl.",
+  "sum_optout": "Anda boleh pilih keluar daripada pengiklanan tersasar dan pengukuran.",
+  "sum_kids": "Kami tidak dengan sengaja mengumpul data daripada kanak-kanak.",
+
+  "who_t": "1) Siapa kami",
+  "who_b": "{{legalEntity}} (‘kami’) membangunkan dan menerbitkan permainan video serta aplikasi. Kami bertindak sebagai pengawal data bagi pemprosesan yang dihuraikan dalam Dasar ini.",
+
+  "scope_t": "2) Skop",
+  "scope_b": "Dasar ini merangkumi {{appsList}} dan laman web kami yang dikendalikan di seluruh dunia di bawah jenama ‘{{companyName}}’.",
+
+  "data_t": "3) Data yang kami proses",
+  "d_usage": "Penggunaan & diagnostik (peristiwa, sesi, alamat IP, lokasi kasar/negara, peranti/OS, versi apl) — analitik, pengesanan ranap, penambahbaikan produk.",
+  "d_progress": "Kemajuan permainan & pengecam (ID pemain/akaun, pencapaian, simpanan awan, isyarat anti-penipuan) — fungsi teras dan penyegerakan.",
+  "d_account": "Data akaun (nama paparan, avatar, e-mel jika diberikan, token pengesahan, kumpulan umur) — penciptaan akaun, log masuk, keselamatan.",
+  "d_ugc": "Kandungan yang dijana pengguna dan ciri sosial (mesej sembang, profil, nama klan/guild, laporan) — ciri permainan dan pemoderasian.",
+  "d_purchases": "Maklumat pembelian (SKU, wilayah, token/resit pembelian) — pemenuhan pembelian, bayaran balik, pencegahan penipuan.",
+  "d_ads": "Data iklan/atribusi (paparan iklan, klik, ID pengiklanan boleh ditetapkan semula seperti IDFA/AAID, hantaran balik SKAdNetwork, isyarat konteks) — paparan iklan, had kekerapan, pengukuran (tajuk disokong iklan).",
+  "d_support": "Data sokongan (e-mel, kandungan mesej, lampiran, diagnostik peranti yang anda pilih untuk dihantar) — sokongan pelanggan dan penyelesaian masalah.",
+  "d_sensitive_note": "Kami tidak mengumpul lokasi tepat atau kategori sensitif melainkan anda memberikannya secara jelas kepada sokongan.",
+
+  "legal_t": "4) Tujuan & asas undang-undang",
+  "legal_b": "Bergantung pada lokasi anda, kami bergantung pada: (a) persetujuan (jika diperlukan untuk kuki/SDK pengiklanan/analitik di EEA/UK, dan untuk akses kepada IDFA di bawah Apple ATT); (b) pelaksanaan kontrak (untuk menyampaikan permainan/apl, simpanan awan dan pembelian); (c) kepentingan yang sah (keselamatan, pencegahan penipuan, diagnostik ranap, analitik tidak diperibadikan); dan (d) pematuhan kewajipan undang-undang (cukai/perakaunan). Anda boleh menarik balik persetujuan pada bila-bila masa melalui tetapan dalam apl atau sepanduk persetujuan kami (jika dipaparkan).",
+
+  "optout_t": "5) Pilihan pengiklanan (opt keluar)",
+  "optout_b": "Anda boleh pada bila-bila masa pilih keluar daripada ‘pengiklanan tersasar’ dan pengukuran tertentu di **Tetapan → Privasi → Pilihan pengiklanan**. Untuk California dan negeri-negeri AS lain, anda boleh menggunakan butang **‘Do Not Sell or Share My Personal Information’** untuk memilih keluar daripada ‘perkongsian’ bagi pengiklanan tingkah laku rentas konteks. Pada Android/iOS anda juga boleh menetapkan semula atau mengehadkan pengecam pengiklanan dalam tetapan OS. Kami menghormati pilihan Apple ATT dan pengukuran SKAdNetwork apabila IDFA tidak tersedia.",
+
+  "att_t": "6) Apple App Tracking Transparency (iOS)",
+  "att_b": "Di iOS, kami meminta kebenaran melalui Apple App Tracking Transparency. Jika anda menolak, kami tidak mengakses IDFA dan hanya menggunakan iklan berasaskan konteks serta pengukuran yang memelihara privasi (cth. SKAdNetwork).",
+
+  "sdks_t": "7) Perkhidmatan pihak ketiga (pemproses)",
+  "sdk_firebase": "Firebase Analytics mengumpul metrik penggunaan dan kestabilan; Crashlytics membantu mendiagnosis ranap. Data mungkin termasuk maklumat peranti/OS, versi apl, peristiwa dan log ranap.",
+  "sdk_ads": "Rangkaian iklan (cth. Google AdMob, Unity Ads) memaparkan iklan dan mengukur prestasi menggunakan ID pengiklanan yang boleh ditetapkan semula dan isyarat konteks. Anda boleh menetapkan semula atau mengehadkan penjejakan iklan dalam OS anda.",
+  "sdk_play": "Google Play Games Services untuk simpanan awan, pencapaian, papan pendahulu dan integrasi platform.",
+  "sdk_gc": "Apple Game Center dan iCloud (jika didayakan) untuk pengesahan dan simpanan awan pada platform Apple.",
+  "sdk_af": "AppsFlyer menyediakan atribusi pemasangan dan prestasi kempen menggunakan pengecam dan data peristiwa tidak sensitif.",
+  "processors_note": "Kami melibatkan penyedia ini di bawah kontrak pemprosesan data; mereka mesti melindungi data dan menggunakannya hanya mengikut arahan kami.",
+
+  "share_t": "8) Perkongsian",
+  "share_b": "Kami tidak menjual data peribadi. Kami mendedahkan data kepada penyedia perkhidmatan (pemproses), penyedia platform (Google/Apple), dan apabila dikehendaki oleh undang-undang atau untuk melindungi hak, keselamatan dan integriti.",
+
+
+
+
+  "intl_t": "9) Pemindahan antarabangsa",
+  "intl_b": "Apabila data dipindahkan merentas sempadan, kami menggunakan perlindungan yang sesuai (cth. Klausa Kontrak Piawai). Sesetengah penyedia mengambil bahagian dalam EU-US Data Privacy Framework. Anda boleh menghubungi kami untuk meminta maklumat tentang perlindungan ini.",
+
+  "kids_t": "10) Kanak-kanak",
+  "kids_b": "Kami tidak dengan sengaja mengumpul data peribadi daripada kanak-kanak. Untuk tajuk khalayak bercampur, kami melaksanakan pengesahan umur dan mematikan iklan/atribusi diperibadikan untuk pengguna yang dikenal pasti di bawah umur yang berkenaan (cth. bawah 13 tahun di AS, bawah 16 tahun di EEA/UK untuk ‘perkongsian’ iklan). Jika anda percaya seorang kanak-kanak telah memberikan data kepada kami, sila hubungi kami dan kami akan memadamkannya serta mematikan pemperibadian.",
+
+  "rights_t": "11) Hak anda",
+  "rights_b": "Bergantung pada rantau anda, anda mungkin mempunyai hak untuk mengakses, membetulkan, memadam, memindahkan, membantah, mengehadkan, menarik balik persetujuan, atau merayu keputusan kami. Untuk melaksanakan hak, gunakan borang permintaan dalam apl atau hubungi kami di e-mel di bawah. Kami akan membalas dalam 30 hari (EEA/UK) atau 45 hari (AS). Penduduk California boleh menggunakan ejen yang diberi kuasa. Anda berhak untuk tidak didiskriminasi kerana menggunakan hak anda. Penduduk EEA/UK boleh membuat aduan kepada pihak berkuasa penyelia.",
+
+  "cookies_t": "12) Kuki & persetujuan",
+  "cookies_b": "Laman web kami pada masa ini tidak menggunakan kuki/SDK yang tidak penting. Jika ini berubah, kami akan memaparkan sepanduk persetujuan yang membolehkan anda menerima, menolak atau menukar pilihan pada bila-bila masa.",
+
+  "acct_t": "13) Akaun dan pemadaman",
+  "acct_b": "Anda boleh mencipta akaun dalam permainan untuk menyegerakkan kemajuan dan menggunakan ciri sosial. Anda boleh memadam akaun pada bila-bila masa di **Tetapan → Akaun → Padam akaun** atau dengan menghubungi kami. Memadam akaun akan mengalih keluar data peribadi dan simpanan awan yang dipautkan kepada akaun dalam masa 30 hari (sandaran mungkin kekal untuk tempoh terhad). Anda juga boleh menanggalkan Google Play Games atau Apple Game Center daripada tetapan masing-masing.",
+
+  "ugc_t": "14) Kandungan Dijana Pengguna (UGC) & pemoderasian",
+  "ugc_b": "UGC (cth. sembang, profil, nama guild) boleh dilihat oleh pemain lain sebagai sebahagian daripada permainan. Kami memoderasi untuk menguatkuasakan peraturan komuniti dan boleh mengambil tindakan atas laporan penyalahgunaan. Jangan kongsi maklumat sensitif dalam UGC.",
+
+  "sec_t": "15) Keselamatan",
+  "sec_b": "Kami menggunakan langkah teknikal dan organisasi yang sesuai dengan risiko (penyulitan semasa transit, penyulitan semasa rehat jika berkenaan, kawalan akses, prinsip keistimewaan minimum, pencatatan log, tampalan berkala, tindak balas insiden). Tiada sistem yang 100% selamat.",
+
+  "chg_t": "16) Perubahan",
+  "chg_b": "Kami mungkin mengemas kini Dasar ini dari semasa ke semasa. Kami akan menyiarkan versi baharu dengan tarikh berkuat kuasa yang baharu.",
+
+  "ct_t": "17) Hubungi",
+  "ct_b": "Pengawal data: {{legalEntity}}.<br>Alamat: {{address}}.<br>E-mel: <a href=\"mailto:{{contact}}\">{{contact}}</a>.",
+
+  "defs_t": "18) Takrifan utama",
+  "defs_b": "‘Data peribadi’ bermaksud maklumat yang mengenal pasti atau berkaitan dengan individu yang boleh dikenal pasti. ‘Pemprosesan’ bermaksud sebarang operasi yang dilakukan pada data peribadi. ‘Pengawal’ menentukan tujuan dan cara; ‘pemproses’ memproses bagi pihak pengawal. ‘Pengiklanan tersasar’ bermaksud memaparkan iklan berdasarkan data peribadi yang diperoleh daripada aktiviti merentasi apl atau laman web yang tidak berafiliasi.",
+
+  "dnsmpi_btn": "Jangan jual atau kongsi maklumat peribadi saya",
+  "privacy_settings_t": "Tetapan privasi",
+  "privacy_settings_b": "Anda boleh mengurus persetujuan, pilihan pengiklanan dan permintaan data dalam **Tetapan → Privasi**."
+}

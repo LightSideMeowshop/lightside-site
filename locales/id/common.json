@@ -1,0 +1,197 @@
+{
+  "nav": {
+    "about": "Tentang",
+    "games": "Gim",
+    "team": "Tim",
+    "careers": "Karier",
+    "news": "Berita",
+    "press": "Media",
+    "contact": "Kontak",
+    "brand": "Merek",
+    "theme": "Tema"
+  },
+  "alt": {
+    "logo": "Logo",
+    "banner": "Banner"
+  },
+  "brand": {
+    "name": "LIGHT SIDE",
+    "modal": {
+      "title": "Aset merek",
+      "subtitle": "Unggah logo dan banner Anda — halaman akan langsung diperbarui."
+    },
+    "logo": "Logo",
+    "upload": "Unggah",
+    "banner": "Banner",
+    "done": "Selesai"
+  },
+  "hero": {
+    "pill": {
+      "indie_studio": "Studio indie",
+      "meaningful_games": "Kami membuat gim yang bermakna"
+    },
+    "title": "LIGHT SIDE — studio pengembang gim",
+    "subtitle": "Kami membangun gim yang stylish dan rapi, di mana mekanik menerangi ide. Dari prototipe hingga rilis — tumbuh di sisi cahaya.",
+    "cta": {
+      "games": "Gim kami",
+      "careers": "Karier",
+      "contact": "Kontak"
+    }
+  },
+  "about": {
+    "kicker": "Tentang",
+    "title": "Gim yang bersinar lewat mekanik",
+    "subtitle": "Tim kami menyatukan engineer, artist, dan penulis dengan prinsip sederhana: gameplay adalah inti, gaya adalah medium, pemain adalah rekan‑pencipta.",
+    "bullets": {
+      "technical": {
+        "title": "Kematangan teknis",
+        "text": "Pipeline kustom, CI/CD, ticketing — bukan membosankan, tapi cepat."
+      },
+      "prototype": {
+        "title": "Desain lewat prototyping",
+        "text": "Build awal, telemetri, iterasi mingguan."
+      },
+      "aesthetics": {
+        "title": "Estetika & suara",
+        "text": "Seni dan audio bersinergi agar emosi lebih terasa."
+      }
+    }
+  },
+  "games": {
+    "kicker": "Portofolio",
+    "title": "Gim kami",
+    "subtitle": "Inilah yang kami kerjakan sekarang. Minta build — kami kirim dan atur playtest.",
+    "solar_run": {
+      "title": "Tetra Crush",
+      "description": "Dalam gaya Block Blast: mode klasik dan level berbasis tujuan, tema untuk latar belakang, papan, dan musik; booster — bom, roket, palu, dll.; serta blok khusus — batu, kayu, logam, dll. Kumpulkan, ledakkan, menang!",
+      "status": "Dalam produksi"
+    },
+    "dusk_valley": {
+      "title": "DUSK VALLEY",
+      "description": "Detektif noir dengan mekanik imersif. Jelajahi kota, bongkar konspirasi, pilih sisi cahaya.",
+      "status": "Pra‑produksi"
+    },
+    "neon_forge": {
+      "title": "NEON FORGE",
+      "description": "Aksi taktis dengan bengkel senjata: tempa build, jadi‑kan musuh percikan, bersinar paling terang.",
+      "status": "Prototipe"
+    },
+    "tags": {
+      "roguelite": "Roguelite",
+      "singleplayer": "Satu pemain",
+      "pc_console": "PC/Konsol",
+      "adventure": "Petualangan",
+      "choices_matter": "Pilihan Berarti",
+      "narrative": "Naratif",
+      "action": "Aksi",
+      "tactics": "Taktik",
+      "indie": "Indie"
+    },
+    "trailer": "Trailer",
+    "request_build": "Minta build"
+  },
+  "team": {
+    "kicker": "Budaya",
+    "title": "Tim kecil — ambisi besar",
+    "subtitle": "Senior berdampingan dengan mid dan junior. Kami membimbing dan bertumbuh — tanpa muram.",
+    "members": {
+      "0": {
+        "name": "Egor",
+        "role": "Direktur Teknis"
+      },
+      "1": {
+        "name": "Anna",
+        "role": "Direktur Artistik"
+      },
+      "2": {
+        "name": "Roman",
+        "role": "Game Designer"
+      },
+      "3": {
+        "name": "Maria",
+        "role": "Produser"
+      }
+    }
+  },
+  "careers": {
+    "kicker": "Karier",
+    "title": "Kami merekrut",
+    "subtitle": "Jadwal fleksibel, ramah kerja jarak jauh, proses jelas. Tinggalkan kontak — kami kembali dengan rencana wawancara.",
+    "jobs": {
+      "senior_engineer": {
+        "title": "Engineer Senior Unity/Unreal",
+        "type": "Jarak jauh / Penuh waktu",
+        "description": "Arsitektur sistem gim, optimasi, pipeline aset, build multi‑platform."
+      },
+      "game_designer": {
+        "title": "Game Designer (Core/Systems)",
+        "type": "Hibrida / Penuh waktu",
+        "description": "Core loop, keseimbangan, model ekonomi, meta, A/B, telemetri."
+      },
+      "hard_surface_artist": {
+        "title": "3D Artist (Hard Surface)",
+        "type": "Jarak jauh / Kontrak",
+        "description": "Modeling, UV, PBR, optimasi untuk konsol/mobile; keahlian shader disukai."
+      }
+    },
+    "apply": "Lamar"
+  },
+  "news": {
+    "kicker": "Pembaruan",
+    "title": "Berita studio",
+    "subtitle": "Berlangganan agar tidak ketinggalan demo dan playtest tertutup.",
+    "items": {
+      "0": {
+        "title": "Light Side mengumumkan Solar Run",
+        "summary": "Teaser pertama, build yang dapat dimainkan dan playtest musim panas ini."
+      },
+      "1": {
+        "title": "Kami berkembang: 3 lowongan",
+        "summary": "Mencari engineer engine, game designer, dan hard‑surface artist. Syarat fleksibel."
+      },
+      "2": {
+        "title": "Light Side di DevGAMM",
+        "summary": "Pitch deck, booth demo, pertemuan dengan penerbit."
+      }
+    },
+    "read": "Baca"
+  },
+  "newsletter": {
+    "placeholder": "Email Anda untuk pembaruan",
+    "subscribe": "Langganan"
+  },
+  "press": {
+    "kicker": "Media & mitra",
+    "title": "Media kit & kontak pers",
+    "subtitle": "Logo, banner, tangkapan layar, pitch deck — semua yang Anda butuhkan.",
+    "logo": "Logo",
+    "download_png": "Unduh PNG",
+    "banner": "Banner",
+    "download_image": "Unduh gambar"
+  },
+  "contact": {
+    "kicker": "Kontak",
+    "title": "Tulis kepada kami",
+    "subtitle": "Kemitraan, publishing, playtest, media — kami terbuka.",
+    "form": {
+      "name": "Nama Anda",
+      "email": "Email",
+      "subject": "Subjek",
+      "message": "Pesan",
+      "sending": "Mengirim…",
+      "sent": "Terkirim ✓",
+      "send": "Kirim"
+    },
+    "reply_time": "Kami membalas dalam 1–2 hari kerja."
+  },
+  "footer": {
+    "copyright": "Light Side. Seluruh hak cipta.",
+    "made_with_love": "Dibuat dengan ❤ di sisi cahaya."
+  },
+  "social": {
+    "twitter": "X / Twitter",
+    "youtube": "YouTube",
+    "twitch": "Twitch",
+    "github": "GitHub"
+  }
+}

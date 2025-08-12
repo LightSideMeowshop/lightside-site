@@ -1,0 +1,87 @@
+{
+"pp_title": "Privacybeleid",
+"updated": "Ingangsdatum",
+"btn_expand": "Alles uitklappen",
+"btn_collapse": "Alles inklappen",
+"btn_print": "Afdrukken / PDF opslaan",
+"btn_copy": "Link naar deze sectie kopiëren",
+
+"sum_global": "Geldt wereldwijd voor onze games, apps en websites.",
+"sum_sdks": "We gebruiken breed toegepaste diensten: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (indien ingeschakeld), AppsFlyer, SKAdNetwork.",
+"sum_no_sell": "We verkopen geen persoonsgegevens. We kunnen bepaalde identificatoren en app-gebeurtenissen ‘delen’ voor gerichte reclame zoals gedefinieerd door Amerikaanse deelstaatwetten. Je kunt je hiervoor afmelden in de app.",
+"sum_optout": "Je kunt je afmelden voor gerichte advertenties en meting.",
+"sum_kids": "We verzamelen niet bewust gegevens van kinderen.",
+
+"who_t": "1) Wie wij zijn",
+"who_b": "{{legalEntity}} (‘wij’, ‘ons’) ontwikkelt en publiceert videogames en applicaties. Wij treden op als verwerkingsverantwoordelijke voor de verwerking die in dit Beleid wordt beschreven.",
+
+"scope_t": "2) Reikwijdte",
+"scope_b": "Dit Beleid is van toepassing op {{appsList}} en onze websites die wereldwijd worden geëxploiteerd onder het merk ‘{{companyName}}’.",
+
+"data_t": "3) Gegevens die wij verwerken",
+"d_usage": "Gebruik & diagnostiek (gebeurtenissen, sessies, IP-adres, grove locatie/land, apparaat/OS, app-versie) — analyse, crashdetectie, productverbetering.",
+"d_progress": "Spelvoortgang & identificatoren (speler-/account-ID, prestaties, cloudopslag, anti-cheat-signalen) — kernfunctionaliteit en synchronisatie.",
+"d_account": "Accountgegevens (weergavenaam, avatar, e-mail indien opgegeven, authenticatietokens, leeftijdsgroep) — aanmaken van account, inloggen, veiligheid.",
+"d_ugc": "Door gebruikers gegenereerde inhoud en sociale functies (chatberichten, profielen, clan-/gildennamen, meldingen) — gameplay-functies en moderatie.",
+"d_purchases": "Aankoopinformatie (SKU, regio, aankooptoken/bon) — afhandeling van aankopen, terugbetalingen, fraudepreventie.",
+"d_ads": "Advertentie-/attributiegegevens (advertentieweergaven, klikken, resetbare advertentie-ID’s zoals IDFA/AAID, SKAdNetwork-postbacks, contextsignalen) — advertenties tonen, frequentiebeperking, meting (advertentie-ondersteunde titels).",
+"d_support": "Supportgegevens (e-mail, berichtinhoud, bijlagen, apparaatsdiagnostiek die je kiest te verzenden) — klantenondersteuning en probleemoplossing.",
+"d_sensitive_note": "We verzamelen geen precieze locatie of gevoelige categorieën tenzij je deze expliciet aan support verstrekt.",
+
+"legal_t": "4) Doeleinden & rechtsgrondslagen",
+"legal_b": "Afhankelijk van je locatie baseren wij ons op: (a) toestemming (waar vereist voor advertentie-/analysecookies/SDK’s in de EER/VK en voor toegang tot IDFA onder Apple ATT); (b) uitvoering van een overeenkomst (om de game/app, cloudopslag en aankopen te leveren); (c) gerechtvaardigde belangen (beveiliging, fraudebestrijding, crashdiagnostiek, niet-gepersonaliseerde analyses); en (d) naleving van wettelijke verplichtingen (belasting/boekhouding). Je kunt je toestemming op elk moment intrekken via de in-app instellingen of via onze toestemmingsbanner (waar getoond).",
+
+"optout_t": "5) Advertentie-keuzes (opt-out)",
+"optout_b": "Je kunt je op elk moment afmelden voor ‘gerichte advertenties’ en bepaalde metingen in **Instellingen → Privacy → Advertentie-keuzes**. Voor Californië en andere Amerikaanse staten kun je de knop **‘Do Not Sell or Share My Personal Information’** gebruiken om je af te melden voor ‘deling’ voor cross-contextuele gedragsreclame. Op Android/iOS kun je de advertentie-ID ook resetten of beperken in de OS-instellingen. We respecteren Apple ATT-keuzes en SKAdNetwork-meting wanneer IDFA niet beschikbaar is.",
+
+"att_t": "6) Apple App Tracking Transparency (iOS)",
+"att_b": "Op iOS vragen we toestemming via Apple’s App Tracking Transparency. Als je weigert, hebben we geen toegang tot de IDFA en gebruiken we alleen contextuele advertenties en privacy-beschermende metingen (bijv. SKAdNetwork).",
+
+"sdks_t": "7) Diensten van derden (verwerkers)",
+"sdk_firebase": "Firebase Analytics verzamelt gebruiks- en stabiliteitsmetriek; Crashlytics helpt crashes te diagnosticeren. Gegevens kunnen apparaat-/OS-info, app-versie, gebeurtenissen en crashlogs omvatten.",
+"sdk_ads": "Advertentienetwerken (bijv. Google AdMob, Unity Ads) tonen advertenties en meten prestaties met resetbare advertentie-ID’s en contextsignalen. Je kunt advertentietracking resetten of beperken in je OS.",
+"sdk_play": "Google Play Games Services voor cloudopslag, prestaties, ranglijsten en platformintegraties.",
+"sdk_gc": "Apple Game Center en iCloud (indien ingeschakeld) voor authenticatie en cloudopslag op Apple-platforms.",
+"sdk_af": "AppsFlyer levert install-attributie en campagneprestaties met behulp van identificatoren en niet-gevoelige gebeurtenisgegevens.",
+"processors_note": "We schakelen deze aanbieders in onder verwerkersovereenkomsten; zij moeten gegevens beschermen en deze alleen gebruiken volgens onze instructies.",
+
+"share_t": "8) Delen",
+"share_b": "We verkopen geen persoonsgegevens. We verstrekken gegevens aan dienstverleners (verwerkers), platformaanbieders (Google/Apple), en waar wettelijk vereist of om rechten, veiligheid en integriteit te beschermen.",
+
+
+
+
+"intl_t": "9) Internationale doorgiften",
+"intl_b": "Wanneer gegevens internationaal worden doorgegeven, gebruiken wij passende waarborgen (bijv. Standaardcontractbepalingen). Sommige aanbieders nemen deel aan het EU-VS Data Privacy Framework. Je kunt contact met ons opnemen om informatie over deze waarborgen op te vragen.",
+
+"kids_t": "10) Kinderen",
+"kids_b": "We verzamelen niet bewust persoonsgegevens van kinderen. In titels voor een gemengd publiek hanteren we een leeftijdscontrole en schakelen we gepersonaliseerde advertenties/attributie uit voor gebruikers die als jonger dan de toepasselijke leeftijd worden aangemerkt (bijv. jonger dan 13 in de VS, jonger dan 16 in de EER/VK voor advertentie-‘deling’). Als je denkt dat een kind ons gegevens heeft verstrekt, neem dan contact met ons op; we verwijderen deze en schakelen personalisatie uit.",
+
+"rights_t": "11) Je rechten",
+"rights_b": "Afhankelijk van je regio heb je mogelijk rechten om je gegevens in te zien, te corrigeren, te verwijderen, over te dragen, bezwaar te maken, de verwerking te beperken, toestemming in te trekken, of beroep aan te tekenen tegen onze beslissing. Om je rechten uit te oefenen, gebruik je het verzoekformulier in de app of neem je contact met ons op via het onderstaande e-mailadres. We reageren binnen 30 dagen (EER/VK) of 45 dagen (VS). Inwoners van Californië kunnen een gemachtigde inschakelen. Je hebt het recht niet te worden gediscrimineerd voor het uitoefenen van je rechten. Inwoners van de EER/VK kunnen een klacht indienen bij een toezichthoudende autoriteit.",
+
+"cookies_t": "12) Cookies & toestemming",
+"cookies_b": "Onze websites gebruiken momenteel geen niet-essentiële cookies/SDK’s. Als dit verandert, tonen we een toestemmingsbanner waarmee je op elk moment kunt accepteren, weigeren of je keuzes wijzigen.",
+
+"acct_t": "13) Accounts en verwijdering",
+"acct_b": "Je kunt een in-game account aanmaken om voortgang te synchroniseren en sociale functies te gebruiken. Je kunt je account op elk moment verwijderen via **Instellingen → Account → Account verwijderen** of door contact met ons op te nemen. Het verwijderen van een account verwijdert binnen 30 dagen de persoonsgegevens en cloudopslag die aan het account zijn gekoppeld (back-ups kunnen gedurende een beperkte periode blijven bestaan). Je kunt Google Play Games of Apple Game Center ook loskoppelen via hun respectieve instellingen.",
+
+"ugc_t": "14) Door gebruikers gegenereerde inhoud (UGC) & moderatie",
+"ugc_b": "UGC (bijv. chat, profielen, gildennamen) is zichtbaar voor andere spelers als onderdeel van de gameplay. We modereren om onze communityregels te handhaven en kunnen maatregelen nemen naar aanleiding van misbruikmeldingen. Deel geen gevoelige informatie in UGC.",
+
+"sec_t": "15) Beveiliging",
+"sec_b": "We gebruiken technische en organisatorische maatregelen die passend zijn voor het risico (versleuteling tijdens transport, versleuteling in rust waar van toepassing, toegangscontroles, least privilege, logging, regelmatige patching, incidentrespons). Geen enkel systeem is 100% veilig.",
+
+"chg_t": "16) Wijzigingen",
+"chg_b": "We kunnen dit Beleid van tijd tot tijd bijwerken. We publiceren dan een nieuwe versie met een nieuwe ingangsdatum.",
+
+"ct_t": "17) Contact",
+"ct_b": "Verwerkingsverantwoordelijke: {{legalEntity}}.<br>Adres: {{address}}.<br>E-mail: <a href=\"mailto:{{contact}}\">{{contact}}</a>.",
+
+"defs_t": "18) Belangrijke definities",
+"defs_b": "‘Persoonsgegevens’ betekent informatie die betrekking heeft op een geïdentificeerde of identificeerbare persoon. ‘Verwerking’ betekent elke bewerking die op persoonsgegevens wordt uitgevoerd. ‘Verwerkingsverantwoordelijke’ bepaalt doeleinden en middelen; ‘verwerker’ verwerkt namens een verwerkingsverantwoordelijke. ‘Gerichte advertenties’ betekent het tonen van advertenties op basis van persoonsgegevens die zijn verkregen uit activiteiten over niet-verwante apps of websites heen.",
+
+"dnsmpi_btn": "Verkoop of deel mijn persoonsgegevens niet",
+"privacy_settings_t": "Privacy-instellingen",
+"privacy_settings_b": "Je kunt toestemming, advertentie-keuzes en gegevensverzoeken beheren in **Instellingen → Privacy**."
+}

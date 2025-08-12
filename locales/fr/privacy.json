@@ -1,0 +1,87 @@
+{
+"pp_title": "Politique de confidentialité",
+"updated": "Date d’entrée en vigueur",
+"btn_expand": "Tout déplier",
+"btn_collapse": "Tout replier",
+"btn_print": "Imprimer / Enregistrer en PDF",
+"btn_copy": "Copier le lien vers cette section",
+
+"sum_global": "S’applique dans le monde entier à nos jeux, applications et sites web.",
+"sum_sdks": "Nous utilisons des services largement adoptés : Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (si activé), AppsFlyer, SKAdNetwork.",
+"sum_no_sell": "Nous ne vendons pas de données personnelles. Nous pouvons « partager » certains identifiants et événements d’application pour la publicité ciblée telle que définie par les lois des États américains. Vous pouvez vous y opposer dans l’application.",
+"sum_optout": "Vous pouvez refuser la publicité ciblée et la mesure.",
+"sum_kids": "Nous ne collectons pas sciemment de données auprès d’enfants.",
+
+"who_t": "1) Qui nous sommes",
+"who_b": "{{legalEntity}} (« nous ») développe et publie des jeux vidéo et des applications. Nous agissons en tant que responsable du traitement pour les traitements décrits dans la présente Politique.",
+
+"scope_t": "2) Champ d’application",
+"scope_b": "La présente Politique couvre {{appsList}} et nos sites web exploités dans le monde entier sous la marque « {{companyName}} ».",
+
+"data_t": "3) Données que nous traitons",
+"d_usage": "Utilisation et diagnostics (événements, sessions, adresse IP, localisation approximative/pays, appareil/OS, version de l’app) — analyses, détection des crashs, amélioration du produit.",
+"d_progress": "Progression de jeu et identifiants (ID joueur/compte, succès, sauvegardes cloud, signaux anti-triche) — fonctionnalité de base et synchronisation.",
+"d_account": "Données de compte (nom d’affichage, avatar, e-mail si fourni, jetons d’authentification, tranche d’âge) — création de compte, connexion, sécurité.",
+"d_ugc": "Contenu généré par les utilisateurs et fonctionnalités sociales (messages de chat, profils, noms de clan/guilde, signalements) — fonctionnalités de jeu et modération.",
+"d_purchases": "Informations d’achat (SKU, région, jeton d’achat/reçu) — exécution des achats, remboursements, prévention de la fraude.",
+"d_ads": "Données publicitaires/attribution (impressions, clics, identifiants publicitaires réinitialisables tels que IDFA/AAID, postbacks SKAdNetwork, signaux contextuels) — affichage des publicités, limitation de fréquence, mesure (titres financés par la publicité).",
+"d_support": "Données de support (e-mail, contenu du message, pièces jointes, diagnostics de l’appareil que vous choisissez d’envoyer) — assistance client et dépannage.",
+"d_sensitive_note": "Nous ne collectons pas la localisation précise ni des catégories sensibles, sauf si vous nous les fournissez explicitement dans le cadre du support.",
+
+"legal_t": "4) Finalités et bases juridiques",
+"legal_b": "Selon votre lieu de résidence, nous nous appuyons : (a) sur le consentement (lorsqu’il est requis pour les cookies/SDK de publicité/analyse dans l’EEE/R.-Uni et pour l’accès à l’IDFA dans le cadre d’Apple ATT) ; (b) sur l’exécution d’un contrat (pour fournir le jeu/l’app, les sauvegardes cloud et les achats) ; (c) sur l’intérêt légitime (sécurité, lutte contre la fraude, diagnostics de crash, analyses non personnalisées) ; et (d) sur le respect d’obligations légales (fiscalité/comptabilité). Vous pouvez retirer votre consentement à tout moment via les paramètres in-app ou notre bandeau de consentement (le cas échéant).",
+
+"optout_t": "5) Choix publicitaires (opt-out)",
+"optout_b": "Vous pouvez à tout moment refuser la « publicité ciblée » et certaines mesures dans **Paramètres → Confidentialité → Choix publicitaires**. Pour la Californie et d’autres États américains, vous pouvez utiliser le bouton **‘Do Not Sell or Share My Personal Information’** pour refuser le « partage » à des fins de publicité comportementale inter-contextes. Sur Android/iOS, vous pouvez aussi réinitialiser ou limiter l’identifiant publicitaire dans les réglages du système. Nous respectons les choix ATT d’Apple et la mesure via SKAdNetwork lorsque l’IDFA n’est pas disponible.",
+
+"att_t": "6) Apple App Tracking Transparency (iOS)",
+"att_b": "Sur iOS, nous sollicitons votre autorisation via l’App Tracking Transparency d’Apple. Si vous refusez, nous n’accédons pas à l’IDFA et n’utilisons que des publicités contextuelles et une mesure préservant la confidentialité (p. ex., SKAdNetwork).",
+
+"sdks_t": "7) Services tiers (sous-traitants)",
+"sdk_firebase": "Firebase Analytics collecte des métriques d’usage et de stabilité ; Crashlytics aide à diagnostiquer les crashs. Les données peuvent inclure des informations appareil/OS, la version de l’app, des événements et des journaux de crash.",
+"sdk_ads": "Les réseaux publicitaires (p. ex., Google AdMob, Unity Ads) affichent des publicités et mesurent les performances à l’aide d’identifiants publicitaires réinitialisables et de signaux contextuels. Vous pouvez réinitialiser ou limiter le suivi publicitaire dans votre OS.",
+"sdk_play": "Google Play Games Services pour les sauvegardes cloud, les succès, les classements et les intégrations de plateforme.",
+"sdk_gc": "Apple Game Center et iCloud (si activé) pour l’authentification et les sauvegardes cloud sur les plateformes Apple.",
+"sdk_af": "AppsFlyer fournit l’attribution d’installations et les performances de campagnes à l’aide d’identifiants et de données d’événements non sensibles.",
+"processors_note": "Nous faisons appel à ces prestataires dans le cadre de contrats de sous-traitance ; ils doivent protéger les données et ne les utiliser que selon nos instructions.",
+
+"share_t": "8) Partage",
+"share_b": "Nous ne vendons pas de données personnelles. Nous divulguons des données à des prestataires de services (sous-traitants), aux fournisseurs de plateforme (Google/Apple), ainsi que lorsque la loi l’exige ou pour protéger les droits, la sécurité et l’intégrité.",
+
+
+
+
+"intl_t": "9) Transferts internationaux",
+"intl_b": "Lorsque des données sont transférées à l’international, nous utilisons des garanties appropriées (p. ex., clauses contractuelles types). Certains prestataires participent au Data Privacy Framework UE-États-Unis. Vous pouvez nous contacter pour obtenir des informations sur ces garanties.",
+
+"kids_t": "10) Enfants",
+"kids_b": "Nous ne collectons pas sciemment de données personnelles auprès d’enfants. Pour les titres à public mixte, nous appliquons une vérification d’âge et désactivons les publicités/attributions personnalisées pour les utilisateurs identifiés comme étant en dessous de l’âge applicable (p. ex., moins de 13 ans aux États-Unis, moins de 16 ans dans l’EEE/R.-Uni pour le « partage » publicitaire). Si vous pensez qu’un enfant nous a envoyé des données, contactez-nous : nous les supprimerons et désactiverons la personnalisation.",
+
+"rights_t": "11) Vos droits",
+"rights_b": "Selon votre région, vous pouvez avoir le droit d’accéder à vos données, de les rectifier, de les supprimer, de les porter, de vous opposer, d’en limiter le traitement, de retirer votre consentement ou de faire appel de notre décision. Pour exercer vos droits, utilisez le formulaire de demande dans l’app ou contactez-nous à l’adresse e-mail ci-dessous. Nous répondons sous 30 jours (EEE/R.-Uni) ou 45 jours (États-Unis). Les résidents de Californie peuvent recourir à un agent autorisé. Vous avez le droit de ne pas faire l’objet de discrimination pour l’exercice de vos droits. Les résidents de l’EEE/R.-Uni peuvent déposer une plainte auprès d’une autorité de contrôle.",
+
+"cookies_t": "12) Cookies et consentement",
+"cookies_b": "Nos sites web n’utilisent actuellement pas de cookies/SDK non essentiels. Si cela change, nous afficherons un bandeau de consentement vous permettant d’accepter, de refuser ou de modifier vos choix à tout moment.",
+
+"acct_t": "13) Comptes et suppression",
+"acct_b": "Vous pouvez créer un compte en jeu pour synchroniser la progression et utiliser les fonctionnalités sociales. Vous pouvez supprimer votre compte à tout moment via **Paramètres → Compte → Supprimer le compte** ou en nous contactant. La suppression d’un compte entraîne la suppression des données personnelles et des sauvegardes cloud liées au compte sous 30 jours (les sauvegardes peuvent persister pendant une période limitée). Vous pouvez aussi déconnecter Google Play Games ou Apple Game Center depuis leurs réglages respectifs.",
+
+"ugc_t": "14) Contenu généré par les utilisateurs (UGC) et modération",
+"ugc_b": "L’UGC (p. ex., chat, profils, noms de guildes) est visible par les autres joueurs dans le cadre du jeu. Nous modérons afin de faire respecter nos règles communautaires et pouvons agir suite à des signalements d’abus. Ne partagez pas d’informations sensibles dans l’UGC.",
+
+"sec_t": "15) Sécurité",
+"sec_b": "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées au risque (chiffrement en transit, chiffrement au repos le cas échéant, contrôles d’accès, principe du moindre privilège, journalisation, correctifs réguliers, réponse aux incidents). Aucun système n’est sécurisé à 100 %.",
+
+"chg_t": "16) Modifications",
+"chg_b": "Nous pouvons mettre à jour la présente Politique périodiquement. Nous publierons une nouvelle version avec une nouvelle date d’entrée en vigueur.",
+
+"ct_t": "17) Contact",
+"ct_b": "Responsable du traitement : {{legalEntity}}.<br>Adresse : {{address}}.<br>E-mail : <a href=\"mailto:{{contact}}\">{{contact}}</a>.",
+
+"defs_t": "18) Définitions clés",
+"defs_b": "« Données personnelles » désigne toute information qui identifie ou se rapporte à une personne identifiable. « Traitement » désigne toute opération effectuée sur des données personnelles. Le « responsable du traitement » détermine les finalités et les moyens ; le « sous-traitant » traite pour le compte d’un responsable. La « publicité ciblée » consiste à afficher des publicités sur la base de données personnelles obtenues à partir d’activités sur des apps ou sites web non affiliés.",
+
+"dnsmpi_btn": "Ne pas vendre ni partager mes informations personnelles",
+"privacy_settings_t": "Paramètres de confidentialité",
+"privacy_settings_b": "Vous pouvez gérer le consentement, les choix publicitaires et les demandes de données dans **Paramètres → Confidentialité**."
+}

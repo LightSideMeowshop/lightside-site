@@ -1,0 +1,87 @@
+{
+  "pp_title": "Kebijakan Privasi",
+  "updated": "Tanggal berlaku",
+  "btn_expand": "Perluas semua",
+  "btn_collapse": "Ciutkan semua",
+  "btn_print": "Cetak / Simpan PDF",
+  "btn_copy": "Salin tautan ke bagian ini",
+
+  "sum_global": "Berlaku di seluruh dunia untuk gim, aplikasi, dan situs web kami.",
+  "sum_sdks": "Kami menggunakan layanan yang banyak diadopsi: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (jika diaktifkan), AppsFlyer, SKAdNetwork.",
+  "sum_no_sell": "Kami tidak menjual data pribadi. Kami dapat ‘membagikan’ pengenal tertentu dan peristiwa aplikasi untuk periklanan bertarget sebagaimana didefinisikan oleh hukum negara bagian AS. Anda dapat melakukan opt-out di dalam aplikasi.",
+  "sum_optout": "Anda dapat melakukan opt-out dari periklanan bertarget dan pengukuran.",
+  "sum_kids": "Kami tidak dengan sengaja mengumpulkan data dari anak-anak.",
+
+  "who_t": "1) Siapa kami",
+  "who_b": "{{legalEntity}} (‘kami’) mengembangkan dan menerbitkan video game dan aplikasi. Kami bertindak sebagai pengendali data untuk pemrosesan yang dijelaskan dalam Kebijakan ini.",
+
+  "scope_t": "2) Cakupan",
+  "scope_b": "Kebijakan ini mencakup {{appsList}} dan situs web kami yang dioperasikan secara global di bawah merek ‘{{companyName}}’.",
+
+  "data_t": "3) Data yang kami proses",
+  "d_usage": "Penggunaan & diagnostik (peristiwa, sesi, alamat IP, lokasi kasar/negara, perangkat/OS, versi aplikasi) — analitik, deteksi crash, peningkatan produk.",
+  "d_progress": "Kemajuan gim & pengenal (ID pemain/akun, pencapaian, penyimpanan cloud, sinyal anti-cheat) — fungsionalitas inti dan sinkronisasi.",
+  "d_account": "Data akun (nama tampilan, avatar, email jika diberikan, token autentikasi, kelompok usia) — pembuatan akun, login, keamanan.",
+  "d_ugc": "Konten buatan pengguna dan fitur sosial (pesan chat, profil, nama klan/guild, laporan) — fitur gameplay dan moderasi.",
+  "d_purchases": "Informasi pembelian (SKU, wilayah, token/atau tanda terima pembelian) — pemenuhan pembelian, pengembalian dana, pencegahan penipuan.",
+  "d_ads": "Data iklan/atribusi (tayangan iklan, klik, ID periklanan yang dapat direset seperti IDFA/AAID, postback SKAdNetwork, sinyal konteks) — penayangan iklan, pembatasan frekuensi, pengukuran (judul yang didukung iklan).",
+  "d_support": "Data dukungan (email, isi pesan, lampiran, diagnostik perangkat yang Anda pilih untuk dikirim) — dukungan pelanggan dan pemecahan masalah.",
+  "d_sensitive_note": "Kami tidak mengumpulkan lokasi presisi atau kategori sensitif kecuali Anda memberikannya secara eksplisit kepada dukungan.",
+
+  "legal_t": "4) Tujuan & dasar hukum",
+  "legal_b": "Bergantung pada lokasi Anda, kami bergantung pada: (a) persetujuan (jika diwajibkan untuk cookie/SDK periklanan/analitik di EEA/UK, dan untuk akses ke IDFA di bawah Apple ATT); (b) pelaksanaan kontrak (untuk menyediakan gim/aplikasi, penyimpanan cloud, dan pembelian); (c) kepentingan yang sah (keamanan, pencegahan penipuan, diagnostik crash, analitik non-personal); dan (d) kepatuhan terhadap kewajiban hukum (pajak/pembukuan). Anda dapat menarik kembali persetujuan kapan saja melalui pengaturan dalam aplikasi atau banner persetujuan kami (jika ditampilkan).",
+
+  "optout_t": "5) Pilihan iklan (opt-out)",
+  "optout_b": "Anda dapat setiap saat melakukan opt-out dari ‘periklanan bertarget’ dan pengukuran tertentu di **Pengaturan → Privasi → Pilihan iklan**. Untuk California dan negara bagian AS lainnya, Anda dapat menggunakan tombol **‘Do Not Sell or Share My Personal Information’** untuk menolak ‘pembagian’ untuk periklanan perilaku lintas-konteks. Di Android/iOS Anda juga dapat mereset atau membatasi pengenal iklan di setelan OS. Kami menghormati pilihan Apple ATT dan pengukuran SKAdNetwork ketika IDFA tidak tersedia.",
+
+  "att_t": "6) Apple App Tracking Transparency (iOS)",
+  "att_b": "Di iOS, kami meminta izin melalui App Tracking Transparency milik Apple. Jika Anda menolak, kami tidak mengakses IDFA dan hanya menggunakan iklan kontekstual serta pengukuran yang menjaga privasi (mis., SKAdNetwork).",
+
+  "sdks_t": "7) Layanan pihak ketiga (pemroses)",
+  "sdk_firebase": "Firebase Analytics mengumpulkan metrik penggunaan dan stabilitas; Crashlytics membantu mendiagnosis crash. Data dapat mencakup info perangkat/OS, versi aplikasi, peristiwa, dan log crash.",
+  "sdk_ads": "Jaringan iklan (mis., Google AdMob, Unity Ads) menayangkan iklan dan mengukur kinerja menggunakan ID periklanan yang dapat direset dan sinyal konteks. Anda dapat mereset atau membatasi pelacakan iklan di OS Anda.",
+  "sdk_play": "Google Play Games Services untuk penyimpanan cloud, pencapaian, papan peringkat, dan integrasi platform.",
+  "sdk_gc": "Apple Game Center dan iCloud (jika diaktifkan) untuk autentikasi dan penyimpanan cloud di platform Apple.",
+  "sdk_af": "AppsFlyer menyediakan atribusi instal dan kinerja kampanye menggunakan pengenal dan data peristiwa non-sensitif.",
+  "processors_note": "Kami melibatkan penyedia ini berdasarkan perjanjian pemrosesan data; mereka harus melindungi data dan menggunakannya hanya sesuai instruksi kami.",
+
+  "share_t": "8) Berbagi",
+  "share_b": "Kami tidak menjual data pribadi. Kami mengungkapkan data kepada penyedia layanan (pemroses), penyedia platform (Google/Apple), dan jika diwajibkan oleh hukum atau untuk melindungi hak, keamanan, dan integritas.",
+
+
+
+
+  "intl_t": "9) Transfer internasional",
+  "intl_b": "Jika data ditransfer secara internasional, kami menggunakan perlindungan yang sesuai (mis., Klausul Kontrak Standar). Beberapa penyedia berpartisipasi dalam EU-US Data Privacy Framework. Anda dapat menghubungi kami untuk meminta informasi tentang perlindungan ini.",
+
+  "kids_t": "10) Anak-anak",
+  "kids_b": "Kami tidak dengan sengaja mengumpulkan data pribadi dari anak-anak. Dalam judul untuk audiens campuran, kami menerapkan gerbang usia dan menonaktifkan iklan/atribusi yang dipersonalisasi bagi pengguna yang diidentifikasi di bawah usia yang berlaku (mis., di bawah 13 tahun di AS, di bawah 16 tahun di EEA/UK untuk ‘pembagian’ iklan). Jika Anda yakin seorang anak telah memberikan data kepada kami, hubungi kami dan kami akan menghapusnya serta menonaktifkan personalisasi.",
+
+  "rights_t": "11) Hak Anda",
+  "rights_b": "Bergantung pada wilayah Anda, Anda mungkin memiliki hak untuk mengakses, memperbaiki, menghapus, memindahkan, menolak, membatasi, menarik persetujuan, atau mengajukan banding atas keputusan kami. Untuk menggunakan hak Anda, gunakan formulir permintaan dalam aplikasi atau hubungi kami melalui email di bawah. Kami merespons dalam 30 hari (EEA/UK) atau 45 hari (AS). Penduduk California dapat menggunakan agen resmi. Anda berhak untuk tidak didiskriminasi karena menggunakan hak Anda. Penduduk EEA/UK dapat mengajukan keluhan kepada otoritas pengawas.",
+
+  "cookies_t": "12) Cookie & persetujuan",
+  "cookies_b": "Situs web kami saat ini tidak menggunakan cookie/SDK non-esensial. Jika ini berubah, kami akan menampilkan banner persetujuan yang memungkinkan Anda menerima, menolak, atau mengubah pilihan kapan saja.",
+
+  "acct_t": "13) Akun dan penghapusan",
+  "acct_b": "Anda dapat membuat akun dalam gim untuk menyinkronkan kemajuan dan menggunakan fitur sosial. Anda dapat menghapus akun kapan saja di **Pengaturan → Akun → Hapus akun** atau dengan menghubungi kami. Menghapus akun akan menghapus data pribadi dan penyimpanan cloud yang ditautkan ke akun dalam 30 hari (cadangan dapat bertahan untuk jangka waktu terbatas). Anda juga dapat memutus Google Play Games atau Apple Game Center dari setelan masing-masing.",
+
+  "ugc_t": "14) Konten buatan pengguna (UGC) & moderasi",
+  "ugc_b": "UGC (mis., chat, profil, nama guild) terlihat oleh pemain lain sebagai bagian dari gameplay. Kami melakukan moderasi untuk menegakkan aturan komunitas dan dapat mengambil tindakan atas laporan penyalahgunaan. Jangan bagikan informasi sensitif dalam UGC.",
+
+  "sec_t": "15) Keamanan",
+  "sec_b": "Kami menggunakan langkah-langkah teknis dan organisasi yang sesuai dengan risiko (enkripsi saat transit, enkripsi saat disimpan jika berlaku, kontrol akses, prinsip hak minimum, pencatatan log, patch berkala, respons insiden). Tidak ada sistem yang 100% aman.",
+
+  "chg_t": "16) Perubahan",
+  "chg_b": "Kami dapat memperbarui Kebijakan ini dari waktu ke waktu. Kami akan memublikasikan versi baru dengan tanggal berlaku yang baru.",
+
+  "ct_t": "17) Kontak",
+  "ct_b": "Pengendali data: {{legalEntity}}.<br>Alamat: {{address}}.<br>Email: <a href=\"mailto:{{contact}}\">{{contact}}</a>.",
+
+  "defs_t": "18) Definisi kunci",
+  "defs_b": "‘Data pribadi’ berarti informasi yang mengidentifikasi atau berkaitan dengan individu yang dapat diidentifikasi. ‘Pemrosesan’ berarti operasi apa pun yang dilakukan pada data pribadi. ‘Pengendali’ menentukan tujuan dan cara; ‘pemroses’ memproses atas nama pengendali. ‘Periklanan bertarget’ berarti menampilkan iklan berdasarkan data pribadi yang diperoleh dari aktivitas di aplikasi atau situs web yang tidak berafiliasi.",
+
+  "dnsmpi_btn": "Jangan jual atau bagikan informasi pribadi saya",
+  "privacy_settings_t": "Pengaturan privasi",
+  "privacy_settings_b": "Anda dapat mengelola persetujuan, pilihan iklan, dan permintaan data di **Pengaturan → Privasi**."
+}

@@ -1,0 +1,87 @@
+{
+  "pp_title": "Gizlilik Politikası",
+  "updated": "Yürürlük tarihi",
+  "btn_expand": "Tümünü genişlet",
+  "btn_collapse": "Tümünü daralt",
+  "btn_print": "Yazdır / PDF olarak kaydet",
+  "btn_copy": "Bu bölüme bağlantıyı kopyala",
+
+  "sum_global": "Oyunlarımıza, uygulamalarımıza ve web sitelerimize dünya çapında uygulanır.",
+  "sum_sdks": "Yaygın olarak benimsenen hizmetleri kullanırız: Firebase Analytics/Crashlytics, Google AdMob, Unity Ads, Google Play Games Services, Apple Game Center/iCloud (etkinleştirilmişse), AppsFlyer, SKAdNetwork.",
+  "sum_no_sell": "Kişisel verileri satmayız. ABD eyalet yasalarında tanımlandığı şekilde hedefli reklamcılık için bazı tanımlayıcıları ve uygulama olaylarını “paylaşabiliriz”. Uygulama içinden vazgeçebilirsiniz.",
+  "sum_optout": "Hedefli reklamcılık ve ölçümden vazgeçebilirsiniz.",
+  "sum_kids": "Bilerek çocuklardan veri toplamıyoruz.",
+
+  "who_t": "1) Biz kimiz",
+  "who_b": "{{legalEntity}} (“biz”) video oyunları ve uygulamalar geliştirir ve yayımlar. Bu Politikada açıklanan işleme faaliyetleri için veri sorumlusu olarak hareket ederiz.",
+
+  "scope_t": "2) Kapsam",
+  "scope_b": "Bu Politika, {{appsList}} ile dünya genelinde “{{companyName}}” markası altında işletilen web sitelerimizi kapsar.",
+
+  "data_t": "3) İşlediğimiz veriler",
+  "d_usage": "Kullanım ve tanılama (olaylar, oturumlar, IP adresi, yaklaşık konum/ülke, cihaz/OS, uygulama sürümü) — analiz, çökme tespiti, ürün iyileştirme.",
+  "d_progress": "Oyun ilerlemesi ve tanımlayıcılar (oyuncu/hesap kimliği, başarımlar, bulut kayıtları, hile karşıtı sinyaller) — temel işlevsellik ve eşitleme.",
+  "d_account": "Hesap verileri (görünen ad, avatar, sağlanmışsa e-posta, kimlik doğrulama belirteçleri, yaş grubu) — hesap oluşturma, oturum açma, güvenlik.",
+  "d_ugc": "Kullanıcı tarafından oluşturulan içerik ve sosyal özellikler (sohbet mesajları, profiller, klan/lonca adları, raporlar) — oynanış özellikleri ve moderasyon.",
+  "d_purchases": "Satın alma bilgileri (SKU, bölge, satın alma jetonu/makbuzu) — satın alma gerçekleştirme, iadeler, dolandırıcılığı önleme.",
+  "d_ads": "Reklam/atfetme verileri (reklam gösterimleri, tıklamalar, IDFA/AAID gibi sıfırlanabilir reklam kimlikleri, SKAdNetwork geri bildirimleri, bağlamsal sinyaller) — reklam gösterimi, frekans sınırlandırma, ölçüm (reklam destekli başlıklar).",
+  "d_support": "Destek verileri (e-posta, mesaj içeriği, ekler, göndermeyi seçtiğiniz cihaz tanılama bilgileri) — müşteri desteği ve sorun giderme.",
+  "d_sensitive_note": "Destek kapsamında bize açıkça sağlamadığınız sürece hassas kategoriler veya kesin konum toplamayız.",
+
+  "legal_t": "4) Amaçlar ve hukuki dayanaklar",
+  "legal_b": "Konumunuza bağlı olarak şu dayanaklara güveniriz: (a) rıza (AEA/Birleşik Krallık’ta reklam/analitik çerezleri/SDK’leri ve Apple ATT kapsamında IDFA erişimi için gerektiğinde); (b) sözleşmenin ifası (oyunu/uygulamayı, bulut kayıtlarını ve satın almaları sunmak için); (c) meşru menfaatler (güvenlik, dolandırıcılığın önlenmesi, çökme tanılaması, kişiselleştirilmemiş analiz); ve (d) yasal yükümlülüklerin yerine getirilmesi (vergi/muhasebe). Rızayı, uygulama içi ayarlardan veya (gösterildiğinde) onay bandımızdan dilediğiniz zaman geri çekebilirsiniz.",
+
+  "optout_t": "5) Reklam tercihleri (vazgeçme)",
+  "optout_b": "“Hedefli reklamcılık”tan ve belirli ölçümlerden dilediğiniz zaman **Ayarlar → Gizlilik → Reklam tercihleri** bölümünden vazgeçebilirsiniz. Kaliforniya ve diğer ABD eyaletleri için **‘Kişisel Bilgilerimi Satma veya Paylaşma’** düğmesini kullanarak bağlamlar arası davranışsal reklamcılık için “paylaşım”dan vazgeçebilirsiniz. Android/iOS’ta reklam tanımlayıcısını sistem ayarlarından sıfırlayabilir veya sınırlandırabilirsiniz. IDFA kullanılamadığında Apple ATT tercihlerinize ve SKAdNetwork ölçümüne saygı duyarız.",
+
+  "att_t": "6) Apple App Tracking Transparency (iOS)",
+  "att_b": "iOS’ta, Apple’ın App Tracking Transparency mekanizmasıyla izin isteriz. Reddederseniz IDFA’ya erişmeyiz ve yalnızca bağlamsal reklamlar ile gizliliği koruyan ölçümleri (örn. SKAdNetwork) kullanırız.",
+
+  "sdks_t": "7) Üçüncü taraf hizmetler (veri işleyenler)",
+  "sdk_firebase": "Firebase Analytics kullanım ve kararlılık metrikleri toplar; Crashlytics çökmelerin tanılanmasına yardımcı olur. Veriler; cihaz/OS bilgileri, uygulama sürümü, olaylar ve çökme günlüklerini içerebilir.",
+  "sdk_ads": "Reklam ağları (örn. Google AdMob, Unity Ads) sıfırlanabilir reklam kimlikleri ve bağlamsal sinyaller kullanarak reklam gösterir ve performansı ölçer. İşletim sisteminizde reklam takibini sıfırlayabilir veya sınırlayabilirsiniz.",
+  "sdk_play": "Google Play Games Services; bulut kayıtları, başarımlar, lider tabloları ve platform entegrasyonları için.",
+  "sdk_gc": "Apple Game Center ve iCloud (etkinse) Apple platformlarında kimlik doğrulama ve bulut kayıtları için.",
+  "sdk_af": "AppsFlyer, tanımlayıcılar ve hassas olmayan olay verileri kullanarak kurulum atfı ve kampanya performansı sağlar.",
+  "processors_note": "Bu sağlayıcıları veri işleme sözleşmeleri kapsamında görevlendiriyoruz; verileri korumalı ve yalnızca talimatlarımız doğrultusunda kullanmalıdırlar.",
+
+  "share_t": "8) Paylaşım",
+  "share_b": "Kişisel verileri satmayız. Verileri hizmet sağlayıcılarına (veri işleyenler), platform sağlayıcılarına (Google/Apple) ve kanunen gerektiğinde veya hakları, güvenliği ve bütünlüğü korumak için açıklarız.",
+
+
+
+
+  "intl_t": "9) Uluslararası aktarımlar",
+  "intl_b": "Veriler uluslararası olarak aktarılırken uygun güvenceler kullanırız (örn. Standart Sözleşme Maddeleri). Bazı sağlayıcılar AB-ABD Veri Gizliliği Çerçevesine katılmaktadır. Bu güvenceler hakkında bilgi talep etmek için bizimle iletişime geçebilirsiniz.",
+
+  "kids_t": "10) Çocuklar",
+  "kids_b": "Bilerek çocuklardan kişisel veri toplamayız. Karma kitleli başlıklarda yaş doğrulaması uygular ve geçerli yaşın altında olduğu belirlenen kullanıcılar için kişiselleştirilmiş reklam/atıfı devre dışı bırakırız (örn. ABD’de 13 yaş altı, AEA/BK’de reklam “paylaşımı” için 16 yaş altı). Bir çocuğun bize veri verdiğini düşünüyorsanız, lütfen iletişime geçin; verileri siler ve kişiselleştirmeyi devre dışı bırakırız.",
+
+  "rights_t": "11) Haklarınız",
+  "rights_b": "Bölgenize bağlı olarak verilere erişme, düzeltme, silme, taşınabilirlik, itiraz, işlemenin kısıtlanması, rızayı geri çekme veya kararımıza itiraz etme haklarına sahip olabilirsiniz. Haklarınızı kullanmak için uygulama içi talep formunu kullanın veya aşağıdaki e-posta üzerinden bize ulaşın. 30 gün (AEA/BK) veya 45 gün (ABD) içinde yanıt veririz. Kaliforniya sakinleri yetkili bir temsilci kullanabilir. Haklarınızı kullandığınız için ayrımcılığa uğramama hakkına sahipsiniz. AEA/BK sakinleri bir denetim otoritesine şikâyette bulunabilir.",
+
+  "cookies_t": "12) Çerezler ve onay",
+  "cookies_b": "Web sitelerimiz şu anda zorunlu olmayan çerezler/SDK’ler kullanmamaktadır. Bu değişirse, istediğiniz zaman kabul etmenizi, reddetmenizi veya tercihlerinizi değiştirmenizi sağlayan bir onay bandı gösteririz.",
+
+  "acct_t": "13) Hesaplar ve silme",
+  "acct_b": "İlerlemeyi eşitlemek ve sosyal özellikleri kullanmak için oyun içi bir hesap oluşturabilirsiniz. **Ayarlar → Hesap → Hesabı sil** bölümünden veya bizimle iletişime geçerek hesabınızı dilediğiniz zaman silebilirsiniz. Hesabın silinmesi, hesaba bağlı kişisel verileri ve bulut kayıtlarını 30 gün içinde kaldırır (yedekler sınırlı bir süre kalabilir). Google Play Games veya Apple Game Center’ı da kendi ayarlarından bağlantısını kesebilirsiniz.",
+
+  "ugc_t": "14) Kullanıcı tarafından oluşturulan içerik (UGC) ve moderasyon",
+  "ugc_b": "UGC (örn. sohbet, profiller, lonca adları) oynanışın bir parçası olarak diğer oyuncular tarafından görülebilir. Topluluk kurallarımızı uygulamak için moderasyon yapar ve kötüye kullanım bildirimlerine göre işlem yapabiliriz. UGC’de hassas bilgiler paylaşmayın.",
+
+  "sec_t": "15) Güvenlik",
+  "sec_b": "Riske uygun teknik ve organizasyonel önlemler kullanırız (iletişim sırasında şifreleme, uygulanabildiğinde depoda şifreleme, erişim kontrolleri, asgari ayrıcalık ilkesi, günlükleme, düzenli yamalar, olay müdahalesi). Hiçbir sistem %100 güvenli değildir.",
+
+  "chg_t": "16) Değişiklikler",
+  "chg_b": "Bu Politikayı zaman zaman güncelleyebiliriz. Yeni yürürlük tarihiyle birlikte yeni bir sürüm yayımlayacağız.",
+
+  "ct_t": "17) İletişim",
+  "ct_b": "Veri sorumlusu: {{legalEntity}}.<br>Adres: {{address}}.<br>E-posta: <a href=\"mailto:{{contact}}\">{{contact}}</a>.",
+
+  "defs_t": "18) Temel tanımlar",
+  "defs_b": "“Kişisel veri”, kimliği belirli veya belirlenebilir bir kişiyle ilgili bilgileri ifade eder. “İşleme”, kişisel veriler üzerinde gerçekleştirilen her türlü işlemdir. “Veri sorumlusu” amaç ve vasıtaları belirler; “veri işleyen” veri sorumlusu adına işler. “Hedefli reklamcılık”, bağlantısız uygulama veya web sitelerindeki faaliyetlerden elde edilen kişisel verilere dayalı reklam gösterimini ifade eder.",
+
+  "dnsmpi_btn": "Kişisel Bilgilerimi Satma veya Paylaşma",
+  "privacy_settings_t": "Gizlilik ayarları",
+  "privacy_settings_b": "Rızayı, reklam tercihlerini ve veri taleplerini **Ayarlar → Gizlilik** bölümünden yönetebilirsiniz."
+}

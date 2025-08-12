@@ -1,0 +1,197 @@
+{
+  "nav": {
+    "about": "Over",
+    "games": "Games",
+    "team": "Team",
+    "careers": "Vacatures",
+    "news": "Nieuws",
+    "press": "Pers",
+    "contact": "Contact",
+    "brand": "Merk",
+    "theme": "Thema"
+  },
+  "alt": {
+    "logo": "Logo",
+    "banner": "Banner"
+  },
+  "brand": {
+    "name": "LIGHT SIDE",
+    "modal": {
+      "title": "Brand‑assets",
+      "subtitle": "Upload je logo en banner — de pagina werkt meteen bij."
+    },
+    "logo": "Logo",
+    "upload": "Uploaden",
+    "banner": "Banner",
+    "done": "Klaar"
+  },
+  "hero": {
+    "pill": {
+      "indie_studio": "Indiestudio",
+      "meaningful_games": "Wij maken betekenisvolle games"
+    },
+    "title": "LIGHT SIDE — gamestudio",
+    "subtitle": "We bouwen stijlvolle, gepolijste games waarin mechanics ideeën laten schitteren. Van prototype tot release — groei aan de lichte kant.",
+    "cta": {
+      "games": "Onze games",
+      "careers": "Vacatures",
+      "contact": "Contact"
+    }
+  },
+  "about": {
+    "kicker": "Over",
+    "title": "Games die schitteren door mechanics",
+    "subtitle": "Ons team verenigt engineers, artists en schrijvers rond één principe: gameplay is de kern, stijl is het kanaal, de speler is co‑auteur.",
+    "bullets": {
+      "technical": {
+        "title": "Technische volwassenheid",
+        "text": "Eigen pipeline, CI/CD, tickets — niet saai, wel snel."
+      },
+      "prototype": {
+        "title": "Ontwerp via prototyping",
+        "text": "Vroege playables, telemetry, wekelijkse iteraties."
+      },
+      "aesthetics": {
+        "title": "Esthetiek & sound",
+        "text": "Kunst en audio in synergie voor sterkere emotie."
+      }
+    }
+  },
+  "games": {
+    "kicker": "Portfolio",
+    "title": "Onze games",
+    "subtitle": "Hieraan werken we nu. Vraag een build aan — we sturen hem en regelen een playtest.",
+    "solar_run": {
+      "title": "Tetra Crush",
+      "description": "In de stijl van Block Blast: klassieke modus en levels met doelen, thema’s voor achtergronden, speelborden en muziek; boosters — bom, raket, hamer, enz.; en speciale blokken — steen, hout, metaal, enz. Verzamel, knal, win!",
+      "status": "In productie"
+    },
+    "dusk_valley": {
+      "title": "DUSK VALLEY",
+      "description": "Noir‑detective met immersieve mechanics. Verken de stad, onthul complotten, kies de lichte kant.",
+      "status": "Pre‑productie"
+    },
+    "neon_forge": {
+      "title": "NEON FORGE",
+      "description": "Tactische actie met wapenwerkplaats: smeed builds, maak vonken van vijanden, straal het felst.",
+      "status": "Prototype"
+    },
+    "tags": {
+      "roguelite": "Roguelite",
+      "singleplayer": "Singleplayer",
+      "pc_console": "PC/Console",
+      "adventure": "Avontuur",
+      "choices_matter": "Keuzes tellen",
+      "narrative": "Narratief",
+      "action": "Actie",
+      "tactics": "Tactiek",
+      "indie": "Indie"
+    },
+    "trailer": "Trailer",
+    "request_build": "Build aanvragen"
+  },
+  "team": {
+    "kicker": "Cultuur",
+    "title": "Klein team — grote ambities",
+    "subtitle": "Seniors naast meds, meds naast juniors. We mentoren en groeien — zonder somberheid.",
+    "members": {
+      "0": {
+        "name": "Egor",
+        "role": "Technical Director"
+      },
+      "1": {
+        "name": "Anna",
+        "role": "Art Director"
+      },
+      "2": {
+        "name": "Roman",
+        "role": "Game Designer"
+      },
+      "3": {
+        "name": "Maria",
+        "role": "Producer"
+      }
+    }
+  },
+  "careers": {
+    "kicker": "Carrière",
+    "title": "We werven aan",
+    "subtitle": "Flexibele uren, remote‑vriendelijk, duidelijke processen. Laat je contact achter — we komen terug met een interviewplan.",
+    "jobs": {
+      "senior_engineer": {
+        "title": "Senior Unity/Unreal Engineer",
+        "type": "Remote / Fulltime",
+        "description": "Architectuur van gamesystemen, optimalisatie, asset‑pipeline, multiplatform builds."
+      },
+      "game_designer": {
+        "title": "Game Designer (Core/Systems)",
+        "type": "Hybride / Fulltime",
+        "description": "Core loops, balans, economie, meta, A/B, telemetry."
+      },
+      "hard_surface_artist": {
+        "title": "3D Artist (Hard Surface)",
+        "type": "Remote / Contract",
+        "description": "Modeling, UV, PBR, optimalisatie voor console/mobile; shader‑skills zijn plus."
+      }
+    },
+    "apply": "Solliciteren"
+  },
+  "news": {
+    "kicker": "Updates",
+    "title": "Studionieuws",
+    "subtitle": "Abonneer je zodat je demo’s en gesloten playtests niet mist.",
+    "items": {
+      "0": {
+        "title": "Light Side kondigt Solar Run aan",
+        "summary": "Eerste teaser, speelbare build en playtests deze zomer."
+      },
+      "1": {
+        "title": "We groeien: 3 vacatures",
+        "summary": "Gezocht: engine‑engineer, game‑designer en hard‑surface artist. Flexibele voorwaarden."
+      },
+      "2": {
+        "title": "Light Side op DevGAMM",
+        "summary": "Pitch‑deck, demobooth, meetings met uitgevers."
+      }
+    },
+    "read": "Lees"
+  },
+  "newsletter": {
+    "placeholder": "Je e‑mail voor updates",
+    "subscribe": "Abonneren"
+  },
+  "press": {
+    "kicker": "Pers & partners",
+    "title": "Mediakit & perscontacten",
+    "subtitle": "Logo’s, banners, screenshots, pitch‑deck — alles voor vermeldingen en publicaties.",
+    "logo": "Logo",
+    "download_png": "PNG downloaden",
+    "banner": "Banner",
+    "download_image": "Afbeelding downloaden"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Schrijf ons",
+    "subtitle": "Partnership, publishing, playtests, media — we staan open.",
+    "form": {
+      "name": "Je naam",
+      "email": "E‑mail",
+      "subject": "Onderwerp",
+      "message": "Bericht",
+      "sending": "Verzenden…",
+      "sent": "Verzonden ✓",
+      "send": "Versturen"
+    },
+    "reply_time": "We antwoorden binnen 1–2 werkdagen."
+  },
+  "footer": {
+    "copyright": "Light Side. Alle rechten voorbehouden.",
+    "made_with_love": "Gemaakt met ❤ aan de lichte kant."
+  },
+  "social": {
+    "twitter": "X / Twitter",
+    "youtube": "YouTube",
+    "twitch": "Twitch",
+    "github": "GitHub"
+  }
+}
