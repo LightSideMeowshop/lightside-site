@@ -1,30 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>LIGHT SIDE — game development studio</title>
-
   <!-- Icons / PWA -->
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#5f4088">
-
+  <link href="/favicon.ico" rel="icon"/>
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="/site.webmanifest" rel="manifest"/>
+  <meta content="#5f4088" name="theme-color"/>
   <!-- Flags (for dropdown) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.1.0/css/flag-icons.min.css">
-
+  <link href="https://cdn.jsdelivr.net/npm/flag-icons@7.1.0/css/flag-icons.min.css" rel="stylesheet"/>
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
   <style>html,body{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}</style>
-
   <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { future:{ hoverOnlyWhenSupported:true } };</script>
-
   <!-- Brand variables fallback -->
   <style>
     :root{ --brand-accent:#ff9f1b; --brand-base:#5f4088; }
@@ -66,24 +62,20 @@
     [data-hide~="team"] a[href="#team"],
     [data-hide~="partners"] a[href="#partners"] { display: none !important; }
   </style>
-
   <!-- React & Babel -->
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
   <!-- Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
   <!-- i18next + ICU + detectors + HTTP backend (ленивая загрузка JSON) -->
   <script src="https://unpkg.com/i18next@23.11.5/i18next.min.js"></script>
   <script src="https://unpkg.com/i18next-http-backend@2.6.2/i18nextHttpBackend.min.js"></script>
   <script src="https://unpkg.com/i18next-browser-languagedetector@7.2.0/i18nextBrowserLanguageDetector.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/i18next-icu@2.5.0/umd/i18nextICU.min.js"></script>
 </head>
-<body data-hide="team careers news press partners" class="bg-[var(--brand-base)] text-white">
+<body class="bg-[var(--brand-base)] text-white" data-hide="team careers news press partners">
 <div id="root"></div>
-
 <script type="text/babel">
   const { useEffect, useState, useMemo, useRef, useCallback } = React;
 
@@ -409,18 +401,27 @@
                   <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">{t("contact.title")}</h2>
                   <p className="mt-3 text-white/70">{t("contact.subtitle")}</p>
                 </div>
-                <form onSubmit={(e)=>e.preventDefault()} className="grid md:grid-cols-2 gap-6">
+                <form id="contactForm" className="grid md:grid-cols-2 gap-6">
                   <div className="grid gap-3">
-                    <input placeholder={t("contact.form.name")} required className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]" />
-                    <input type="email" placeholder={t("contact.form.email")} required className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]" />
-                    <input placeholder={t("contact.form.subject")} className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]" />
+                    <input name="name" placeholder={t("contact.form.name")} required className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]" />
+                    <input type="email" name="email" placeholder={t("contact.form.email")} required className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]" />
+                    <input name="subject" placeholder={t("contact.form.subject")} className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]" />
+                    {/* honeypot анти-бот */}
+                    <input name="company" tabIndex="-1" autoComplete="off" className="hidden" aria-hidden="true" />
                   </div>
+
                   <div className="grid gap-3">
-                    <textarea placeholder={t("contact.form.message")} rows="6" className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]"></textarea>
+                    <textarea name="message" placeholder={t("contact.form.message")} rows="6" className="px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)]"></textarea>
+
                     <div className="flex items-center gap-3">
-                      <button className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-[var(--brand-accent)] text-slate-900 font-semibold transition duration-200 ease-out hover:translate-y-[-1px] hover:bg-black hover:text-[var(--brand-accent)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]/50 disabled:opacity-50 disabled:pointer-events-none">{t('contact.form.send')}</button>
+                      <button type="submit" className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-[var(--brand-accent)] text-slate-900 font-semibold transition duration-200 ease-out hover:translate-y-[-1px] hover:bg-black hover:text-[var(--brand-accent)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]/50 disabled:opacity-50 disabled:pointer-events-none">
+                        {t('contact.form.send')}
+                      </button>
                       <span className="text-sm text-white/70">{t("contact.reply_time")}</span>
                     </div>
+
+                    {/* место для статусов */}
+                    <p id="contactHint" className="text-sm text-white/70" role="status" aria-live="polite"></p>
                   </div>
                 </form>
               </section>
@@ -444,54 +445,72 @@
   root.render(<App />);
 </script>
 
-<!--
-  === Что нужно добавить в проект (файлы локалей) ===
+<script>
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycbxs48qS7q9K8vuR_OnZ70uILZpnSB2lwJBiEXE6CYL-6WpAS_Ap6q5rbqj5izbw6yZh/exec";
 
-  Положите JSON-файлы по пути: /locales/{lang}/common.json
-  Пример: /locales/en/common.json и /locales/ru/common.json
+  (function () {
+    console.error("contact:init");
 
-  Минимальный скелет (common.json):
+    // Делегируем submit – сработает, даже если форма появится позже
+    document.addEventListener("submit", async (e) => {
+      const f = e.target;
+      if (!(f instanceof HTMLFormElement) || f.id !== "contactForm") return;
 
-  en/common.json
-  {
-    "nav": {"about": "About", "games": "Games", "team": "Team", "careers": "Careers", "news": "News", "press": "Press", "contact": "Contact"},
-    "hero": {
-      "pill": {"indie_studio": "Indie studio", "meaningful_games": "Meaningful games"},
-      "title": "We craft small, meaningful games",
-      "subtitle": "Focused on polish, feel and accessibility",
-      "cta": {"games": "Our games", "careers": "Careers", "contact": "Contact us"}
-    },
-    "about": {"kicker":"About us","title":"Light Side studio","subtitle":"We love prototypes and aesthetics","bullets":{"technical":{"title":"Engineering","text":"Solid tech stack and performance"},"prototype":{"title":"Rapid prototyping","text":"We iterate fast"},"aesthetics":{"title":"Aesthetics","text":"Clean visuals and feel"}}},
-    "games": {"kicker":"Games","title":"Projects","subtitle":"Playable and in development","request_build":"Request a build","solar_run":{"title":"Tetra Crush","description":"A minimal puzzle with rich feel","status":"Coming soon"}},
-    "team": {"kicker":"Team","title":"Core Team","subtitle":"Small and effective","members":[{"name":"Member A","role":"Engineer"},{"name":"Member B","role":"Designer"},{"name":"Member C","role":"Artist"},{"name":"Member D","role":"Producer"}]},
-    "careers": {"kicker":"Careers","title":"Join us","subtitle":"We’re hiring","jobs":{"senior_engineer":{"title":"Senior Engineer","type":"Full‑time","description":"Own gameplay systems"},"game_designer":{"title":"Game Designer","type":"Full‑time","description":"Design levels and flows"},"hard_surface_artist":{"title":"Hard Surface Artist","type":"Contract","description":"Model props and environments"}},"apply":"Apply"},
-    "news": {"kicker":"News","title":"Studio updates","subtitle":"What’s new","read":"Read","items":[{"title":"We won an award","summary":"Our prototype got noticed"},{"title":"Funding closed","summary":"We secured seed funding"},{"title":"Devlog #1","summary":"Core loop progress"}]},
-    "press": {"kicker":"Press kit","title":"Press","subtitle":"Logos and banners","logo":"Logo","banner":"Banner","download_png":"Download .png","download_image":"Download image"},
-    "contact": {"kicker":"Contact","title":"Let’s talk","subtitle":"We reply in 24h","form":{"name":"Your name","email":"Email","subject":"Subject","message":"Message","send":"Send"},"reply_time":"Usually within a day"},
-    "footer": {"copyright":"LIGHT SIDE","made_with_love":"Made with ♥"}
-  }
+      console.error("contact:submit");
+      e.preventDefault();
 
-  ru/common.json
-  {
-    "nav": {"about": "О нас", "games": "Игры", "team": "Команда", "careers": "Вакансии", "news": "Новости", "press": "Пресса", "contact": "Контакты"},
-    "hero": {
-      "pill": {"indie_studio": "Инди‑студия", "meaningful_games": "Игры со смыслом"},
-      "title": "Делаем маленькие, но важные игры",
-      "subtitle": "Фокус на полировке, ощущениях и доступности",
-      "cta": {"games": "Наши игры", "careers": "Вакансии", "contact": "Связаться"}
-    },
-    "about": {"kicker":"О студии","title":"Light Side","subtitle":"Любим прототипы и эстетику","bullets":{"technical":{"title":"Инженерия","text":"Надёжный стек и производительность"},"prototype":{"title":"Быстрые прототипы","text":"Быстро итераируем"},"aesthetics":{"title":"Эстетика","text":"Чистая визуалка и ощущения"}}},
-    "games": {"kicker":"Игры","title":"Проекты","subtitle":"Играбельные и в разработке","request_build":"Запросить билд","solar_run":{"title":"Tetra Crush","description":"Минималистичная головоломка с отличным фидбеком","status":"Скоро"}},
-    "team": {"kicker":"Команда","title":"Костяк","subtitle":"Маленькая и эффективная","members":[{"name":"Участник A","role":"Инженер"},{"name":"Участник B","role":"Дизайнер"},{"name":"Участник C","role":"Художник"},{"name":"Участник D","role":"Продюсер"}]},
-    "careers": {"kicker":"Вакансии","title":"Присоединиться","subtitle":"Мы нанимаем","jobs":{"senior_engineer":{"title":"Старший инженер","type":"Полная занятость","description":"Игровые системы"},"game_designer":{"title":"Гейм‑дизайнер","type":"Полная занятость","description":"Уровни и флоу"},"hard_surface_artist":{"title":"Hard Surface Artist","type":"Контракт","description":"Пропсы и окружение"}},"apply":"Откликнуться"},
-    "news": {"kicker":"Новости","title":"Апдейты студии","subtitle":"Что нового","read":"Читать","items":[{"title":"Мы получили награду","summary":"Наш прототип заметили"},{"title":"Раунд закрыт","summary":"Получили сид‑финансирование"},{"title":"Девлог №1","summary":"Прогресс по core‑лупу"}]},
-    "press": {"kicker":"Пресс‑кит","title":"Пресса","subtitle":"Логотипы и баннеры","logo":"Логотип","banner":"Баннер","download_png":"Скачать .png","download_image":"Скачать изображение"},
-    "contact": {"kicker":"Контакты","title":"Пообщаемся","subtitle":"Отвечаем в течение суток","form":{"name":"Ваше имя","email":"Email","subject":"Тема","message":"Сообщение","send":"Отправить"},"reply_time":"Обычно в течение дня"},
-    "footer": {"copyright":"LIGHT SIDE","made_with_love":"Сделано с ♥"}
-  }
+      // Honeypot
+      if ((f.elements.company?.value || "").trim() !== "") return;
 
-  При необходимости добавьте ICU‑формулы для множественного числа, например:
-  "cart": "{count, plural, =0 {Корзина пуста} one {# товар} few {# товара} many {# товаров} other {# товара}}"
--->
+      const name    = (f.elements.name?.value || "").trim();
+      const email   = (f.elements.email?.value || "").trim();
+      const subject = (f.elements.subject?.value || "").trim() || "Website contact";
+      const message = (f.elements.message?.value || "").trim();
+
+      if (!name || !email || !message) {
+        showStatus("Пожалуйста, заполните имя, e-mail и сообщение.", true);
+        return;
+      }
+
+      const payload = new URLSearchParams({ name, email, subject, message });
+
+      try {
+        const btn = f.querySelector('[type="submit"]');
+        if (btn) btn.disabled = true;
+
+        const resp = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+          body: payload.toString()
+        });
+
+        let ok = false;
+        try { ok = !!(await resp.json()).ok; } catch(_) { ok = resp.ok; }
+
+        if (ok) {
+          showStatus("Спасибо! Ваше сообщение отправлено. Мы скоро ответим.");
+          f.reset();
+        } else {
+          showStatus("Не удалось отправить сообщение. Попробуйте снова или напишите на support@lightside.media.", true);
+        }
+
+        if (btn) btn.disabled = false;
+      } catch (err) {
+        console.error(err);
+        showStatus("Сетевая ошибка. Проверьте соединение и попробуйте ещё раз.", true);
+      }
+    });
+
+    function showStatus(text, isError){
+      const hint = document.getElementById("contactHint");
+      if (!hint) return;
+      hint.style.display = "block";
+      hint.textContent = text;
+      hint.style.color = isError ? "#ffb4b4" : "#b4ffb8";
+    }
+  })();
+</script>
+
+
 </body>
 </html>
