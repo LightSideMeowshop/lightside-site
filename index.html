@@ -448,69 +448,34 @@
 <script>
   const ENDPOINT = "https://api.lightside.media/api/apps-script?id=AKfycbxWF7_78oTze8ybJ_R74fQgXut6RAiYLB3eJY3yqbXFlyHokb9m3ZqNi4ABmHWCxVa4";
 
-  (function () {
-    console.error("contact:init");
+  document.addEventListener("submit", async (e) => {
+    const f = e.target;
+    if (!(f instanceof HTMLFormElement) || f.id !== "contactForm") return;
+    e.preventDefault();
 
-    // Делегируем submit – сработает, даже если форма появится позже
-    document.addEventListener("submit", async (e) => {
-      const f = e.target;
-      if (!(f instanceof HTMLFormElement) || f.id !== "contactForm") return;
+    if ((f.elements.company?.value || "").trim() !== "") return;
 
-      console.error("contact:submit");
-      e.preventDefault();
+    const name    = (f.elements.name?.value || "").trim();
+    const email   = (f.elements.email?.value || "").trim();
+    const subject = (f.elements.subject?.value || "").trim() || "Website contact";
+    const message = (f.elements.message?.value || "").trim();
+    if (!name || !email || !message) return;
 
-      // Honeypot
-      if ((f.elements.company?.value || "").trim() !== "") return;
+    const fd = new FormData();
+    fd.set("name", name);
+    fd.set("email", email);
+    fd.set("subject", subject);
+    fd.set("message", message);
 
-      const name    = (f.elements.name?.value || "").trim();
-      const email   = (f.elements.email?.value || "").trim();
-      const subject = (f.elements.subject?.value || "").trim() || "Website contact";
-      const message = (f.elements.message?.value || "").trim();
-
-      if (!name || !email || !message) {
-        showStatus("Пожалуйста, заполните имя, e-mail и сообщение.", true);
-        return;
-      }
-
-      const payload = new URLSearchParams({ name, email, subject, message });
-
-      try {
-        const btn = f.querySelector('[type="submit"]');
-        if (btn) btn.disabled = true;
-
-        const resp = await fetch(ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-          body: payload.toString()
-        });
-
-        let ok = false;
-        try { ok = !!(await resp.json()).ok; } catch(_) { ok = resp.ok; }
-
-        if (ok) {
-          showStatus("Спасибо! Ваше сообщение отправлено. Мы скоро ответим.");
-          f.reset();
-        } else {
-          showStatus("Не удалось отправить сообщение. Попробуйте снова или напишите на support@lightside.media.", true);
-        }
-
-        if (btn) btn.disabled = false;
-      } catch (err) {
-        console.error(err);
-        showStatus("Сетевая ошибка. Проверьте соединение и попробуйте ещё раз.", true);
-      }
-    });
-
-    function showStatus(text, isError){
-      const hint = document.getElementById("contactHint");
-      if (!hint) return;
-      hint.style.display = "block";
-      hint.textContent = text;
-      hint.style.color = isError ? "#ffb4b4" : "#b4ffb8";
-    }
-  })();
+    const btn = f.querySelector('[type="submit"]'); if (btn) btn.disabled = true;
+    try {
+      const resp = await fetch(ENDPOINT, { method: "POST", body: fd }); // <— без manual headers
+      const ok = resp.headers.get("content-type")?.includes("application/json")
+              ? !!(await resp.json()).ok
+              : resp.ok;
+      if (ok) f.reset();
+    } finally { if (btn) btn.disabled = false; }
+  });
 </script>
-
-
 </body>
 </html>
