@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   CSS Variables (Design Tokens)
+   ============================================ */
+:root {
+  /* Brand colors */
+  --color-accent: #ff9f1b;
+  --color-base: #5f4088;
+
+  /* Text colors */
+  --color-ink: #0b0b0f;
+  --color-paper: #ffffff;
+
+  /* Surfaces */
+  --surface-glass: rgba(255, 255, 255, 0.08);
+  --surface-glass-hover: rgba(255, 255, 255, 0.14);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-glass-strong: rgba(255, 255, 255, 0.22);
+
+  /* Shadows */
+  --shadow-dropdown: 0 12px 32px rgba(0, 0, 0, 0.35);
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}
+
+/* ============================================
+   Base styles
+   ============================================ */
+html, body {
+  font-family: Inter, system-ui, 'Segoe UI', Arial, sans-serif;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #111;
+}
+
+::-moz-selection {
+  background: var(--color-accent);
+  color: #111;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Links
+   ============================================ */
+a {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.08em;
+  text-decoration-color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+/* ============================================
+   Form elements
+   ============================================ */
+input, textarea, select {
+  caret-color: var(--color-accent);
+}
+
+input[type="checkbox"],
+input[type="radio"],
+progress,
+input[type="range"] {
+  accent-color: var(--color-accent);
+}
+
+/* ============================================
+   Scrollbar
+   ============================================ */
+* {
+  scrollbar-color: var(--color-accent) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+}
+
+/* ============================================
+   Tailwind ring color override
+   ============================================ */
+[class*="ring-"] {
+  --tw-ring-color: var(--color-accent) !important;
+}
+
+[class*="ring-"]:not([class*="ring-opacity-"]) {
+  --tw-ring-opacity: 0.30 !important;
+}
+
+/* ============================================
+   Language Dropdown
+   ============================================ */
+.lang-dd {
+  position: relative;
+}
+
+.lang-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.06));
+  border: 1px solid var(--border-glass-strong);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.lang-trigger svg {
+  opacity: 0.8;
+  transition: transform 0.2s;
+}
+
+.lang-trigger[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.lang-menu {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  min-width: 220px;
+  max-height: 280px;
+  overflow: auto;
+  padding: 6px;
+  border-radius: var(--radius-md);
+  display: none;
+  z-index: 40;
+  background: linear-gradient(180deg, var(--color-base), color-mix(in oklab, var(--color-base) 96%, black));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-dropdown);
+  backdrop-filter: blur(8px);
+}
+
+.lang-menu.open {
+  display: block;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: #fff;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lang-option:hover,
+.lang-option[aria-selected="true"],
+.lang-option:focus {
+  background: rgba(255, 255, 255, 0.10);
+  outline: 2px solid transparent;
+}
+
+#langLabel .fi,
+.lang-option .fi {
+  margin-right: 8px;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+  vertical-align: -0.1em;
+}
+
+/* ============================================
+   Feature toggles (hide sections)
+   ============================================ */
+[data-hide~="careers"] #careers,
+[data-hide~="news"] #news,
+[data-hide~="updates"] #news,
+[data-hide~="press"] #press,
+[data-hide~="team"] #team,
+[data-hide~="partners"] #partners {
+  display: none !important;
+}
+
+[data-hide~="careers"] a[href="#careers"],
+[data-hide~="news"] a[href="#news"],
+[data-hide~="updates"] a[href="#news"],
+[data-hide~="press"] a[href="#press"],
+[data-hide~="team"] a[href="#team"],
+[data-hide~="partners"] a[href="#partners"] {
+  display: none !important;
+}
+
+/* ============================================
+   Screen reader only (accessibility)
+   ============================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only.focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
