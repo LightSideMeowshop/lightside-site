@@ -1,0 +1,6 @@
+# Light Side Website - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lightside.media/sitemap.xml

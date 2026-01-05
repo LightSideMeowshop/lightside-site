@@ -6,7 +6,7 @@
 - **Frontend**: React 18 + JSX
 - **Styling**: Tailwind CSS 3.4 + CSS Custom Properties
 - **i18n**: i18next with HTTP backend, browser language detection, ICU plurals
-- **Icons**: lucide-react (React components), flag-icons (CSS)
+- **Icons**: lucide-react (React components), custom minimal flags.css (13 inline SVG flags)
 - **Hosting**: GitHub Pages (static build)
 
 ## Project Structure
@@ -25,17 +25,21 @@ Site/
 │   │   ├── i18n.js       # i18next initialization
 │   │   └── languages.js  # Language constants (SUPPORTED_LANGUAGES, LANGUAGES)
 │   ├── pages/            # Page components
-│   │   └── HomePage.jsx
+│   │   ├── HomePage.jsx
+│   │   └── PrivacyPage.jsx
 │   ├── styles/
-│   │   └── index.css     # Global styles + Tailwind + CSS variables
-│   └── main.jsx          # App entry point
+│   │   ├── index.css     # Global styles + Tailwind + CSS variables
+│   │   ├── privacy.css   # Privacy page styles
+│   │   └── flags.css     # Minimal flag icons (13 inline SVG flags)
+│   ├── main.jsx          # Main page entry point
+│   └── privacy-main.jsx  # Privacy page entry point
 ├── public/               # Static assets (copied to dist/ as-is)
 │   ├── locales/          # i18n JSON files (13 languages)
 │   │   └── {lang}/common.json, privacy.json
 │   ├── assets/           # Images (logos, etc.)
 │   └── favicon files...
 ├── index.html            # Main page (Vite entry)
-├── privacy.html          # Privacy policy (vanilla JS, not React)
+├── privacy.html          # Privacy policy page (React)
 ├── package.json
 ├── vite.config.js
 ├── tailwind.config.js
@@ -94,10 +98,10 @@ npm run preview  # Preview production build
 
 ## Important Notes
 
-- **privacy.html** is still vanilla JS (not React) — uses same i18n setup but different implementation
+- **Multi-page app**: Both index.html and privacy.html are React pages with separate entry points
+- **Privacy page**: Uses namespace "privacy" for i18n (loads from `locales/{lang}/privacy.json`)
 - **Contact form** sends to Google Apps Script endpoint (see `src/config/contact.js`)
 - **Debug panel** only shows in development mode (`import.meta.env.DEV`)
-- Old index.html backup: `index.old.html` (can be deleted after verification)
 
 ## Adding New Languages
 

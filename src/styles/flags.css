@@ -1,0 +1,36 @@
+/* Minimal flag icons - only the 13 flags we use */
+/* Based on flag-icons, but only including what's needed */
+
+.fi {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.333333em;
+  line-height: 1em;
+}
+
+.fi::before {
+  content: "\00a0";
+}
+
+/* Square variant */
+.fi.fis {
+  width: 1em;
+}
+
+/* 4x3 ratio flags (default) */
+.fi-de { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%23ffce00' d='M0 320h640v160H0z'/%3E%3Cpath fill='%23000' d='M0 0h640v160H0z'/%3E%3Cpath fill='%23d00' d='M0 160h640v160H0z'/%3E%3C/svg%3E"); }
+.fi-es { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%23AA151B' d='M0 0h640v480H0z'/%3E%3Cpath fill='%23F1BF00' d='M0 120h640v240H0z'/%3E%3C/svg%3E"); }
+.fi-fi { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%23fff' d='M0 0h640v480H0z'/%3E%3Cpath fill='%23002f6c' d='M0 174.5h640v131H0z'/%3E%3Cpath fill='%23002f6c' d='M175.5 0h130.9v480h-131z'/%3E%3C/svg%3E"); }
+.fi-fr { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%23fff' d='M0 0h640v480H0z'/%3E%3Cpath fill='%2300267f' d='M0 0h213.3v480H0z'/%3E%3Cpath fill='%23f31830' d='M426.7 0H640v480H426.7z'/%3E%3C/svg%3E"); }
+.fi-gb { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%23012169' d='M0 0h640v480H0z'/%3E%3Cpath fill='%23FFF' d='m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z'/%3E%3Cpath fill='%23C8102E' d='m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z'/%3E%3Cpath fill='%23FFF' d='M241 0v480h160V0H241zM0 160v160h640V160H0z'/%3E%3Cpath fill='%23C8102E' d='M0 193v96h640v-96H0zM273 0v480h96V0h-96z'/%3E%3C/svg%3E"); }
+.fi-id { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%23e70011' d='M0 0h640v240H0z'/%3E%3Cpath fill='%23fff' d='M0 240h640v240H0z'/%3E%3C/svg%3E"); }
+.fi-it { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%23fff' d='M0 0h640v480H0z'/%3E%3Cpath fill='%23009246' d='M0 0h213.3v480H0z'/%3E%3Cpath fill='%23ce2b37' d='M426.7 0H640v480H426.7z'/%3E%3C/svg%3E"); }
+.fi-my { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%23cc0000' d='M0 0h640v480H0z'/%3E%3Cpath fill='%23fff' d='M0 34.3h640v34.3H0zm0 68.6h640v34.3H0zm0 68.6h640v34.3H0zm0 68.5h640v34.3H0zm0 68.6h640v34.3H0zm0 68.6h640v34.3H0zm0 68.5h640v34.3H0z'/%3E%3Cpath fill='%23010066' d='M0 0h320v274H0z'/%3E%3Cg fill='%23fc0'%3E%3Ccircle cx='144' cy='137' r='60'/%3E%3Cpath d='m175 65 15.3 39.6-35.6-21.4H210l-35.6 21.4z'/%3E%3C/g%3E%3Ccircle cx='166' cy='137' r='45' fill='%23010066'/%3E%3C/svg%3E"); }
+.fi-nl { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%2321468b' d='M0 0h640v480H0z'/%3E%3Cpath fill='%23fff' d='M0 0h640v320H0z'/%3E%3Cpath fill='%23ae1c28' d='M0 0h640v160H0z'/%3E%3C/svg%3E"); }
+.fi-pl { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%23fff' d='M0 0h640v240H0z'/%3E%3Cpath fill='%23dc143c' d='M0 240h640v240H0z'/%3E%3C/svg%3E"); }
+.fi-pt { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%23006600' d='M0 0h240v480H0z'/%3E%3Cpath fill='%23ff0000' d='M240 0h400v480H240z'/%3E%3Ccircle cx='240' cy='240' r='80' fill='%23ffcc00'/%3E%3Ccircle cx='240' cy='240' r='60' fill='%23fff'/%3E%3C/svg%3E"); }
+.fi-ru { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%23fff' d='M0 0h640v160H0z'/%3E%3Cpath fill='%230039a6' d='M0 160h640v160H0z'/%3E%3Cpath fill='%23d52b1e' d='M0 320h640v160H0z'/%3E%3C/svg%3E"); }
+.fi-tr { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath fill='%23e30a17' d='M0 0h640v480H0z'/%3E%3Ccircle cx='240' cy='240' r='120' fill='%23fff'/%3E%3Ccircle cx='270' cy='240' r='95' fill='%23e30a17'/%3E%3Cpath fill='%23fff' d='m360 240 60 18-37-51v66l37-51z'/%3E%3C/svg%3E"); }
