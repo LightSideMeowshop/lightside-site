@@ -9,7 +9,10 @@
       "Bash(npm run build:*)",
       "Bash(npm run dev:*)",
       "Bash(npm run preview:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(start http://localhost:3001/unitext/)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:icons.getbootstrap.com)"
     ]
   }
 }
